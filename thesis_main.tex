@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[normalem]{ulem}
-\usepackage[french]{babel}
+\usepackage[francais,english]{babel}% langue principale = english
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
@@ -23,6 +23,9 @@
 \usepackage{placeins} 
 \usepackage[table]{xcolor}
 \usepackage{array,multirow,makecell}
+\usepackage[tight]{shorttoc}
+
+\newcommand{\sommaire}{\shorttoc{Sommaire}{1}}
 
 % \usepackage{fullpage}
 \usepackage[nottoc, notlof, notlot]{tocbibind}
@@ -119,6 +122,7 @@ Directeur de thèse : Jérôme \textsc{Baudot}\\ }%
     %\setcounter{page}{1}
 
     \tableofcontents
+	\sommaire
 	
     \mainmatter
 
