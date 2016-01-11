@@ -1,0 +1,155 @@
+\documentclass[a4papper, 11pt,titlepage]{book}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[normalem]{ulem}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{a4wide}
+\usepackage{ulem}
+\usepackage{enumerate}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{textcomp}
+\usepackage{mathtools}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{url}
+\usepackage{moreverb}
+ \usepackage{placeins} 
+ \usepackage[table]{xcolor}
+ 
+
+% \usepackage{fullpage}
+\usepackage[nottoc, notlof, notlot]{tocbibind}
+
+%\usepackage{geometry}
+%\geometry{hmargin=2.5cm}
+
+ \definecolor{light-gray}{gray}{0.85}
+ %\newcolumntype{M}[1]{>{\raggedright}m{#1}}
+ \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}} % To center text in table
+
+ 
+\renewcommand{\baselinestretch}{0.9}
+\newcommand{\noyau}[3]{\prescript{#2}{#3}{\mathrm{#1}}}
+
+\lstset{language=c++,numbers=left,tabsize=2,breaklines=true}
+
+\makeatletter
+\def\clap#1{\hbox to 0pt{\hss #1\hss}}%
+\def\ligne#1{%
+    \hbox to \hsize{%
+\vbox{\centering #1}}}%
+\def\haut#1#2#3{%
+    \hbox to \hsize{%
+        \rlap{\vtop{\raggedright #1}}%
+        \hss
+        \clap{\vtop{\centering #2}}%
+        \hss
+\llap{\vtop{\raggedleft #3}}}}%
+\def\bas#1#2#3{%
+    \hbox to \hsize{%
+        \rlap{\vbox{\raggedright #1}}%
+        \hss
+        \clap{\vbox{\centering #2}}%
+        \hss
+\llap{\vbox{\raggedleft #3}}}}%
+\def\maketitle{%
+    \thispagestyle{empty}\vbox to \vsize{%
+        \haut{}{\@blurb}{}
+        \vfill
+        \vspace{3cm}
+        \begin{center}
+            \usefont{OT1}{ptm}{m}{n}
+            \huge \@title
+        \end{center}
+        \par
+        \hrule height 4pt
+        \par
+        \begin{flushright}
+            \usefont{OT1}{phv}{m}{n}
+            \Large \@author
+            \par
+        \end{flushright}
+        \vspace{1cm}
+        \vfill
+        \vfill
+        \bas{}{\@location, \@date}{}
+        \vspace{1cm}
+        %\includegraphics[scale = 0.1]{Logos/LogoUCBL}
+        %\hfill
+        %\includegraphics[scale = 0.2]{Logos/logo_IPHC_10cm}
+        %\hfill
+        %\includegraphics[scale = 0.15]{Logos/CNRS_logo}
+        %\hfill
+    }%
+    \cleardoublepage
+}
+\def\date#1{\def\@date{#1}}
+\def\author#1{\def\@author{#1}}
+\def\title#1{\def\@title{#1}}
+\def\location#1{\def\@location{#1}}
+\def\blurb#1{\def\@blurb{#1}}
+\date{du 4 mars 2013 au 12 juillet 2013}
+\author{}
+\title{}
+\location{DESY - Hamburg}\blurb{}
+\makeatother
+\title{Intelligent detection layers for tracking in high energy physics}
+\author{Benjamin \textsc{Boitrelle}}
+
+\location{DESY - Hamburg}
+\blurb{%
+    Université de Strasbourg\\
+    École Doctorale de Physique et Chimie-Physique (ED182) \\ 
+    \textbf{Thèse}\\[1em]
+Directeur de thèse : Jérôme \textsc{Baudot}\\ }% 
+%Co-directeur de thèse : Ingrid \textsc{Maria Gregor}\\ }% 
+
+\begin{document}
+
+    %\frontmatter
+    %\maketitle
+    \input{aknowledgements.tex}
+    %\setcounter{page}{1}
+
+    \tableofcontents
+	
+    \mainmatter
+
+    \input{introduction.tex}
+
+    \input{SM.tex}
+	  
+    \input{ILC.tex}
+
+    \input{double_sided_VXD.tex}
+
+    \input{labTest.tex}
+    \input{test_beam.tex}
+
+%	  \input{probleme.tex}
+%	  
+    \input{conclusions.tex}
+%	  \appendix	  
+%	  \input{annexe_Code}
+    
+    \backmatter
+
+	\bibliographystyle{unsrt}
+	\bibliography{Bibliographie/biblioStage}
+
+%------------------------------
+% Différentes études :  - Parcours des protons dans le détecteur afin d'avoir la résolution en énergie
+%                       - Modélisation de la réponse des capteurs afin de connaitre la précision des mesures
+%                       - Peut-on suivre chaque particule et les identifier? 
+%   ===> \textit{Simuler le comportement d'un tel objet}
+
+
+\end{document}
+
