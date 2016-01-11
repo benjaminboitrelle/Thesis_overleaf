@@ -35,10 +35,10 @@
     Lonely quarks were never observed in the nature.
     The quarks have a charge color : green, red, blue.
     The quarks are confined into "white color" objects call hadrons.
-    The hadrons are subdivided into three categories: the mesons, the overlineyons and the anti-overlineyons.
+    The hadrons are subdivided into three categories: the mesons, the baryons and the anti-baryons.
     The mesons are made of a quark and a anti-quark are always of integer spin.
-    The overlineyons (or anti-overlineyons) are made of three quarks, like the proton or neutron.
-    A quantum number is associated to the quarks: the overlineyon number B which is conserved for every interaction and has the same properties as the L number.
+    The baryons (or anti-baryons) are made of three quarks, like the proton or neutron.
+    A quantum number is associated to the quarks: the baryon number B which is conserved for every interaction and has the same properties as the L number.
 
 
     \begin{center}
@@ -105,11 +105,24 @@
 
     \subsection{Interactions in the Standard Model}
 
-    The Quantum Field Theory is the mathematical basis of the S.M.
-    The equations come from the least action and the gauge symmetries. 
-    The dynamic of the interactions is described by a Lagrangian.
+	The mathematical basis of the S.M. is the Quantum Field Theory (QFT). All the interactions are described by the gauge group 
+    \begin{equation}
+    	SU_C(3) \otimes SU_L(2) \otimes U_Y(1)
+	\end{equation}
+    
+    The gauge theory is invariant under a continuous set of local transformation.
+    Taking the gauge symmetries and the least action into account, physicists were able to set up equations that describe the dynamic of the interactions by Lagrangian.
+    
+	The Quantum Electrodynamic (QED) is used to described the electromagnetic interaction using a $U(1)$ gauge group. It is associating a Lagrangian for a massless fermion $\Psi$ with a massless photon field $A_\mu$:
+    
+    \begin{equation}
+    	\mathcal{L} =  \bar{\Psi}\left( i \gamma^\mu D_\mu \right) \Psi - \frac{1}{4}F_{\mu \nu} F^{\mu \nu}
+    \end{equation}
 
-    Here comes the E.M. Lagrangian
+	where $D_\mu \ = \ \partial_\mu - i Q_e A_\mu$ and $F_{\mu \nu} \ = \ \partial_\mu A_\nu - \partial_\nu A_\mu$.
+    
+    
+    
     Here comes the strong Lagrangian
     Here comes the E.W Lagrangian
 
