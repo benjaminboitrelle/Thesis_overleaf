@@ -128,23 +128,85 @@
     The gauge theory is invariant under a continuous set of local transformation.
     Taking the gauge symmetries and the least action into account, physicists were able to set up equations that describe the dynamic of the interactions by Lagrangian.
     
+      \subsubsection{Quantum Electrondynamic}
 	The Quantum Electrodynamic (QED) is used to described the electromagnetic interaction using a $U(1)$ gauge group. It is associating a Lagrangian for a fermion $\Psi$ with a massless photon field $A_\mu$:
     
     \begin{equation}
-    	\mathcal{L}_{QED} =  \bar{\Psi\left(x\right)}\left( i \gamma^\mu D_\mu - m \right) \Psi\left(x\right) - \frac{1}{4}F_{\mu \nu}\left(x\right) F^{\mu \nu}\left(x\right)
+    	\mathcal{L}_{QED} =  \overline{\Psi}\left(x\right)\left( i \gamma^\mu D_\mu - m \right) \Psi\left(x\right) - \frac{1}{4}F_{\mu \nu}\left(x\right) F^{\mu \nu}\left(x\right)
     \end{equation}
 
 	where $D_\mu \ = \ \partial_\mu - i Q_e A_\mu$ and $F_{\mu \nu} \ = \ \partial_\mu A_\nu - \partial_\nu A_\mu$.
-    
-    
-    The Quantum Chromodynamics (QCD) is the quantum field theory of the strong interaction.
-    Here comes the strong Lagrangian
+
+    This Lagrangian is invariant under the transformation:
+
     \begin{equation}
-    	\mathcal{L} = \bar{q} \left(i \gamma^\mu D_\mu \right) - \frac{1}{4} G_{\mu \nu}^{a} G_{a}^{\mu \nu}
+        D_{\mu} \rightarrow e^{i\alpha(x)}D_{\mu}\Psi
     \end{equation}
     
+      \subsubsection{Quantum Chromodynamics}
+    The Quantum Chromodynamics (QCD) is the quantum field theory of the strong interaction.
+    In this model, the interaction is du to a SU(3) gauge group. 
+    It produces 8 gauge fields called gluons.
+    The spinners of this theory are the six quarks that form a triplet with respect to the gauge symmetry.
+
+    The SU(3) gauge group is a group of 9 - 1 = 8 real parameters and so of 8 generators. 
+    Those generators are the Gell-Mann matrices. 
+    The normalised generators are defined by: 
     
-    Here comes the E.W Lagrangian
+    \begin{equation}
+        T^a = \frac{1}{2}\lambda^a
+    \end{equation}
+
+    The structure constant $f^{abc}$ can be expressed as:
+
+    \begin{equation}
+        if^{abc} = 2 Tr([T^a,T^b]T^c)
+    \end{equation}
+     
+   Some theories arguments and the results of experiments in high energy physics ask to introduce six spinor fields, the quarks.
+   Each of them are considered as a triplet state with respect to the SU(3) group:
+
+   \begin{equation}
+        q_i = \begin{pmatrix}
+                q_i^1 \\
+                q_i^2 \\
+                q_i^3 \\
+              \end{pmatrix}
+   \end{equation}
+    
+    where $q_i$ are the six quarks.
+    These quarks can appeared in three different states, called color and that are names red, blue and green.
+
+    The local gauge symmetry U(1) should be included into the SU(3) group.
+    
+    The gauge field $A_{\mu}$ can be introduced in the group:
+    
+    \begin{equation}
+        A_{\mu} = g_S A^a_{\mu}\frac{\lambda^a}{2}
+    \end{equation} 
+    with a = 1,...,8 and corresponds to the 8 gluons.
+    A mass term  $m_g A^{\mu}_a A^a_{\mu}$ would not be gauge invariant, that implies the gluons are massless.
+
+    The material derivative is then:
+
+    \begin{equation}
+        D_{\mu} = \partial_{\mu} - i A_{\mu} = \partial_{\mu} - i g_S A^a_{\mu} \frac{\lambda^a}{2}
+    \end{equation}
+
+    The QED field $F_{\mu \nu}$ is not gauge invariant in QCD.
+    Nevertheless an additional term to obtain gauge invariant field tensor can be introduced:
+    
+    \begin{equation}
+        G^a_{\mu \nu} = \left( \partial_{\mu} A^a_{\nu} - \partial_{\nu} A^a_{\mu} \right) + g_S f^{abc} A^b_{\mu} A^c_{\nu}
+    \end{equation} 
+
+    Finally, the QCD Lagrangian is given by:
+
+    \begin{equation}
+        \mathcal{L} = \sum_{i=1}^6  \bar{q_i} \left(i \gamma^{\mu}D_{\mu} -m_i \right)q_i - \frac{1}{4} G_{\mu \nu}^{a} G_{a}^{\mu \nu}
+    \end{equation}
+    
+    \subsubsection{Electroweak lagrangian}
     
 
   \section{The Higgs physics}
@@ -156,3 +218,5 @@
     \subsection{Higgs mechanism}
 
   \section{Basic physics analysis at the ILC}
+
+
