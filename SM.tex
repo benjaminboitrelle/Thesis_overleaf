@@ -1,10 +1,10 @@
-\chapter{From the discovery of the electron to the high-energy physics}
+\chapter{Secrets of the nature}
 
   \section{The Standard Model}
 
     \subsection{Introduction}
     
-    The Standard Model (SM) is a theory that describes the fundamental structure of matter. 
+    \lettrine{\textgoth{T}}{he} Standard Model (SM) is a theory that describes the fundamental structure of matter. 
     All of the matter found in the universe is made up of fermions, fundamental particles of spin 1/2 and that are to the number of 12.
     It can be found also some intermediate gauge bosons, that are mediators of interactions and are particles of spin 1. 
 
@@ -129,19 +129,65 @@
     Taking the gauge symmetries and the least action into account, physicists were able to set up equations that describe the dynamic of the interactions by Lagrangian.
     
       \subsubsection{Quantum Electrondynamic}
-	The Quantum Electrodynamic (QED) is used to described the electromagnetic interaction using a $U(1)$ gauge group. It is associating a Lagrangian for a fermion $\Psi$ with a massless photon field $A_\mu$:
+
+      The Quantum Electrodynamic (QED) is the QFT used to described the electromagnetic interactions using a $U(1)$ gauge group.
+     
+      Lets first consider the Dirac equation for a free fermion:
+      
+      \begin{equation}
+        \mathcal{L}_{Dirac} = \overline{\Psi}\left(x\right) \left(i \gamma^{\mu}\partial_{\mu} - m \right) \Psi\left(x\right)
+      \end{equation}
+
+      The Lagrangian is invariant under global U(1) transformation:
+
+      \begin{equation}
+            \begin{array}{rrccr}
+             \Psi \left(x \right) & \rightarrow & \Psi^{'} \left(x \right)  & = & e^{-i\alpha} \Psi\left(x\right) \\
+             \overline{\Psi}\left(x\right) & \rightarrow & \overline{\Psi}^{'}\left(x\right) & = & e^{i\alpha}  \overline{\Psi}\left(x\right) \\
+            \end{array}
+      \end{equation}
+
+      The corresponding local symmetry is:
+
+      \begin{equation}
+            \begin{array}{rcccr}
+             \Psi\left(x\right) & \rightarrow & \Psi^{'} \left(x \right) & = & e^{-i\alpha(x)} \Psi\left(x\right) \\
+             \overline{\Psi}\left(x\right) & \rightarrow & \overline{\Psi}^{'}\left(x\right) & = & e^{i\alpha(x)}  \overline{\Psi}\left(x\right) \\
+            \end{array}
+      \end{equation}
+
+      Considering the local symmetry, the mass term of the Lagrangian REF-Dirac-Lagrangian stays invariant but the term which contains the derivative is not anymore:
+      By introducing a material derivative that includes a gauge field $A_{\mu}$, it is possible to keep the derivative invariant under local gauge transformation:
+
+      \begin{equation}
+        D_{\mu} \Psi\left(x\right) =  \left(\partial_{\mu} - i Q_e A_{\mu}\right) \Psi\left(x\right)
+      \end{equation}
+
+   The gauge field is not yet a dynamic field. To get a physical gauge field, a kinetic term should be added to the equation.
+   This gauge invariant term that includes derivative from the $A_{\mu}$ field is:
+    
+    \begin{equation}
+      F_{\mu \nu} \ = \ \partial_\mu A_\nu - \partial_\nu A_\mu
+    \end{equation}
+
+    The Lagrangian that is local invariant, is the one that describes the QED:
+
+	%The Quantum Electrodynamic (QED) is used to described the electromagnetic interaction using a $U(1)$ gauge group. It is associating a Lagrangian for a fermion $\Psi$ with a massless photon field $A_\mu$:
     
     \begin{equation}
     	\mathcal{L}_{QED} =  \overline{\Psi}\left(x\right)\left( i \gamma^\mu D_\mu - m \right) \Psi\left(x\right) - \frac{1}{4}F_{\mu \nu}\left(x\right) F^{\mu \nu}\left(x\right)
     \end{equation}
 
-	where $D_\mu \ = \ \partial_\mu - i Q_e A_\mu$ and $F_{\mu \nu} \ = \ \partial_\mu A_\nu - \partial_\nu A_\mu$.
+    A mass term $m A_{\mu} A^{\mu}$ for the field $A_{\mu}$ is missing because it is not gauge invariant. It can be explain by the fact that the photon is massless.
 
-    This Lagrangian is invariant under the transformation:
 
-    \begin{equation}
-        D_{\mu} \rightarrow e^{i\alpha(x)}D_{\mu}\Psi
-    \end{equation}
+%	where $D_\mu \ = \ \partial_\mu - i Q_e A_\mu$ and $F_{\mu \nu} \ = \ \partial_\mu A_\nu - \partial_\nu A_\mu$.
+
+ %   This Lagrangian is invariant under the transformation:
+
+  %  \begin{equation}
+  %    D_{\mu} \rightarrow e^{i\alpha(x)}D_{\mu}\Psi
+  %  \end{equation}
     
       \subsubsection{Quantum Chromodynamics}
     The Quantum Chromodynamics (QCD) is the quantum field theory of the strong interaction.
@@ -206,21 +252,19 @@
         \mathcal{L} = \sum_{i=1}^6  \bar{q_i} \left(i \gamma^{\mu}D_{\mu} -m_i \right)q_i - \frac{1}{4} G_{\mu \nu}^{a} G_{a}^{\mu \nu}
     \end{equation}
     
-    \subsubsection{Electroweak lagrangian}
-
-    
+    \subsubsection{Electroweak unification}
    
     Lagrangian EW goes here: 
 
   \section{The Higgs physics}
 
-	One of the S.M. strength is to be able to explain the generation of the particle masses via the Higgs mechanism.
-    
+    The Standard Model constitutes one of the most successful achievement in modern physics.
+    One of its strength is to provides a elegant theoretical framework to describe the known experimental facts about particles, but also it was able to predict 
+    the existence of a mechanism to generate the particle masses via the Higgs mechanism.
+
     \subsection{Symmetry Breaking}
 
-    
-        \subsection{Higgs mechanism}
-
+    \subsection{Higgs mechanism}
 
   \section{Basic physics analysis at the ILC}
 
