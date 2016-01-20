@@ -1,4 +1,4 @@
-\documentclass[a4papper, 11pt,titlepage]{book}
+\documentclass[a4papper, 11pt, titlepage]{book}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -26,6 +26,21 @@
 \usepackage[tight]{shorttoc}
 \usepackage{lettrine}
 \usepackage{oldgerm}
+\usepackage{import}
+\usepackage{hyperref}
+
+\hypersetup{
+  backref=true, %permet d'ajouter des liens dans... pagebackref=true,%...les bibliographies
+  hyperindex=true, %ajoute des liens dans les index.
+  colorlinks=true, %colorise les liens
+  breaklinks=true, %permet le retour à la ligne dans les liens trop longs urlcolor= blue, %couleur des hyperliens
+  linkcolor= blue, %couleur des liens internes
+  bookmarks=true, %créé des signets pour Acrobat
+  bookmarksopen=true,
+  pdftitle={Intelligent detection layers for tracking in high energy physics}, 
+  pdfauthor={Benjamin BOITRELLE},
+  pdfsubject={Mac OS X}
+}
 
 \newcommand{\sommaire}{\shorttoc{Sommaire}{1}}
 
@@ -38,7 +53,6 @@
  \definecolor{light-gray}{gray}{0.85}
  %\newcolumntype{M}[1]{>{\raggedright}m{#1}}
  \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}} % To center text in table
-
  
 \renewcommand{\baselinestretch}{0.9}
 \newcommand{\noyau}[3]{\prescript{#2}{#3}{\mathrm{#1}}}
@@ -116,6 +130,7 @@
 Directeur de thèse : Jérôme \textsc{Baudot}\\ }% 
 %Co-directeur de thèse : Ingrid \textsc{Maria Gregor}\\ }% 
 
+
 \begin{document}
 
     %\frontmatter
@@ -128,6 +143,7 @@ Directeur de thèse : Jérôme \textsc{Baudot}\\ }%
 	
     \mainmatter
 
+    %\input{introduction.tex}
     \input{introduction.tex}
 
     \input{SM.tex}
