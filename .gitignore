@@ -1,6 +1,6 @@
 .DS_Store
 *.swp
-.aux
+*.aux
 *.toc
 *.log
 *.out
