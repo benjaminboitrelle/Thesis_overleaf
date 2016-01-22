@@ -84,6 +84,7 @@
     It is responsible for the nucleus cohesion and the hadrons.
     The last force is the gravitational interaction but it is not included into the SM.
     Trying to find a framework where the equation of the general relativity used to describe the macro world and the equation of the quantum mechanics describing the micro world is a difficult challenge.
+    From a quantum theory, the boson associated to the gravitational force might be the graviton, a spin 2 particle. 
 
     The Higgs boson (H) is a particle predicted by the S.M and is the only one to have been found in 2012 at the LHC. 
     It is the gauge boson of the Higgs mechanism.
@@ -127,7 +128,10 @@
       \subsubsection{Quantum Electrodynamic}
 
       The Quantum Electrodynamic (QED) is the QFT used to described the electromagnetic interactions using a $U(1)$ gauge group.
-     
+     The Quantum Electrodynamic (QED) is the QFT that combines the electromagnetism formalism and the quantum mechanics formalism to describe the interaction thanks to a relativistic Lagrangian.
+     As the charge $Q_e$ of the electron is invariant on every part of the Universe, the QED Lagrangian should be invariant under some transformation.
+     The $U(1)$ gauge group is a unitary group of one dimension that is invariant under space transformation.
+
       Lets first consider the Dirac equation for a free fermion:
       
       \begin{equation}
@@ -176,6 +180,9 @@
 
     \subsubsection{Weak interaction}
 
+    The weak interaction explains the $\beta$ decays of the nuclei.
+    It couples the left-handed particles and the right-handed anti-particles.
+    Madame Wu
     Experimental experiments with $\beta$ decays lead to the fact that only left-handed fermion chiralities participate in the weak interaction.
 
     The weak interaction is described by a SU(2) symmetry group. 
@@ -256,7 +263,31 @@
     One of its strength is to provides a elegant theoretical framework to describe the known experimental facts about particles, but also it was able to predict 
     the existence of a mechanism to generate the particle masses via the Higgs mechanism.
 
-    \subsection{Symmetry Breaking}
+    With the lagrangians described above, the gauge boson were considered as massless fields.
+    The electroweak interaction does not allow a $m\overline{\Psi}\Psi$ term because it does not transform as a scalar under $SU(2_L)\otimes U(1)g$.
+    The $m^2A_{\mu} A^{\mu}$ violates the gauge invariance of the Lagrangian.
+    That section will present the mechanism to generate fermions and boson masses.
+
+    \subsection{Symmetry Breaking mechanism}
+    
+    As we have seen with the Lagrangian of the QED and QCD, the bosons generated are massless. Nevertheless, the W boson and the Z bosons have a mass. 
+    The origin of the fermions masses is solved in the SM thanks to the Higgs-Englert-Brout mechanism.
+
+    Lets consider first a complex scalar doubled field $\phi$ and a lagrangian, invariant under local gauge transformations:
+
+    \begin{equation}
+      \mathcal{L} = \left(D^{\mu} \phi \right)^{\dagger} \left( D_{\mu} \phi \right) - V(\phi)
+    \end{equation}
+
+    \begin{equation}
+      \begin{array}{lr}
+        V(\phi) = \mu^{2}\phi^{\dagger}\phi + \lambda \left(\phi^{\dagger}\phi\right)^2  & , with \ \lambda > 0 \\
+      \end{array}   
+    \end{equation}
+    
+    Depending if $\mu^{2}$ is positive or negative, the potential can take two forms.
+    If $\mu^{2} > 0$, the potential has a minimum at $\phi = 0$ and describes a scalar field with a mass $\mu$.
+
 
     Here talk about the Goldstone theorem (may be.)
 
