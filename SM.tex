@@ -1,5 +1,6 @@
 \chapter{Secrets of the nature}
 
+ \minitoc
   \section{The Standard Model}
 
     \subsection{Introduction}
@@ -113,7 +114,16 @@
     \label{tab:boson}
     \caption{Summary of the bosons}
   \end{table}
+  \todo{Add range of particles}
 
+    
+    \begin{figure}[h]
+    \centering
+    \missingfigure{Particles and boson}
+    \caption{}
+    \label{fig:partInterac}
+    \end{figure}
+      
     \subsection{Quantum Field Theory}
 
 	The mathematical basis of the SM is the Quantum Field Theory (QFT). All the interactions are described by the gauge group 
@@ -178,6 +188,8 @@
     \end{equation}
 
     A mass term $m A_{\mu} A^{\mu}$ for the field $A_{\mu}$ is missing because it is not gauge invariant. It can be explain by the fact that the photon is massless.
+
+    \todo{Add details on the QED: coupling...}
 
     \subsubsection{Weak interaction}
 
@@ -278,7 +290,11 @@
 
     \begin{equation}
       \mathcal{L} = \left(D^{\mu} \phi \right)^{\dagger} \left( D_{\mu} \phi \right) - V(\phi)
-    \end{equation}
+      \label{eq:lagrangianHiggs}
+    \end{equation}             
+
+    The first term corresponds to the kinetic term of a scalar field.
+    The second term is a scalar potential that is invariant under $SU(2)_L$ and it is:
 
     \begin{equation}
       \begin{array}{lr}
@@ -290,27 +306,65 @@
     If $\mu^{2} > 0$, the potential has a minimum at $\phi = 0$ and describes a scalar particle with a mass $\mu$ and a quartic self coupling.
     As the transformation $\phi \rightarrow  - \phi$ is respected, this solution is a symmetric one.
 
-    When $\mu^{2} < 0$, 
+    When $\mu^{2} < 0$, there is not a unique ground state for this system but multiple states with the same vacuum energy.
+    
+    the minima is obtained for those fields configurations:
 
+    \begin{equation}
+      v = \sqrt{\frac{- \mu^2}{2\lambda}} > 0
+    \end{equation}
 
+    This minima will be considered as a vacuum state.
+    Lets write a new field:
+
+    \begin{equation}
+      \phi(x) = v + h(x)
+    \end{equation}
+
+    The value $v$ is given by one of the solution from equation REFXXX, and $h(x)$ is new physical variable.
+    If 
+    \begin{figure}[h]
+    \centering
+    \missingfigure{Mexican hat}
+    \caption{Scalar potential}
+    \label{fig:scalarPotential}
+    \end{figure}
     Here talk about the Goldstone theorem (may be.)
 
     \subsection{Higgs mechanism}
 
-    Here talk about the Higgs mechanism but may be added in a Higgs chapter)...
+    Here talk about the Higgs mechanism but may be added in a Higgs chapter...
 
 
    \subsubsection{Higgs Decays}
 
    As explained before, the Higgs boson couples to all particles of the Standard Model.
-   The figure FIGXXX, the branching ratios for different decay modes are shown as a function of the mass of the Higgs boson.
+   The figure \ref{fig:higgsBR}, the branching ratios for different decay modes are shown as a function of the mass of the Higgs boson.
    For a Higgs mass of 125.5 GeV, a large number of decays are accessible to experiments
 
-   \subsubsection{Higgs production at the ILC}
+    \begin{figure}[h]
+    \centering
+    \missingfigure{Higgs Branching ratio}
+    \caption{The branching ratio of the Higgs}
+    \label{fig:higgsBR}
+    \end{figure}
 
-     FIGXXX
+   \subsubsection{Higgs production at the ILC}
+    
+    \begin{figure}[h]
+    \centering
+    \missingfigure{Higgs Production}
+    \caption{Higgs production}
+    \label{fig:higgsBR}
+    \end{figure}
       
   \section{Limitations of the Standard Model}
+
+  The SM is one of the best theory to describe the infinity and beyond. 
+  Nevertheless, it can not explain all the mysteries in the universe. 
+  Physicists have to test the limits of the Model and find a theory that is working beyond the SM. 
+  One way to do so, is to build new expensive and non-eco-friendly machines.
+
 
     \subsection{Matter-antimatter asymmetry}
 
