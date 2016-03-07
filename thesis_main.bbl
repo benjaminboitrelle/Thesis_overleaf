@@ -1,5 +1,11 @@
 \begin{thebibliography}{1}
 
+\bibitem{Baer2013}
+H~Baer, T~Barklow, K~Fujii, Y~Gao, and a~Hoang.
+\newblock {[1306.6352] The International Linear Collider Technical Design
+  Report - Volume 2: Physics}.
+\newblock {\em {\ldots} preprint arXiv:13066352}, 2, jun 2013.
+
 \bibitem{1964PhRvL..13..321E}
 F.~{Englert} and R.~{Brout}.
 \newblock {Broken Symmetry and the Mass of Gauge Vector Mesons}.
@@ -29,6 +35,12 @@ T.~D. {Lee} and C.~N. {Yang}.
 K.~A. Olive et~al.
 \newblock {Review of Particle Physics}.
 \newblock {\em Chin. Phys.}, C38:090001, 2014.
+
+\bibitem{Signer2009}
+Adrian Signer.
+\newblock {ABC of SUSY}.
+\newblock {\em Journal of Physics G: Nuclear and Particle Physics},
+  36(7):073002, jul 2009.
 
 \bibitem{1957PhRv..105.1413W}
 C.~S. {Wu}, E.~{Ambler}, R.~W. {Hayward}, D.~D. {Hoppes}, and R.~P. {Hudson}.
