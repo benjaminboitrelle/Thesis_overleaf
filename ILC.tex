@@ -21,11 +21,11 @@
 
  \minitoc
   
-  \section{The ILC machine}
+  \section{To a linear lepton collider}
  
-  Before to introduce the ILC machine and explain the reasons to invest in such a project, I will give an overview of the LHC abilities and the limits of this giant machine.
+ % Before to introduce the ILC machine and explain the reasons to invest in such a project, I will give an overview of the LHC abilities and the limits of this giant machine.
   The most impressive accelerator ever built is located at CERN in Geneva, Switzerland. 
-  It is the world's largest particle accelerator, with a circumference ring of nearly 27 kilometers, straddling the Swiss and French borders.
+  It is the world largest particle accelerator, with a circumference ring of nearly 27 kilometers, straddling the Swiss and French borders.
   It is designed to collide two counter rotating beams of protons or heavy ions, with a possibility to reach centre-of-mass energies of 14 TeV with a high peak luminosity of $10^{34} \text{ cm}^2 \text{s}^{-1}$.
   The goals of the LHC are to perform further tests on the SM, search for new forces or produce dark matter candidates. 
   Indeed, the collider covers a wide energy range at the constituent level while running at a fixed beam energy.
@@ -47,8 +47,28 @@
     The signal event is then accompanied by large backgrounds produced by the interaction of other partons collisions.
     This background has an impact on the detector design (high radiation tolerance and selective trigger implementation) and masks the elementary process of interests. 
     The lepton colliders do not suffer from this kind of background and at similar energies, the event rate is lower as those of hadron colliders.
+    Moreover, the interaction of electrons and positrons is purely electroweak.
     So, the detectors do not have to handle extreme data rates and they can be use without any trigger.
     This will allow to get a better sensitivity to any possible signature of new physics.
+
+    This main advantages of the lepton colliders do not explain the choice of a linear collider to perform fine and precise measurements, as it is planed for the ILC or CLIC.
+    The reason of that choice is provided by the equation \ref{eq:Esynchrotron} describing the synchrotron radiation emitted by a particle moving a circular accelerator.
+    
+    \begin{equation}
+     E = ....
+       \label{eq:Esynchrotron}
+    \end{equation} 
+
+    The energy loss is proportional to the radius and the energy of the particle.
+
+    \todo{Write energy loss}
+
+
+    To reach the same energy scale at a linear collider, it requires a bigger number of accelerating cavities and would be bigger than a circular collider.
+    Indeed, in a circular collider, th particle bunches are being accelerated many time in the ring up to reach the energy of collison.
+    Unfortunately, the track of particles are bended, this means that they will lose energy through synchrotron radiation. 
+    The energy loss is proportional to the particle's energy
+    
 
     % - Leptons are structureless -> Well known 4-vector momentum to reconstruct fully the event
     % - Quarks are made of partons => Impossible to know exactly the 4-vector momentum
@@ -62,16 +82,39 @@
   
   blablabla
 
-  \begin{figure}
-    \centering
-    \missingfigure{Design of the ILC}
-    \caption{Basic design of the International Linear Collider}
-    \label{fig:ILC}
-  \end{figure}
-
-  \section{Design of the ILC}
+  \section{The ILC machine}
+  
+    The ILC should be the next lepton collider experiment and will be situated in Japan.
+    During 2016, the final site where the experiment will be hold is going to be decided.
+    The more likely site candidate will be in the north of Japan, in the region of Kitakami. 
+    
     \subsection{Baseline design}
+
+   \begin{figure}
+      \centering
+      \missingfigure{Design of the ILC}
+      \caption{Basic design of the International Linear Collider}
+      \label{fig:ILC}
+    \end{figure}
+
+
+    The ILC is plane to collide electrons an positrons at a center-of-mass energy up to 500 GeV, with energy variability down to 200 GeV for 31 kilometers long accelerator. 
+    An upgrade to reach the centre-of-mass energy of 1 TeV is possible, but the accelerator should be extended to achieve a length of 50 kilometers in total.
+    It is designed to generate a total of $500 \text{fb}^{-1}$ of data during the first four years of operation.
+
+    The 
+
+
+
     \subsection{Beam parameters}
+
+    \begin{figure}
+      \centering
+      \missingfigure{Bunch structure}
+      \caption{Bunch structure of the ILC: ...}
+      \label{fig:bunches}
+    \end{figure}
+
     \subsection{Background}
 
   \section{The ILC detectors concept}
@@ -90,8 +133,22 @@
   The two experiments are the Silicon Detector (SiD) and the International Large Detector (ILD) and a global comparison of the two detectors is going to be presented on the next subsection.
 
       \subsection{SiD VS ILD}
+    \begin{figure}
+      \centering
+      \missingfigure{ILD concept and SiD concept}
+      \caption{The ILC detectors concept: on the left, a design of the SiD, on right a design of the ILD }
+      \label{fig:SiLD}
+    \end{figure}    
+    
+    \subsection{The ILD detector}
 
-    \subsection{I don't know th title name}
+    \begin{figure}
+      \centering
+      \missingfigure{ILD overview}
+      \caption{The ILD detector concept with its subdetector system}
+      \label{fig:ILD}
+    \end{figure}
+
       \subsubsection{Vertex detector}
       \subsubsection{Tracking}
       \subsubsection{Calorimeters}
