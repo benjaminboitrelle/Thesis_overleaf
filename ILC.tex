@@ -154,13 +154,62 @@
 
     The ILD is a detector designed to follow the requirements given before.
     
-    They are two options in study for the vertex detector.
-    The first one is a made of five single sided layers and the other one three double sided detection layers. 
-    The design of a vertex detector is driven by the material budget and the precision of the measurements.
-    The section~\ref{chap:vxd} will introduce more the vertex detector requirements for the ILD.
 
-        \subsubsection{Vertex detector}
+      \subsubsection{Vertex detector}
+
+      The chapter~\ref{chap:vxd} will introduce more in details the vertex detector requirements for the ILD and the different design proposals. 
+      For the moment, two designs are under study for the vertex detector.
+      The first one is made of five single sided layers and the other one three double sided detection layers.
+      The design of a vertex detector is driven by the material budget and the precision of the measurements.
+
       \subsubsection{Tracking}
+      %Silicon tracking
+      %TPC
+
+      The main tracking system for the ILD is done by the Time-Projection-Chamber (TPC).
+      It is a gaseous detector with a low material budget designed to measure the particles' trajectory.
+      When a particle goes through the TPC, it ionises the gas, creating electrons that are drifting to the anode thanks to a high voltage.
+      The anode is the part where the readout plates are installed.
+      It provides 3D position of the particles tracks thanks to the wires and the anode (give x-y) and the z coordinate is given by the drifting time.
+      In addition to the exact position measurement, this detector is also able to measure the energy $\frac{dE}{dx}$ deposited by the particle and would be a first step for a particle identification.
+      \todo{Rewrite description of the TPC, it is such shitty right now...}
+
+      The requirements to design a TPC at the ILC are given by two main values: 
       
-      The track reconstruction is done by a Time-Projection-Chamber (TPC) surrounding by a Silicon Internal Tracker (SIT), a Silicon External Tracker (SET), an Endcap Tracking Detector (ETD) and a Forward Tracking Detector. 
+      \begin{itemize} 
+        \item Single point resolution $\sigma_{s.p.}$ which should be lower than $100 \mu\text{m}$ in the $r\phi$ direction and less than $500 \mu\text{m}$ in the z direction
+        \item The minimum distance to separate two hits which should be lower than 2 mm.
+      \end{itemize}
+
+      The TPC thought for the ILD is constituted of a central barrel part, with an inner radius of $\simeq 33 \text{cm}$ and a outer radius of $\simeq 180 \text{cm}$ and two endcaps with a detection area of $10 m^2$. 
+      The solid angle coverage is up to $|\cos{\theta} \simeq 0.98|$.
+      The barrel will be filled with a gas mixture called T2K (3 \% of Ar-CF4 and 2 \% of isobutane).
+      Due to the low material budget and the ability to cope with a high magnetic field, the TPC is compliant with a Particle FlowAlgorithm~\ref{sec:PFA} \todo{Add PFA citation}. 
+
+
+      To improve the track reconstruction, the TPC is surrounded by high silicon detectors: two barrel components, the Silicon Internal Tracker (SIT) and the Silicon External Tracking (SET); an end-cap component, the End-cap Tracking Detector and the Forward Tracking Detector (FTD).
+      The SIT is linking the tracking between the VXD and the TPC, whereas the SET is giving an entry point to the ECAL after the TPC.
+      Both system provide precise space points and improve the overall momentum resolution.
+      The goal of the SIT is to improve the momentum resolution, the reconstruction of low $p_{T}$ charged particles and the reconstruction of long lived particles.
+      The coupling of the SIT and SET provide also a time stamping information.
+
+      The ETD is located within the gap separating the TPC and the end-cap calorimeter. 
+      It improves the momentum resolution for charged tracks with a reduce path in the TPC.
+      It also reduces the effect of the material of the TPC end-plate. 
+      The material budget of this end-plate is estimated to 15 \% of $X_0$.
+
+      As the TPC does not provie any coverage in the forward region, seven silicon disks ensure efficient and precise tracking down to very small angles.
+      The ETD and FTD make sure to get a full tracking hermeticity.
+
+      To simplify the system layout and the maintenance, the SIT, SET and ETD are made of single sided strip layers titled by a small angle with respect to each other. 
+      They are placed in a so called false double-sided layers.
+      The SIT has two layers of micro-strip, instead of one layer for the SET. 
+      The technology studied are micro-strip sensors with an area of $10x10 \text{cm}^2$, with a pitch of 50 $\mu$m, a thickness of 200 $\mu$m and a edgeless.
+      The dead area of the sensors will be reduced down to few microns instead of 100 $\mu$m.
+
+
+
       \subsubsection{Calorimeters}
+
+
+      \subsubsection{Magnetic Field and yoke}
