@@ -206,10 +206,49 @@
       The SIT has two layers of micro-strip, instead of one layer for the SET. 
       The technology studied are micro-strip sensors with an area of $10x10 \text{cm}^2$, with a pitch of 50 $\mu$m, a thickness of 200 $\mu$m and a edgeless.
       The dead area of the sensors will be reduced down to few microns instead of 100 $\mu$m.
+      The spatial point resolution aimed for this detectors is $\sim 7.0 \ \mu$m in the $r\phi$ direction.
+      The table~\ref{tab:siTrackParam} gives the single point resolution aimed, as well as the angular coverage and the material budget.
 
+      \begin{table}[!h]
+        \centering
+          \begin{tabular}{c c c c}
+          \hline %----------------------------
+          Detector &  Single point resolution ($\mu$m) &  coverage  & material budget $X_0$ (\%) \tabularnewline
+          \hline %----------------------------
+          \hline %----------------------------
+          \multirow{2}*{SIT}  & $\sigma_{R-\phi} = 7.0 $  & \multirow{2}*{$\cos{\theta} \sim 0.91$ } & \multirow{2}*{0.65} \tabularnewline
+                              & $\sigma_Z = 50.0 $ & & \tabularnewline
+          SET      & $\sigma_R = 7.0$ & $\cos{\theta} \sim 0.79$ & 0.65 \tabularnewline
+          ETD      & $\sigma_X = 7.0$ & $\cos{\theta} \sim 0.799 - 0.985 $ & 0.65 \tabularnewline
+          \end{tabular}
+          \caption{Parameters aimed for the silicon tracker using microstrips sensors.}
+          \label{tab:siTrackParam}
+      \end{table}
 
+     The FTD is placed in the forward direction, between the beam pipe and the inner field cage of the TPC, where the magnetic field becomes less and less useful to bend charged tracks and so the determination of a precise momentum is more difficult.
+     It consists of seven tracking disks: the two firsts are pixel detectors to cope with expected high occupancies and the five others are strip detectors.
+     The pointing resolution will vary between $3.0-6.0 \ \mu$m for the two firsts layers and $7.0 \ \mu$m for the five other ones.
+     
+
+      \todo{Check the table and values....}
 
       \subsubsection{Calorimeters}
+
+      The calorimeters design are driven by the particle flow.
+      Each particles must be reconstructed individually in the detector.
+      One of the goal is for example to be able to get a jet energy resolution sufficient to cleany separate W and Z hadronic decays.
+      Jet energy measurement: 
+
+      \begin{equation}
+        \frac{\Delta E}{E} = 30 \% / \sqrt{\frac{E}{GeV}}
+        \label{eq:jetRes}
+      \end{equation}
+
+      
+      % PFA may be ?
+      % ECAL
+      % HCAL
+
 
 
       \subsubsection{Magnetic Field and yoke}
