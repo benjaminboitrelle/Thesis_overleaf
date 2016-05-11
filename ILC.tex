@@ -234,21 +234,50 @@
 
       \subsubsection{Calorimeters}
 
-      The calorimeters design are driven by the particle flow.
-      Each particles must be reconstructed individually in the detector.
-      One of the goal is for example to be able to get a jet energy resolution sufficient to cleany separate W and Z hadronic decays.
-      Jet energy measurement: 
-
+      The calorimeters design is driven by the particle flow requirements.
+      Each particle must be reconstructed individually in the detector with a jet energy measurement equal to:
       \begin{equation}
         \frac{\Delta E}{E} = 30 \% / \sqrt{\frac{E}{GeV}}
         \label{eq:jetRes}
       \end{equation}
 
+      The energy resolution obtained in equation~\ref{eq:jetRes} is obtained thanks to a combination of information from the tracking system and the calorimeters. 
+      The choice of technology used for the calorimeter will be determined by the pattern recognition performance. 
+      One of the ILD detector's goal is for example to be able to get a jet energy resolution sufficient to cleany separate W and Z hadronic decays.
       
-      % PFA may be ?
-      % ECAL
-      % HCAL
+      The average jet energy distribution is roughly: 
+      \begin{itemize}
+        \item $62 \%$ of charged particles (mainly hadrons)
+        \item $27 \%$ of $\gamma$
+        \item $10 \%$ of long-lived neutral hadrons
+        \item $1.5 \%$ of $\nu$
+      \end{itemize}
 
+      The electromagnetic calorimeter (ECAL) is the first calorimeter after the tracking system.
+      Its role is to identify photons and leptons and measure their energy, nevertheless it is also the first section to develop the hadron showers.
+      Its fine segmentation makes important contribution to hadron-hadron jet separation.
+      For the ILD, a compromise between the performance and the cost has led to use a sampling calorimeter realised with tungsten absorber.
+      They are three options under study for the active area.
+      The first one, called SiW-ECAL, is made of silicon pin diodes with a pitch of $5 \times 5 \text{mm}^2$. 
+      It has the advantage to cover a large area, to be reliable and simple to operate, to have thin readout layers and can be operate in 3.5 T magnetic field.
+      The second option is made of scintillator strips readout by photo-sensors and is called ScECAL.
+      It has an active area of $5 \times 45 \text{mm}^2$ arranged in alternative directions to achieve an effective granularity of $5 \times 5 \text{mm}^2$ 
+      The weakness of this technology happened in dense jets environment, where the reconstruction becomes more and more complicated.
+      Some alternatives are also thought, like the Micromegas chambers. Nevertheless this technology is less advanced compared to the others.
+      One good candidate could be the use of MAP\footnote{Monolithic Active Pixel} sensors.
+      They have the advantage to get the readout on the same.... blablabla...
+      and by choosing standard CMOS processes, the cost of fabrication would be reduced.
 
+      The hadronic calorimeter (HCAL) has the role to separate the deposits energy of charged and neutral hadrons and to precisely measure the energy deposited.
+      It is also a sampling calorimeter using stainless steel instead of tungsten as absorber. 
+      The rigidity of stainless steel makes possible to get a self supporting structure limiting the dead areas.
+      Two different options for the active medium area are studied.
+      The analogue HCAL (AHCAL) is made of scintillator tiles, whereas the semi-digital options is made of gaseous devices.
+      Analogue HCAL and Semi-Digital HCAL (SDHCAL)  and strong candidate: Glass Resistive Plate Chamber (GRPC)
+
+      The calorimeter system is completed in the very forward region by three different subsystems. 
+      The LumiCAL serves as luminosity monitor by measuring the Bhabha scattering $e^+e^- \rightarrow e^+e^-$ via emission of virtual $\gamma$, the BeamCal as beamstrahlungsmonitor 
+
+      
 
       \subsubsection{Magnetic Field and yoke}
