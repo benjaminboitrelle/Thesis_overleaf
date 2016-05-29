@@ -50,7 +50,7 @@
 
 % \usepackage{fullpage}
 \usepackage[nottoc, notlof, notlot]{tocbibind}
-\usepackage{glossaries}
+\usepackage[toc,acronym]{glossaries}
 
 %\usepackage{geometry}
 %\geometry{hmargin=2.5cm}
@@ -60,7 +60,7 @@
  \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}} % To center text in table
  
 \renewcommand{\baselinestretch}{0.9}
-\newcommand{\noyau}[3]{\prescript{#2}{#3}{\mathrm{#1}}}
+%\newcommand{\noyau}[3]{\prescript{#2}{#3}{\mathrm{#1}}}
 
 \lstset{language=c++,numbers=left,tabsize=2,breaklines=true}
 
@@ -119,7 +119,7 @@
 \def\title#1{\def\@title{#1}}
 \def\location#1{\def\@location{#1}}
 \def\blurb#1{\def\@blurb{#1}}
-\date{du 4 mars 2013 au 12 juillet 2013}
+\date{}
 \author{}
 \title{}
 \location{DESY - Hamburg}\blurb{}
@@ -128,11 +128,11 @@
 \author{Benjamin \textsc{Boitrelle}}
 
 \location{DESY - Hamburg}
-\blurb{%
-    Université de Strasbourg\\
-    École Doctorale de Physique et Chimie-Physique (ED182) \\ 
-    \textbf{Thèse}\\[1em]
-Directeur de thèse : Jérôme \textsc{Baudot}\\ }% 
+%\blurb{%
+%    Université de Strasbourg\\
+%    École Doctorale de Physique et Chimie-Physique (ED182) \\ 
+%    \textbf{Thèse}\\[1em]
+%Directeur de thèse : Jérôme \textsc{Baudot}\\ % 
 %Co-directeur de thèse : Ingrid \textsc{Maria Gregor}\\ }% 
 
 \makeglossaries
@@ -144,6 +144,7 @@ Directeur de thèse : Jérôme \textsc{Baudot}\\ }%
   {}%
 }
 \renewcommand*{\glstextformat}[1]{\textcolor{black}{#1}} % To make glossary black and not blue
+
 \begin{document}
 
     %\frontmatter
@@ -179,8 +180,11 @@ Directeur de thèse : Jérôme \textsc{Baudot}\\ }%
  %   \backmatter
 
   \printglossaries
-	\bibliographystyle{plain}
+	
+  \bibliographystyle{plain}
 	\bibliography{Bibliography/biblio}
+
+  \printglossary[type=\acronymtype]
 
 \end{document}
 
