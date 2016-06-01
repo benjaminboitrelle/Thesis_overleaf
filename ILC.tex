@@ -119,8 +119,8 @@
 
    \begin{figure}[!h]
       \centering
-      \includegraphics[width = 16 cm]{Pictures/ILC/ILC}
-      \caption{Basic design of the International Linear Collider}
+      \includegraphics[width = 16 cm]{Pictures/ILC/ILC_new.png}
+      \caption{Schematic layout of the International Linear Collider (ILC).\cite{Behnke2013}}
       \label{fig:ILC}
     \end{figure}
 
@@ -179,7 +179,7 @@
     \begin{figure}[!h]
       \centering
       \includegraphics[width = 10cm]{Pictures/ILC/bunch.png}
-      \caption{Representation of the bunch structure at the ILC. One bunch train is made of 2625 bunch crossings and lasts 0.95 ms. Each bunch crossing is spaced out by 337 ns. Two bunch trains are of 0.2s apart from each other.}
+      \caption{Representation of the bunch structure at the ILC. One bunch train is made of 2625 bunch crossings and lasts 0.95 ms. Each bunch crossing is spaced out by 337 ns. Two bunch trains are of 0.2s apart from each other.\cite{Li2010}}
       \label{fig:bunches}
     \end{figure}
     \todo{Draw my one bunch structure figure...}
@@ -192,33 +192,58 @@
     \subsection{Beam backgrounds}
 
     To design the detectors of the \gls{ILC}, the backgrounds must be understood and taken into account to give optimal performances.
+    Indeed, the event reconstruction becomes more complicated with hits caused by background particles.
+    They are two kind of background, the one created by the \gls{BDS} and the one related to the interaction point.
+    As it was discussed in the subsection~\ref{subsec:design}, the collimator placed closed to the \gls{IP} to purify the beam can produce muons by electromagnetic shower.
+    To sweep them away, iron spoilers are used to create a magnetic field and deflect the muons.
+    A side effect is to increase the number of neutron created in photo-nuclear reactions.
+    A concrete wall placed at the entrance of the experimental hall vanishes the neutron background.
+
     Contrary to the \gls{LHC}, the \gls{ILC} will not suffer from the QCD background, as mentioned in subsection~\ref{subsec:advLLC}
     Nevertheless, due to the nature of electrons and positrons, the two beams will interact each others before to collide.
-    This interaction is called the beamstrahlung and is due to the electromagnetic force which bends the particles trajectory.
-    On the one hand, this has a positive effect on the luminosity which is enhanced by a factor of 2.
-    On the other hand, it creates low energy $e^+e^-$ pairs at the interaction point. 
-    This will degrade the energy spectrum by emission of hard breamstrahlung photons.
-    Thanks to the design of an added dipole field to the conventional solenoid field, the pair background created are guided out of the detectors. 
-    Different kind of pair backgrounds are expected at the \gls{ILC}: the coherent and incoherent pair background.
-    The first one corresponds to the interaction of a photon with an atomic nucleus field.
-    This process is estimated to be negligible in the \gls{ILC} environment.
-    The second one is the incoherent pair background, where a $e^+e^-$ pair is generating via scattering of two photons.
-    Depending on the origin of the photons, the process will be more or less dominant.
-    When photons are both virtual, it will create a $e^+e^-$ pair via Landau-Lifshitz process and will contribute to approximately the third of the pair creation.
-    The Bethe-Heitler process happens while one of the photon is real and the other virtual. 
-    It contributes roughly to two of the third pair creation.
-    The third process called Breit-Wheeler, is the creation of $e^+e^-$ pair via two real photons.
-    This process is estimated to have only a percent level contribution.
-    Photons are radiated into a very narrow cone in the forward direction and would strike components.
-    The $e^+e^-$ incoherent pair created is expected to have a relatively low $P_T$ and to be emitted in the forward direction.
-    This has an impact of the design of the vertex detector and the forward detectors.
+    The electromagnetic beam field of each bunch is high and causes the focusing of the opposite bunch.
+    It is bending the electron/positron trajectories near the \gls{IP}.
+    On the one hand, this effect helps to focus the incoming beams and enhance the luminosity.
+    On the other hand, as the charged particles have bending track, they are emitting hard photons via beamstrahlung, creating $e^+e^-$ pairs background.
+    The hard photon are strongly focused in the forward region and do not contribute strongly to the background in the detector.
+    However, the $e^+e^-$ pairs created contribute to the background directly or through backscattered particles.
+    In consequence of the beamstrahlung, the beam particle energy is reduced, hence the collisions occur at different energies from the nominal one and this affects the physics cross-section.
+    The beamstrhalung photons can also produced neutrons by hitting components.
+    An other source of hard photons is the initial state radiation. 
+    With the beamstrhalung, they contribute to reduce the luminosity\cite{Markin2014}.
+
+    Different kinds of soft pairs background could be expect at the \gls{ILC}: the coherent and incoherent pair production.
+    The coherent pair production appears when beamstrahlung photons are interacting with the strong electromagnetic field of the beams.
+    In the \gls{ILC} environment the coherent pair background are negligible, whereas the incoherent pair production is dominant.
+    It corresponds to $e^+e^-$ pairs created by the interaction of only two particles.
+    They are to the number of three depending on the nature of the scattered photons creating the $e^+e^-$ pair.
+    The Bethe-Heitler process corresponds to the scattering of one real photon while the second one is virtual.
+    It contributes to approximately two of the third pair production.
+    The second process is the Landau-Lifshitz, where the two scattered photons are virtuals and contribute to approximately to the third of the pair creation.
+    The last production occurred via two real photons (Breit-Wheeler process) and contribute only to a percent level.
+    The incoherent $e^+e^-$ pairs are produced at a relatively low transverse momentum and are emitted in the forward direction.
+    
+    %This interaction is called the beamstrahlung and is due to the electromagnetic force which bends the particles trajectory.
+    %On the one hand, this has a positive effect on the luminosity which is enhanced by a factor of 2.
+    %On the other hand, it creates low energy $e^+e^-$ pairs at the interaction point. 
+    %This will degrade the energy spectrum by emission of hard breamstrahlung photons.
+    %Thanks to the design of an added dipole field to the conventional solenoid field, the pair background created are guided out of the detectors. 
+    %Different kind of pair backgrounds are expected at the \gls{ILC}: the coherent and incoherent pair background.
+    %The first one corresponds to the interaction of a photon with an atomic nucleus field.
+    %This process is estimated to be negligible in the \gls{ILC} environment.
+    %The second one is the incoherent pair background, where a $e^+e^-$ pair is generating via scattering of two photons.
+    %Depending on the origin of the photons, the process will be more or less dominant.
+    %When photons are both virtual, it will create a $e^+e^-$ pair via Landau-Lifshitz process and will contribute to approximately the third of the pair creation.
+    %The Bethe-Heitler process happens while one of the photon is real and the other virtual. 
+    %It contributes roughly to two of the third pair creation.
+    %The third process called Breit-Wheeler, is the creation of $e^+e^-$ pair via two real photons.
+    %This process is estimated to have only a percent level contribution.
+    %Photons are radiated into a very narrow cone in the forward direction and would strike components.
+    %The $e^+e^-$ incoherent pair created is expected to have a relatively low $P_T$ and to be emitted in the forward direction.
+    %This has an impact of the design of the vertex detector and the forward detectors.
 
     %An other kind of background are coming from the photon-photon collisions.
     %It produces high-transverse momentum particles that overlap 
-    
-   % the secondary backscattered particles.
-
-   % SYNCHROTRON RADIATION: Muons, neutrons, hadrons and muon, pair background, photon bg, synchrotron radiation bg, beam halo muon bg.
 
   \section{The ILC detectors concept}
   \label{sec:detectors}
@@ -235,7 +260,7 @@
         \includegraphics[width = 1.03\textwidth]{Pictures/ILC/ILD.jpg}
         \caption{\label{fig:ILD} The International Large Detector}
       \end{subfigure}
-      \caption{Overview of the two detectors designs at the ILC. The figure~\subref{fig:SiD} represents the SiD design while the figure~\subref{fig:ILD} shows the ILD approach.}
+      \caption{Overview of the two detectors designs at the ILC. The figure~\subref{fig:SiD} represents the SiD design while the figure~\subref{fig:ILD} shows the ILD approach.\cite{Behnke2010}}
       \label{fig:SiD}
     \end{figure}    
 
@@ -294,7 +319,7 @@
     \begin{figure}[!h]
       \centering
       \includegraphics[width = 10cm]{Pictures/ILC/fig_ILD_Quadrant.png}
-      \caption{Quadrant view of the ILD detector concept with its subdetector system}
+      \caption{Quadrant view of the ILD detector concept with its subdetector system \cite{Behnke2010}}
       \label{fig:ILD}
     \end{figure}
 
@@ -317,7 +342,6 @@
       The anode is the part where the readout plates are installed.
       It provides 3D position of the particles tracks thanks to the wires and the anode (give x-y) and the z coordinate is given by the drifting time.
       In addition to the exact position measurement, this detector is also able to measure the energy $\frac{dE}{dx}$ deposited by the particle and would be a first step for a particle identification.
-      \todo{Rewrite description of the TPC...}
 
       The requirements to design a \gls{TPC} at the \gls{ILC} are given by two main values: 
       
