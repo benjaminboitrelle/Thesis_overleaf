@@ -13,12 +13,12 @@
  %   -> Talking about the \gls{ILD} (VTX, SIT, TPC, f)
 
   Since 2008, the \gls{LHC} is actually the most powerful tool in high energy physics to have a better understanding of the universe, particularly with the discovery in 2012 of a new particle compatible to the boson predicted by the spontaneous symmetry breaking of the SM \cite{Aad2012, Chatrchyan2012}.
-  Although the \gls{LHC} is an impressive machine able to reach the highest energy scales of collision available on Earth with a centre-of-mass energy of 13 TeV, the complex environment of the events generated hides the access to some fundamental parameters. 
-  To achieve more precise measurements of the Higgs boson, but also to test the validity of the SM and other physics theories introduce in the chapter \ref{chap:SM}, the high energy physics community has merged on the necessity to build a linear electron-positron collider, that will work as a complementary accelerator to the \gls{LHC}.
+  Although the \gls{LHC} is an impressive machine able to reach the highest energy scale of collision available on Earth with a centre-of-mass energy of 13 TeV, the complex environment of the events generated hides the access to some fundamental parameters. 
+  To achieve more precise measurements of the Higgs boson, but also to test the validity of the SM and other physics theories introduced in the chapter \ref{chap:SM}, the high energy physics community has merged on the necessity to build a linear electron-positron collider, that will work as a complementary accelerator to the \gls{LHC}.
   
   This chapter will explain the motivations to invest a huge amount of money in a new great world project. 
   It will present the complementary nature of the lepton and hadron colliders and the main advantages of the lepton collisions will be discussed.
-  After giving an overview of the ILC with its basic design and the experiment models, we will focus on the design of one of the experiments: the \gls{ILD}.
+  After giving an overview of the ILC with its basic design and the experiment models, we will focus on the design of one of the detectors: the \gls{ILD}.
 
  \minitoc
   
@@ -37,7 +37,7 @@
     \subsection{Advantages of a linear lepton collider}
     \label{subsec:advLLC}
     
-    First of all, during each collision at an hadron collider, only a part of the total centre-of-mass energy is available for the process evolved, so the initial four-vector momentum is not known. 
+    First of all, during each collision at an hadron collider, only a part of the total centre-of-mass energy is available for the process evolved, therefore the initial four-vector momentum is not known. 
     By colliding leptons, which are structureless objects, the full centre-of-mass energy is available for the elementary process. 
     The initial four-vector momentum of an interaction is exactly known, hence the event can be fully reconstructed.
 
@@ -47,40 +47,50 @@
     Thirdly, as seen on the first point, at the \gls{LHC}, only a fraction of the partons are contributing to the interesting process. 
     The proton-proton interaction cross section is dominated by inelastic background QCD processes.
     The signal event is then accompanied by large backgrounds produced by the interaction of other partons collisions.
-    This background has an impact on the detector design (high radiation tolerance and selective trigger implementation) and masks the elementary process of interests. 
+    This background masks the elementary process of interests, in order that it has an impact on the detector design, that should have a high radiation tolerance and implement a selective trigger to reduce the data rate.
+    %has an impact on the detector design (high radiation tolerance and selective trigger implementation) and masks the elementary process of interests. 
     The lepton colliders do not suffer from this kind of background and at similar energies, the event rate is lower as those of hadron colliders.
     Moreover, the interaction of electrons and positrons is purely electroweak.
-    So, the detectors do not have to handle extreme data rates and they can be used without any trigger.
-    This will allow to get a better sensitivity to any possible signature of new physics.
+    In consequence, the detector does not have to handle extreme data rates and can be used without any trigger.
+    Hence, the sensitivity to any possible signature of new physics is improved.
+    %This will allow to get a better sensitivity to any possible signature of new physics.
 
-    This main advantages of the lepton colliders do not explain the choice of a linear collider working at lower centre-of-mass energy to perform fine and precise measurements.
-    The first reason of the linear collider choice is driven by the equation \ref{eq:Esynchrotron} describing the energy loss via synchrotron radiation by a particle moving in a circular accelerator.
+    Although the leptons, in particularly the electron and positron, have clearer advantages on hadrons to perform precise measurement, the choice of a linear collider comes from the physics of accelerating charged particles.
+    While charged particles are moving in a circular accelerator, they lose some energy by emitting photons via synchrotron radiation.
+    The equation~\ref{eq:Esynchrotron} describe the energy loss via synchrotron radiation:
+    
+    %radiate photon. In a linear acceleration, the radiation is called bremstrahlung and in a circular acceleration
+    %When charged particles are accelerated in a circular accelerator, they lose energy via synchrotron radiation as seen on the equation~\ref{eq:Esynchrotron}.
+    %
+    %This main advantages of the lepton colliders do not explain the choice of a linear collider working at lower centre-of-mass energy to perform fine and precise measurements.
+    %The first reason of the linear collider choice is driven by the equation \ref{eq:Esynchrotron} describing the energy loss via synchrotron radiation by a particle moving in a circular accelerator.
     
     \begin{equation}
      \Delta E_{sync} \sim \frac{E^4}{m^4r}
        \label{eq:Esynchrotron}
     \end{equation} 
 
-    The radiative energy loss is proportional to the radius $r$ of the accelerator, the energy of the particle $E$ to the power of fourth and its mass $m$ to the power of fourth.
-    As the electron mass is really smaller than the proton mass, the energy loss is radiated by the electron at the same centre-of-mass energy is bigger.  
-    To compensate the energy loss, a circular electron-positron accelerator should have an extremely big radius (bigger than the actual \gls{LHC}). 
-    The second reason is deduced from the first one.
-    Indeed, a linear collider has to reach the desired centre-of-mass energy of collision in only one path, whereas in a circular collider, the bunch of particles are being accelerated many times in the ring to reach the desired energy of collision.
-    To work at the same energy scale, a linear collider would require a bigger number of accelerating cavities and would make a much bigger and more expensive collider than a circular one.
+    The radiative energy loss is proportional to the radius $r$ of the accelerator, the energy of the particle $E$ to the power of the fourth and its mass $m$ to the power of the fourth.
+    As the electron mass is $\sim 1.8 \times 10^3$ smaller than the proton mass, the energy loss radiated by the electron is bigger than the energy loss radiated by proton at the same centre-of-mass energy.
+    To compensate the energy loss, a circular electron-positron accelerator should have an extremely big radius (bigger than the actual \gls{LHC}), increasing the cost to build the experiment.
+    An other solution to overcome the synchrotron radiation is to accelerate the particles in a linear collider. Nevertheless, the centre-of-mass energy have to be reached in only one path, whereas the bunch of particles in a circular collider are accelerated many times in the ring until the desired energy of collision is reached.
+    %Indeed, a linear collider has to reach the desired centre-of-mass energy of collision in only one path, whereas in a circular collider, the bunch of particles are being accelerated many times in the ring to reach the desired energy of collision.
+    To still get an "affordable" experiment, the centre-of-mass energy obtained at a linear collider is below to the one from a circular collider. 
+    Indeed, to work at the same energy scale, a linear collider would require a bigger number of accelerating cavities and would make a much bigger and more expensive collider than a circular one.
 
     \subsection{Future linear lepton collider}
 
     As it was mentioned before, the precise measurements offered by lepton collider is one of the key point to constraint the limits of the \gls{SM} and to characterise precisely all the known particles.
-    Since the 1980's, several linear collider technologies have been developed, leading in the 1990's to five major accelerator technologies: \gls{SRF}, the \gls{CLIC} technology and three different normal conducting technologies (S-band, C-band and X-band).
-    At the beginning of the 2000's, a committee for the future linear collider was formed and has chosen in 2004 the \gls{SRF} technology and since then all the efforts are done in that direction to build the \gls{ILC}\todo{Paper on ILC}.
-    The technology used for this future experiment is also used for the XFEL at DESY in Hamburg and at KEK in Japan.
+    Since the 1980's, several linear collider technologies have been developed, leading in the 1990's to five major accelerator technologies: \gls{SRF}, the \gls{CLIC} technology and three different normal conducting technologies (S-band, C-band and X-band)\cite{Desy1988}.
+    At the beginning of the 2000's, a committee for the future linear collider was formed and has chosen in 2004 the \gls{SRF} technology\cite{ICFA2004} and since then all the efforts are done in that direction to build the \gls{ILC}\todo{Paper on ILC}.
+    The technology developed for this future experiment is also used for the XFEL at DESY in Hamburg and at KEK in Japan.
     An other linear collider project led by the CERN is being prepared: the \gls{CLIC}.
     It has a more challenging technology to aim a nominal energy of 3 TeV instead of 1 TeV for the \gls{ILC}.
     Contrary to the \gls{ILC}, \gls{CLIC} plans to use radio-frequency structures and a two beam concept\todo{Paper on CLIC}. 
     An other idea would be to develop a muon collider instead of electron-positron collider\cite{Lipton2012}.
-    As the electron, the muon is a pointlike particle, so the centre-of-mass energy can be easily adjust to perform precise study.
-    The muon mass is 207 times much bigger the electron's mass and suffer less of energy loss by synchrotron radiation.
-    Hence, a circular collider could be more adapted and the beamstrahlung effects would be smaller in a muon collider than in an $e^+e-$ machine.
+    As the electron, the muon is a pointlike particle, therefore the centre-of-mass energy can be easily adjust to perform precise study.
+    The muon mass is 207 times much bigger than the electron ones and suffer less of energy loss by synchrotron radiation.
+    Hence, a circular collider could be more adapted and the beamstrahlung effects would be smaller in a muon collider than in an $e^+e^-$ machine.
     Nevertheless, the muon has a life-time of only $2.2 \ \mu\text{s}$ making up a more challenging acceleration design.
     
     %An other plan not reasonably practicable would be to develop a muon collider instead of electron-positron collider.\todo{Muon Collider: Plans, Progress and Challenges}
@@ -101,68 +111,74 @@
 
   \section{The ILC machine}
   
-    The ILC should be the next lepton collider experiment and will be situated in Japan.
-    During 2016, the final site where the experiment will be hold is going to be decided.
+    The \gls{ILC} should be the next lepton collider experiment and will be situated in Japan.
+    During 2016, the physicists community is waiting for an official decision of the Japan government concerning final site where the experiment will be hold is going to be decided.
     As the time as this thesis was written, the most likely site candidate is located in the north of Japan, in the region of Kitakami. 
     
     \subsection{Baseline design}
 
-   \begin{figure}
+   \begin{figure}[!h]
       \centering
-      \includegraphics[width = 15 cm]{Pictures/ILC}
+      \includegraphics[width = 16 cm]{Pictures/ILC/ILC}
       \caption{Basic design of the International Linear Collider}
       \label{fig:ILC}
     \end{figure}
 
 
-    The ILC is planed to collide electrons and positrons at a center-of-mass energy up to 500 GeV, with an energy variability down to 200 GeV for a 31 kilometers long accelerator. 
+    The \gls{ILC} is planed to collide electrons and positrons at a center-of-mass energy up to 500 GeV, with an energy variability down to 200 GeV for a 31 kilometers long accelerator. 
     An upgrade to reach the centre-of-mass energy of 1 TeV is also possible, but the accelerator should be extended to achieve a total length of 50 kilometers.
     It is designed to generate a total of $500\text{ fb}^{-1}$ of data during the first four years of operation. The luminosity will reach a peak of $2 \times 10^{34}\text{cm}^{-2}\text{s}^{-1}$ at $\sqrt s = 500\text{ GeV}$.
 
     %The main components of the ILC are the electrons and positrons sources, the damping ring, the main LINAC, the Beam Delivery System (BDS) and the interaction region. Two experiments will participate and will share the same interaction region. Via a push-pull system, the detector will be alternatively positioned and running, while the other one would be maintain in a cavern next to the interaction region. 
 
-    The main components of the ILC in the following order: first of all, an overview on the electron source and their acceleration via the conducting and superconducting structures, then the role of the damping rings, the injection into the main linacs, followed by the positron source and the \gls{BDS} to finally present the interaction region.
+    The main components of the \gls{ILC} are presented in the following order: first of all, an overview on the electron source and their acceleration via the conducting and superconducting structures, then the role of the damping rings, the injection into the main linacs, followed by the positron source and the \gls{BDS} to finally present the \gls{IR}.
+    A detailed description of the \gls{ILC} could be found in the Technical Design Report\cite{Appleby2006}.
 
-    \subsection{Machine design and Beam parameters}
+    \subsection{Machine design and beam parameters}
     \label{subsec:design}
 
     The polarised electrons are produced by a laser firing a strained GaAs photocathode in a \gls{DC} gun.
-    To provide redundancy, the electron generation system is made of two lasers and guns., providing bunches with a polarisation of 90 $\%$.
+    To implement a redundancy, the electron generation system is made of two lasers and \gls{DC} guns, providing bunches with a polarisation of 90 $\%$.
     The electrons are then pre-accelerate to 76 MeV thanks to non-superconducting accelerating structures.
-    Then, they are injected into a 250 m long superconducting linac to reach the energy of 5 GeV.
-    Nevertheless, the emittance of the particle bunches is too wide, leading in dimensions and density of bunches quite extended.
-    Before the injection of the bunches into a damping ring, which is used in order to decrease the emittance and reach the desired luminosity, superconducting solenoids rotate the spin vector into the vertical direction, while \gls{SRF} cryomodules are used for an energy compression.
+    Thereafter, they are injected into a 250 m long superconducting linac to reach the energy of 5 GeV.
+    Nevertheless, the dimension and density of bunches are quite extended, thus their emittance is too wide.
+    Before to inject the bunches into a damping ring, which is used in order to decrease the emittance and reach the desired luminosity, superconducting solenoids rotate the spin vector into the vertical direction, while \gls{SRF} cryomodules are used for an energy compression.
  
     The damping ring is 6.7 km long and made of magnets and wrigglers that are going to force the particles to get a bent track.
     This system is used to damp the electrons with large transverse and longitudinal emittance to the low emittance required for the luminosity production.
     The reduction of the emittance should be achieved within 200 ms between the machine pules.
-    Although the positron source was not yet introduced, their bunches suffer from the same problem as the electron ones. 
-    A second damping ring, placed in the same cavern as the other damping ring, is also in charge to get the desired emittance.
+    Although the positron source was not yet introduced, their bunches suffer from the same problems as the electron ones. 
+    A second damping ring, placed in the same cavern as the electron one, is also in charge to get the desired emittance.
 
     The bunches are then extracted from the damping rings and transfered via the \gls{RTML} structure, the longest continuous beam line at the \gls{ILC}.
-    It is divided into five subsystems to transport the bunches from the damping rings to the \gls{BDS}, in order to rotate the spin of the particle to orient the beam in the desired polarisation, but also to compress the beam bunch length from several millimeters to a few hundred microns thanks to a two-stage bunch compressor.
+    It is divided into five subsystems to transport the bunches from the damping rings to the \gls{BDS}, in order to orient the beam in the desired polarisation by rotating the spin of the particle, but also to compress the beam bunch length from several millimeters to a few hundred microns thanks to a two-stage bunch compressor.
     At the same time the bunches are compressed, sections of \gls{SRF} technology accelerate the bunches from 5 GeV up to 15 GeV.
     One of the challenge of the \gls{RTML} is to preserve the emittance obtained after the damping rings, while the length and the energy of the bunches are tunned.
     Then, the particles are delivered to the main Linac, a 11 km long accelerator using 1.3 GHz \gls{SRF} cavities, made of niobium.
 
-    Before to reach the interaction region, the primary electron beam is transported throw a 147 m superconducting helical undulator to produce photons from $\sim 10$ up to $\sim 30$ MeV $\gamma$, depending on the energy of the primary beam.
-    This primary beam is separated from the photons and sent back to the \gls{BDS}.
+    Before to reach the interaction region, the primary electron beam is transported through a 147 m superconducting helical undulator to produce photons from $\sim 10$ up to $\sim 30$ MeV, depending on the energy of the primary beam.
+    This primary beam is separated from the photons and sent back to the \gls{BDS} with an energy lose of $\sim 3$ GeV.
     The photons are directed onto a rotating Ti-alloy target to create $e^+e^-$ pairs that are separated.
-    The positrons collected are accelerated to 125 MeV thanks to a normal conducting linac and then accelerated to 5 GeV with a superconducting boost linac, to finally be introduced into the damping ring.
-    The primary bunch of electrons if transfered back to the main linac with an energy lose of $\sim 3$ GeV.
+    The positrons collected are accelerated to 125 MeV thanks to a normal conducting linac and then accelerated to 5 GeV with a superconducting boost linac.
+    Finally they are introduced into the damping ring to reduce their emittance.
 
-    The two beams are transfered from the main linacs to the \gls{IR} thanks to the \gls{BDS}.
-    At this point, the beams are focused in order to optimise the desired luminosity wanted.
-    It is also needed to protect the detector from miss-steered beams and create a screening from beam halo muons.\todo{I don't like my BDS description...}
+    The two beams are transported from the high energy lincas to the \gls{IR} by the \gls{BDS}, in charge to focus the beams to the sizes required to meet the \gls{ILC} luminosity wanted.
+    It is divided in five main subsystems. 
+    First, in the direction of the beam, a system is in charge to perform some emittance measurement and matching, to give a trajectory feedback, an provide a polarimetry and energy diagnostic. 
+    Then the beam is collimated to remove the beam-halo particles that would generate a huge amount of background in the detector.
+    Muons generated during the collimation process are deflected by magnetised iron shielding.
+    Thereafter, strong compact quadrupoles focus the beam to the sizes required to meet the desired luminosity. 
+    Before the collisions, crab cavities rotate the bunches in the horizontal plane for effective collisions and to achieve a 14 mrad total crossing angle.
+    After the collisions an extraction line is dedicated to transport the beams into the main beam dump.
 
     Although two experiments will run at the \gls{ILC}, there will be only one interaction region due to cost reasons.
     Indeed, to have two experiments running at the same time, it requires two separate \gls{BDS} of 4 km long each.
     Thanks to a push-pull scheme, the detectors will work alternatively: while one is taking data, the other one is sitting in garage to be maintained.
     The two detectors will be presented in more details at section~\ref{sec:detectors}.
     
-    \begin{figure}
+    \begin{figure}[!h]
       \centering
-      \includegraphics[width = 10cm]{Pictures/bunch.png}
+      \includegraphics[width = 10cm]{Pictures/ILC/bunch.png}
       \caption{Representation of the bunch structure at the ILC. One bunch train is made of 2625 bunch crossings and lasts 0.95 ms. Each bunch crossing is spaced out by 337 ns. Two bunch trains are of 0.2s apart from each other.}
       \label{fig:bunches}
     \end{figure}
@@ -196,22 +212,32 @@
     Photons are radiated into a very narrow cone in the forward direction and would strike components.
     The $e^+e^-$ incoherent pair created is expected to have a relatively low $P_T$ and to be emitted in the forward direction.
     This has an impact of the design of the vertex detector and the forward detectors.
-    
 
-    An other kind of background are coming from the photon-photon collisions.
-    It produces high-transverse momentum particles that overlap 
+    %An other kind of background are coming from the photon-photon collisions.
+    %It produces high-transverse momentum particles that overlap 
     
-    
-    the secondary backscattered particles.
+   % the secondary backscattered particles.
 
-    SYNCHROTRON RADIATION: Muons, neutrons, hadrons and muon, pair background, photon bg, synchrotron radiation bg, beam halo muon bg.
-
+   % SYNCHROTRON RADIATION: Muons, neutrons, hadrons and muon, pair background, photon bg, synchrotron radiation bg, beam halo muon bg.
 
   \section{The ILC detectors concept}
   \label{sec:detectors}
 
     \subsection{Overview of the two experiments}
     
+    \begin{figure}[!h]
+      \centering
+      \begin{subfigure}[t]{0.5\textwidth}
+        \includegraphics[width = \textwidth]{Pictures/ILC/SiD.jpg}
+        \caption{\label{fig:SiD} The Silicon Detector}
+      \end{subfigure}
+      \begin{subfigure}[t]{0.5\textwidth}
+        \includegraphics[width = 1.03\textwidth]{Pictures/ILC/ILD.jpg}
+        \caption{\label{fig:ILD} The International Large Detector}
+      \end{subfigure}
+      \caption{Overview of the two detectors designs at the ILC. The figure~\subref{fig:SiD} represents the SiD design while the figure~\subref{fig:ILD} shows the ILD approach.}
+      \label{fig:SiD}
+    \end{figure}    
 
   As it was presented in the subsection~\ref{subsec:design}, the \gls{ILC} will be built with only one interaction region due to cost reasons, whereas two detectors are expected.
   The push-pull operation scheme will allow for data taking of one detector, while the second one is out of the beam in a close-by cavern for maintenance.
@@ -235,29 +261,37 @@
   In contrast to the \gls{SiD}, the tracking system is based on a continuous-readout \gls{TPC} surrounded by silicon tracking detectors.
   The magnetic field will be only of 3.5 T combined with granular calorimeters for a good particle-flow reconstruction
 
-    \begin{figure}[!h]
-      \centering
-      \begin{subfigure}[t]{0.5\textwidth}
-        \includegraphics[width = \textwidth]{Pictures/ILC/SiD.jpg}
-        \caption{\label{fig:SiD} The Silicon Detector}
-      \end{subfigure}
-      \begin{subfigure}[t]{0.5\textwidth}
-        \includegraphics[width = 1.03\textwidth]{Pictures/ILC/ILD.jpg}
-        \caption{\label{fig:ILD} The International Large Detector}
-      \end{subfigure}
-      \caption{Overview of the two detectors designs at the ILC. The figure~\subref{fig:SiD} represents the SiD design while the figure~\subref{fig:ILD} shows the ILD approach.}
-      \label{fig:SiD}
-
-    \end{figure}    
-
     \subsection{Particle flow algorithm}
     \label{subsec:PFA}
 
-    The \gls{PFA} is 
+    The main purpose of the \gls{ILC} (or the \gls{CLIC}) is to achieve precise measurements of physics processes that produce final states of multiple jets.
+    The jet energy resolution at the \gls{ILC} should be sufficient to cleanly separate W and Z hadronic decays.
+    Typically, the jet energy resolution is deduced from the equation~\ref{eq:jet}, where $\alpha$ is the stochastic term usually greater than $\sim 60 \% / \sqrt{E(GeV)}$.
+
+    \begin{equation}
+      \frac{\sigma_E}{E} \simeq \frac{\alpha}{\sqrt{E(GeV)}} \oplus \beta
+      \label{eq:jet}
+    \end{equation}
+
+    The \gls{PFA} approach is the extended version of the Energy Flow approach (used at H1, D0, CMS) for a highly granular detector. 
+    The goal of this framework is to achieved a stochastic term for the energy resolution greater than $30 \% / \sqrt{E(GeV)}$, not reachable with a traditional calorimeter.
+    Each sub-detector should be efficient enough to separate and to reconstruct the four-vectors of all visible particles in an event.
+    The energy of charged particle is measured in the tracking detectors, while the energy measurements for photons are done in the electromagnetic calorimeter and neutral hadrons are done in the hadron calorimeter.
+     
+     \begin{figure}[!h]
+      \centering
+      \includegraphics[width = 15cm]{Pictures/ILC/physics.jpg}
+      \caption{Two different approaches for calorimetry. On the left is the traditional calorimetry method used on most of the experiments, the right one is the particle flow approach for calorimetry. The particle track is taken into account to calculate the jet energy.\cite{PFA} }
+      \label{fig:jetEnergy}
+    \end{figure}   
     
+    The \gls{PFA} requirements drive the design of the detectors at the ILC.
+    For both experiments, the electromagnetic and hadronic calorimeter have to be located inside the solenoid.
+    Moreover each sub-detector must be able to distinguish single particle signals, imposing a better tracking precision and higher granular calorimeters than the traditional detectors in high energy physics.
+
     \subsection{The ILD detector}
     
-    \begin{figure}
+    \begin{figure}[!h]
       \centering
       \includegraphics[width = 10cm]{Pictures/ILC/fig_ILD_Quadrant.png}
       \caption{Quadrant view of the ILD detector concept with its subdetector system}
@@ -295,7 +329,7 @@
       The \gls{TPC} thought for the \gls{ILD} is constituted of a central barrel part, with an inner radius of $\simeq 33 \text{ cm}$ and a outer radius of $\simeq 180 \text{ cm}$ and two endcaps with a detection area of $10 \ m^2$. 
       The solid angle coverage is up to $|\cos{\theta} \simeq 0.98|$.
       The barrel will be filled with a gas mixture called T2K (3 \% of Ar-CF4 and 2 \% of isobutane).
-      Due to the low material budget and the ability to cope with a high magnetic field, the \gls{TPC} is compliant with the \gls{PFA}~\ref{sec:PFA} \todo{Add PFA citation}. 
+      Due to the low material budget and the ability to cope with a high magnetic field, the \gls{TPC} is compliant with the \gls{PFA}~\ref{subsec:PFA}. 
 
 
       To improve the track reconstruction, the \gls{TPC} is surrounded by high silicon detectors: two barrel components, the \gls{SIT} and the \gls{SET}; an end-cap component, the \gls{ETD} and the \gls{FTD}.
@@ -394,3 +428,28 @@
       The third system, the \gls{LHCAL}, ensure the coverage of the hadron calorimeter to small polar angles.
 
       \subsubsection{Magnetic Field and yoke}
+
+     By applying a high magnetic field inside the detector, the charged particles have a bent track helping in the identification and the energy measurement.
+     At the \gls{ILD}, the nominal magnetic field is 3.5 T and should have a high homogeneity inside the TPC.
+     Moreover, as mentioned in subsection~\ref{subsec:design}, the magnetic beyond the coil has to be reduced to avoid any perturbations with the second detector in its parking position.
+     A superconducting coil surrounding the tracking and calorimetric system generate the magnetic field.
+     It has a diameter of 6.88 m, a length of 7.35 m and made of three modules.
+
+     Surrounding the coil, an iron yoke ensures to return the magnetic flux. 
+     It is constituted by a barrel of 2.88 m thickness and 2 end-caps of 2.12 m thickness.
+     Muon detectors are inserted inside the iron yoke in a sandwich like structure.
+     They're performing measurement on muons but they are also used as tail catchers, to improve the energy resolution of high energetic jets escaping the calorimeters. 
+
+
+   \section{Conclusions}
+
+   In this chapter, the reasons to build a linear electron/positron collider were discussed by introducing the pros and cons of such a big experiment.
+   In order to reduce the costs, only one interaction region is planned but two detectors are going to operate alternately. 
+   The design of the detectors are driven by the particle flow approach to reach a ... energy resolution.
+   In particularly, the  onion structure of \gls{ILD} was peeled. 
+   The different sub-detectors and the technology options were introduced, except for the vertex detector.
+   Indeed, the chapter~\ref{chap:vxd} will be dedicated to the vertex detector at the \gls{ILD}.
+
+   The next chapter will introduce the physics cases at the \gls{ILC}, especially by describing an approach of a physics analysis to study the $H \rightarrow c\bar{c}$.
+
+

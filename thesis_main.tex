@@ -50,7 +50,7 @@
 
 % \usepackage{fullpage}
 \usepackage[nottoc, notlof, notlot]{tocbibind}
-\usepackage[toc,acronym]{glossaries}
+\usepackage[toc,acronym,nomain,indexonlyfirst]{glossaries}
 
 %\usepackage{geometry}
 %\geometry{hmargin=2.5cm}
@@ -136,6 +136,7 @@
 %Co-directeur de thèse : Ingrid \textsc{Maria Gregor}\\ }% 
 
 \makeglossaries
+\setacronymstyle{long-short}
 \renewcommand*{\glslinkcheckfirsthyperhook}{% To make a reference only for the first glossary entry
   \ifglsused{\glslabel}%
   {%
@@ -144,6 +145,14 @@
   {}%
 }
 \renewcommand*{\glstextformat}[1]{\textcolor{black}{#1}} % To make glossary black and not blue
+
+\newcommand*{\glswriteentry}[2]{%  
+  \ifglsindexonlyfirst  
+    \ifglsused{#1}{}{#2}%  
+  \else  
+    #2%  
+  \fi  
+}
 
 \begin{document}
 
@@ -182,10 +191,11 @@
  %   \backmatter
 
 	
-  \bibliographystyle{plainmat}
+  \printglossary[type=\acronymtype]
+  
+  \bibliographystyle{plain}
 	\bibliography{Bibliography/biblio}
 
-  \printglossaries
 
 \end{document}
 
