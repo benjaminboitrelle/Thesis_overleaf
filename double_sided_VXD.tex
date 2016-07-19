@@ -1,11 +1,11 @@
 \chapter{Double-sided VXD: PLUME}
 \label{chap:vxd}
   
-  Since en of the 1960's and the 1970's, the development of position sensitive silicon sensors has permitted to confirm the prediction of the \acrfull{SM} with a high precision, as well as the discovery of the $t$ quark.
+  Since the end of the 1960's and the 1970's, the development of position sensitive silicon sensors has permitted to confirm the prediction of the \acrfull{SM} with a high precision, as well as the discovery of the $t$ quark.
   These sensors, called \acrfull{VXD}, are in charge to track the particles down to their decay vertices.
   The design of such device is held by the physics requirement of the experiment and is playing a crucial role at the \acrfull{ILC}.
   For example, one flagship measurement is the study of the Higgs boson couplings to the fermions and other bosons.
-  This can be achieved only with a precise heavy flavor tagging and the ability to separate the $b$ quarks form the $c$ quarks. 
+  This can be achieved only with a precise heavy flavor tagging and the ability to separate the $b$ quarks from the $c$ quarks. 
   Actually, the lifetime of the two quarks is close together ($1.3 \time 10^{-12}$ s for the $b$ quark and $1.1 \time 10^{-12}$ s for the $c$ quarks), leading to a very close decay vertices. 
   
   Along this chapter, the role of the vertex detector and the physics requirements to build one suited for the \gls{ILC} environment will be presented.
@@ -16,7 +16,7 @@
   %It can be achieved only by a proper detector design, driven by flagship measurements like the Higgs coupling to quarks and bosons.
   %The \acrfull{VXD} at the \gls{ILC} should be able to perform an efficient B-meson tagging and to separate $b$ and $c$ quarks.
   %The measurement of heavy quark jets and their decay vertices will play a crucial role in the \gls{ILC} physics.
-  %Along this chapter, the role of the vertex detector and the physics requirements to build one suited for the \gls{ILC} environment will be presented.
+  %Along this chapter, the role of the vertex detector and the physics requirements in building one suited for the \gls{ILC} environment will be presented.
   %Then, the different options for the \gls{ILD} are shown to focus on the double-sided options developed by the PLUME collaboration.
   %To finish, the principle of \gls{CMOS} sensors and their use in physics are described.
 
@@ -31,7 +31,7 @@
 
   %At the \gls{ILC} flagship measurements such as the Higgs coupling to the quarks and bosons are driving the development of the vertex detector.
   %For example, to separate $b$ (1.3 10-12)and $c$ (1.1 10-12)quarks
-  %To measure particles with a short life-time ($\simeq 10^{12}$s) that have a decay length between 150 and 500 $\mu$m, 
+  %To measure particles with a short lifetime ($\simeq 10^{12}$s) that have a decay length between 150 and 500 $\mu$m, 
 
 
   %The sub-detector has to be able to separate particles with a time life $\simeq 10^{-12}$s  
@@ -148,7 +148,7 @@
     The \gls{DEPFET} \todo{REF for a DEPFET paper} is a \gls{APS} in which field effect transistors are incorporated into each pixel.
     The single point resolution is $\sim 3$ $\mu\text{m}$ for pixels with a size of 20 $\mu\text{m}$.
     The silicon itself is used as sensitive part but also as a mechanical structure, minimising the support and services.
-    The sensor is completely depleted of free charged carries thanks to a voltage applied along the thickness.
+    The sensor is completely depleted of free charged carries thanks to a voltage applied to the thickness.
     The rolling-shutter approach is used for reading each row and the column readout is done by two auxiliary \glspl{ASIC}.
 
     %Rapid and efficient collection of signal on a deep implant underneath the field effect transistor
@@ -259,16 +259,23 @@
     The DESY test beam results are presented in chapter ???, while a specific study of the sensor's deformation observed at CERN is discussed in chapter ???.
 
     \begin{figure}[!h]
+      \centering
       \includegraphics[width = 12 cm]{Pictures/vxd/plume_ladder2010_frontView}
-      \caption{Front view of the ladder version-1 made in 2010 in its holding box. On the left, there is the connector to the output board servicing, on the right a connection to blow air on the module. As this version was not made with a mirrored design, the flex-cables are not entirely overlapping and the SiC foam can be seen (in black here).}
+      \caption{Front view of the ladder version-1 made in 2010 in its holding box. On the left, there is the connector to the output board servicing, on the right a connection to blow air on the module. As this version was not made with a mirrored design, the flexible cables are not entirely overlapping and the SiC foam can be seen (in black here).}
     \end{figure}
 
     At the beginning of 2016, the third prototype versions were mounted but have not yet been completely tested.
     In fact, this new version is divided into two sub-versions: one using copper traces and the other one aluminum traces.
     Nevertheless, both sub-versions have a new design featuring reduced traces thickness to have a narrower flex-cable (18 mm width) adjusted to the sensors width in order to minimise the dead areas.
-    The flex-design has slightly changed to have a mirrored geometry in order to minimize the dead area too and have a better alignment solution.
+    The flex-design has slightly changed to have a mirrored geometry (figure~\ref{fig:AM01}) and a straight geometry in order to minimize the dead area too and have a better alignment solution.
     The stiffener is made of a lower density \gls{SiC} foam reducing the global material budget. 
 
+    \begin{figure}[!h]
+      \centering
+      \includegraphics[width = 12cm]{Pictures/vxd/AM01.jpg}
+      \caption{Picture of the first mirrored module made with aluminum traces. The cable width is adjusted to the size of the sensor.}
+      \label{fig:AM01}
+    \end{figure}
     The table~\ref{tab:X0} summarises the material budget reached by the different prototypes.
 
     %Before to reach the lightest ladder with a material budget of only 0.35 \%, the collaboration has studied the design, production and impact of the mechanical structure, but also how to power and control the sensors.
@@ -324,7 +331,7 @@
     The collaboration is considering to embed the sensors directly inside the multi-layer micro-cable\cite{Baudot2012}.
     The chips are glued on the first polyimide substrate layer, then the metal layer is deposited on top of it and the metal traces are directly connected to the chips pads.
     Then an insulator is added to the module.
-    The advantages of this technique are, firstly, the direct connection of metal traces to the pads that avoid wire-bonding and can reduce, in the same time, the width of the module.
+    The advantages of this technique are, firstly, the direct connection of metal traces to the pads that avoid wire-bonding and can reduce, at the same time, the width of the module.
     And secondly, this structure has the advantage to apply the mechanical stress on the polymer wrapping, thus reducing it on the sensor.
 
     A closer perspective for the collaboration is to integrate two ladders in the physics commissioning of the BEAST experiment at KEK.
@@ -372,7 +379,7 @@
     The \gls{CMOS} sensor can detect crossing particles thanks to their structure, but also to the interaction of particles with matter.
     When a particle is traversing a layer of matter, it loses energy via interactions with electrons and nuclei.
     Due to the size of a \gls{MAPS}, it loses only a small fraction of its energy, and the energy loss can be described by a Landau.
-    A \gls{MIP}, creates 80 electrons per microns inside the silicon.
+    A \gls{MIP} creates 80 electrons per microns inside the silicon.
 
     At the beginning, the microelectronic industry has insulated the transistors from the substrate thanks to a high resistivity layer, called the epitaxial layer.
     The development of \gls{CMOS} sensors was done thanks to the properties offered by these semiconductors.
@@ -386,11 +393,11 @@
     The \gls{CMOS} sensors developed by the IPHC at Strasbourg are called monolithic \gls{MAPS} sensors because the different layers of the sensor are made in one block of the same material, but with different doping.
     The structure of the sensor is a highly doped P+ substrate made of a moderate quality silicon. 
     The crystal structure contains a lot of defects, hence the recombination rate of charge carriers is high.
-    Above the bulk, a low doped P- layer is grown.
-    The silicon used has a good quality, thus the charge carriers have less change to recombine.
+    Above the bulk, a low-doped P- layer is grown.
+    The silicon used has a good quality, thus the charge carriers have less chance to recombine.
     It is the sensitive part of the sensor and is called the epitaxial layer. 
     On top of it, an N-well implant has the role of the charge collection.
-    The interface between the N-wells and the epitaxial layer forms a P-N junction, called a collection diode.
+    The interface between the N-wells and the epitaxial layer forms a P-N junction called a collection diode.
     A depleted area is created by this junction, on which the charge carriers are attracted.
     Nevertheless, this P-N junction is only one part of the pixel.
     Next to the N-well implants are sitting highly doped P-well in charge to reflect the charge carriers to the implants.
@@ -399,8 +406,7 @@
     The typical doping concentration are $10^{15} \text{at/cm}^3$ for the epitaxial layer, $10^{19} \text{at/cm}^3$ in the substrate and $10^{17} \text{at/cm}^3$ for the other layers.
     The doping concentration defines the size of the depleted region.
     For this doping concentrations, only a small region around the P-N junction is depleted, while the epitaxial layer is mainly undepleted. 
-
-    As no external voltage is applied to the sensor to increase the depleted region, the charge carriers created by crossing particles are thermally diffused inside the epitaxial layer to the diode.
+    As no external voltage is applied to the sensor to increase the depleted region, the charge carriers created by crossing particles are thermally diffused into the epitaxial layer to the diode.
     Nevertheless, the different doping levels produce a built-in voltage defined as: 
 
     \begin{equation}
@@ -411,7 +417,7 @@
     Due to the different doping levels, the electrons are restricted to diffuse inside the sensitive volume, to be then guided towards a collection diode.
     One effect of the thermal diffusion is that the average path of the electrons in the epitaxial layer is longer than the one they would have in a fully-depleted sensor.
     Hence, the probability of recombination between an electron and a hole is increasing.
-    Also the charges tend to spread more around neighboring n-well.
+    Also, the charges tend to spread more around neighboring n-well.
     Therefore, the charge collection efficiency is lower than the fully-depleted sensor.
 
     \begin{figure}[!h]
@@ -428,7 +434,7 @@
     Therefore, many prototypes and bigger matrices can be built, while benefiting from the industrial experience.
     For example, the imaging industry has developed smaller and smaller grid size and a pitch size of ten microns can be achieved.
     
-    Secondly, due to the size of the depleted area, the charge carriers tend to spread more over neighbouring pixels.
+    Secondly, due to the size of the depleted area, the charge carriers tend to spread more over neighboring pixels.
     On the one hand, the signal collected per pixel is smaller, but on the other hand, the reconstruction of the hit position with a centre of gravity algorithm is improving the spatial resolution.
     To give an idea, a binary output sensor with a pitch of 18.4 $\mu\text{m}$ can achieve a spatial resolution better than 3 $\mu\text{m}$.
 
@@ -442,7 +448,7 @@
 
     Nevertheless, the thickness of the epitaxial layer (usually between 10 and 15$\mu$m) and the small depleted region are responsible for a small charge collection.
     As a matter of fact, a \gls{MIP} is creating 80 electron/hole pairs per microns, so the number of charges collecting by the diode is of the order of a thousand electrons.
-    Hence, the signal created is only few millivolts and low noise electronics have to be used for processing the signal.
+    Hence, the signal created is only a few millivolts and low noise electronics have to be used for processing the signal.
 
     CMOS sensors are sensitive to ionizing and non-ionizing radiations that degrade the sensor properties.
     The non-ionizing radiations are damaging the crystal structure of the epitaxial layers, creating defaults in the lattice.
@@ -478,7 +484,7 @@
     
     The figure~\ref{fig:selfBiased} depicts the \textit{self-biased pixel design} method\cite{Deveaux2009}.
     It is using a P-N junction (symbolised here by a diode mounted on the other side) coupled to the N-well implant to absorb the leakage current.
-    The inverted diode is continuously compensated the diode's leakage current, thus the dead time is vanished.
+    The inverted diode is continuously compensated the diode's leakage current, thus the dead time vanishes.
     %Using a forward p-n junction has the advantage to avoid any dead-time because the diode's leakage current is continuously compensated by the second diode.
     While no particle is crossing the sensor, an equilibrium appears between the leakage and recharge current.
     A particle going through the sensor disrupts this equilibrium.
@@ -515,71 +521,143 @@
     This integration time is not reachable due to other factors, like the pixel occupancy or the time needed to obtain the information of all the pixels.
     Also, a compromise to reach fast integration time has to be done.
     Faster is the sensor, more important is the power consumption of the electronic.
-    Moreover, to reduce the integration time, a solution consists to increase the size of the pixels.
+    Moreover, to reduce the integration time, a solution consists of increasing the size of the pixels.
     In consequence, the pointing resolution of the device is impacted.
     For the case of the \gls{ILC}, the integration time is dictated by the pixel occupancy that should not be bigger than a percent, to stay in the using sensor's range and to be able to reconstruct the impact.
 
     The first sensors developed were using an analog output.
     With this approach, the pixels were addressed sequentially and their output was multiplexing in one bus line.
-    The advantage of such method is that the discrimination can be adjusted offline for each pixel, thus compensating the non uniform response.
+    The advantage of such method is that the discrimination can be adjusted offline for each pixel, thus compensating the nonuniform response.
     Nevertheless, the integration time is depending on the operational frequency of the bus (usually 50 MHz) and the number of pixels contained in a matrix.
     For a sensor having millions of pixels, the integration time is then of the order of the millisecond.
-    An analog output is then too slow for an \gls{ILC} purpose. 
+    An analog output is then too slow for a \gls{ILC} purpose. 
     
-    To overcome this problem, an approach is to group the pixels in columns and to read them in parallel.
-    The figure~\ref{fig:rollShut} depicts the principle of this method called \textit{column parallel readout} or \textit{rolling-shutter}.
-    Instead of having one bus line for the whole matrix, each columns has in own bus and a data sparsification logic is integrated on the periphery of the sensor.
-    One row is read in only 100 ns, independently of the number of pixels contained.
-    When one line is read, the precedent line is processed by the electronics on the bottom each columns.
-    Only the pixels having a signal above a certain thresholds are read.
-    A zero suppression logic, called \gls{SUZE}, is in charge to determine the number of fired pixels in a raw and to send the address of the first pixel hit, as shown on figure~\ref{fig:SUZE}.
-
-     
-    \begin{itemize}
-      \item Digital output with zero suppression is decreasing data band-with and readout
-      \item Rolling-shutter: read one line one the previous line is treated. => One row read in 100 ns independently of the number of columns
-      \item Presentation of SUZE
-    \end{itemize}
-
     \begin{figure}[!h]
+      \centering
       \missingfigure{Rolling shutter}
       \caption{Parallel column readout.}
       \label{fig:rollShut}
     \end{figure}
+    
+    To overcome this problem, an approach is to group the pixels in columns and to read them in parallel.
+    The figure~\ref{fig:rollShut} depicts the principle of this method called \textit{column parallel readout} or \textit{rolling-shutter}.
+    Instead of having one bus line for the whole matrix, each column has its own bus and a data sparsification logic is integrated on the periphery of the sensor.
+    One row is read out between 100 ns and 200 ns, independently to the number of pixels contained in it.
+    In consequence, a matrix containing thousands of rows has an integration time of $\mathcal{O}(100\mu$s).
+    Moreover, to increase the integration time an output memory is duplicated at the periphery of the sensor.
+    Hence, when one line is read, the precedent one is processed by the electronics at the end of each bus line of each column.
+    To minimise the data bandwidth, only the pixels above certain thresholds are read thanks to discriminators coupling to a zero suppression logic, called \gls{SUZE}.
+    In this way, only the address of the first pixel hit in a row and the number of the adjacent fired ones are stored.
+    This memory is duplicated to be able to process one row, while the previous one is read out by the outside world.
+    In order to increase the readout speed, two techniques are conceivable\cite{Winter:2009zz}.
+    The first one provides elongated pixels in the vertical direction in order to reduce the number of rows, thus degrading the spatial resolution in the same direction.
+    The second one consists of dividing the columns into two distinct parts, which have its dedicated output.
+
+    %When one line is read, the precedent line is processed by the electronics on the bottom each column.
+    %Only the pixels having a signal above certain thresholds are read.
+    %A zero suppression logic, called \gls{SUZE}, is in charge to determine the number of fired pixels in a raw and to send the address of the first pixel hit and the number of adjacent ones hit, as shown on figure~\ref{fig:SUZE}.
+    %The sequence of fired pixels feed one output memory, while a second memory is read out by the outside world.
+    %This technique has the advantage to reduce the data bandwidth.
+    %The integration time is then defined as the time to read one line by the number of rows in the matrix.
+    %For example, sensors containing a thousand of lines have an integration time of $\mathcal{O}(100\mu$s). 
+    %Two techniques can be used to increase the readout speed\cite{Winter:2009zz}.
+    %The first one provides elongated pixels in the vertical direction in order to reduce the number of rows, thus degrading the spatial resolution in the same direction.
+    %The second one consists of dividing the columns into two distinct parts, which have its dedicated output.
 
     \begin{figure}[!h]
-      \missingfigure{SUZE}
-      \caption{Zero suppression principle.}
+      \centering
+      \includegraphics[width=\textwidth]{Pictures/vxd/suze_hit.pdf}
+      \caption{Principle of the zero suppression logic. }
       \label{fig:SUZE}
     \end{figure}
 
     \subsubsection{Noise}
 
-    \gls{FPN} and \gls{TN}
-    \begin{description}
-      \item[Noise during reset]: correspond to TN, only for 3T pixels induced by 
-      \item[Noise during integration]: shot noise, leakage current fluctuations, leakage current (process, temperature, architecture)
-      \item[Noise during readout]
-      \item[Correlated Double Sampling]: done inside a pixel or at the end of a column. Remove FPN  and reset noise
-    \end{description}
-
-    The chapter~\ref{chap:labTests} describes the steps to characterise the fixed pattern noise and temporal noise.
+    The \gls{CMOS} sensors are sensitive to the noise.
+    Many factors are causing it and the different kind of noise is divided into two categories: the \gls{FPN} and the \gls{TN}.
+    The non-uniformity responses of the pixel in a sub-array is responsible for the \gls{FPN} and is regarded as an offset or pedestal, which should be subtracted from the pixel response.
+    The \gls{TN} has different origins, as the shot noise, the pink noise or the thermal noise.
+    The different operational phases to read the signal are contributing to the noise.
+    
+    One contribution to the \gls{TN} appears in the \textit{3T pixel design} only during the reset phase.
+    This noise arises when the transistor is open restoring the charge of the capacitor associated with the collection diode.
+    It is dependent on the temperature and the diode's capacitance.
+    
+    The second one is the noise during integration and is caused by statistical fluctuations of the leakage current (shot noise).
+    Faster is the integration time, slower is the shot noise contribution.
+    
+    Finally, the third one arises from the readout, while the column switch and the source follower capacitors are working.
+    This noise depends on the contribution of each capacitor.
+    
+    To remove the \gls{FPN} and the reset noise, a \gls{CDS} is performed inside the pixel or at the bottom of the column.
+    It consists to acquire two frames and to subtract the first one to the second one to search for possible signals.
+    The chapter~\ref{chap:labTests} describes the steps to characterise the \gls{FPN} and \gls{TN} and to select an appropriate \gls{SNR} in order to minimise the noise contribution, and to find a range on which the sensor is working properly.
 
 
     \subsection{State of the art in high energy physics}
     \label{subsec:Mi26}
 
-    The PICSEL group has developed sensors, called or ULTIMATE, for the STAR experiment at Brookhaven National Laboratory\todo{REF to a paper}.
-    They are based on \gls{MIMOSA}-28 sensors and are integrated into the vertex detector.
-    The figure~\ref{fig:Mi28} is showing a half-section of the STAR vertex detector (subfigure~\ref{fig:vxdSTAR}) and a \gls{MIMOSA}-28 bounded on a PCB.
-    The choice for this technology was made because of their characteristics.
-    Indeed, the thickness of a sensor is around 50 $\mu\text{m}$ in order to minimise the multiple scattering of particles.
-    The matrix is made of roughly $9 \times 10^5$ pixels, corresponding to 960 columns and 928 rows for a pitch of 20.7 x 20.7 $\mu\text{m}^2$.
-    The sensitive area is 19.7 x 19.2 $\text{cm}^2$.
-    They have a binary output integrating a zero suppression technology (SUZE) and the integration time of the whole matrix is 200 $\mu\text{s}$.
-    Thanks to this architecture, the sensors can reach a particle detection rate of $10^6$ particles/$\text{cm}^2$/s. 
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.8\textwidth]{Pictures/vxd/MIMOSA26_chip26_HR15_20deg}
+      \caption{Plots representing the efficiency, the fake hit rate per pixel and the spatial resolution as a function of the discriminator threshold.}
+    \end{figure}
+
+    The first full-scale digital sensor developed by the PICSEL group was the \gls{MIMOSA}-26.
+    They were designed to equip the reference planes of the EUDET beam telescope and are used since 2010 to build the PLUME prototypes.
+    It is fabricated in the AMS $0.35\mu\text{m}$ technology, and has a matrix containing approximately $7 \times 10^5$ pixels, distributed in 1152 columns and 576 rows.
+    The pixel pitch is $18.4\mu\text{m}$ and the sensitive area represents $21.2 \times 10.6 \text{cm}^2$.
+    The readout of the matrix is ensured by a rolling-shutter working at 80MHz frequency, hence the integration time is $115.2\mu\text{s}$.
+    The signal produces by the charge collection inside the pixel is firstly amplified.
+    Then, the \gls{CDS} technique is used to subtract successive frames before to send the signal at the bottom of the pixel array, where the signal processing circuitry is placed.
+    Analog to digital conversion is done, coupled to a second double sampling, in order to reduce the \gls{FPN}.
+    The output of the discriminators is then connected to a zero suppression logic, in which an output memory is duplicated to ensure a continuous readout.
+    The signal is finally transmitted to the outside world.
+    The architecture of the \gls{MIMOSA}-26 is represented by a block-diagram on figure~\ref{fig:archMi26}.
+    The power consumption is $1.1\mu\text{W/pixel}$ and the sensor is thinned down to $50\mu\text{m}$ in order to minimise the multiple scattering inside the volume.
+    The performances obtained with a \gls{MIMOSA}-26 are shown on the figure~\ref{fig:mi26Perf}.
+
+  \begin{figure}[!h]
+    \centering
+    \begin{subfigure}[t]{0.4\textwidth}
+        \includegraphics[width=0.8\textwidth]{Pictures/vxd/mi26_architecture.pdf}
+        \caption{Layout of the MIMOSA-26 matrix.}
+        \label{fig:archMi26}
+    \end{subfigure}
+    \qquad
+     %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[t]{0.4\textwidth}
+        \includegraphics[width=0.95\textwidth]{Pictures/vxd/mi26.jpg}
+        \caption{Picture of a MIMOSA-26 bounded on a PCB.}
+        \label{fig:ultimate}
+    \end{subfigure}
+    \caption{Block-diagram and a picture of the MIMOSA-26}\label{fig:Mi26}
+    \end{figure}    
+
+
+
+    The PICSEL group has then developed digital output sensors for the pixel vertex detector at the START experiment at Brookhaven National Laboratory\cite{}.
+    The figure~\ref{fig:Mi28} is showing a half-section of the STAR vertex detector (subfigure~\ref{fig:vxdSTAR}) and a \gls{MIMOSA}-28 bounded on a PCB(subfigure~\ref{fig:ultimate}).
+    They are based on the architecture of \gls{MIMOSA}-26 with some modifications.
+    The matrix contains 960 columns and 928 rows for a pitch of $20.7 \times 20.7 \mu\text{m}^2$.
+    The sensitive area is 19.7 x 19.2 $\text{cm}^2$, for an integration time of less than $200\mu\text{s}$.
+    The sensor can reach a particle detection rate of $10^6$ particles/$\text{cm}^2$/s. 
     Finally, their power consumption is lower or equal to 150 mW/$\text{cm}^2$.
     The spatial resolution obtained for ULTIMATE is less than 4 $\mu\text{m}$.
+
+  
+
+    %The PICSEL group has developed sensors, called ULTIMATE, for the STAR experiment at Brookhaven National Laboratory\todo{REF to a paper}.
+    %They are based on \gls{MIMOSA}-28 sensors and are integrated into the vertex detector.
+    %The choice for this technology was made because of their characteristics.
+    %Indeed, the thickness of a sensor is around 50 $\mu\text{m}$ in order to minimise the multiple scattering of particles.
+    %The matrix is made of roughly $9 \times 10^5$ pixels, corresponding to 960 columns and 928 rows for a pitch of 20.7 x 20.7 $\mu\text{m}^2$.
+    %The sensitive area is 19.7 x 19.2 $\text{cm}^2$.
+    %They have a binary output integrating a zero suppression technology (SUZE) and the integration time of the whole matrix is 200 $\mu\text{s}$.
+    %Thanks to this architecture, the sensors can reach a particle detection rate of $10^6$ particles/$\text{cm}^2$/s. 
+    %Finally, their power consumption is lower or equal to 150 mW/$\text{cm}^2$.
+    %The spatial resolution obtained for ULTIMATE is less than 4 $\mu\text{m}$.
 
   \begin{figure}[!h]
     \centering
@@ -599,19 +677,14 @@
     \caption{Pictures of the STAR vertex detector and an ULTIMATE chip}\label{fig:Mi28}
     \end{figure}    
 
-An older version of the \gls{MIMOSA}-28, based on the same architecture is currently used on the \gls{PLUME} ladder: \gls{MIMOSA}-26.
-    Contrary to his brother, the matrix contains roughly $7 \times 10^5$ pixels, distribute on 1152 columns and 576 rows.
-    The pixels are scared with a pitch of 18.4 $\mu\text{m}$ and the sensitive area is 21.2 x 10.6 $\text{cm}^2$.
-    They also have a binary output integrating a zero suppression mode but the integration time of the whole matrix is 115.2 $\mu\text{s}$.
-    The architecture of a \gls{MIMOSA}-26 is represented on figure~\ref{fig:archMi26}.
-    The power consumption is 1.1 $\mu$W/pixel.
-    These sensors are equipping the telescope planes at DESY and CERN.
 
-    \begin{figure}[!h]
-      \missingfigure{Architecture of Mi26}
-      \caption{Layout of the MIMOSA-26 matrix.}
-      \label{fig:archMi26}
-    \end{figure}
+    This chapter has depicted the purpose of the vertex detector for the \gls{ILD}.
+    Different technologies were introduced, to focus specifically on the \gls{CMOS} sensors and their use in high-energy physics.
+    The \gls{PLUME} collaboration aims to integrate \gls{MAPS} onto light double-sided ladders, in order to reach the requirements of the \gls{ILC}.
+    The collaboration has reach different steps to produce the first full-scale ladder, which have only a material budget of only $0.35\% X_0$ and a spatial resolution better than $4\mu\text{m}$.
+    The principle of the \gls{CMOS} technology was presented. 
+    The next chapter is focusing on the electrical validation of this sensors mounted onto a PLUME ladder.
+
     
 
 
