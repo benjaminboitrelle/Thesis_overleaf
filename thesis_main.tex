@@ -146,7 +146,7 @@
 }
 \renewcommand*{\glstextformat}[1]{\textcolor{black}{#1}} % To make glossary black and not blue
 
-\renewcommand*{\glswriteentry}[2]{%  
+\newcommand*{\glswriteentry}[2]{%  
   \ifglsindexonlyfirst  
     \ifglsused{#1}{}{#2}%  
   \else  
