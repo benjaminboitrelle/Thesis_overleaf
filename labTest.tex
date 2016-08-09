@@ -140,20 +140,16 @@
 
   \subsection{Auxiliary board}
 
-  On one edge of the module, a ZIF connector is used to power the sensors, but also to pilot them and to transfer the data to the outside world.
-  A jumper cable is connected between the module and an auxiliary board.
-  This card is connected to a power supply board which is providing the nominal voltages needed by the module.
-  The $\text{V}_{DD_d}$ and $\text{V}_{DD_a}$, used for the buffer, are tunable thanks to two potentiometers, while $\text{V}_{CC}$, used for buffers is fixed to 3.3 V.\todo{Look for VDD and VCC}
-  The auxiliary board is also connected to a computer for the slow control.
-  Two RJ45 are in charge to provide the JTAG registers, as well as the start, the reset signal and in a case of a complete ladder an external clock.
-
-  First of all, the auxiliary board is connected to the power supply board which is plugged to two external power supplies, which are delivering  8 V D.C.
-  The current of the empty auxiliary board should be about 350 mA.
-  The first step is to check the different voltages on the auxiliary board.
-  The $\text{V}_{CC}$, $\text{V}_{DD_d}$ and $\text{V}_{DD_a}$ should be at 3.3 V, but only the two last voltages can be adjusted thanks to potentiometers on the power supply board.
-  The $\text{V}_{clp}$ is set to 2.1 V and should not be outside the range $\left[2, 2.2\right]$ V.
-  An I2C chips or a potentiometer are providing this voltage.
-  The auxiliary board has a section dedicated to the power pulsing, nevertheless, for the purpose of the electrical validation, the system is disconnected.
+  A module or a PLUME ladder is connected to the outside world thanks to a jumper cable plugged on a ZIF connector at one edge of the module.
+  This jumper cable is linked to an auxiliary board which is in charge to power the sensors of the module, but also to pilot them and to transfer the data to the data acquisition system.
+  This auxiliary card is connected to a power supply board which is in charge to provide the nominal voltages needed by the module.
+  As seen on the figure~\ref{fig:plumeAux}, the power supply board delivers the digital and analogue voltage ($V_{DD_D}$ and $V_{DD_A}$ are set to 3.3 V thanks to two potentiometers), the $V_{CC}$ fixed to 3.3 V for the buffers, the voltage needed for the temperature measurement, a $\pm 5$ V for trigger and a power pulsing signal.
+  For the lab tests to validate the module, the power pulsing is deactivated by connecting this pin to the +5 V pin.
+  The clamping voltage $V_{clp}$ used for the polarisation of the pixel has to be in the range $\left[2, 2.2\right]$ V.
+  On the first version of the auxiliary board, it was provided by an external power supply, but the new version delivers the 2.1 V needed, thanks to an I2C chips or a potentiometer (the user can select which methods to use).
+  The auxiliary board is also connected to a computer in charge of the slow control of the sensors.
+  Two RJ45 are providing the JTAG registers, as well as the start and reset signal. 
+  For a complete ladder, the two modules have to be synchronised and the clock can be distributed by a clock distribution board.
 
   The JTAG communication between the computer and the auxiliary board is then checked.
   One RJ45 connector is dedicated to the JTAG slow control. 
@@ -167,13 +163,50 @@
 
   The second RJ45 connector is providing signal coming from the DAQ:
   \begin{description}
-    \item[Clock:] this line is used only to synchronise two modules together
-    \item[Start:] The JTAG can't start multiple sensors. This signal is provided by the DAQ
-    \item[Reset:] default value is 1 
+    \item[Clock:] clock at 80 MHz provided by the clock distribution board to synchronise two modules together
+    \item[Start:] signal provided by the DAQ software to start multiple sensors (the JTAG start works only for one sensor).
+    \item[Reset:] reset the registers to default value. 
   \end{description}
 
-  The clock provided to the sensors should be at 80 MHz and is transmitted to the sensors via LVDS.
-  The connections of the auxiliary board to the different component are summarised on figure~\ref{fig:plumeAux}.
+  A summary describing the auxiliary board and its connection to the module and the computer is shown on the figure~\ref{fig:plumeAux}.
+
+  Before to connect a PLUME module to the auxiliary board, the voltages have to be set and the JTAG communication has to be checked.
+  Two external power supplies are delivering 8 V D.C. to the power supply board and are giving an information on the consumption of the whole system.
+  The empty auxiliary board has a current consumption about 350 mA.
+  Then, the $\text{V}_{CC}$, $\text{V}_{DD_d}$ and $\text{V}_{DD_a}$ should be at 3.3 V, but only the two last voltages can be adjusted thanks to potentiometers on the power supply board.
+  The $\text{V}_{clp}$ is set to 2.1 V and should not be outside the range $\left[2, 2.2\right]$ V.
+  The JTAG communication is verified thanks to a probe linked to an oscilloscope.
+  The observed values should be:
+
+  \begin{description}
+    \item[TDI:]
+    \item[TDO:]
+    \item[TMS:]
+    \item[TCK:] this clock is slower (30 kHz) than the 80 MHz needed by the sensors and is only dedicated for the slow control
+    \item[Reset:] by default is fixed to 1 and should change to 0 every time the reset is called by the JTAG software
+    \item[Start:] 
+  \end{description}
+
+  The last step is to be sure that the 80 MHz clock is well distributed to the module.
+
+ % On one edge of the module, a ZIF connector is used to power the sensors, but also to pilot them and to transfer the data to the outside world.
+ % A jumper cable is connected between the module and an auxiliary board.
+ % This card is connected to a power supply board which is providing the nominal voltages needed by the module.
+ % 
+ % The $\text{V}_{DD_d}$ and $\text{V}_{DD_a}$, used for the buffer, are tunable thanks to two potentiometers, while $\text{V}_{CC}$, used for buffers is fixed to 3.3 V.\todo{Look for VDD and VCC}
+ % The auxiliary board is also connected to a computer for the slow control.
+ % Two RJ45 are in charge to provide the JTAG registers, as well as the start, the reset signal and in a case of a complete ladder an external clock.
+
+  %First of all, the auxiliary board is connected to the power supply board which is plugged to two external power supplies, which are delivering  8 V D.C.
+  %The current of the empty auxiliary board should be about 350 mA.
+  %The first step is to check the different voltages on the auxiliary board.
+  %The $\text{V}_{CC}$, $\text{V}_{DD_d}$ and $\text{V}_{DD_a}$ should be at 3.3 V, but only the two last voltages can be adjusted thanks to potentiometers on the power supply board.
+  %The $\text{V}_{clp}$ is set to 2.1 V and should not be outside the range $\left[2, 2.2\right]$ V.
+  %An I2C chips or a potentiometer are providing this voltage.
+  %The auxiliary board has a section dedicated to the power pulsing, nevertheless, for the purpose of the electrical validation, the system is disconnected.
+
+  %The clock provided to the sensors should be at 80 MHz and is transmitted to the sensors via LVDS.
+  %The connections of the auxiliary board to the different component are summarised on figure~\ref{fig:plumeAux}.
 
   \begin{figure}[!h]
     \centering
@@ -209,42 +242,35 @@
   %  \item test point for the DAC characterisation
   %\end{itemize}
 
-
   \subsection{Smoke test}
 
- %@ After the connections were controlled and before to connect the module to the bench, the different voltages has to be set.
+ % After the connections were controlled and before to connect the module to the bench, the different voltages has to be set.
 
-  After switching-off every power supplies, the module is connected to the auxiliary board via a jumper cable.
-  The power supplies are switched-on again.
-  The module consumption is checked at every JTAG steps to make sure that there is no short-circuit.
-  Just after powering-on everything, the six sensors of the module are starting in a random state and this information can't be used to observe any problem.
+  When the auxiliary board was validated and the power supplies switched-off, the module can be linked to it via a jumper cable.
+  The module consumption is checked at every JTAG steps to make sure that no short-circuit occurs.
+  Just after powering-on everything, the six sensors of the module are starting in a random state and the consumption at this stage can not point out any electrical problem.
   After the reset of the registers, the total consumption should be around 33 mA.
   Then the registers are loaded and the consumption should be around 750 mA and read-back by the JTAG software.
   If at the reading step no error was discovered, the sensors can be operated and their consumption should be around 1300 mA.
 
-  The next step is then to control the JTAG communication of every sensor.
-  A JTAG file which is configuring the sensors in a normal mode (80 MHz with zero suppression output) is loaded.
-  When the start signal is sent, all the sensors are synchronised, so the \textit{clock} and \textit{marker} is read only from one sensor.
-  The output is checked in three steps, chip by chip thanks to an oscilloscope.
-  First of all, the sensor is reset, the register are loaded and read back and then the start signal is sent. 
-  Then the header and trailer are modified in the JTAG software and the registers are loaded again.
-  The output should change with respect to the word loaded.
-  Then, the response of the discriminators are checked, specifically to find pixels stuck in an opened position.
+  Before to present the next step to control the JTAG communication of every sensor, let's introduce the MIMOSA-26 output.
 
-  \subsection{Mimosa-26 output}
+  %\subsection{Mimosa-26 output}
 
   An inspection of the output with an oscilloscope is performed to check the slow control and to estimate the response of the sensor.
   The information provided by a sensor is contained in four output lines.
-  On a PLUME ladder, all the sensors are synchronised, so only the clock and marker from the last sensor is provided.
-  The clock is always present and its rate depends on the clock register. 
-  In a normal mode, the rate is 80 MHz.
+  On a PLUME module, all the sensors are synchronised, so only the \textit{clock} and \textit{marker} from one sensor is read back.
+  The clock is always present and its rate depends on the clock register.
+  For the normal mode with the zero suppression data, the nominal rate is 80 MHz. 
   The second output is the marker. 
   It is available in all modes and its signal last during 4 clock cycles (starting at the rising edge) and is used to know the beginning of the data transmission.
   The data itself are divided on two output \textit{Data0} and \textit{Data1}. 
-  It contains the \textit{header} and \textit{trailer} that allows to detect the beginning and the end of a data transmission.
+  It contains the \textit{header} ($2 \times 16$ bits) and \textit{trailer} ($2 \times 16$ bits) that allows to detect the beginning and the end of a data transmission.
   The signal is composed of $2 \times 16$ bits and its configurable via the \gls{JTAG}.
+  For the acquisition, a different \textit{header} and \textit{trailer} is assigned to the different sensors to be able to know which sensor has sent the information.
   Then, 16 more bits are indicating the \textit{frame counter}.
   It corresponds to the number of frame since the chip was reset.
+  The useful part of the data is following with the \textit{data length} which provides an information on the length 
   After that, the \textit{data length} provides an information on the length of the useful data.
   The useful data \textit{state} and \textit{status}
 
@@ -255,13 +281,25 @@
     \label{fig:mi26Output}
   \end{figure}
 
+  \subsection{JTAG communication}
+  
+  The next step is then to control the JTAG communication of every sensor.
+  A JTAG file which is configuring the sensors in a normal mode (80 MHz with zero suppression output) is loaded.
+  When the start signal is sent, all the sensors are synchronised, so the \textit{clock} and \textit{marker} is read only from one sensor.
+  The output is checked in three steps, chip by chip thanks to an oscilloscope.
+  First of all, the sensor is reset, the register are loaded and read back and then the start signal is sent. 
+  Then the header and trailer are modified in the JTAG software and the registers are loaded again.
+  The output should change with respect to the word loaded.
+  Then, the response of the discriminators are checked, specifically to find pixels stuck in an opened position.
+
+
 \section{Noise measurements}
 
   In the chapter~\ref{chap:vxd}, the principle of the \gls{CMOS} sensors was described and the noise of this technology was discussed.
   The two noises contribution are the \acrfull{TN} and the \acrfull{FPN}.
   The measurement of the noise is needed to operate correctly the sensors, specifically to be able to detect physics signal. 
 
-  \subsection{Threshold scan}
+  \subsection{Middle point finding}
 
   The first step consists to configure the sensors for the discriminators output mode.
   The zero suppression mode is bypassed, pixels and discriminators are in normal mode (whole matrix read in $115\mu\text{s}$), but the readout frequency is lower (10 MHz) via 2 LVDS output pads.
@@ -285,19 +323,20 @@
   \end{figure}
 
   \begin{figure}[!h]
-    %\centering
-    \missingfigure{Output of closed pixels}
-    \caption{Matrix response in discriminator mode, where all the discriminators are opened.}
+    \centering
+    \includegraphics[width=\textwidth]{Pictures/labTests/th0.png}
+    \caption{Matrix response in discriminator mode, where all the discriminators are opened. On the right of the matrix, one line is not working correctly and some pixels are never activated}
     \label{fig:openPixel}
   \end{figure}
   
   \begin{figure}[!h]
-    %\centering
-    \missingfigure{Output of closed pixels}
-    \caption{Matrix response in discriminator mode, where all the discriminators are closed.}
+    \centering
+    \includegraphics[width=\textwidth]{Pictures/labTests/th255.png}
+    \caption{Matrix response in discriminator mode, where all the discriminators are closed. One line of pixels is always activated, as well as few pixels in the same column. This will increase the fake hit rate of the sensor.}
     \label{fig:closePixel}
   \end{figure}
 
+  \subsection{Threshold scan}
   The second step consists to perform a threshold scan around the half activation point.
   At every thresholds, the response of each discriminators are recorded in order to calculate the noise, the offset and the dispersion.
   Usually, 29 runs with 500 to 1000 events are recorded.
