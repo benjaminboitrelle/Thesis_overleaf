@@ -142,38 +142,36 @@
 
   A module or a PLUME ladder is connected to the outside world thanks to a jumper cable plugged on a ZIF connector at one edge of the module.
   This jumper cable is linked to an auxiliary board which is in charge to power the sensors of the module, but also to pilot them and to transfer the data to the data acquisition system.
-  This auxiliary card is connected to a power supply board which is in charge to provide the nominal voltages needed by the module.
-  As seen on the figure~\ref{fig:plumeAux}, the power supply board delivers the digital and analogue voltage ($V_{DD_D}$ and $V_{DD_A}$ are set to 3.3 V thanks to two potentiometers), the $V_{CC}$ fixed to 3.3 V for the buffers, the voltage needed for the temperature measurement, a $\pm 5$ V for trigger and a power pulsing signal.
-  For the lab tests to validate the module, the power pulsing is deactivated by connecting this pin to the +5 V pin.
+  This auxiliary card is connected to a power supply board which is in charge to provide the nominal voltages needed by the sensors.
+  The power supply board delivers the digital and analogue voltage ($V_{DD_D}$ and $V_{DD_A}$ are set to 3.3 V thanks to two potentiometers), the $V_{CC}$ fixed to 3.3 V for the buffers, the voltage needed for the temperature measurement, a $\pm 5$ V for trigger and a power pulsing signal.
+  For the lab tests to validate the module, the power pulsing is deactivated by connecting this pin to the +5 V pin of the trigger.
   The clamping voltage $V_{clp}$ used for the polarisation of the pixel has to be in the range $\left[2, 2.2\right]$ V.
-  On the first version of the auxiliary board, it was provided by an external power supply, but the new version delivers the 2.1 V needed, thanks to an I2C chips or a potentiometer (the user can select which methods to use).
-  The auxiliary board is also connected to a computer in charge of the slow control of the sensors.
+  On the first version of the auxiliary board, it was provided by an external power supply, but the new version delivers the 2.1 V needed, thanks to an I2C chips or a potentiometer (the user can select which methods to use thanks to a jumper).
+  The auxiliary board is also connected to a computer in charge of the sensors' slow control.
   Two RJ45 are providing the JTAG registers, as well as the start and reset signal. 
-  For a complete ladder, the two modules have to be synchronised and the clock can be distributed by a clock distribution board.
+  For a complete ladder, the two modules have to be synchronised and the clock can be injected by a clock distribution board.
+  One RJ45 connector is dedicated to the JTAG slow control is delivering four signals: 
 
-  The JTAG communication between the computer and the auxiliary board is then checked.
-  One RJ45 connector is dedicated to the JTAG slow control. 
-  Four signals are sent:
-  \begin{description}
-    \item[TDI (Test Data In):] received the serial data input feed to the test data registers or instruction register
-    \item[TMS (Test Mode Select):] controls operation of test logic (for example, by selecting the register)
-    \item[TCK (Test Clock):] uses to load test mode data from TMS pin and test data on TDI pin at the rising edge, while at the falling edge, it is used to output the test data on the TDO pin.
-    \item[TDO (Test Data Out):] the output data feed the input data of the next sensor and the last sensor sends the information back to the computer 
-  \end{description}
+  \begin{itemize}
+    \item \textbf{Test Data In (TDI)}: received the serial data input feed to the test data registers or instruction register
+    \item \textbf{Test Mode Select (TMS)}: controls operation of test logic (for example, by selecting the register)
+    \item \textbf{Test Clock (TCK)}: uses to load test mode data from TMS pin and test data on TDI pin at the rising edge, while at the falling edge, it is used to output the test data on the TDO pin.
+    \item \textbf{Test Data Out (TDO)}: the output data feed the input data of the next sensor and the last sensor sends the information back to the computer 
+  \end{itemize}
 
   The second RJ45 connector is providing signal coming from the DAQ:
-  \begin{description}
-    \item[Clock:] clock at 80 MHz provided by the clock distribution board to synchronise two modules together
-    \item[Start:] signal provided by the DAQ software to start multiple sensors (the JTAG start works only for one sensor).
-    \item[Reset:] reset the registers to default value. 
-  \end{description}
+  \begin{itemize}
+    \item \textbf{Clock}: clock at 80 MHz provided by the clock distribution board to synchronise two modules together
+    \item \textbf{Start}: signal provided by the DAQ software to start and synchronise multiple sensors (the JTAG start works only for one sensor).
+    \item \textbf{Reset}: reset the registers to default value. 
+  \end{itemize}
 
-  A summary describing the auxiliary board and its connection to the module and the computer is shown on the figure~\ref{fig:plumeAux}.
+  The principle of the connection between the auxiliary board and the different components to operate one module is depicted on the figure~\ref{fig:plumeAux}.
 
-  Before to connect a PLUME module to the auxiliary board, the voltages have to be set and the JTAG communication has to be checked.
+  Before to connect a PLUME module to the auxiliary board, the voltages have to be set and the JTAG communication has to be checked on the auxiliary card.
   Two external power supplies are delivering 8 V D.C. to the power supply board and are giving an information on the consumption of the whole system.
   The empty auxiliary board has a current consumption about 350 mA.
-  Then, the $\text{V}_{CC}$, $\text{V}_{DD_d}$ and $\text{V}_{DD_a}$ should be at 3.3 V, but only the two last voltages can be adjusted thanks to potentiometers on the power supply board.
+  Then, the $\text{V}_{CC}$, $\text{V}_{DD_d}$ and $\text{V}_{DD_a}$ should be at 3.3 V, but only the two last voltages can be adjusted thanks to two potentiometers on the power supply board.
   The $\text{V}_{clp}$ is set to 2.1 V and should not be outside the range $\left[2, 2.2\right]$ V.
   The JTAG communication is verified thanks to a probe linked to an oscilloscope.
   The observed values should be:
@@ -185,9 +183,8 @@
     \item[TCK:] this clock is slower (30 kHz) than the 80 MHz needed by the sensors and is only dedicated for the slow control
     \item[Reset:] by default is fixed to 1 and should change to 0 every time the reset is called by the JTAG software
     \item[Start:] 
+    \item[Clock:] Independently of the method used, the 80 MHz clock has to be correctly distributed along the auxiliary card
   \end{description}
-
-  The last step is to be sure that the 80 MHz clock is well distributed to the module.
 
  % On one edge of the module, a ZIF connector is used to power the sensors, but also to pilot them and to transfer the data to the outside world.
  % A jumper cable is connected between the module and an auxiliary board.
@@ -246,33 +243,52 @@
 
  % After the connections were controlled and before to connect the module to the bench, the different voltages has to be set.
 
-  When the auxiliary board was validated and the power supplies switched-off, the module can be linked to it via a jumper cable.
+  After the validation of the auxiliary board (and the power supplies switched-off), the module can be linked to it via a jumper cable.
+  The voltages applied to the device have to be adjusted again due to the dissipation inside the flex-cable and the jumper cable.
+  The $V_{DD_D}$, $V_{DD_A}$ and $V_{clp}$ can be measured on different pads of the ladder: three pads are closed to the connector, while the three others are at the edge of the flex-cable, as seen on the figure~\ref{fig:voltagePads}
+
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth]{Pictures/labTests/AM01_voltagePads.jpg}
+    \caption{Picture of a aluminum mirrored module with the points of measurement for $V_{DD_D}$, $V_{DD_A}$ and $V_{clp}$.}
+    \label{fig:voltagePads}
+  \end{figure}
+
+  Two versions of the jumper cable, one very flexible with a high resistivity and the second one stiff with a low resistivity.
+  The first cable was not used because of the high resistivity that implies an important voltage drop between the auxiliary board and the module.
+  Moreover, the cable was not properly grounded.
+  The second one has a low voltage drop, nevertheless, the stiffness of the cable requires a mechanical structure to hold the whole system to reduce the mechanical stress on the connector of the module, which is a sensitive part.\todo{Details of voltage drop inside the jumper cable and the flex-cable}
+
   The module consumption is checked at every JTAG steps to make sure that no short-circuit occurs.
-  Just after powering-on everything, the six sensors of the module are starting in a random state and the consumption at this stage can not point out any electrical problem.
+  Right after powering-on the system, the six sensors are starting in a random state and the consumption at this stage can not point out any electrical problem.
   After the reset of the registers, the total consumption should be around 33 mA.
-  Then the registers are loaded and the consumption should be around 750 mA and read-back by the JTAG software.
+  Then, the registers are loaded and the consumption should be around 750 mA and read-back by the JTAG software.
   If at the reading step no error was discovered, the sensors can be operated and their consumption should be around 1300 mA.
 
-  Before to present the next step to control the JTAG communication of every sensor, let's introduce the MIMOSA-26 output.
+  %Before to present the next step to control the JTAG communication of every sensor, let's introduce the MIMOSA-26 output.
 
   %\subsection{Mimosa-26 output}
 
   An inspection of the output with an oscilloscope is performed to check the slow control and to estimate the response of the sensor.
-  The information provided by a sensor is contained in four output lines.
-  On a PLUME module, all the sensors are synchronised, so only the \textit{clock} and \textit{marker} from one sensor is read back.
-  The clock is always present and its rate depends on the clock register.
-  For the normal mode with the zero suppression data, the nominal rate is 80 MHz. 
-  The second output is the marker. 
-  It is available in all modes and its signal last during 4 clock cycles (starting at the rising edge) and is used to know the beginning of the data transmission.
-  The data itself are divided on two output \textit{Data0} and \textit{Data1}. 
-  It contains the \textit{header} ($2 \times 16$ bits) and \textit{trailer} ($2 \times 16$ bits) that allows to detect the beginning and the end of a data transmission.
-  The signal is composed of $2 \times 16$ bits and its configurable via the \gls{JTAG}.
-  For the acquisition, a different \textit{header} and \textit{trailer} is assigned to the different sensors to be able to know which sensor has sent the information.
-  Then, 16 more bits are indicating the \textit{frame counter}.
-  It corresponds to the number of frame since the chip was reset.
-  The useful part of the data is following with the \textit{data length} which provides an information on the length 
-  After that, the \textit{data length} provides an information on the length of the useful data.
-  The useful data \textit{state} and \textit{status}
+  For the normal mode data format with SUZE enable, the output data of the last frame is sparsified and transmitted during the acquisition of the current one.
+  The information provided by the MIMOSA-26 is contained in four output lines.
+  The first output line corresponds to the \textit{clock} which is always running even if the data transmission is finished. 
+  Its rate depends on the clock rate register. 
+  For the normal output mode, it is 80 MHz.
+  The second output line is the \textit{marker}, which is available in all mode.
+  It is set during four clock's rising edge cycle and might be used to detect the beginning of the data transmission.
+  Then, the two last output lines are dedicated to the data.
+  They contain multiple information.
+  First of all, the beginning and the ending of the data transmission is determined by the \textit{header} and \textit{trailer}.
+  They can be used to detect a loss of synchronisation.
+  They corresponds to $2 \times 16$ bits (\textit{header0-header1} and \textit{trailer0-trailer1}) and are totally configurable through the JTAG software.
+  The \textit{header} is followed by the \textit{frame counter} which corresponds to the number of frame since the chip was reset. 
+  The information is separated into two words (\textit{FrameCounter0} corresponding to the least significant bit and \textit{FrameCounter1} corresponding to the most significant bit).
+  Then, the \textit{data length} gives the number of 16 bits words of the useful data. 
+  The useful data is split into \textit{states/line}, which contains the address of the line which has a hit and an overflow flag, followed by the \textit{state} giving the number of consecutive hit and the address of the first column.
+  Finally, the \textit{trailer} is ending the data transmission followed by 32 bits of zero.
+  The figure~\ref{fig:mi26Output} is a picture of an oscilloscope output of a MIMOSA-26 data output. From the top to the bottom, it shows the 80 MHz \textit{clock}, the four clock's cycle \textit{marker}, the \textit{data0} and \textit{data1} with the \textit{header} and the \textit{frame counter}.
+  More information about the MIMOSA-26 can be found here\todo{Reference to MI-26 user manual}.
 
   \begin{figure}[h]
     \centering
@@ -282,53 +298,68 @@
   \end{figure}
 
   \subsection{JTAG communication}
-  
-  The next step is then to control the JTAG communication of every sensor.
-  A JTAG file which is configuring the sensors in a normal mode (80 MHz with zero suppression output) is loaded.
-  When the start signal is sent, all the sensors are synchronised, so the \textit{clock} and \textit{marker} is read only from one sensor.
-  The output is checked in three steps, chip by chip thanks to an oscilloscope.
-  First of all, the sensor is reset, the register are loaded and read back and then the start signal is sent. 
-  Then the header and trailer are modified in the JTAG software and the registers are loaded again.
-  The output should change with respect to the word loaded.
-  Then, the response of the discriminators are checked, specifically to find pixels stuck in an opened position.
 
+  After adjusting the voltages and looking for any short-circuits, the next step is to control the JTAG communication for every sensor.
+  As in the PLUME module, all the sensors are synchronised, only the \textit{clock} and \textit{marker} from one sensor is read back.
+  On the oscilloscope, the trigger is set on the \textit{marker}.  
+  The sensors are configured in the normal mode data format (80 MHz with zero suppression output) and the output is checked in three steps.
+  First of all, the sensor is reset, the register are loaded and read back and then the start signal is sent. 
+  Through the JTAG software, the \textit{header} and \textit{trailer} are modified several time and are checked thanks to the oscilloscope.
+  Then, the discriminators response is visualised, specifically to find pixels stuck in an opened position (always sending data).
+  The number of defective pixels and their position is then estimated.
+  After that, an estimation of the threshold discriminator values to get few hits is determined and the response is then checked.
+  Nevertheless, using light to estimate the response of the sensor can impact the pixels' baseline and modify the normal behavior of the matrix.
+  For example, instead of sending more information, the pixels are less responsive.
+  Thus, using a radiation source is a better solution.
 
 \section{Noise measurements}
 
   In the chapter~\ref{chap:vxd}, the principle of the \gls{CMOS} sensors was described and the noise of this technology was discussed.
-  The two noises contribution are the \acrfull{TN} and the \acrfull{FPN}.
-  The measurement of the noise is needed to operate correctly the sensors, specifically to be able to detect physics signal. 
+  As a reminder, the two noises contribution are the \acrfull{TN} and the \acrfull{FPN}.
+  The \gls{FPN} is determined as an offset to subtract from the pixel response to reduce its non-uniformity response, while the \gls{TN} is coming from the contribution of different noises during the reset, the integration and the readout of the pixel.
+  This noises have to be measured in the lab in order to find the optimum configuration to detect physics signal and reduce the noise impact on the measurement.
 
-  \subsection{Middle point finding}
+  \subsection{Characterisation bench}
 
-  The first step consists to configure the sensors for the discriminators output mode.
+  The noise is estimated thanks to a bench of characterisation composed of a National Instrument PXIe crate equipped with a 6562 digital card, two power supplies, a power distribution board, an auxiliary and a JTAG card, as well as the module to test.
+  The procedure described here is applied to a single MIMOSA-26, or a PLUME module, as well as a MIMOSA-28 sensor.
+  Nevertheless, the data acquisition software used during the characterisation is slightly different, depending on the sensor technology.
+  The four output data are connected from the pins on the auxiliary board to the digital card thanks to a National Instrument spider cable.
+  Firstly, a test pattern, which loads automatically a JTAG file for this test, is done to read the \textit{header} and \textit{trailer} during several frames with a determined data length.
+  It has been observed that the \textit{clock} output cable has to be eighty centimeters longer than the three other cables to ensure the synchronisation on the rising edge.
+  If this is not done or if one of the cable has a wrong polarity, the software is not able to read the \textit{header} and \textit{trailer}.
+
+  Then, the sensors are configured in the discriminator output mode.
   The zero suppression mode is bypassed, pixels and discriminators are in normal mode (whole matrix read in $115\mu\text{s}$), but the readout frequency is lower (10 MHz) via 2 LVDS output pads.
-  The control of the discriminators is divided into four sub-matrices, containing each 288 columns.
-  The threshold voltage of this four blocks are defined in DAC unit in the JTAG software.
-  A DAQ software is used to characterise each sensor. 
-  By studying the baseline of a line in the middle of the matrix, the response of each matrix is set to a half activation by tuning the threshold of each sub-matrices.
-  When the four thresholds are set, the homogeneity of the matrix is checked, as shown on the figure~\ref{fig:homogeneityMi26}.
-  Then, the thresholds are set to the highest and lowest value to look for defect pixels.
-  The figure~\ref{fig:openPixel} represents some pixels stuck in an open position.
-  This mean that they are always activated and they will increase the fake hit rate of the sensor.
-  If a part of a column is always opened, there is the possibility to disconnect the discriminator on the JTAG programm, otherwise, for a line, during an offline analysis, the line is not taken into account.
-  The figure~\ref{fig:closePixel} represents some pixels stuck in a closed position.
-  This pixels will never be activated and this area is not able to detect any particle.
-
+  The control of the discriminators is divided into four sub-matrices, each containing 288 columns.
+  Thus, for one sub-matrix a threshold value in DAC units in the JTAG software is driving all the discriminators, depending on a baseline value.
+  For one line, usually one located in the middle of the matrix, its baseline response is studied to find the "middle-points" by looking for the threshold of each sub-matrix, in which the discriminators are reaching an half activation.
+  When this "middle-points" are determined, the homogeneity of the matrix is checked, as shown on the figure~\ref{fig:homogeneityMi26}.
+  
   \begin{figure}[!h]
     %\centering
     \missingfigure{Homogeneity of the Mi26 matrix when the discriminators are 50 \% activated}
     \caption{Matrix response for the discriminators half activated.}
     \label{fig:homogeneityMi26}
   \end{figure}
-
+  
+  Due to the structure of the sensor, the homogeneity is not perfect and some dispersions in the discriminator response are observed between the beginning and the end of a sub-matrix.
+  Moreover, to reduce this dispersion, the reference baseline and the clamping voltage have to be adjusted.
+  Before to start the threshold scan, the thresholds are set to the lowest and highest value in order to look for defect pixels.
+  On the one hand, few pixels can be always activated even if the discriminators were closed.
+  The figure~\ref{fig:openPixel} depicts the matrix output for all the discriminators closed.
+  Therefore, a line is always activated, as well as few pixels in a column and they are increasing the fake hit rate of the matrix.
+  A solution exists to disconnect some discriminators in order to reduce the noise of defect columns thanks to the JTAG program, nevertheless, no solution during the sensor programming exists to remove the defect lines.
+  On the other hand, few pixels can be always deactivated even if the discriminators are completely opened, thus, they are not able to detect any physics signal.
+  This behavior is represented on the figure~\ref{fig:closePixel} and no solution exists to make them working properly.
+   
   \begin{figure}[!h]
     \centering
     \includegraphics[width=\textwidth]{Pictures/labTests/th0.png}
     \caption{Matrix response in discriminator mode, where all the discriminators are opened. On the right of the matrix, one line is not working correctly and some pixels are never activated}
     \label{fig:openPixel}
   \end{figure}
-  
+   
   \begin{figure}[!h]
     \centering
     \includegraphics[width=\textwidth]{Pictures/labTests/th255.png}
@@ -337,19 +368,36 @@
   \end{figure}
 
   \subsection{Threshold scan}
-  The second step consists to perform a threshold scan around the half activation point.
-  At every thresholds, the response of each discriminators are recorded in order to calculate the noise, the offset and the dispersion.
-  Usually, 29 runs with 500 to 1000 events are recorded.
-  The scan can be done in two ways.
-  The first one consists to inject a reference voltage in the discriminators while the matrix output is disconnected.
-  In this way, only the noise contribution coming from the discriminators is measured.
+
+  To measure the noise, a threshold scan is perform around the "middle-point" found before.
+  For each step, the data acquisition software records the response of each discriminators, in order to calculate the noise, the offset and the dispersion.
+  Usually, 29 runs with 500 to 1000 events are stored.
+  They are two different ways to measure the noise. 
+  The first one consists to inject a reference voltage in the discriminators, while the matrix output is disconnected.
+  Only the noise contribution coming from the discriminators is thus determined.
   The second method does not use an external reference voltage, but rather the response of the pixel matrix to characterise the noise of the whole system.
 
-  After completing the threshold scan, a configuration file, which contains the DAC values of each sub-matrix for each threshold with the corresponding value in millivolts is created.
-  Then, the file is analysed and converted to create an output file containing a hit average picture of each sub-matrix for each step.
+  The next step consists to build a configuration file containing the DAC values of each sub-matrix for each threshold with the corresponding value in millivolts.
+  %After completing the threshold scan, a configuration file, which contains the DAC values of each sub-matrix for each threshold with the corresponding value in millivolts is created.
+  Afterward, this file is analysed and converted to create an output file containing a hit average picture of each sub-matrix for each step.
   Then a macro based on C++ and ROOT is reading this picture to plot the transfer function, as the one represented on figure~\ref{fig:transfer}, which shows the response of the 288 discriminators for a sub-matrix, as a function the threshold applied in millivolts.
   From this S-curve, the dispersion, as well as the offset and the noise are measured.
   Two plots are summarising this information, as shown on figure~\ref{fig:TN&FPN}.
+  
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{Pictures/labTests/transfer_B.png}
+    \caption{Pixels response of a threshold scan around the middle-point of discriminators for a sub-matrix.}
+    \label{fig:transfer}
+  \end{figure}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Pictures/labTests/noise_A.png}
+    \caption{TN and FPN}
+    \label{fig:TN&FPN}
+  \end{figure}
+
   The one on the left represents the temporal noise, while the right one represents the fixed pattern noise.
   The offset corresponds to the RMS of the fixed pattern noise, the dispersion is the ... of ... and the noise ...
   To estimate the discriminator thresholds of each sub-matrix for a given \gls{SNR}, the total noise is determined as:
@@ -369,23 +417,11 @@
   \begin{equation}
     \text{Threshold (DAC)} = \frac{\text{Threshold (mV)} - \text{DAC}_{offset}}{\text{DAC}_{slope}}
   \end{equation}
- 
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.6\textwidth]{Pictures/labTests/transfer_B.png}
-    \caption{Pixels response of a threshold scan around the middle-point of discriminators for a sub-matrix.}
-    \label{fig:transfer}
-  \end{figure}
 
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{Pictures/labTests/noise_A.png}
-    \caption{TN and FPN}
-    \label{fig:TN&FPN}
-  \end{figure}
+  \subsection{Measurement of the fake hit rate}
 
   Once the thresholds are defined for the different cuts, the fake hit rate of the matrix, as well as the detection homogeneity is determined.
-  A quick step consists to use the DAQ software and acquire ten thousands event in a dark. 
+  A quick step consists to use the DAQ software and acquire ten-thousands events in the dark. 
   The fake hit rate per event per pixel is then determined as:
 
   \begin{equation}
@@ -412,17 +448,40 @@
     \label{fig:fe55}
   \end{figure}
 
-  Finally, to validate the sensor, the acquisition system used during the test beam is used.\todo{detail the DAQ}
-  Several runs containing each a million events are acquired for different threshold. 
-  The data are stored in binary file that are read by a analysis program, called TAF and developed by the IPHC and based on C++ and ROOT.
-  On the figure~\ref{fig:FHR}, the fake hit rate is represented. 
-  The results are tallying the expectations for this sensors, as it was discussed on section .......
+  Finally, in order to validate the sensor, the acquisition system used during the test beam is used to calculated more accurately the fake hit rate.\todo{detail the DAQ}
+  The auxiliary board is connected to a  Flex RIO board instead of the digital card.
+  The test beam DAQ software developed by the IPHC is using LabVIEW interface, which gives the number of events acquired, the \textit{header}, the \textit{trailer} and the \textit{frame counter} of the sensor.
+  A second software is used to store the data into three files: a parameter file containing the run number, the event number, a binary file containing the data and an index file.
+  Two acquisition modes are available. 
+  The first one, used in test beam, acquires data only when a trigger is sent.
+  The second one, stores all frames regardless there is a trigger or not. 
+  This acquisition is the one used in the lab, as only the noise of the sensor is measured.
+   
+  Several runs containing each one million events are acquired for different thresholds. 
+  The data stored are analysed with a software developed by the IPHC and is called \gls{TAF}.
+  It is based on C++ and the ROOT framework.
+  The software reads the information of the hit pixels, reconstructs the clusters of hit pixels and in the case of a test beam is able to reconstruct tracks from the hit information.
+
+  A method is in charge to determine the fake hit rate with respect to the number of pixels hit per event.
+  From the distribution shown on the figure~\ref{fig:pixel/event}, which represents the number of pixels fired per event, the average fake hit rate is calculated as the mean of this distribution divided by the total number of pixel contained in the matrix.
+    \begin{figure}
+    %\centering
+    \missingfigure{Number of pixels per event}
+    \caption{Distribution of the number of pixel fired per event.}
+    \label{fig:pixel/event}
+  \end{figure}
+  The error on the measurement is then the root mean squared of the distribution divided by the number of entries and the number of pixel inside the matrix.
+  This calculation is done for different thresholds and the figure~\ref{fig:FHR} represents the average fake hit rate per pixel per event as a function of the threshold for one sensor of an aluminum module.
+  The results are matching the expected behavior for a standalone MIMOSA-26 sensor as shown in figure~\ref{fig:mi26Perf}.
 
   \begin{figure}
-    %\centering
-    \missingfigure{FHR = f(Threshold)}
+    \centering
+    \includegraphics[width=0.7\textwidth]{Pictures/labTests/fake_sensor6.png}
+    \caption{Distribution of the fake hit rate per pixel.}
     \label{fig:FHR}
   \end{figure}
+
+
 
 \section{Cluster}
 
