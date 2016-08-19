@@ -418,7 +418,7 @@
     \text{Threshold (DAC)} = \frac{\text{Threshold (mV)} - \text{DAC}_{offset}}{\text{DAC}_{slope}}
   \end{equation}
 
-  \subsection{Measurement of the fake hit rate}
+  \subsection{Noise measurements}
 
   Once the thresholds are defined for the different cuts, the fake hit rate of the matrix, as well as the detection homogeneity is determined.
   A quick step consists to use the DAQ software and acquire ten-thousands events in the dark. 
@@ -450,7 +450,7 @@
 
   Finally, in order to validate the sensor, the acquisition system used during the test beam is used to calculated more accurately the fake hit rate.\todo{detail the DAQ}
   The auxiliary board is connected to a  Flex RIO board instead of the digital card.
-  The test beam DAQ software developed by the IPHC is using LabVIEW interface, which gives the number of events acquired, the \textit{header}, the \textit{trailer} and the \textit{frame counter} of the sensor.
+  The test beam DAQ software developed by the IPHC is using a LabVIEW interface, which gives the number of events acquired, the \textit{header}, the \textit{trailer} and the \textit{frame counter} of the sensor.
   A second software is used to store the data into three files: a parameter file containing the run number, the event number, a binary file containing the data and an index file.
   Two acquisition modes are available. 
   The first one, used in test beam, acquires data only when a trigger is sent.
@@ -481,11 +481,7 @@
     \label{fig:FHR}
   \end{figure}
 
-
-
-\section{Cluster}
-
-  
+\section{Source measurements}
 
   \begin{figure}
     %\centering
