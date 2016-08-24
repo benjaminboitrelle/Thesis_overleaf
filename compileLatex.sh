@@ -9,7 +9,7 @@ fi
 
 if [[ -z $1 ]];then
   echo "Generating the PDF file..."
-  latexmk -pdf -output-directory=$OUTPUTDIR $NAME.tex
+  latexmk -pdf -output-directory=$OUTPUTDIR $NAME.tex | grep --color -E "Warning|Missing|$"
   if [ $? -eq 0 ]; then 
     echo "...PDF file generated..."
   else

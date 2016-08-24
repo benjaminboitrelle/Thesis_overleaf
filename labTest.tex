@@ -176,7 +176,7 @@
   \begin{description}
     \item[TDI:]
     \item[TDO:]
-    \item[TMS:]
+    \item[TMS:] by default is fixed to 1 when it is not used
     \item[TCK:] this clock is slower (30 kHz) than the 80 MHz needed by the sensors and is only dedicated for the slow control
     \item[Reset:] by default is fixed to 1 and should change to 0 every time the reset is called by the JTAG software
     \item[Start:] 
@@ -252,12 +252,16 @@
   \end{figure}
 
   Two versions of the jumper cable were produced, one very flexible with a high resistivity and the second one stiff with a low resistivity.
-  The most flexible cable was not used for two reasons.
-  The first one is due to the high resistivity that implies an important voltage drop between the auxiliary board and the module.
-  The second reason is that the cable was not mounted and grounded correctly.
-  The sensors were not working correctly and the only solution to resolve the problem was to by-pass the digital and analog voltages, by applying them externally from the pads located at the edge opposite to the connector.
-  The stiffest cable has a low voltage drop and was used during the test.
-  Nevertheless, due to the stiffnessthe stiffness of the cable requires a mechanical structure to hold the whole system to reduce the mechanical stress on the connector of the module, which is a sensitive part.\todo{Details of voltage drop inside the jumper cable and the flex-cable}
+  The most flexible cable was not used because of an important voltage drop between the auxiliary board and the module, but also because of a wrong fabrication.
+  Indeed, after setting the voltages to the nominal value and plugin the module, a short-circuit happened.
+  The auxiliary board tests were correct and were proofed one more time without the module.
+  Then, a thermal camera was used to find if a sensor was responsible for the short-circuit.
+  One sensor was hotter than the others, nevertheless, the wire-bonds were correctly assigned.
+  The problem was coming from a short-circuit between the $V_{DD_D}$ and the $V_{clp}$.
+  By passing this two lines on the jumper cable and by connecting them directly to the module, the short was gone.
+  Instead of this flexible jumper cable, a stiffer one was used.
+  Nonetheless, any movement of the auxiliary board causes a too important stress on the connector and on the flex-cable.
+  To avoid any damage, a support was build to hold the auxiliary board and the module on the same frame, thus reducing the risk to break anything.
 
   The module consumption is checked at every JTAG steps to make sure that no short-circuit occurs.
   Right after powering-on the system, the six sensors are starting in a random state and the consumption at this stage can not point out any electrical problem.
@@ -290,7 +294,7 @@
   It is followed by the \textit{state} giving the number of consecutive hit and the address of the first column.
   Finally, the \textit{trailer} is ending the data transmission followed by 32 bits of zero.
   The figure~\ref{fig:mi26Output} is a picture of an oscilloscope output of a MIMOSA-26 data output. From the top to the bottom, it shows the 80 MHz \textit{clock}, the four clock's cycle \textit{marker}, the \textit{data0} and \textit{data1} with the \textit{header} and the \textit{frame counter}.
-  More information about the MIMOSA-26 can be found here\todo{Reference to MI-26 user manual}.
+  More information about the MIMOSA-26 can be found in the MIMOSA-26 user manual\cite{manualMi26}.
 
   \begin{figure}[h]
     \centering
@@ -347,7 +351,7 @@
     \label{fig:homogeneityMi26}
   \end{figure}
   
-  Before to start the threshold scan, the thresholds are set to the lowest and highest value in order to look for defect pixels.
+  Afterward, the thresholds are set to the lowest and highest value to look for defect pixels in the matrix.
   On the one hand, few pixels can be always activated even if the discriminators were closed.
   The figure~\ref{fig:openPixel} depicts the matrix output for all the discriminators closed.
   Therefore, a line is always activated, as well as few pixels in a column and they are increasing the fake hit rate of the matrix.
@@ -371,21 +375,37 @@
 
   \subsection{Threshold scan}
 
-  To measure the noise, a threshold scan is perform around the "middle-point" found before.
-  For each step, the data acquisition software records the response of each discriminators, in order to calculate the noise, the offset and the dispersion.
-  Usually, 29 runs with 500 to 1000 events are stored.
-  They are two different ways to measure the noise. 
-  The first one consists to inject a reference voltage in the discriminators, while the matrix output is disconnected.
-  Only the noise contribution coming from the discriminators is thus determined.
-  The second method does not use an external reference voltage, but rather the response of the pixel matrix to characterise the noise of the whole system.
-  It is the one used to characterise the PLUME modules.
-
-  The next step consists to build a configuration file containing the DAC values of each sub-matrix for each threshold with the corresponding value in millivolts.
-  %After completing the threshold scan, a configuration file, which contains the DAC values of each sub-matrix for each threshold with the corresponding value in millivolts is created.
+  The noise performance of the sensor is determined thanks to a threshold scan around the "middle-point" found before.
+  This consists to record the normalise response of the discriminators or the discriminators and the pixels for different threshold values.
+  For the first possibility an external voltage is injected into the discriminators, while the matrix output is disconnected.
+  Only the noise contribution coming from the discriminator is thus determined.
+  In this work, the noise performance results presented were done without injected an external voltage, but rather with the sensitive system connected to the discriminators.
+  Usually, 29 runs containing between 50 to 1000 are stored.
+  The files created are used to firstly, build a configuration file containing the DAC values of each sub-matrix for the different thresholds applied.
+  The threshold is here defined has the voltage applied to the discriminators.
   Afterward, this file is analysed and converted to create an output file containing a hit average picture of each sub-matrix for each step.
-  Then a macro based on C++ and ROOT is reading this picture to plot the transfer function, as the one represented on figure~\ref{fig:transfer}, which shows the response of the 288 discriminators for a sub-matrix, as a function the threshold applied in millivolts.
-  From this S-curve, the dispersion, as well as the offset and the noise are measured.
-  Two plots are summarising this information, as shown on figure~\ref{fig:TN&FPN}.
+  Then, a macro based on C++ and ROOT framework is reading the hit average picture to plot the transfer function, also called "S" curve, as represented on the figure~\ref{fig:transfer}.
+  It shows the normalised response of the 288 discriminators and the pixels contained in this sub-matrix as a function of the threshold applied in millivolts.
+  The temporal noise of each pixel is calculated from the derivative of the "S" curve and is represented here on the left plot of the figure~\ref{fig:TN&FPN}.
+  The mean value of the distribution obtained the mid-point threshold of a pixel.
+  The dispersion of the mid-point threshold corresponds to the fixed pattern noise, represented on the right plot of the figure~\ref{fig:TN&FPN}.
+  
+  % Noise performance of full in-pixel circuitry + sensing system and discriminator characterised by using the S curve method: normalised response as a function of the threshold voltage.
+  %To measure the noise performance of the pixels and the discriminators, a threshold scan is performed around the "middle-point" found before.
+  %For each step, the threshold voltage is adjusted and the data acquisition software records the normalised response of the system (pixels + discriminators response).
+  %Usually, 29 runs with 500 to 1000 events are stored.
+  %They are two different ways to measure the noise. 
+  %The first one consists to inject a reference voltage in the discriminators, while the matrix output is disconnected.
+  %Only the noise contribution coming from the discriminators is thus determined.
+  %The second method does not use an external reference voltage, but rather the response of the pixel matrix to characterise the noise of the whole system.
+  %It is the one used to characterise the PLUME modules.
+
+  %The next step consists to build a configuration file containing the DAC values of each sub-matrix for each threshold with the corresponding value in millivolts.
+  %%After completing the threshold scan, a configuration file, which contains the DAC values of each sub-matrix for each threshold with the corresponding value in millivolts is created.
+  %Afterward, this file is analysed and converted to create an output file containing a hit average picture of each sub-matrix for each step.
+  %Then a macro based on C++ and ROOT is reading this picture to plot the transfer function, as the one represented on figure~\ref{fig:transfer}, which shows the response of the 288 discriminators for a sub-matrix, as a function the threshold applied in millivolts.
+  %From this S-curve, the dispersion, as well as the offset and the noise are measured.
+  %Two plots are summarising this information, as shown on figure~\ref{fig:TN&FPN}.
   
   \begin{figure}[!h]
     \centering
@@ -397,12 +417,12 @@
   \begin{figure}[!h]
     \centering
     \includegraphics[width=0.8\textwidth]{Pictures/labTests/noise_A.png}
-    \caption{TN and FPN}
+    \caption{Noise performances of a sub-matrix for the discriminators and the pixel array output. The temporal noise is plotted on the left plot, whereas the fixed pattern noise is represented on the right plot.} 
     \label{fig:TN&FPN}
   \end{figure}
 
   The one on the left represents the temporal noise, while the right one represents the fixed pattern noise.
-  The offset corresponds to the RMS of the fixed pattern noise, the dispersion is the ... of ... and the noise ...
+  The systematic offset of the discriminator are extracted from the this measurements (the mean value of the temporal noise, the mean value and the sigma value of the fixed pattern noise).
   To calculate the discriminator thresholds of each sub-matrix for a given \gls{SNR}, the total noise is determined as:
   
   \begin{equation}
@@ -426,8 +446,8 @@
   \subsection{Noise measurements}
 
   Once the thresholds are defined for the different cuts, the fake hit rate of the matrix, as well as the detection homogeneity is determined.
-  A quick step consists to use the DAQ software and acquire ten-thousands events in the dark. 
-  The fake hit rate per event per pixel is then determined as:
+  A quick step consists to use the DAQ software and acquire ten-thousands events in the dark to determine the noise qualitatively. 
+  The fake hit rate per event per pixel is then considered as:
 
   \begin{equation}
     \text{F.H.R} = \frac{\text{Number of hits}}{\text{Number of events} \times \text{Number of pixels}} 
@@ -453,7 +473,7 @@
     \label{fig:fe55}
   \end{figure}
 
-  Finally, in order to validate the sensor, the acquisition system used during the test beam is used to calculated more accurately the fake hit rate.\todo{detail the DAQ}
+  Finally, in order to validate the sensor, the acquisition system used during the test beam is used to calculate quantitatively the fake hit rate.
   The auxiliary board is connected to a  Flex RIO board instead of the digital card.
   The test beam DAQ software developed by the IPHC is using a LabVIEW interface, which gives the number of events acquired, the \textit{header}, the \textit{trailer} and the \textit{frame counter} of the sensor.
   A second software is used to store the data into three files: a parameter file containing the run number, the event number, a binary file containing the data and an index file.
@@ -490,10 +510,15 @@
 
   The assembly procedures and the tests performed in the laboratory were introduced along this chapter.
   So far, for the new PLUME versions which have a narrower flex-cable and which should embed only 0.35 \% of the radiation length, different prototypes were built. 
-  In January 2016, an entire copper prototype was assembled.
-  The aluminum prototypes are more challenging to build. 
-  Indeed, all the mirrored versions produced till ... have grounded problem due to a more fragile connector, that could have been damaged by plugging and unplugging the jumper cable.
+  The first ladder using copper module was assembled in January 2016.
+  New ladders are currently being built and the collaboration is expecting to test them in the DESY test beam facility in November.
+  Nevertheless, the aluminum ladder seems to be more challenging to build.
+  Indeed, the three first mirrored versions produced have a connector problem, that could have been damaged by plugging and unplugging the jumper cable.
+  This problem did not occur with the copper mirrored versions and this might come from a more fragile flex-cable.
   Ideally, each module should have is own jumper cable and this should not be disconnected.
   Nevertheless, for shipping them, there is no other solution.
   The collaboration is thinking of a tool which will reduce the stress applied to the connector.
+
+  The next chapter deals with the tests performed in real condition at the CERN-SPS facility with the PLUME-V1 prototype in 2011.
+
 
