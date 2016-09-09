@@ -20,27 +20,39 @@
     The test beam was performed at CERN-SPS in the North hall on the H6 beam line.
     Negative pions with an energy of 120 GeV were used.
     The spill structure is 9.6 s with a dead time of 45.6 s. 
-    The bench set-up is composed of 4 standards 120 $\mu\text{m}$ thinned MIMOSA-26 used as telescope planes, the PLUME ladder, called here \gls{DUT} and a $7 \times 7 \text{mm}^2$ used for triggering. 
-    The reference planes are at 8 sigma S/N cut and stabilized to a temperature of 15 degrees Celsius.
-    The telescope is made of two arms, on each side of the \gls{DUT} and the distance between two sensors of the same arm is 5 mm.
-    Nonetheless, for one experimentation, the telescope was set-up differently, as discussed later.
-    Most of the runs were taken with a trigger frequency between 2 and 8 kHz except for two days on which it was between 1 and 1.3 kHz.
-    As the acquisition system is limited to eight inputs and the set-up has four reference planes, only four sensors of the \gls{DUT} were connected, two on each side.
-    Nevertheless, due to the size of the scintillator, the acquisition of sensors outside the beam is not mandatory. 
-    Thus, it reduces the data band-with.
-    The temperature of the \gls{DUT} was keep stable thanks to a air flow cooling system, provided by a fan.
-    Two different air flow speeds were used: 3 $\text{m.s}^{-1}$ and 6 $\text{m.s}^{-1}$. 
+    The bench set-up is composed of a telescope made of four standard MIMOSA-26 sensors, thinned down to 120 $\mu\text{m}$ and used as reference planes.
+    The telescope is made of two arms, with a distance between the two sensors of the arm of 5 mm.
+    The reference planes are stabilised to a temperature of 15 degrees Celsius and a threshold at 8 sigma S/N cut was applied.
+    In the middle of the two arms, the PLUME ladder is placed and for the next of the chapter it is denominated as the \gls{DUT}.
+    The bench has also $7 \times 7$ scintillators used for triggering the data.
+    Most of the runs were taken with a trigger frequency between 2 and 8 kHz, except for two days where the frequency was oscillating between 1 and 1.3 kHz.
+    The acquisition system is limited to eight inputs and four inputs are used by the telescope.
+    Thus, only four sensors of the \gls{DUT} were connected to the acquisition, two on each side.
+    The temperature of the \gls{DUT} was stabilised thanks to air flow cooling system, provided by a fan.
+
+    %The bench set-up is composed of 4 standards 120 $\mu\text{m}$ thinned MIMOSA-26 used as telescope planes, the PLUME ladder, called here \gls{DUT} and a $7 \times 7 \text{mm}^2$ used for triggering. 
+    %The reference planes are at 8 sigma S/N cut and stabilized to a temperature of 15 degrees Celsius.
+   % The telescope is made of two arms, on each side of the \gls{DUT} and the distance between two sensors of the same arm is 5 mm.
+    %Nonetheless, for one experimentation, the telescope was set-up differently, as discussed later.
+    %Most of the runs were taken with a trigger frequency between 2 and 8 kHz except for two days on which it was between 1 and 1.3 kHz.
+    %As the acquisition system is limited to eight inputs and the set-up has four reference planes, only four sensors of the \gls{DUT} were connected, two on each side.
+    %Nevertheless, due to the size of the scintillator, the acquisition of sensors outside the beam is not mandatory. 
+    %Thus, it reduces the data band-with.
+    %Two different air flow speeds were used: 3 $\text{m.s}^{-1}$ and 6 $\text{m.s}^{-1}$. 
 
     \subsection{Cartesian coordinate systems}
 
-    Two coordinate systems are defined: the global and the local coordinate system.
-    The notation used for the global coordinate system is $(x, y, z)$ and is determined by all the sensors of the telescope.
-    The $x$ is the horizontal direction, $y$ along the vertical direction and the $z$ is along the beam axis.
+    Although the sensors have their own ID to distinguish them during the analysis, the position of each plane has to be known exactly.
+    Two Cartesian coordinate systems are then defined.
+    The first one is the global one and is determined by the position of each sensors of the telescope.
+    The notation used for this coordinate system is $(x,y,z)$.
+    The $x$-axis corresponds to the horizontal direction, the $y$-axis is the vertical direction and the $z$-axis is along the beam direction.
     The origin $(0,0,0)$ is of the system is defined with respect to the center of the two reference planes arms.
-    The notation $(u, v, w)$ is used for the local coordinate system.
-    The $u$ axis corresponds to a sensor row, the $v$ axis is along the pixel columns and the $w$ is perpendicular to the matrix.
-    The origin of the local system is in the center of the pixel matrix.
-    The figure~\ref{fig:labCoordinates} summarises the definition of the coordinate systems.
+    The second coordinate system is the local one and is determined for a single sensor.
+    To differentiate this reference the $(u,v,w)$ notation is used.
+    The $u$-axis corresponds to the pixel rows, the $v$-axis is along the pixel columns and the $w$-axis is perpendicular to the matrix.
+    The origin of the local system is the center of the pixel matrix.
+    The figure~\ref{fig:labCoordinates} summarises the definition of the two coordinate systems.
 
     \begin{figure}
       \centering
@@ -49,38 +61,43 @@
       \label{fig:labCoordinates}
     \end{figure}
 
-    \begin{figure}[!h]
-      \centering
-      \includegraphics[width = 0.5\textwidth]{Pictures/deformation/tb_cern_11_sketch_normal.pdf}
-      \caption{Top view sketch of the experimental set-up for the PLUME ladder in normal incidence with respect to the beam direction.}
-      \label{fig:tbNormal}
-    \end{figure}
-
     \subsection{Measurements}
 
-    To validate this prototype, different measurements were performed.
-    Nevertheless, this chapter will report only one study: the performance of the \gls{DUT} for titled position.
-    Measurements were performed with different angles and telescope set-up.
-    The first one is represented on the figure~\ref{fig:tilt36} and the angle varies between 28 and 40 degrees.
-    Some runs with a larger angle (60 degrees) were done. 
-    Due to the limited space between the telescope arm and the size of the \gls{DUT} with the air flow cooling system, the PLUME ladder was positioned outside the two telescope arms, as shown on figure~\ref{fig:tilt60}.
+    The prototype validation was done under several conditions.
+    Firstly, three different geometric configurations were used.
+    On the first one presented on the figure~\ref{fig:tbNormal}, the \gls{DUT} is parallel to the telescope planes and the beam is hitting the device in a normal incidence.
+    The \gls{DUT} is placed in between the two arms, with the middle in a center of the foam.
+    For the second configuration, as shown on the figure~\ref{fig:tilt36}, the distance between the telescope planes are the same, but the \gls{DUT} is tilted between 28 and 40 degrees along the $y$-axis.
+    Runs with a larger angle (60 degrees) were done.
+    Due to the PLUME box's size, the cabling for the acquisition, the air cooling system and the design of the telescope stage, limiting the spacing between the two arms, the \gls{DUT} was placed behind the two arms, as presented on the figure~\ref{fig:tilt60}.
+    For both configurations, different parameters were modified.
+    The thresholds was set to 5 and 6 mV, different sensors were aimed and the air flow speed was set to 3 $\text{m.s}^{-1}$ and 6 $\text{m.s}^{-1}$.
 
     \begin{figure}[!h]
-    \centering
-    \begin{subfigure}[t]{0.45\textwidth}
+      \centering
+      \begin{subfigure}[t]{0.9\textwidth}
+        \centering
+        \includegraphics[width = 0.5 \textwidth]{Pictures/deformation/tb_cern_11_sketch_normal.pdf}
+        \caption{Set-up for the PLUME ladder in normal incidence with respect to the beam direction.}
+        \label{fig:tbNormal}
+      \end{subfigure}
+
+      \begin{subfigure}[t]{0.45\textwidth}
+        \centering
         \includegraphics[width=0.8\textwidth]{Pictures/deformation/tb_cern_11_sketch_tilted.pdf}
         \caption{Configuration for an angle between 28 and 40 degrees.}
         \label{fig:tilt36}
-    \end{subfigure}
-    ~%\quad
-     %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[t]{0.45\textwidth}
+      \end{subfigure}
+      ~%\quad
+       %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+        %(or a blank line to force the subfigure onto a new line)
+      \begin{subfigure}[t]{0.45\textwidth}
+        \centering
         \includegraphics[width=0.95\textwidth]{Pictures/deformation/tb_cern_11_sketch_tilted120mm.pdf}
         \caption{Configuration for an angle of 60 degrees.}
         \label{fig:tilt60}
-    \end{subfigure}
-      \caption{Top view of the test beam configuration for different ladder tilts.}
+      \end{subfigure}
+      \caption{Top view sketches of the test beam configuration for different ladder positions.}
       \label{fig:tilt}
     \end{figure}   
 
@@ -134,33 +151,36 @@
       When the telescope alignment is done, the reference tracks reconstructed by the reference planes are used to align the \gls{DUT}.
       Its $z$ position is fixed, nonetheless, two degrees for freedom are added: the rotations along the $x$ and $y$-axes, plus the three other degrees of freedom defined above.
 
+      \begin{figure}
+        %\centering
+        \missingfigure{Track-hit residual as a function of the hit position (normal incidence)}
+      \end{figure}
+
+
+
     \subsection{Ladder tilted in one direction}
 
       The same alignment procedure, as presented above, was applied for runs where the ladder was tilted with respect to the beam direction, as shown on the figure~\ref{fig:tilt}.
       Nevertheless, the alignment is more complicated.
-
+      
+      \begin{figure}
+        %\centering
+        \missingfigure{Track-hit residual as a function of the hit position (tilt)}
+      \end{figure}
     
-    This test-beam results have already been discussed (reference to paper and thesis) and results, such as the efficiency or ... are no going to be presented.
+      \subsubsection{Origin of the deviations}
 
-    \begin{figure}
-      %\centering
-      \missingfigure{Track-hit residual as a function of the hit position (normal incidence)}
-    \end{figure}
+      \begin{figure}
+        %\centering
+        \missingfigure{Explanation of deviations}
+      \end{figure}
 
-    \begin{figure}
-      %\centering
-      \missingfigure{Track-hit residual as a function of the hit position (tilt)}
-    \end{figure}
+      \subsubsection{Algorithm to estimate the deformations}
 
-    \begin{figure}
-      %\centering
-      \missingfigure{Residual (tilt and normal incidence)}
-    \end{figure}
-
-    \begin{figure}
-      %\centering
-      \missingfigure{Explanation of deviations}
-    \end{figure}
+      \begin{figure}
+        %\centering
+        \missingfigure{Residual after correction}
+      \end{figure}
     
   \section{Benefits of double-sided measurement}
 
