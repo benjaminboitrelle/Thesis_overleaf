@@ -1,47 +1,46 @@
 \chapter{Deformation studies of a ladder under the test beam}
 
   The first full-scale prototype which embeds twelve sensors glued on a copper flex-cable and a 8 \% density \gls{SiC} foam was tested in November 2011 at CERN-SPS facility with a pions beam of 120 GeV.
-  The motivations to perform such a test in real conditions are to, firstly, make sure that the ladder is working properly, secondly, that the sensors have a homogeneous response, and to point the benefits of a double sided measurement.
-  This chapter does not aim to present the test beam campaign and all the results, but to focus on a specific study of the ladder's deformation.
-  The reader can get some of the results here\todo{REF: loic's thesis}.
+  The motivations to perform such a test in real conditions are to, firstly, make sure that the ladder is working properly.
+  Secondly, to verify the response homogeneity of each sensor.
+  Finally, it has to prove the benefits of a double sided measurement.
+  This chapter does not aim to present fully the test beam campaign and all the results, but to focus on a specific study of the ladder's deformation observed during the alignment procedure.
+  More results about this test beam is presented in Loic Cousin's thesis\cite{cousin}.
   This chapter will present the test beam facility, as well as the experimental set-up.
-  Then, it will discuss a method to estimate the deformation of a ladder and how to overcome the deviations obtained during the analysis. 
+  The alignment procedure is explained and some results for the ladder positioned in a normal incidence, as well as the ladder titled in one direction are discussed.
+  The second part of the sensor will focus on the deviation observed during the alignment and will discuss a method to overcome these deformations.
   Finally, the benefits of double-sided measurements will be introduced.
   
   \minitoc
 
-  \section{PLUME-V1 tested at CERN-SPS}
+  \section{Test beam of the full complete PLUME ladder at CERN}
 
-    \subsection{Test beam facility}
+    \subsection{Test beam facility and beam test set-up}
 
     The test beam was performed at CERN-SPS in the North hall on the H6 beam line.
+    Negative pions with an energy of 120 GeV were used.
     The spill structure is 9.6 s with a dead time of 45.6 s. 
-    The test bean set-up is composed of 4 standards 120 $\mu\text{m}$ thinned Mi26 used as telescope and the DUT. 
+    The bench set-up is composed of 4 standards 120 $\mu\text{m}$ thinned MIMOSA-26 used as telescope planes, the PLUME ladder, called here \gls{DUT} and a $7 \times 7 \text{mm}^2$ used for triggering. 
     The reference planes are at 8 sigma S/N cut and stabilized to a temperature of 15 degrees Celsius.
-    Most of the runs are taken with a trigger frequency between 2 and 8 kHz except for two days on which it was between 1 and 1.3 kHz on a scintillator of $7 \times 7 \text{mm}^2$.
-    
-    \subsection{Experimental set-up}
+    The telescope is made of two arms, on each side of the \gls{DUT} and the distance between two sensors of the same arm is 5 mm.
+    Nonetheless, for one experimentation, the telescope was set-up differently, as discussed later.
+    Most of the runs were taken with a trigger frequency between 2 and 8 kHz except for two days on which it was between 1 and 1.3 kHz.
+    As the acquisition system is limited to eight inputs and the set-up has four reference planes, only four sensors of the \gls{DUT} were connected, two on each side.
+    Nevertheless, due to the size of the scintillator, the acquisition of sensors outside the beam is not mandatory. 
+    Thus, it reduces the data band-with.
+    The temperature of the \gls{DUT} was keep stable thanks to a air flow cooling system, provided by a fan.
+    Two different air flow speeds were used: 3 $\text{m.s}^{-1}$ and 6 $\text{m.s}^{-1}$. 
 
-      \subsubsection{Reference plane and coordinate system}
+    \subsection{Cartesian coordinate systems}
 
-    During the test beam, a telescope made of four reference planes mounted on two arms was used.
-    The reference planes are MIMOSA-26 sensors thinned down to 120 $\mu\text{m}$.
-
-
-     \begin{itemize}
-       \item Beam structure
-       \item Telescopes
-     \end{itemize}
-
-    \begin{figure}
-      %\centering
-      \missingfigure{TB geometries}
-    \end{figure}
-
-    The origin of the global coordinate system is determined with respect to the center of the two reference planes arms.
-    The Z axis is going along the beam direction, the x axis corresponds to the horizontal direction and the y axis to the vertical direction.
-    The local coordinate system is chosen at the center of a sensor, with w perpendicular to the plane, u is defined along the row and v along the columns.
-    The figure~\ref{fig:labCoordinates} summarises the global and local coordinate system.
+    Two coordinate systems are defined: the global and the local coordinate system.
+    The notation used for the global coordinate system is $(x, y, z)$ and is determined by all the sensors of the telescope.
+    The $x$ is the horizontal direction, $y$ along the vertical direction and the $z$ is along the beam axis.
+    The origin $(0,0,0)$ is of the system is defined with respect to the center of the two reference planes arms.
+    The notation $(u, v, w)$ is used for the local coordinate system.
+    The $u$ axis corresponds to a sensor row, the $v$ axis is along the pixel columns and the $w$ is perpendicular to the matrix.
+    The origin of the local system is in the center of the pixel matrix.
+    The figure~\ref{fig:labCoordinates} summarises the definition of the coordinate systems.
 
     \begin{figure}
       \centering
@@ -50,19 +49,42 @@
       \label{fig:labCoordinates}
     \end{figure}
 
-      \subsubsection{Data Acquisition}
+    \begin{figure}[!h]
+      \centering
+      \includegraphics[width = 0.5\textwidth]{Pictures/deformation/tb_cern_11_sketch_normal.pdf}
+      \caption{Top view sketch of the experimental set-up for the PLUME ladder in normal incidence with respect to the beam direction.}
+      \label{fig:tbNormal}
+    \end{figure}
 
-      The acquisition system is limited to eight sensors. 
-      Four inputs are necessary for the telescope, thus only four sensors on the PLUME ladder can be connected, two on each side of the mechanical structure.
-      Nevertheless, as the scintillator has a detection area of $7\times 7\text{mm}^2$, it is not mandatory to record the other sensors.
+    \subsection{Measurements}
 
-    \subsection{Software analysis}
+    To validate this prototype, different measurements were performed.
+    Nevertheless, this chapter will report only one study: the performance of the \gls{DUT} for titled position.
+    Measurements were performed with different angles and telescope set-up.
+    The first one is represented on the figure~\ref{fig:tilt36} and the angle varies between 28 and 40 degrees.
+    Some runs with a larger angle (60 degrees) were done. 
+    Due to the limited space between the telescope arm and the size of the \gls{DUT} with the air flow cooling system, the PLUME ladder was positioned outside the two telescope arms, as shown on figure~\ref{fig:tilt60}.
 
+    \begin{figure}[!h]
+    \centering
+    \begin{subfigure}[t]{0.45\textwidth}
+        \includegraphics[width=0.8\textwidth]{Pictures/deformation/tb_cern_11_sketch_tilted.pdf}
+        \caption{Configuration for an angle between 28 and 40 degrees.}
+        \label{fig:tilt36}
+    \end{subfigure}
+    ~%\quad
+     %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[t]{0.45\textwidth}
+        \includegraphics[width=0.95\textwidth]{Pictures/deformation/tb_cern_11_sketch_tilted120mm.pdf}
+        \caption{Configuration for an angle of 60 degrees.}
+        \label{fig:tilt60}
+    \end{subfigure}
+      \caption{Top view of the test beam configuration for different ladder tilts.}
+      \label{fig:tilt}
+    \end{figure}   
 
-      TAF:
-      \begin{itemize}
-        \item ROOT/C++
-      \end{itemize}
+    The analysis and the results shown in the following sections were done thanks to \gls{TAF}, the analysis software developed by the IPHC.
 
   \section{Spatial resolution studies}
    
@@ -73,8 +95,50 @@
 
     \subsection{Normal incidence track}
 
+    Only the hit position is provided by the each sensor.
+    To perform an analysis, the telescope planes have to be aligned each other to form tracks from the hit information.
+    A track correspond to the path of a particle through the system.
+    Thanks to this information, the tracks are then compared to the hit position on the \gls{DUT} to give some information, such as the detection efficiency (the ratio of tracks matched to hits on the \gls{DUT}), the spatial resolution (minimum distance to distinguish two incoming tracks).
+
+    The alignment procedure is done in two steps: firstly the telescope planes are aligned and then the \gls{DUT} is aligned with respect to the information provided by the reference planes. 
+    Although the position of each sensors is measured during in the test beam with a precision of the millimeter, for the analysis, a precision of the micron level has to be achieved.
+    During the analysis, three degrees of freedom were taken into account for the alignment: two translations for the $x$ and $y$-axes and one rotation around the $z$-axis.
+    The $z$ position is here fixed with respect to the measurement performed during the test beam campaign.
+
+      \subsubsection{Alignment procedure}
+
+      Firstly, the data are processed to extract the signal and the hit information.
+      The hit is defined as each pixel having a signal above the discriminator thresholds.
+      The pixels fired are grouped into cluster.
+      As the sensors used have a binary output, no information on the seed pixel is provided.
+      Thus, the hit position is obtained from a center of gravity calculation.
+
+      Secondly, the tracks are reconstructed from the hit position.
+      One plane is the origin of the global coordinate system and it is generally the first reference plan hit by the beam.
+      The track candidates are built perpendicular from the hit found in this first sensor and then extrapolated to the next planes.
+      The alignment is an iterative procedure that consists to minimise the residual, or the distance between the track extrapolated to the closest hit on the sensor.
+      For example, a track is built from the first reference plane and extrapolated to the last reference plane.
+      The residual is minimised and then, a track is defined as straight line connecting one hit on the first plane to a hit on the last plane.
+      The sensors in the middle are aligned with respect to this track candidate.
+      After the telescope alignment, a track candidate is dismissed if it is made of less than four hits or if the $\chi^2$ fit is greater than a fixed value determined by the user. 
+
+      For the alignment, two assumptions are defined. 
+      The telescope planes are parallel each other.
+      Thus the alignment consists of a translation along $x$ and $y$ and a rotation around the $z$-axis.
+      As the test beam was performed without a magnetic field and pions of 120 GeV were used, the Coulomb multiple scattering is neglected.
+      So, the tracks are perpendicular to the detectors and the alignment is not sensitive to the $z$ position.
+      A precision of the millimeter level for the position does not have a huge impact on the alignment.
+
+      \subsubsection{Alignment of the DUT}
+
+      When the telescope alignment is done, the reference tracks reconstructed by the reference planes are used to align the \gls{DUT}.
+      Its $z$ position is fixed, nonetheless, two degrees for freedom are added: the rotations along the $x$ and $y$-axes, plus the three other degrees of freedom defined above.
 
     \subsection{Ladder tilted in one direction}
+
+      The same alignment procedure, as presented above, was applied for runs where the ladder was tilted with respect to the beam direction, as shown on the figure~\ref{fig:tilt}.
+      Nevertheless, the alignment is more complicated.
+
     
     This test-beam results have already been discussed (reference to paper and thesis) and results, such as the efficiency or ... are no going to be presented.
 
