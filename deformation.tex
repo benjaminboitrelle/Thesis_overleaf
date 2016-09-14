@@ -485,10 +485,100 @@
    \subsection{Angular resolution}
 
    The mini-vectors give an access to new information not provided by a single sensor, the angular resolution.
-   The direction of the track is compared to the direction of the mini-vector.
+   The direction of the track can be compared to the direction of the mini-vector.
+   The estimation of the angular resolution is given by:
+
+   \begin{equation}
+     \sigma_{theta} = \frac{\sqrt{\sigma_{front}^2 + \sigma_{back}^2}}{d}
+     \label{eq:angularResolution}
+   \end{equation}
+
+   With $\sigma_{front}$ and $\sigma_{back}$ the spatial resolution on each side of the \gls{DUT} in microns and d the distance between the two sides in microns.
+   The spatial resolution here is $\sigma \simeq 3.6 \text{ }\mu\text{m}$ and the distance between the two planes 2000 microns.
+   The angular resolution estimated is then $\sigma_{\theta} = 0.146^{\degree}$.  
    
-   \begin{figure}
-     \missingfigure{Angular resolution plot}
-     \caption{Angular distribution.}
+   \begin{figure}[!h]
+     \centering
+     \includegraphics[width = 0.7\textwidth]{Pictures/deformation/hDiffAngleX_226056.png}
+     \caption{Distribution of the angle between the tracks direction and the mini-vectors direction.}
      \label{fig:angRes}
    \end{figure}
+
+   The figure~\ref{fig:angRes} depicts the distribution of the angle between the tracks direction and the mini-vectors direction.
+   As it can be seen, several peaks are present and the distribution can't be extrapolated by a Gaussian fit.
+   The sensors have a binary output and the hit position is determined by the centre-of-gravity of the clusters.
+   If the cluster is only one pixel, the centre-of-gravity will be in the middle of the pixel, but if the clusters contain more pixels, this centre-of-gravity will be displaced.
+   Moreover, the are some deviations in the distance between the hit projected to one side to the real hit position on this side.
+   The figure~\ref{fig:clusterSize} represents the minimum distance between one cluster on one side to the cluster on the other side.
+   
+   \begin{figure}[!h]
+     \centering
+      \begin{subfigure}[t]{0.45\textwidth}
+         \centering
+         \includegraphics[width = \textwidth]{Pictures/deformation/cluster_1x1.png}
+         \caption{One pixel per cluster.}
+      \end{subfigure}
+      \quad
+       %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+        %(or a blank line to force the subfigure onto a new line)
+      \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{Pictures/deformation/cluster_1x2.png}
+        \caption{$1 \times 2$ pixels per cluster.}
+      \end{subfigure}
+      
+      \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{Pictures/deformation/cluster_2x2.png}
+        \caption{$2 \times 2$ pixels per cluster.}
+      \end{subfigure}
+      \quad
+      \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{Pictures/deformation/cluster_3x3.png}
+        \caption{$3 \times 3$ pixels per cluster.}
+      \end{subfigure}
+      \caption{Minimum distance between the cluster projected on one side to the position of the cluster of this side.}
+      \label{fig:clusterSize}
+   \end{figure}
+
+   Hence, for one pixel clusters, the displacement between the two pixels is the pitch $p = 18.4 \text{ }\mu\text{m}$ and the angle between the two minimal hit position is then $\theta \sim 0.52^{\degree}$.
+   A selection of the events where only clusters of 1 pixel are considered is shown on the figure~\ref{fig:angRes1x1}.
+   The two peaks have a spacing closed to $0.5^{\degree}$.
+
+
+   \begin{figure}[!h]
+     \centering
+      \begin{subfigure}[t]{0.45\textwidth}
+         \centering
+         \includegraphics[width = \textwidth]{Pictures/deformation/hDiffAngleX11_226056.png}
+         \caption{One pixel per cluster.}
+         \label{fig:angRes1x1}
+      \end{subfigure}
+      \quad
+       %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+        %(or a blank line to force the subfigure onto a new line)
+      \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{Pictures/deformation/hDiffAngleX21_226056.png}
+        \caption{$2 \times 1$ pixels per cluster.}
+        \label{fig:angRes2x2}
+      \end{subfigure}
+      
+      \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{Pictures/deformation/hDiffAngleX22_226056.png}
+        \caption{$2 \times 3$ pixels per cluster.}
+        \label{fig:angRes2x3}
+      \end{subfigure}
+      \quad
+      \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{Pictures/deformation/hDiffAngleXg1g1_226056.png}
+        \caption{Clusters bigger than $2 \times 2$ pixels.}
+      \end{subfigure}
+      \caption{Minimum distance between the cluster projected on one side to the position of the cluster of this side.}
+      \label{fig:anglResDecomposed}
+   \end{figure}
+   
+
