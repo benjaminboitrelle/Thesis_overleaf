@@ -103,13 +103,14 @@
     The alignment steps to obtained the pointing resolution of the ladders are explained below for different run configurations. 
 
     \subsection{Normal incidence track}
-
-    The sensors are sending to the acquisition the position of the pixel hit, on which frame this event was recorded, as well as the sensor ID.
+     
+    For each event, the acquisition is recording the position of the pixels hit, the frame number, as well as the sensor ID.
+    %The sensors are sending to the acquisition the position of the pixel hit, on which frame this event was recorded, as well as the sensor ID.
     The binary file created contains no information about the relative position of each sensor.
     To perform an analysis, the telescope planes have to be aligned each other.
     The hits information of every plane is combined in order to create tracks. 
     A track corresponds to the path of a particle through the system.
-    Thanks to this information, the tracks are then compared to the hit position on the \gls{DUT} to give some information, such as the detection efficiency (the ratio of tracks matched to the hits on the \gls{DUT}), the spatial resolution (minimum distance to distinguish two incoming tracks).
+    Thanks to this information, the tracks are then compared to the hits position on the \gls{DUT} to give some information, such as the detection efficiency (the ratio of tracks matched to the hits on the \gls{DUT}) or the spatial resolution (minimum distance to distinguish two incoming tracks).
 
     The alignment procedure is done in two steps: firstly the telescope planes are aligned to minimise the mismatch of particles' tracks and to improve the tracking resolution.
     Afterward, the \gls{DUT} is aligned with respect to the information provided by the reference planes and then, the analysis itself is performed.
@@ -162,9 +163,8 @@
       \end{figure}
 
       As already explained, the alignment is an iterative procedure.
-      To find a hit matching a track, a region of interest is defined.
-      At the beginning, a hit in a $1000 \times 1000 \text{ }\mu\text{m}$ around the extrapolated one is search.
-      Step by step, the region of interest is restricted to achieve a region of six times the pitch.
+      At the beginning, a region of interest of $1000 \times 1000 \text{ }\mu\text{m}$ around the extrapolated is used to find a matching hit.
+      Step by step, this region of interest is restricted to achieve a region of six times the pitch of the sensor.
       
       After aligning the telescope, a candidate track is dismissed if it is made of less than four hits or if the $\chi^2$ fit is greater than a fixed value determined by the user. 
       Two assumptions are used during the alignment. 
@@ -177,12 +177,11 @@
       \subsubsection{Alignment of the DUT}
 
       When the telescope alignment is done, the reference tracks reconstructed by the reference planes are used to align the \gls{DUT}.
-      Its $z$ position is fixed, nonetheless, two degrees of freedom are added: the rotations along the $x$ and $y$-axes, plus the three other degrees of freedom defined above.
-      To assist the user in the alignment steps, several scatter plots are produced (see figures~\ref{fig:alignUV},~\ref{fig:alignVU},~\ref{fig:alignUU} and~\ref{fig:alignVV}).
+      Its $z$ position is fixed, nonetheless, two degrees of freedom are added to the three degrees defined above: the rotations along the $x$ and $y$-axes.
+      To assist the user in the alignment steps, several scatter plots are produced (see figure~\ref{fig:alignmentDUT}).
       For examples, the figures~\ref{fig:alignUV} and~\ref{fig:alignVU} help to indicate a tilt in the $z$-direction, whereas figures~\ref{fig:alignUU} and~\ref{fig:alignVV} help to find shift and/or tilt in the respective $u$ and $v$-directions.
-
       The figures~\ref{fig:residualU} and~\ref{fig:residualV} show the residuals distribution in both direction for one sensor of the \gls{DUT}.
-      The width of these distributions, called spatial residual $\sigma_{Res}$, is approximately 4.1 $\mu\text{m}$ and is a combination of the telescope resolution $\sigma_{tel}$, the multiple scattering $\sigma_{M.S}$ and the pointing resolution of the sensor $\sigma_{DUT}$, as described in equation~\ref{eq:pointingResolution}.
+      The width of these distributions, called spatial residual $\sigma_{Res}$, is approximately 4.1 $\mu\text{m}$ and is a combination of the telescope resolution $\sigma_{tel}$, the multiple scattering $\sigma_{M.S}$ and the pointing resolution or spatial resolution of the sensor $\sigma_{DUT}$, as described in equation~\ref{eq:pointingResolution}.
       
       \begin{equation}
         \sigma_{Res}^2 = \sigma_{tel}^2 + \sigma_{DUT}^2 + \sigma_{M.S}^2
@@ -195,7 +194,7 @@
         \sigma_{DUT} = \sqrt{\sigma_{Res}^2 - \sigma_{tel}^2}
       \end{equation}
 
-      For the configuration of the telescope, its spatial resolution is $\sigma_{tel} \simeq 1.8 \text{ }\mu\text{m}$, thus the sensor studied here has a pointing resolution $\sigma_{DUT} \simeq 3.7 \text{ }\mu\text{m}$ for a threshold of 6 mV.
+      For the configuration of the telescope used, the spatial resolution of the whole system measured is $\sigma_{tel} \simeq 1.8 \text{ }\mu\text{m}$, thus the sensor studied here has a pointing resolution $\sigma_{DUT} \simeq 3.7 \text{ }\mu\text{m}$ for a threshold of 6 mV.
       This result is corroborating the pointing resolution of a single MIMOSA-26, as shown on figure~\ref{fig:mi26Perf} in chapter~\ref{chap:vxd}.
 
       \begin{figure}[H]
@@ -252,9 +251,11 @@
       Three different angles were tested ($28^{\degree}$, $36^{\degree}$ and $60^{\degree}$), as well as different threshold cuts and air flow speed. 
       The results presented below are for a run with a $36^{\degree}$ tilt, a threshold sets to 5 mV and an air flow speed of 3 $\text{m.s}^{-1}$.
       The same alignment procedure as presented in the subsection above is used, nevertheless, the alignment of the plane along the $u$-direction is more complicated than the other direction.
-      Indeed, the scatter plot in the $v$-direction is shown on figure~\ref{fig:scatterDVV_deformed} represents a good alignment and the spatial residual (see figure~\ref{fig:residualVDef}) is comparable to the one find for normal incidence tracks.
+      Indeed, the scatter plot in the $v$-direction for the front plane which is shown on figure~\ref{fig:scatterDVV_deformed} represents a good alignment and the spatial residual (see figure~\ref{fig:residualVDef}) is comparable to the one find for normal incidence tracks.
       But, the scatter plot $\Delta u=f(u_{hit})$ as presented on figure~\ref{fig:scatterDUU_deformed} shows a banana shape that can not be flatten with a traditional alignment procedure.
       Moreover, the spatial residual measured on figure~\ref{fig:residualUDef} is larger (6.8 $\mu\text{m}$ instead of $\sim 4 \text{ }\mu\text{m}$ in the $v$-direction) and the distribution has a large tail on the positive values.
+      Concerning the back plane, the deformation is also visible on figure~\ref{fig:scatterDUU_deformed_back} but have a different form.
+      The spatial residual measured for this plane is more than two times larger than the other side (14.1 $\mu\text{m}$) as it is depicted on figure~\ref{fig:residualUDef_back}.
 
       \begin{figure}[!h]
         \centering
@@ -434,14 +435,14 @@
         \label{eq:polynomials}
       \end{equation}
       
-      The $omega_{k}$ are the coefficients that quantify the sensor curvature and $P_{k}(u_{r})$ are the Legendre polynomials defined by the equation~\ref{eq:Legendre}:
+      The $\omega_{k}$ are the coefficients that quantify the sensor curvature and $P_{k}(u_{r})$ are the Legendre polynomials defined by the equation~\ref{eq:Legendre}:
 
       \begin{equation}
         P_{k}\left(u_{r}\right) = \frac{1}{2^{k}!}\frac{d^{k}}{du_{r}^{k}} \left( (u_{r}^2 - 1)^{k}\right)
         \label{eq:Legendre}
       \end{equation}
 
-      Then, the exact hit position is calculated by correcting the hit position extrapolated by $-\omega(u_{r}.\tan{\theta})$, according to the equation~\ref{eq:deltaW} and the residual $\Delta u$ is determined by taking into account the tracks' angle during the analysis.      
+      Then, the exact hit position is calculated by correcting the hit position extrapolated by $\left(-\omega(u_{r}).\tan{\theta}\right)$, according to the equation~\ref{eq:deltaW} and the residual $\Delta u$ is determined by taking into account the tracks' angle during the analysis.      
 
       \begin{figure}[h]
         \centering
@@ -504,9 +505,8 @@
 
       For example, using a $11^{th}$ order Legendre polynomials has improved the spatial residual for both planes. 
       Instead of $\sigma_{u} \simeq 6.8 \text{ }\mu\text{m}$ for the front plane, the spatial residual is $\sigma_{u} \simeq 5.9 \text{ }\mu\text{m}$, namely an improvement of 13.2 \% of the measured spatial residual and achieving a pointing resolution of $5.6 \text{ }\mu\text{m}$ for a tilt at $36^{\degree}$.
-      Concerning the back plane, the spatial residual measured was $12.5 \text{ }\mu\text{m}$ and after the correction it achieves $6.2 \text{ }\mu\text{m}$, namely an improvement of 50.4 \% on the measured spatial residual.
+      Concerning the back plane, the spatial residual measured was $14.1 \text{ }\mu\text{m}$ and after the correction it achieves $6.2 \text{ }\mu\text{m}$, namely an improvement of 56.0 \% on the measured spatial residual.
       The point resolution of the plane is then $5.9 \text{ }\mu\text{m}$
-
       As it can be seen on figure~\ref{fig:scatterDUU_corrected_front}, the deviations are reduced. 
       Nevertheless, the edges of the plot are less corrected.
       This is due to the fact that the length of the sensor used to parametrise the Legendre function is a bit different to the real size of the sensor due to the deformation.
@@ -606,7 +606,7 @@
           Back  &      28       & $ 5.7 \ \pm \ 0.1 $ & $ 4.7 \ \pm \ 0.1 $ &    $17.5 \ \%$  \tabularnewline
           %\hline %----------------------------------------------------------------------------------------------------------------
           \hline %----------------------------------------------------------------------------------------------------------------
-          Front &      36       & $ 12.5 \ \pm \ 0.1 $ & $ 6.1 \ \pm \ 0.1 $ &    $51.2 \ \%$ \tabularnewline
+          Front &      36       & $ 14.1 \ \pm \ 0.1 $ & $ 6.1 \ \pm \ 0.1 $ &    $56.0 \ \%$ \tabularnewline
           Back  &      36       & $ 6.8 \ \pm \ 0.1 $ & $ 5.9 \ \pm \ 0.1 $ &    $13.2 \ \%$  \tabularnewline
           %\hline %----------------------------------------------------------------------------------------------------------------
           \hline %----------------------------------------------------------------------------------------------------------------
@@ -678,17 +678,19 @@
       \label{fig:residualFrontBackLadder}
     \end{figure}
 
-    For a run in normal incidence, the spatial resolution measured on each side is $\sigma_{front} \simeq \sigma_{back} \simeq 4 \text{ }\mu\text{m}$, according to the figure~\ref{fig:residualFrontBackLadder}.
-    The resolution of the mini-vector should be then $\sigma_{res} \simeq 2.8 \text{ }\mu\text{m}$.
-    The measurement of the residual for the mini-vector displayed on the figure~\ref{fig:residualMV} gives a residual of 3.2 $\mu\text{m}$.
-    Taking into account the resolution of the telescope, the spatial resolution achieved by the mini-vector is $\sigma_res{} \simeq 2.9 \text{ }\mu\text{m}$.
-
-    \begin{figure}[h]
+    \begin{figure}[!h]
       \centering
       \includegraphics[width = 0.7\textwidth]{Pictures/deformation/hDiffPosX_226056.png}
       \caption{Residual distribution of the mini-vector measured on the intermediate plane.}
       \label{fig:residualMV}
     \end{figure}
+
+    For a run in normal incidence, the spatial resolution measured on each side is $\sigma_{front} \simeq \sigma_{back} \simeq 4 \text{ }\mu\text{m}$, according to the figure~\ref{fig:residualFrontBackLadder}.
+    The resolution of the mini-vector should be then $\sigma_{res} \simeq 2.8 \text{ }\mu\text{m}$.
+    The measurement of the residual for the mini-vector displayed on the figure~\ref{fig:residualMV} gives a residual of 3.2 $\mu\text{m}$.
+    Taking into account the resolution of the telescope, the spatial resolution achieved by the mini-vector is $\sigma_{res} \simeq 2.9 \text{ }\mu\text{m}$.
+
+
 
    \subsection{Angular resolution}
 
@@ -716,7 +718,7 @@
    As it can be seen, several peaks are present and the distribution can't be extrapolated by a Gaussian fit.
    The sensors have a binary output and the hit position is determined by the centre-of-gravity of the clusters.
    If the cluster is only one pixel, the centre-of-gravity will be in the middle of the pixel, but if the clusters contain more pixels, this centre-of-gravity will be displaced.
-   Moreover, the are some deviations in the distance between the hit projected to one side to the real hit position on this side.
+   Moreover, they are some deviations in the distance between the hit projected to one side to the real hit position on this side.
    The figure~\ref{fig:clusterSize} represents the minimum distance between one cluster on one side to the cluster on the other side.
    
    \begin{figure}[!h]
@@ -755,7 +757,7 @@
    The two peaks have a spacing close to $0.5^{\degree}$.
    For clusters of $1 \times 2$ or $2 \times 2$ pixels, the distance between the two hit positions reconstructed via centre-of-gravity is half the pitch.
    Hence, the peaks are two times closer with a spacing of nearly $0.25^{\degree}$, as seen on the figures~\ref{fig:angRes2x1} and~\ref{fig:angRes2x2}.
-   Nevertheless, for larger cluster sizes......
+   Nevertheless, for larger cluster sizes the angular distribution has only one peak around $0^{\degree}$.
 
 
    \begin{figure}[!h]
@@ -795,7 +797,7 @@
 
   \section{Conclusions}
 
-  Along with this chapter, the test beam campaign done in November 2011 at CERN was discussed. 
+  Along this chapter, the test beam campaign done in November 2011 at CERN was discussed. 
   The results were focused on the alignment procedure, as well as the performances of the ladder in normal and tilted positions.
   The runs in tilted position were challenging to align due to some deviations between the track-hit residual and the actual hit position on the plane.
   This has the effect of increasing the spatial residual measured.
