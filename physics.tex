@@ -223,7 +223,7 @@
     The generation of Mont-Carlo events are performed with WHIZARD.
     This software includes Standard Model processes, as well as a large variety of BSM models.
     For the purpose of the \gls{ILC}, it can simulate the beamstrahlung, the \gls{ISR} and the beam polarisation.
-    Although the hard interaction are simulated thanks to WHIZARD, the hadronisation and fragmentation are implemented via PYHIA.
+    Although the hard interaction are simulated thanks to WHIZARD, the hadronisation and fragmentation are implemented via PYTHIA.
     
     Afterward the physics events are generated, the particle interaction inside the detector is simulated with MOKKA.
     The software is based on GEANT4 simulation toolkit and is par of the ILCSoft.
@@ -231,6 +231,11 @@
     This model simulates the dead areas due to cabling, cooling system and mechanical structure and has a silicon-tungsten electromagnetic calorimeter, as well as an analog hadronic calorimeter.
     
     Finally, the events are reconstructed thanks to Marlin.
+
+  \subsection{Signal}
+
+  The $\nu\nu H$ final state is produced via Higgs-Strahlung and WW-fusion. 
+  The leading order Feynman diagrams are shown on figure~\ref{fig:higgsStrahlung} and~\ref{fig:WW-fusion}.
 
   \subsection{Background processes}
 
