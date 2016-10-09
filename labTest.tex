@@ -3,9 +3,12 @@
 \label{chap:labTests}
 
   The chapter~\ref{chap:vxd} has described the \gls{PLUME} project with the different prototypes that were built. 
-  Since the version-1 of \gls{PLUME}, the detector is more complicated due to the six sensors on a module that have to be synchronised and the flex-cable which has a lot of thin metal traces to pilot and read the sensors.
-  Before to perform a test in real conditions at CERN or at DESY, the device has to be validated and characterised first in the lab.
-  This chapter is introducing the different steps from the assembly procedure performed at Strasbourg (for the module) and Bristol (for a complete ladder), to the final tests to study the sensors response, and include electrical functionality tests.
+  Since the version-1 of \gls{PLUME}, the ladder has a more complicated electrical scheme due to the six sensors on each module.
+  The flex-cable used has a lot of thin metal layers connected to the sensors.
+  The synchronisation, as well the powering and data transmission of the chips have to be work without any problem.
+  %Since the version-1 of \gls{PLUME}, the detector is more complicated due to the six sensors on a module that have to be synchronised and the flex-cable which has a lot of thin metal traces to pilot and read the sensors.
+  Before performing a test under real conditions at test beams CERN or at DESY, the device has to be validated and characterised in the lab.
+  This chapter is introducing the different steps from the assembly procedure performed at Strasbourg (for the module) and Bristol (for a complete ladder), to the final tests to study the sensors response, and include electrical functionality tests at Hamburg.
   %This chapter is introducing the different steps from the assembly procedure performed at Strasbourg (for the module) and Bristol (for a complete ladder), to the final tests with a radiation source, and include electrical functionality tests.
 
   %The \gls{PLUME} ladders are complex detectors and the last prototype was designed to optimise the material budget, by decreasing the width of the flex-cable and the metal traces.
@@ -23,7 +26,7 @@
 \section{PLUME assembly procedures}
 
   The ladders are built in two steps. 
-  Firstly, two independent modules are mounted at Strasbourg, then tested at DESY, afterward, they are shipped to Bristol where the modules are glued together on a \gls{SiC} foam.
+  Firstly, two independent modules are assembled at Strasbourg, then tested at DESY, afterward, they are shipped to Bristol where the modules are glued together on a \gls{SiC} foam to form a \gls{PLUME} ladder.
   The assembly procedures are introduced below, as well as the visual inspection between the mounting steps.
 
   \subsection{Module and ladder assembly}
@@ -33,18 +36,19 @@
 
     The module assembly is performed at the IPHC by the microelectronics group and is done in three steps.
     First of all, the passive components are soldered onto a flex-cable.
-    Then, an epoxy layer with a thickness of $300 \text{ }\mu\text{m}$ is glued under the connector side.
+    Then, an epoxy layer with a thickness of $300~\mu\rm{m}$ is applied under the connector side.
     Due to the force applied by pulling and pushing the jumper cable on the ZIF connector, the epoxy layer has the role to reinforce this area and to avoid the flex-cable to be damaged.
-    The module is then placed on a metal jig to ensure its flatness thanks to a vacuum suction.
+    The module is then placed on a metal jig to ensure its flatness using a vacuum suction.
     The next step consists of gluing the six sensors onto the flex.
-    The positioning of the chips was used to be done manually, but a programmable robot which has a maximum mismatch alignment reaching approximately $20 \text{ }\mu\text{m}$ is in charge of this procedure.
-    As the sensors are thin and fragile pieces, the manipulation is done thanks to a vacuum sucker.
+    The positioning of the chips was used to be done manually, but a programmable robot which has a maximum mismatch alignment reaching approximately $20~\mu\rm{m}$ is now used for this procedure.
+    As the sensors are thin and fragile pieces, their are manipulated with a vacuum sucker.
     Few drops of glue are dispensed on the flex and then, the sensors are gently pressed one by one on top of it to be glued.
-    Afterward, the glue is cured in an oven and the chips can't be removed anymore.
-    If a sensor is not working properly, it can't be replaced by a new one because the force needed to un-glue it might break the fragile flex-cable.
-    On the worse case scenario, a new sensor can be glued on top of it, but this solution can't be envisaged for a real ladder as it increases the material budget locally.
-    In order to avoid this situation, the sensors are probe-tested at the IK in Frankfort, to select only the good ones before the module assembly.
-    The final step consists of soldering the 540 wire-bonds (a single MIMOSA-26 requires 90 wire-bonds) thanks to a semi-automatic machine.
+    Afterward, the glue is cured in an oven and the chips cannot be removed anymore.
+    If a sensor is not working properly, it can not be replaced by a new one because the force needed to remove it might break the fragile flex-cable.
+    On the worse case scenario, a new sensor can be glued on top of it, but this solution cannot be envisaged for a real ladder as it increases the material budget locally.
+    
+    In order to avoid this situation, the sensors are probe-tested at the IK in Frankfurt, to select only the good ones before the module assembly.
+    The final step consists of soldering the 540 wire-bonds (a single MIMOSA-26 requires 90 wire-bonds) using a semi-automatic machine.
     The wire-bonds can be protected by applying a glob-top epoxy\todo{Citation to a glob-top paper}.
     It has the advantage to offer a protection against moisture or contaminants, an electrically insulation and prohibits their movement during other manipulations (see~\ref{subsec:visualInspection} for the utility of the glob-top epoxy). 
     Nevertheless, it increases the material budget locally and if an electrical problem occurs, the wire-bonds can't be disconnected.
@@ -65,11 +69,11 @@
     \subsubsection{Ladder assembly}
 
     The ladder assembly is performed by the Bristol team.
-    It consists of group two modules together on a spacer (\gls{SiC}) and a bate (an aluminum plate).
+    It consists of two modules together on a spacer (\gls{SiC}) and a bate (an aluminum plate).
     The operation is done entirely by hands.
-    Each module is placed on a separate jig containing grooves and alignment pins to ensure the positioning.
+    Each module is placed on a separate jig containing grooves and alignment pins to ensure the positioning, as presented on figure~\ref{fig:ladderAssemblyStep1}.
     The sensitive side of the module is facing the jig to have an access to the rear of the flex-cable for the gluing procedure.
-    Then, the foam is placed on one module below the sensors, while the bate is glued below the connector with an overlap on the foam.
+    Then, the foam is placed on one module below the sensors, while the bate is glued below the connector with an overlap on the foam (see figure~\ref{fig:ladderAssemblyStep2})
     The second module receives some glue on the backside before the jigs are assembled together.
     The glue is then cured for one day.
     The amount of glue needed for the assembly was studied carefully. 
@@ -102,15 +106,15 @@
   As explain in subsection~\ref{subsec:modAssembly}, the sensors positioning was performed firstly manually and later was switched to an automatic procedure.
   To tune properly the robot which is in charge of gluing the sensors on the flex-cable, the microelectronic group needs a position feedback.
   The modules are then inspected under a microscope to measure the gap between two sensors, and their position relatively to each other.
-  The distance between the last pixel of a sensor to the neighboring one should be less than $500 \mu\text{m}$, taking into account the $20\mu\text{m}$ robot's mismatch.
+  The distance between the last pixel of a sensor to the neighboring one should be less than $500~\mu\rm{m}$, taking into account the $20~\mu\rm{m}$ robot's mismatch.
   The figure~\ref{fig:visAlign} is a picture taken with a microscope showing the relative position of two sensors on the bottom of the matrix for an aluminum straight module.
   %A visual inspection of the position,  as well as any problem on the matrix, as a crack, as well as a check of the wire-bonds have to be done before any electrical validation.
-  The gap between the two edges is approximately $51 \mu\text{m}$. 
+  The gap between the two edges is $\sim 51~\mu\rm{m}$. 
   
   \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{Pictures/labTests/alignment_sensors.jpg}
-    \caption{Visualisation of the alignment. The distance between the two edges is approximately $51 \mu\text{m}$.}
+    \caption{Visualisation of the alignment. The distance between the two edges is $\sim 51~\mu\rm{m}$.}
     \label{fig:visAlign}
   \end{figure}
   
@@ -121,7 +125,7 @@
   The sensitive part and the electronics were not damaged, but some wires were touching leading to a shortcut.
   Fortunately, the microelectronic group at Strasbourg was able to unbend the wires and repair the most damaged one.
   This module is fully operational and working correctly.
-  By using the glob-top method, the wire-bonds can survive to falling cable, but if they are not assigned to the right pad, there is no possibility to correct it anymore.
+  %By using the glob-top method, the wire-bonds can survive to falling cable, but if they are not assigned to the right pad, there is no possibility to correct it anymore.
 
   \begin{figure}[!h]
     \centering
@@ -138,17 +142,17 @@
 
   \subsection{Auxiliary board}
 
-  A module or a PLUME ladder is connected to the outside world thanks to a jumper cable plugged on a ZIF connector at one edge of the module.
-  This jumper cable is linked to an auxiliary board which is in charge to power the sensors of the module, but also to pilot them and to transfer the data to the data acquisition system.
-  This auxiliary card is connected to a power supply board which is in charge to provide the nominal voltages needed by the sensors.
-  The power supply board delivers the digital and analog voltages ($V_{DD_D}$ and $V_{DD_A}$ are set to 3.3 V thanks to two independent potentiometers), the buffers voltage $V_{CC}$ fixed to 3.3 V, as well for the temperature measurement diodes, a $\pm 5$ V for trigger and a power pulsing signal.
-  For the lab tests to validate the module, the power pulsing is deactivated by connecting this pin to the +5 V pin of the trigger.
-  The clamping voltage $V_{clp}$ used for the polarisation of the pixel has to be in the range $\left[2, 2.2\right]$ V.
-  On the first version of the auxiliary board, it was provided by an external power supply, but the new version delivers the 2.1 V needed, thanks to an I2C chips or a potentiometer (the user can select which methods to use thanks to a jumper).
+  A module or a PLUME ladder is connected to the outside world by plugging a jumper cable on a ZIF connector at one edge of the module.
+  This jumper cable is linked to an auxiliary board which powers the sensors of the module, but also pilots them and to transfer the data to the data acquisition system.
+  This auxiliary card is connected to a power supply board which provides the nominal voltages needed by the sensors.
+  The power supply board delivers the digital and analog voltages ($V_{DD_D}$ and $V_{DD_A}$ are set to $3.3~\rm{V}$ using two independent potentiometers), the buffers voltage $V_{CC}$ fixed to $3.3~\rm{V}$, as well for the temperature measurement diodes, a $\pm 5~\rm{V}$ for trigger and a power pulsing signal.
+  For the lab tests to validate the module, the power pulsing is deactivated by connecting this pin to the $+5~\rm{V}$ pin of the trigger.
+  The clamping voltage $V_{clp}$ used for the polarisation of the pixel has to be in the range $\left[2, 2.2\right]~\rm{V}$.
+  On the first version of the auxiliary board, it was provided by an external power supply, but the new version delivers the $2.1~\rm{V}$ needed by using an I2C chips or a potentiometer (the user can select which methods to use thanks to a jumper).
   The auxiliary board is also connected to a computer in charge of the sensors' slow control.
-  Two RJ45 are providing the JTAG registers, as well as the start and reset signal. 
+  Two RJ45 are providing the \gls{JTAG} registers, as well as the start and reset signal. 
   For a complete ladder, the two modules have to be synchronised and the clock can be injected by a clock distribution board.
-  One RJ45 connector is dedicated to the JTAG slow control and the signals delivered are: 
+  One RJ45 connector is dedicated to the \gls{JTAG} slow control and the signals delivered are: 
 
   \begin{itemize}
     \item \textbf{Test Data In (TDI)}: received the serial data input feed to the test data registers or instruction register
@@ -166,42 +170,23 @@
 
   The principle of the connection between the auxiliary board and the different components to operate one module is depicted on the figure~\ref{fig:plumeAux}.
 
-  Before to connect a PLUME module to the auxiliary board, the voltages have to be set and the JTAG communication has to be checked on the auxiliary card.
-  Two external power supplies are delivering 8 V D.C. to the power supply board and are giving an information on the consumption of the whole system.
-  The empty auxiliary board has a current consumption about 350 mA.
+  Before connecting a PLUME module to the auxiliary board, the voltages have to be set and the \gls{JTAG} communication has to be checked on the auxiliary card.
+  Two external power supplies are delivering $8~\rm{V}$ D.C. to the power supply board and are giving an information on the consumption of the whole system.
+  The empty auxiliary board has a current consumption about $350~\rm{mA}$.
   Then, the $\text{V}_{CC}$, $\text{V}_{DD_d}$ and $\text{V}_{DD_a}$ should be at 3.3 V, but only the two last voltages can be adjusted thanks to two potentiometers on the power supply board.
-  The $\text{V}_{clp}$ is set to 2.1 V and should not be outside the range $\left[2, 2.2\right]$ V.
+  The $\text{V}_{clp}$ is set to $2.1~\rm{V}$ and should not be outside the range $\left[2, 2.2\right]~\rm{V}$.
   The JTAG communication is verified thanks to a probe linked to an oscilloscope.
   The observed signals should be:
 
   \begin{description}
     \item[TDI:]
     \item[TDO:]
-    \item[TMS:] by default is fixed to 1 when it is not used
+    \item[TMS:] by default is fixed to 1 and change to 0 at every register selection
     \item[TCK:] this clock is slower (30 kHz) than the 80 MHz needed by the sensors and is only dedicated for the slow control
     \item[Reset:] by default is fixed to 1 and should change to 0 every time the reset is called by the JTAG software
     \item[Start:] 
     \item[Clock:] Independently of the method used, the 80 MHz clock has to be correctly distributed along the auxiliary card
   \end{description}
-
- % On one edge of the module, a ZIF connector is used to power the sensors, but also to pilot them and to transfer the data to the outside world.
- % A jumper cable is connected between the module and an auxiliary board.
- % This card is connected to a power supply board which is providing the nominal voltages needed by the module.
- % 
- % The $\text{V}_{DD_d}$ and $\text{V}_{DD_a}$, used for the buffer, are tunable thanks to two potentiometers, while $\text{V}_{CC}$, used for buffers is fixed to 3.3 V.\todo{Look for VDD and VCC}
- % The auxiliary board is also connected to a computer for the slow control.
- % Two RJ45 are in charge to provide the JTAG registers, as well as the start, the reset signal and in a case of a complete ladder an external clock.
-
-  %First of all, the auxiliary board is connected to the power supply board which is plugged to two external power supplies, which are delivering  8 V D.C.
-  %The current of the empty auxiliary board should be about 350 mA.
-  %The first step is to check the different voltages on the auxiliary board.
-  %The $\text{V}_{CC}$, $\text{V}_{DD_d}$ and $\text{V}_{DD_a}$ should be at 3.3 V, but only the two last voltages can be adjusted thanks to potentiometers on the power supply board.
-  %The $\text{V}_{clp}$ is set to 2.1 V and should not be outside the range $\left[2, 2.2\right]$ V.
-  %An I2C chips or a potentiometer are providing this voltage.
-  %The auxiliary board has a section dedicated to the power pulsing, nevertheless, for the purpose of the electrical validation, the system is disconnected.
-
-  %The clock provided to the sensors should be at 80 MHz and is transmitted to the sensors via LVDS.
-  %The connections of the auxiliary board to the different component are summarised on figure~\ref{fig:plumeAux}.
 
   \begin{figure}[!h]
     \centering
@@ -210,36 +195,7 @@
     \label{fig:plumeAux}
   \end{figure}
 
-
-  %For the test procedure, but also for the acquisition, the PLUME module is connected to an acquisition board, via a jumper cable.
-  %This board is in charge to distribute the power supplies, the control signals, and the data output.
-  %A power supply board is providing the $\text{V}_{dd_d}$ and $\text{V}_{dd_a}$, the $\text{V}_{CC}$ and 5 V.
-  %The $\text{V}_{dd_d}$ and $\text{V}_{dd_a}$ are tunable thanks to two potentiometers, while $\text{V}_{CC}$ is fixed.
-
-  %A PLUME module is connected to an auxiliary board via a jumper cable in order to be operated.
-  %This auxiliary board is providing the power supply and the slow control to the ladder and give then an access to the sensors' output.
-  %Two RJ45 inputs are providing the slow control, the reset and start signal and has the possibility to provide an external clock, used only when two modules are working together to make sure that they are synchronised.
-  %A power supply board, connected to the auxiliary board, is providing the digital and analog voltage, plus 
-
-  %An auxiliary board is in charge to power a PLUME module and to send the slow control to pilot each sensor. 
-  %If only one module is tested, an oscillator is providing the 80 MHz clock.
-
-  %Sixteen pads are used to read the response of the six sensors and the clock and marker of the sensor number 6.
-  %It also has an output connection to check the response of each sensor with an oscilloscope, as well as for the acquisition.
-  %It is in charge to provide the 80 MHz clock, via oscillator or via an external input. 
-
-  %\begin{itemize}
-  %  \item Generate the 80 MHz for the 6 Mi 26 by an oscillator on board or by an external input.
-  %  \item Bufferisation of the Digital signals sent to the chips (JTAG and control signals) and the digital signal provide by the 6 Mi26 to the DAQ in LVDS .
-  %  \item Regulators for the power supply of the sensors.
-  %  \item Power pulsing
-  %  \item Current measurement
-  %  \item test point for the DAC characterisation
-  %\end{itemize}
-
   \subsection{Smoke test}
-
- % After the connections were controlled and before to connect the module to the bench, the different voltages have to be set.
 
   After the validation of the auxiliary board (and the power supplies switched off), the module can be linked to it via a jumper cable.
   The voltages applied to the device have to be adjusted again due to the dissipation inside the flex-cable and the jumper cable.
@@ -253,6 +209,7 @@
   \end{figure}
 
   Two versions of the jumper cable were produced, one very flexible with a high resistivity and the second one stiff with a low resistivity.
+ % The first one was not used during the test because of a problem during the fabrication.
   The most flexible cable was not used because of an important voltage drop between the auxiliary board and the module, but also because of a wrong fabrication.
   Indeed, after setting the voltages to the nominal value and plug in the module, a short-circuit happened.
   The auxiliary board tests were correct and were proofed one more time without the module.
@@ -321,25 +278,25 @@
 
 \section{Noise measurements}
 
-  In the chapter~\ref{chap:vxd}, the principle of the \gls{CMOS} sensors was described and the noise of this technology was discussed.
+  In chapter~\ref{chap:vxd}, the principle of the \gls{CMOS} sensors is described and the noise of this technology is discussed.
   As a reminder, the two noise contributions are the \acrfull{TN} and the \acrfull{FPN}.
   The \gls{FPN} is determined as an offset to subtract from the pixel response to reduce its non-uniformity response, while the \gls{TN} is coming from the contribution of different noises during the reset, the integration and the readout of the pixel.
   These noises have to be measured in the lab in order to find the optimum configuration to detect physics signal and reduce the noise impact on the measurement.
 
   \subsection{Characterisation bench}
 
-  The noise is estimated thanks to a bench of characterisation composed of a National Instrument PXIe crate equipped with a 6562 digital card, two power supplies, a power distribution board, an auxiliary and a JTAG card, as well as the module to test.
+  The noise is estimated with a bench of characterisation composed of a National Instrument PXIe crate equipped with a 6562 digital card, two power supplies, a power distribution board, an auxiliary and a JTAG card, as well as the module to test.
   The procedure described here is applied to a single MIMOSA-26, or a PLUME module, as well as an MIMOSA-28 sensor.
   Nevertheless, the data acquisition software used during the characterisation is slightly different to match the clock speed, depending on the sensor technology.
   The four data outputs are connected from the pins on the auxiliary board to the digital card thanks to a National Instrument spider cable.
-  Firstly, a test pattern, which loads automatically a JTAG file for this test, is done to read the \textit{header} and \textit{trailer} during several frames with a determined data length.
-  It has been observed that the \textit{clock} output cable has to be eighty centimeters longer than the three other cables to ensure the synchronisation on the rising edge.
+  Firstly, a test pattern, which loads automatically a \gls{JTAG} file for this test, is done to read the \textit{header} and \textit{trailer} during several frames with a determined data length.
+  It has been observed that the \textit{clock} output cable has to be $80~\rm{cm}$ longer than the three other cables to ensure the synchronisation on the rising edge.
   If this is not done or if one of the cables has a wrong polarity, the software is not able to read the \textit{header} and \textit{trailer} and the characterisation can't be done.
 
   Then, the sensors are configured in the discriminator output mode.
-  The zero suppression mode is bypassed, pixels and discriminators are in normal mode ( the whole matrix read in $115\mu\text{s}$), but the readout frequency is lower (10 MHz) via 2 LVDS output pads.
+  The zero suppression mode is bypassed, pixels and discriminators are in normal mode ( the whole matrix read in $115~\mu\rm{s}$), but the readout frequency is lower ($10~\rm{MHz}$) via two LVDS output pads.
   The control of the discriminators is divided into four sub-matrices, each containing 288 columns.
-  Thus, for one sub-matrix a threshold value in DAC units in the JTAG software is driving all the discriminators, depending on a baseline value.
+  Thus, for one sub-matrix a threshold value in DAC units in the \gls{JTAG} software is driving all the discriminators, depending on a baseline value.
   For one line, usually one located in the middle of the matrix, its baseline response is studied to find the "middle-points" by looking for the threshold of each sub-matrix, in which the discriminators are reaching a half activation.
   When this "middle-points" are determined, the homogeneity of the matrix is checked, as shown on the figure~\ref{fig:homogeneityMi26}.
   Due to the structure of the sensor, the homogeneity is not perfect and some dispersions in the discriminator response are observed between the beginning and the end of a sub-matrix.
@@ -356,7 +313,7 @@
   On the one hand, few pixels can be always activated even if the discriminators were closed.
   The figure~\ref{fig:openPixel} depicts the matrix output for all the discriminators closed.
   Therefore, a line is always activated, as well as few pixels in a column and they are increasing the fake hit rate of the matrix.
-  A solution exists to disconnect some discriminators in order to reduce the noise of defect columns thanks to the JTAG program, nevertheless, no solution during the sensor programming exists to remove the defect lines.
+  A solution exists to disconnect some discriminators in order to reduce the noise of defect columns thanks to the \gls{JTAG} program, nevertheless, no solution during the sensor programming exists to remove the defect lines.
   On the other hand, few pixels can be always deactivated even if the discriminators are completely opened, thus, they are not able to detect any physics signal.
   This behavior is represented on the figure~\ref{fig:closePixel} and no solution exists to make them working properly.
    
@@ -376,7 +333,7 @@
 
   \subsection{Threshold scan}
 
-  The noise performance of the sensor is determined thanks to a threshold scan around the "middle-point" found before.
+  The noise performance of the sensor is determined through a threshold scan around the "middle-point" found before.
   This consists to record the normalise response of the discriminators or the discriminators and the pixels for different threshold values.
   For the first possibility, an external voltage is injected into the discriminators, while the matrix output is disconnected.
   Only the noise contribution coming from the discriminator is thus determined.
@@ -391,26 +348,9 @@
   The mean value of the distribution obtained the mid-point threshold of a pixel.
   The dispersion of the mid-point threshold corresponds to the fixed pattern noise, represented on the right plot of the figure~\ref{fig:TN&FPN}.
   
-  % Noise performance of full in-pixel circuitry + sensing system and discriminator characterised by using the S-curve method: normalised response as a function of the threshold voltage.
-  %To measure the noise performance of the pixels and the discriminators, a threshold scan is performed around the "middle-point" found before.
-  %For each step, the threshold voltage is adjusted and the data acquisition software records the normalised response of the system (pixels + discriminators response).
-  %Usually, 29 runs with 500 to 1000 events are stored.
-  %They are two different ways to measure the noise. 
-  %The first one consists to inject a reference voltage in the discriminators, while the matrix output is disconnected.
-  %Only the noise contribution coming from the discriminators is thus determined.
-  %The second method does not use an external reference voltage, but rather the response of the pixel matrix to characterise the noise of the whole system.
-  %It is the one used to characterise the PLUME modules.
-
-  %The next step consists to build a configuration file containing the DAC values of each sub-matrix for each threshold with the corresponding value in millivolts.
-  %%After completing the threshold scan, a configuration file, which contains the DAC values of each sub-matrix for each threshold with the corresponding value in millivolts is created.
-  %Afterward, this file is analysed and converted to create an output file containing a hit average picture of each sub-matrix for each step.
-  %Then a macro based on C++ and ROOT is reading this picture to plot the transfer function, as the one represented on figure~\ref{fig:transfer}, which shows the response of the 288 discriminators for a sub-matrix, as a function the threshold applied in millivolts.
-  %From this S-curve, the dispersion, as well as the offset and the noise are measured.
-  %Two plots are summarising this information, as shown on figure~\ref{fig:TN&FPN}.
-  
   \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.6\textwidth]{Pictures/labTests/transfer_B.png}
+    \includegraphics[width=0.7\textwidth]{Pictures/labTests/transfer_B.png}
     \caption{Pixels response of a threshold scan around the middle-point of discriminators for a sub-matrix.}
     \label{fig:transfer}
   \end{figure}
@@ -422,24 +362,24 @@
     \label{fig:TN&FPN}
   \end{figure}
 
-  The one on the left represents the temporal noise, while the right one represents the fixed pattern noise.
+  The plot on the left in figure~\ref{fig;TN&FPN} represents the temporal noise, while the right one represents the fixed pattern noise.
   The systematic offset of the discriminator is extracted from this measurements (the mean value of the temporal noise, the mean value and the sigma value of the fixed pattern noise).
   To calculate the discriminator thresholds of each sub-matrix for a given \gls{SNR}, the total noise is determined as:
   
   \begin{equation}
-    \text{Total noise} = \sqrt{<TN>^2 + <FPN>^2}
+    \rm{Total~noise} = \sqrt{<\rm{TN}>^2 + <\rm{FPN}>^2}
   \end{equation}
 
   For a given S/N cut $\sigma$, the thresholds are determined by:
 
   \begin{equation}
-    \text{Threshold (mV)} = \text{Total Noise} \times \sigma + \text{offset}
+    \rm{Threshold~(mV)} = \rm{Total~Noise} \times \sigma + \rm{offset}
   \end{equation}
 
-  This is converted into the DAC values by taking into account the DAC offset and the DAC slope, which is assumed to be 0.25 mV:
+  This is converted into the DAC values by taking into account the DAC offset and the DAC slope, which is assumed to be $0.25~\rm{mV}$:
   
   \begin{equation}
-    \text{Threshold (DAC)} = \frac{\text{Threshold (mV)} - \text{DAC}_{offset}}{\text{DAC}_{slope}}
+    \rm{Threshold~(DAC)} = \frac{\rm{Threshold~(mV)} - \rm{DAC}_{\rm{offset}}}{\rm{DAC}_{\rm{slope}}}
   \end{equation}
 
 
@@ -451,11 +391,11 @@
   The fake hit rate per event per pixel is then considered as:
 
   \begin{equation}
-    \text{F.H.R} = \frac{\text{Number of hits}}{\text{Number of events} \times \text{Number of pixels}} 
+    \rm{F.H.R} = \frac{\rm{Number~of~hits}}{\rm{Number~of~events} \times \rm{Number~of~pixels}} 
   \end{equation}
   
   The figure~\ref{fig:darkEvents} is representing the accumulation in the dark of ten thousand events for a threshold five times bigger than the noise.
-  The measured fake hit rate was below $10^{-4}$ hits/pixel/events.
+  The measured fake hit rate was below $10^{-4}~\rm{hits/pixel/events}$.
 
    \begin{figure}[!h]
     \centering
@@ -470,7 +410,7 @@
   \begin{figure}[!h]
     \centering
     \includegraphics[width=0.6\textwidth]{Pictures/labTests/10kEvents_Fe55_cut5sigma.png}
-    \caption{Accumulation of 10k events at a thresholds of 5 times the noise with Fe55 radiation source.}
+    \caption{Accumulation of 10k events at a thresholds of 5 times the noise with $^{55}\rm{Fe}$ radiation source.}
     \label{fig:fe55}
   \end{figure}
 
@@ -492,7 +432,7 @@
   It is based on C++ and the ROOT framework.
   The software reads the information of the hit pixels, reconstructs the clusters of hit pixels and in the case of a test beam is able to reconstruct tracks from the hit information.
 
-  A method is in charge to determine the fake hit rate with respect to the number of pixels hit per event.
+  A method is used to determine the fake hit rate with respect to the number of pixels hit per event.
   From the distribution shown on the figure~\ref{fig:pixel/event}, which represents the number of pixels fired per event, the average fake hit rate is calculated as the mean of this distribution divided by the total number of pixels contained in the matrix.
     \begin{figure}
     \centering
@@ -516,7 +456,7 @@
   The assembly procedures and the tests performed in the laboratory were introduced along this chapter.
   Only the results for one sensor were presented.
   Nonetheless, all the modules have a same behavior as the one expected for one single MIMOSA-26.
-  So far, for the new PLUME versions which have a narrower flex-cable and which should embed only 0.35 \% of the radiation length, different prototypes were built. 
+  So far, for the new PLUME versions which have a narrower flex-cable and which should embed only $0.35~\%$ of the radiation length, different prototypes were built. 
   The first ladder using copper module was assembled in January 2016.
   New ladders are currently being built and the collaboration is expecting to test them in the DESY test beam facility in November.
   Nevertheless, the aluminum ladder seems to be more challenging to build.
