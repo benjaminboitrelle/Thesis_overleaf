@@ -116,8 +116,10 @@
       \label{fig:estimationRes4.7GeV}
     \end{figure}
 
-    From these results, it has been decided to use only four telescope planes and the same crate for the acquisition of the EUDET telescope and PLUME.
-    However, the stability of the acquisition is not known.
+    As the number of telescope planes does not impact the pointing resolution, it has been decided to use only four telescope planes to simplify the acquisition system.
+    The sensors of the telescope and \gls{PLUME} are both \gls{MIMOSA}-26 thinned down to $50~\rm{\mu m}$.
+    Instead of building a DAQ compatible with EUDAQ, two EUDET telescope planes are removed from the set-up and replaced by two \gls{PLUME} sensors (one on each side).
+    However, the synchronisation and the stability of the acquisition have to be tested before the test beam campaign. 
 
     \subsection{Acquisition system}
       
@@ -134,37 +136,56 @@
 
       \subsubsection{Hardware}
 
-      A National Instrument PXI crate is used for the data acquisition. 
-      A reduction board connected to the crate
-      Clock distribution board
-      JTAG distribution board
+      After ensuring that there is no data lose and the acquisition is stable for hours, the integration of \gls{PLUME} on the test beam facility as been investigating.
+      To perform the deformation studies, the \gls{DUT} has to be on a rotation stage. 
+      With respect to the \gls{DUT} coordinate system, the rotation is along the $u$-direction. 
+      Two options to perform the rotation are possible.
+      The first one consists to have the same orientation between the \gls{PLUME} sensors and the telescope planes.
+      Hence, the ladder is in the horizontal position and the rotation needs a complicated frame...
+      For the second options, ladder is positioned on the vertical direction. 
+      There is a $90^{\circ}$ rotation between the telescope sensors and the \gls{PLUME} ones.
+      The frame consists of an aluminum plate insulated on which the \gls{DUT} sits.
+      Clamps are used to reduce the force applied by the cable on the flex to avoid to damage the \gls{DUT} during the test beam.
+      A plate with screws hold the ladder strongly to the frame.
+      The frame is then mounted onto a rotation stage, which is mounted on a translation stage.
+      The figure~\ref{fig:mechanics} shows a schematic model of the frame designed and built at DESY.
+      
+      \begin{figure}
+        \centering
+        \includegraphics[width = 0.6\textwidth]{Pictures/X0/Frame/Testbeam1.PNG}
+        \caption{TCAD model of the mechanical structure designed for the test beam in April. The ladder is hold on a circular frame fixed to a PI rotation stage, mounted onto a XY-table.}
+        \label{fig:mechanics}
+      \end{figure}
 
-      To ensure the synchronisation of the ladder and the telescope planes, the acquisition is synchronised on the \textit{clock} provided by one of the \gls{PLUME} sensor.
-      In the lab, two MIMOSA-26 sensors and the ladder to test are plugged together to the NI-crate. 
-      Runs of several hours are launched to verify the synchronisation.
-      As the \gls{DUT} and telescope planes are connected to the same \textit{JTAG} card and \textit{clock} distribution board, the start signal arrives at the same time on each sensor.
-      If a delay appears, there is a loss in the synchronisation and the acquisition does not work anymore.
-      The frame-counter should be the same on each sensor.
+      A cooling system is adapted to maintain a constant temperature. 
+      On one endcap, a pipe is fixed and connected to a fan.
+      Some studies in Strasbourg were done to determine the air flow speed as a function of the voltage applied.
+      Hence, an air flow speed of $3~\rm{m.s^{^1}}$ is achieved with $5~\rm{V}$ and an air flow speed of $6~\rm{m.s^{-1}}$ for $10~\rm{V}$.
+
+      During the test beam campaign, the \textit{clock} and \textit{marker} are read from one sensor of the \gls{PLUME} module.
+      The \textit{clock} is extended with a $80~\rm{cm}$ long cable to ensure that one frame starts on the rising edge.
+      The second input of the acquisition is a second \gls{PLUME} sensor, followed by the four telescope planes. 
+      \gls{PMT}s are placed in coincidence on each side of the telescope to avoid to trigger on fake events where the electrons does not pass through the entire set-up.
+
+      %To ensure the synchronisation of the ladder and the telescope planes, the acquisition is synchronised on the \textit{clock} provided by one of the \gls{PLUME} sensor.
+      %In the lab, two MIMOSA-26 sensors and the ladder to test are plugged together to the NI-crate. 
+      %Runs of several hours are launched to verify the synchronisation.
+      %As the \gls{DUT} and telescope planes are connected to the same \textit{JTAG} card and \textit{clock} distribution board, the start signal arrives at the same time on each sensor.
+      %If a delay appears, there is a loss in the synchronisation and the acquisition does not work anymore.
+      %The frame-counter should be the same on each sensor.
 
     \begin{figure}
       \centering
       \includegraphics[width = \textwidth]{Pictures/X0/testBeamAcquisition.png}
-      \caption{Sketch of the test beam set-up. The PMTs are used for triggering. The clock and marker are read from only one sensor, here it comes from one PLUME sensor.}
+      \caption{Schematic of the test beam set-up. The PMTs are used for triggering. The clock and marker are read from only one sensor, here it comes from one PLUME sensor.}
       \label{fig:testBeamAcq}
     \end{figure}
 
     \subsection{experimental set-up}
 
-    To integrate the ladder onto the translation stage available at the test beam area, a frame was designed and built by the DESY workshop.
-    The ladder is placed vertically a round plate mounted onto a rotation stage. 
-    The figure~\ref{fig:mechanics} shows a schematic layout of the mechanical structure designed and built for the test beam.
-
-    \begin{figure}
-      \centering
-      \includegraphics[width = 0.6\textwidth]{Pictures/X0/Frame/Testbeam1.PNG}
-      \caption{TCAD model of the mechanical structure designed for the test beam in April. The ladder is hold on a circular frame fixed to a PI rotation stage, mounted onto a XY-table.}
-      \label{fig:mechanics}
-    \end{figure}
+    %To integrate the ladder onto the translation stage available at the test beam area, a frame was designed and built by the DESY workshop.
+    %The ladder is placed vertically a round plate mounted onto a rotation stage. 
+    %The figure~\ref{fig:mechanics} shows a schematic layout of the mechanical structure designed and built for the test beam.
 
     To cool the ladder, a air cooling system is used. 
     It consists of a fan connected to the back endcap of the PLUME box, via a pipe. 
@@ -232,6 +253,10 @@
       \theta_{0} = \frac{13.6~\rm{MeV}}{p}\left(\frac{x}{X_{0}}\right)^{0.555},
     \end{equation}
 
+    The spread angle $\theta_{0}$ depends on the momentum $p$ of this particle and the relative radiation length $\frac{x}{X_{0}}$.
+    Hence, higher is the momentum, lower is the spread angle. 
+    As well, the relative radiation length has an impact on the kink angle. 
+
     \subsection{Motivation}
 
     The material budget of a detector is an important aspect during its design.
@@ -260,9 +285,9 @@
       \label{fig:desyTb-sketch}
     \end{figure}
 
-    The beam delivered in the Hall 26 is generated by hitting the electrons beam onto a graphite fiber placed in the beam pipe.
-    Its creates photons via bremsstrahlung.
-    The photons travel through the air and hit a target to convert them into electrons and positrons via pair production.
+    To generate the beam delivered in the Hall 26, a graphite fiber target is placed inside the beam pipe.
+    While the electrons are hitting the target, they lose energy and emit bremsstrahlung photons.
+    The photons travel through the air and hit a target, on which the photons are converted to pairs of electrons and positrons.
     Different targets with different thicknesses are available and this will impact the particles rate.
     One is made of copper, whereas the other one is made of aluminum.
     Then, a dipole magnet bends the particles and spread them according to their energy.
@@ -278,3 +303,4 @@
     \end{figure}
 
 
+  \section{Analysis}
