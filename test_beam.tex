@@ -23,8 +23,12 @@
   \section{Preparation of the test beam}
 
   In April 2016, a test beam campaign with electrons and positrons up to 5 GeV was performed at the DESY-II test beam facility.
-  The first fully functional PLUME ladder (PLUME-V1) was tested again to study the performances of this device with low-momentum particles.
-  The different measurements scheduled are presented here, as well as the preparation of the test beam, from the PLUME integration to the data acquisition.
+  The preparation of a test beam campaign is a long, intense and stressing period.
+  The different aspects of the test beam have to be carefully though to minimise the problems and the time spent for debugging during the test period.
+  This consists to schedule precisely the different measurements that have to be performed during the restricted time, as well as the set-up to use, the integration of the \gls{DUT} and the acquisition system to use.
+  
+  %The first fully functional PLUME ladder (PLUME-V1) was tested again to study the performances of this device with low-momentum particles.
+  %The different measurements scheduled are presented here, as well as the preparation of the test beam, from the PLUME integration to the data acquisition.
 
   % A second test beam was performed in April 2016 at DESY with positrons up to 5 GeV. 
   % The goal of this test beam was to study the performances of this device with low-momentum particles.
@@ -36,25 +40,17 @@
 
     \subsection{Measurements and telescope configuration}
 
-    During the two weeks of test beam, several measurements were performed to test as mush as possible the ladder.
-    The measurements scheduled are: 
-    \begin{itemize}
-      \item Spatial resolution
-      \item Mini-vectors
-      \item Deformation study:
-      \begin{itemize}
-        \item Tilt up to $60^{\degree}$ with a $10^{\degree}$ step
-        \item Air flow speed between 3 and $5~\rm{m.s}^{-1}$
-      \end{itemize}
-      \item radiation length along the sensors and on the mechanical flex
-    \end{itemize}
-
-    Although all the planed schedule was performed, the test beam was at the end of my Ph. D., therefore, I was no able to perform all of the measurements.
+    During the two weeks of test beam available, the measurements planed consist, firstly, to validate the characteristics of the ladder for low momentum particles, such as the spatial resolution, the efficiency or the benefits of the mini-vectors.
+    Runs with different tilts (from $0^{\degree}$ to $60^{\degree}$ with a step of $10^{\degree}$) and different air flow speeds for the cooling system ($3~\rm{and}~6~\rm{m.s}^{-1}$) are performed to study again the deformations of the ladder.
+    Finally, for the first time, the radiation length of \gls{PLUME} is measured to compare it to the theoretical estimations, which gives $\rm{X_{0}} = 0.65~\%$ for the version tested.
+    Although many runs were acquired to performed the different measurements, the test beam was scheduled at the end of my Ph. D.
+    Therefore, I am not able to perform a complete analysis of the first prototype for low momentum electrons.
     The section~\ref{sec:X0} presents the study I have performed on the radiation length measurement.
 
-    The pointing resolution of the telescope depends on the spacing between the different planes. 
+    A second aspect of the test beam is to determine the geometry of the reference planes to optimise the pointing resolution of the telescope.
+    This depends on the spacing between the different planes and the position of the \gls{DUT} respectively to the telescope.
     The best resolution is achieved by placing the inner planes of the telescope as close as possible to the \gls{DUT} and the outer planes as far as possible from the \gls{DUT}.
-    Because of the deformation study, which needs to rotate the ladder, the inner planes can not be close to the \gls{DUT} without modifying the geometry at each steps.
+    Because of the deformation study, which needs to rotate the ladder, the inner planes can not be pressed to the \gls{DUT} without modifying the geometry at each steps.
     Hence, to keep a consistent alignment and to reduce the time spending on the off-line alignment, it was decided to fixed the inner planes as close as possible to be able to rotate the ladder without modifying the geometry.
     Moreover the ladder is not centered in its box, so to keep an equal distance between the two sides of the ladder and the two inner planes, the minimal distance between the telescope planes are calculated by taking into account an offset.
 
@@ -64,14 +60,14 @@
 
     For the first time, the collaboration has decided to use the EUDET telescope and EUDAQ for the acquisition, instead of the Strasbourg telescope and the IPHC acquisition.
     Several configuration are available for the set-up used.
-    The first ones consist to use the six planes of the EUDET telescope and to have two separate acquisition, one for \gls{PLUME} and the second one dedicated for the telescope and then, to merge the data together.
+    The first ones consist to use the six planes of the EUDET telescope and to have two separate acquisitions, one for \gls{PLUME} and the second one dedicated for the telescope and then, to merge the data together.
     As the EUDET telescope are equipped with the same sensors as \gls{PLUME}, the acquisition can be simplified by having only four telescope planes and connecting directly two sensors of the \gls{DUT}.
     A simulation toolkit developed by Simon Spannagel and based on \gls{GBL} is used to compare the pointing resolution at the \gls{DUT} position for different telescope geometries.
-    Here, the six and four telescope planes set-up are compared for different energies and spacing between the sensors.
+    Here, the six and four telescope planes set-ups are compared for different energies and spacing between the sensors.
     This simulation takes into account the material budget of the telescope, the \gls{DUT} and the multiple scattering of electrons in the air.
-    One telescope plane as a material budget of ..., whereas \gls{PLUME} is $0.65~\%$ plus two kapton foils used to insulate the ladder from the light.
-    For both configuration, the telescope is divided into two arms, two or three planes on each side of the \gls{DUT}.
-    The maximal distance between each plane of one frame is $d_{\rm{max}} = 150~\rm{mm}$ for the six sensors configuration, whereas for the second one it is $d_{\rm{max} = 300~\rm{mm}}$.
+    One telescope plane as a material budget of $0.053~\%$ of $\rm{X_{0}}$, whereas \gls{PLUME} is $0.65~\%$ plus two kapton foils used to insulate the ladder from the light.
+    For both configurations, the telescope is divided into two arms, two or three planes on each side of the \gls{DUT}.
+    The maximal distance between each plane of one frame is $d_{\rm{max}} = 150~\rm{mm}$ for the six sensors configuration, whereas for the second one it is $d_{\rm{max}} = 300~\rm{mm}$.
     
     \begin{table}[!h]
       \centering
@@ -121,28 +117,28 @@
     Instead of building a DAQ compatible with EUDAQ, two EUDET telescope planes are removed from the set-up and replaced by two \gls{PLUME} sensors (one on each side).
     However, the synchronisation and the stability of the acquisition have to be tested before the test beam campaign. 
 
-    \subsection{Acquisition system}
+    \subsection{Acquisition system and experimental set-up}
       
       \subsubsection{EUDAQ}
 
       EUDAQ is a modular cross-platform data taking framework developed for the EUDET-type beam telescopes\cite{Jansen}.
       It is designed to be flexible and to have an easy integration of other devices.
-      The software is based on \textit{producers}, that are link between the different subdetector systems, such as the beam telescope, the \gls{DUT} user DAQ and the \gls{TLU}.
-      The events are built by the \textit{Data Collector}.
-      All subdetectors events are correlated to form one single global event for data belonging to one trigger.
-      
-      To simplify the acquisition system, only one DAQ is used, but the robustness of the acquisition has to be tested. 
-      Hence, multiple tests are performed in the lab to make sure that EUDAQ is working with \gls{PLUME} and then, single MIMOSA-26 sensors are added to the set-up.
+      The software is based on \textit{producers}, that are linked between the different subdetector systems, such as the beam telescope, the \gls{DUT} user DAQ and the \gls{TLU}.
+      The events of each subdetector are then correlated to form one single global event for data belonging to one trigger.
+      This step is done by the \textit{Data Collector}.
+      The robustness of the acquisition set-up planed is tested by performing multiple runs for multiple configuration in the laboratory.
+      The data are acquired with only the \gls{PLUME} to ensure that EUDAQ can cope it, and then single \gls{MIMOSA}-26 sensors are added and runs of several hours are performed to look for a loss of synchronisation.
 
-      \subsubsection{Hardware}
+      \subsubsection{Experimental set-up}
 
-      After ensuring that there is no data lose and the acquisition is stable for hours, the integration of \gls{PLUME} on the test beam facility as been investigating.
-      To perform the deformation studies, the \gls{DUT} has to be on a rotation stage. 
-      With respect to the \gls{DUT} coordinate system, the rotation is along the $u$-direction. 
-      Two options to perform the rotation are possible.
-      The first one consists to have the same orientation between the \gls{PLUME} sensors and the telescope planes.
-      Hence, the ladder is in the horizontal position and the rotation needs a complicated frame...
-      For the second options, ladder is positioned on the vertical direction. 
+      Finally, the integration of \gls{PLUME} for the different measurements to perform is investigated.
+      To perform the deformation studies, the \gls{DUT} is mounted on a rotation stage. 
+      With respect to the local coordinate system (or sensor coordinate system), the rotation is along the $u$-direction. 
+      The first option considerer to performer the rotation is to orient the ladder in the same direction as the telescope's sensors. 
+      Hence, the ladder is in the horizontal position and the rotation needs a complicated frame to ensure the stability of the system.
+      The weight of the box and ladder is applied only on the rotation stage. 
+      Due to the complexity and the time needed to build this frame, a second option has been considered.
+      The ladder is placed vertically on a rotation stage. 
       There is a $90^{\circ}$ rotation between the telescope sensors and the \gls{PLUME} ones.
       The frame consists of an aluminum plate insulated on which the \gls{DUT} sits.
       Clamps are used to reduce the force applied by the cable on the flex to avoid to damage the \gls{DUT} during the test beam.
@@ -150,22 +146,25 @@
       The frame is then mounted onto a rotation stage, which is mounted on a translation stage.
       The figure~\ref{fig:mechanics} shows a schematic model of the frame designed and built at DESY.
       
-      \begin{figure}
+      \begin{figure}[!h]
         \centering
-        \includegraphics[width = 0.6\textwidth]{Pictures/X0/Frame/Testbeam1.PNG}
+        \includegraphics[width = 0.5\textwidth]{Pictures/X0/Frame/Testbeam1.PNG}
         \caption{TCAD model of the mechanical structure designed for the test beam in April. The ladder is hold on a circular frame fixed to a PI rotation stage, mounted onto a XY-table.}
         \label{fig:mechanics}
       \end{figure}
 
-      A cooling system is adapted to maintain a constant temperature. 
-      On one endcap, a pipe is fixed and connected to a fan.
+      To control the heating of the ladder during the test beam, a cooling system consisting of a simple fan is used.
+      On one endcap, a pipe is fixed and connected to the fan.
       Some studies in Strasbourg were done to determine the air flow speed as a function of the voltage applied.
       Hence, an air flow speed of $3~\rm{m.s^{^1}}$ is achieved with $5~\rm{V}$ and an air flow speed of $6~\rm{m.s^{-1}}$ for $10~\rm{V}$.
+      This values result in an operating temperature of all sensors between approximately $40$ and $52^{\degree}\rm{C}$.
 
       During the test beam campaign, the \textit{clock} and \textit{marker} are read from one sensor of the \gls{PLUME} module.
       The \textit{clock} is extended with a $80~\rm{cm}$ long cable to ensure that one frame starts on the rising edge.
-      The second input of the acquisition is a second \gls{PLUME} sensor, followed by the four telescope planes. 
-      \gls{PMT}s are placed in coincidence on each side of the telescope to avoid to trigger on fake events where the electrons does not pass through the entire set-up.
+      The second input of the acquisition is a \gls{PLUME} sensor (opposite side of the first sensor), followed by the four telescope planes. 
+      Moreover, \gls{PMT}s are placed in coincidence on each side of the telescope.
+      They are used to trigger the acquisition only when the beam passes through the entire set-up.
+      Hence, the fake events are reduced and the data stream is smaller.
 
       %To ensure the synchronisation of the ladder and the telescope planes, the acquisition is synchronised on the \textit{clock} provided by one of the \gls{PLUME} sensor.
       %In the lab, two MIMOSA-26 sensors and the ladder to test are plugged together to the NI-crate. 
@@ -174,106 +173,67 @@
       %If a delay appears, there is a loss in the synchronisation and the acquisition does not work anymore.
       %The frame-counter should be the same on each sensor.
 
-    \begin{figure}
+    \begin{figure}[!h]
       \centering
       \includegraphics[width = \textwidth]{Pictures/X0/testBeamAcquisition.png}
       \caption{Schematic of the test beam set-up. The PMTs are used for triggering. The clock and marker are read from only one sensor, here it comes from one PLUME sensor.}
       \label{fig:testBeamAcq}
     \end{figure}
 
-    \subsection{experimental set-up}
-
-    %To integrate the ladder onto the translation stage available at the test beam area, a frame was designed and built by the DESY workshop.
-    %The ladder is placed vertically a round plate mounted onto a rotation stage. 
-    %The figure~\ref{fig:mechanics} shows a schematic layout of the mechanical structure designed and built for the test beam.
-
-    To cool the ladder, a air cooling system is used. 
-    It consists of a fan connected to the back endcap of the PLUME box, via a pipe. 
-    A measurement performed by Strasbourg gives the corresponding air flow speed to the selected voltage input.  
-
     \begin{figure}
       \centering
       \includegraphics[width = 0.8\textwidth]{Pictures/X0/testBeam.png}
-      \caption{Test beam set-up.......}
+      \caption{Picture taken during the test beam. The beam is going out of the magnet before to reach the four telescope planes, the DUT and the PMTs. The set-up is mounted on a floating frame insuring the grounded.}
       \label{fig:testBeam}
     \end{figure}
 
-    \subsection{Software analysis chain}
-
-    The analysis framework used is called EUTelescope\todo{REF TO EUTEL}.
-    It is based on the MARLIN framework from the ILCSOFT.
-    It handles LCIO data format.
-    Each step of the analysis is driven by dedicated processors.
-
-    The first step consists to convert the raw data files into LCIO data format.
-    This file contains the pixel number which fired in a given event, along with the sensor number.
-    Then, the noisy pixel are removed before to use a cluster algorithm to form sets of cluster from the individual activated pixels.
-    From the cluster information, the hit position is determined by a centre-of-gravity 
-
-    The specific acquisition which is done with EUDAQ has complicated the analysis.
-    EUTelescope is coded to expect six telescope planes and a or several \gls{DUT} but at different $z$-positions.
-    One way to overcome this problem is to perform a biased analysis. 
-    Instead of performing the alignment of the telescope and followed by the \gls{DUT} alignment, the procedure can be done in one way.
-    Nevertheless, for an unknown reason GBL and Millepede-II are not working.
-
-    A prototype software based on GBL and Millepede-II and written by Claus Kleinwort has permitted to perform the alignment, as well as the other measurements.
-    The software reeds a lcio file containing the hit position of every plane.
-
-    Due to the specific acquisition which was done with EUDAQ, the analysis was a bit complicated.
-    EUTelescope was coded to expect six telescope planes plus a single DUT.
-    One way to overcome this problem was to perform a biased analysis.
-    Instead of performing the alignment of the telescopes and then the DUT for an analysis, this step has to be done in one way.
-    Nevertheless, the alignment procedure was not working.
-
-    To perform the alignment, I have used a python script written by Claus Kleinwort, which reads the hit position of every sensor and use GBL and MP-II to perform the alignment.
-
-    %\begin{figure}
-    %  \centering
-    %  \includegraphics[width = \textwidth]{Pictures/X0/eutel-strategy.png}
-    %  \caption{blabla}
-    %  \label{fig:eutel-strategy}
-    %\end{figure}
-
+   
   \section{Measuring the radiation length}
 
     \subsection{Introduction}
-
-    Charged particles travelling through matter lose energy via inelastic collision with atomic electrons, but they also suffered from repeated elastic coulomb scattering from nuclei.
-    Thus, they are deflected by many small angles from their initial trajectory because of the multiple coulomb scattering.
-
-    Highland formula describes the projected angle of the incoming particle depending on its momentum $p$, its velocity $\beta c$, its charge number $z$ and its true path length in radiation length unit $\frac{x}{X_{0}}$.
-
-    \begin{equation}
-      \theta_{0} = \frac{13.6~\rm{MeV}}{\beta c p} z \sqrt{\frac{x}{X_{0}}}\left(1 + 0.038 \ln{\frac{x}{X_{0}}}\right)
-    \end{equation}
-
-    A modified version of the equation describes the electron scattering better than the Highland formula, with $\beta c = 1$ \cite{GEANT4}:
+    
+    When charged particles are traveling through matter, they lose energy via inelastic collision with atomic electrons and this leads to the ionisation or excitation of the matter.
+    Furthermore, along their path, they are deflected by many small angles from their initial trajectory due to Coulomb scattering from nuclei. 
+    This effect, called multiple Coulomb scattering, is a stochastic effect that leaves on the average the particle undisturbed through its path. 
+    For small angles of deviation, the multiple scattering is following a Gaussian behavior, whereas for larger angles, it behaves like the Rutherford scattering.
+    The Highland formula, which is an empirical formula, describes the distribution of the multiple scattering, or the "kink angle" as a function of the momentum $p$ of the incoming charge particles, its velocity $\beta c$, its charge number $z$ and its true path length in radiation length unit $\frac{x}{X_{0}}$:
 
     \begin{equation}
-      \theta_{0} = \frac{13.6~\rm{MeV}}{p}\left(\frac{x}{X_{0}}\right)^{0.555},
+      \theta_{0} = \frac{13.6~\rm{MeV}}{\beta c p} z \sqrt{\frac{x}{X_{0}}}\left(1 + 0.038 \ln{\frac{x}{X_{0}}}\right).
+      \label{eq:Highland}
     \end{equation}
 
-    The spread angle $\theta_{0}$ depends on the momentum $p$ of this particle and the relative radiation length $\frac{x}{X_{0}}$.
-    Hence, higher is the momentum, lower is the spread angle. 
-    As well, the relative radiation length has an impact on the kink angle. 
+    For the electrons, a modified version of the equation~\ref{eq:Highland} describes its scattering better than the Highland formula\cite{GEANT4}.
+
+    \begin{equation}
+      \theta_{0} = \frac{13.6~\rm{MeV}}{p}\left(\frac{x}{X_{0}}\right)^{0.555},~\text{with $\beta c = 1$.}
+    \end{equation}
+
+    The spread angle $\theta_{0}$ depends on the momentum of the incoming particle, as well as the relative radiation length $\frac{x}{X_{0}}$.
+    Thus, for a given relative radiation length, the kink angle is becoming smaller for higher momentum, and for a given momentum, this kink angle is not the same for different relative radiation length.
 
     \subsection{Motivation}
 
-    The material budget of a detector is an important aspect during its design.
-    The \gls{ILC} sets new goals for the material budget of the vertex detector, but also for other parts of the detector.
-    As a reminder, the tracking system should detect precisely the particles path without degrading their energy, while the calorimeters have to measure accurately the energy deposited by the particles.
-    To reconstruct accurately the events during a physics analysis, the energy loss inside the different component of the detectors before the calorimeters has to be known, in order to correct the measured energy.
+    The design of a detector is driven by its intrinsic characteristics, such as the pointing resolution or the integration time, but also by some requirements on the material budget.
+    For example, the \gls{ILC} sets new goals for the design of the vertex detector, but also for other parts of the detector, as mentioned in chapters~\ref{chap:ILC} and~\ref{chap:vxd}.
+    For such detector, the tracking system should detect precisely the particles path and minimising their energy degradation, while the calorimeters have to measure accurately the energy deposited by the particles.
+    During the physics analysis, the reconstruction of the events depends strongly on the knowledge of the energy loss by the particles inside the different component of the detector before they reach the calorimeters. 
+    To improve the results, a correction on the energy as to be applied.
+    Thus, the study of the radiation length $\rm{X_{0}}$ in $\rm{g.cm}^{2}$, which is the amount of matter traversed by the electron is an important part of the detector development.
+    For electrons and positrons, the radiation length corresponds to the mean distance over which these particles loss $1/e$ of its energy by bremsstrahlung.
 
-    The radiation length $\rm{X_{0}}$ is the amount of matter traversed by the electron and its unit is $\rm{g}~{cm}^{2}$.
-    It is defined as the mean distance over which a charged particle loss $1/e$ of its energy by bremsstrahlung.
+    As detector are made of different layers, the radiation length for composite materials is given as:
 
     \begin{equation}
-      \frac{1}{X_{0}} = \sum_{j} \frac{\omega_{j}}{X_{j}}
+      \frac{1}{X_{0}} = \sum_{j} \frac{\omega_{j}}{X_{j}},
     \end{equation}
+
+   where $\omega_{j}$ and $X_{j}$ are the fraction by weight and radiation length for the $j^{\rm{th}}$ element.
+
 
     \subsection{The DESY II test beam facility}
 
-    The test beam facility at the \gls{DESY} is made of three areas.
+    The \gls{DESY} test beam facility is composed of three areas.
     Firstly, the electron beam is produced in the LINAC-II and accelerated to 450 MeV before to be injected in the DESY-II synchrotron ring.
     The DESY-II is used as a storage ring for the PETRA-III. 
     The beam is accelerated and the particles are stored until enough particles are available to be sent on to PETRA, where they are used for photon science.
@@ -287,7 +247,7 @@
 
     To generate the beam delivered in the Hall 26, a graphite fiber target is placed inside the beam pipe.
     While the electrons are hitting the target, they lose energy and emit bremsstrahlung photons.
-    The photons travel through the air and hit a target, on which the photons are converted to pairs of electrons and positrons.
+    The photons travel through the air and hit another target, on which the photons are converted to pairs of electrons and positrons.
     Different targets with different thicknesses are available and this will impact the particles rate.
     One is made of copper, whereas the other one is made of aluminum.
     Then, a dipole magnet bends the particles and spread them according to their energy.
@@ -304,3 +264,72 @@
 
 
   \section{Analysis}
+  \label{sec:X0}
+
+   \subsection{Software analysis chain}
+
+    The analysis of the test beam data is performed with EUTelescope\cite{Eutel}\cite{Jansen}.
+    It is based on the MARLIN framework, which is a part of the ILCSOFT.
+    The software is used to convert the dart into the LCIO format, but also to perform clustering search, alignment and final analysis.
+    Each step of the analysis is driven by a dedicated processor.
+
+    From the raw data files, a first processor is used to convert the data into the LCIO format.y
+    This converter file contains the pixel number which fired in a given event, along with the sensor number.
+    Before searching for clusters, the noisy pixels are removed from the list.
+    A pixel is considered as noisy if its firing frequency is above a certain value. 
+    The noisy pixels correspond to defect raw or column or single pixels always sending information.
+    Then, a cluster algorithm forms sets of cluster from the individual activated pixels.
+
+    Afterwards the hit candidates are defined, the alignment steps can starts.
+    It consists to minimise... ... .. .. .. .
+
+    Nevertheless, for my set-up, the alignment step did not work.
+    Inside EUTelescope, the number of telescope planes is hard-coded to be six and the sensor IDs in the range $[0; 5]$ are only for the telescope.
+    These IDs have to be ordered according to the $z$-direction too.
+    In my case, the IDs $0$ and $1$ are used for \gls{PLUME} and the rest for the telescope. 
+    Although \gls{GBL} uses only the $z$-ordering information to perform the alignment, the alignment procedure never worked.
+
+    Thankfully, a prototype software developed by Claus Kleinwort has permitted to perform the alignment and finish the analysis. 
+    It is based on \gls{GBL} and Millepede-II and reads the hit information created by the hitmaker processor of EUTelescope. 
+    The goal of \gls{GBL} is to create tracks from the hit information.
+    To do so, it combines six hits (one on each plane) to form a single track.
+    Firstly, on each arm, the hit information of the inner and outer planes are used to create subtracks. 
+    It consist to draw a straight line from one plane to the other of the same arm.
+    Then, the subtrack is extrapolated to the middle plane of the arm and \gls{GBL} is looking for the closest hit to the subtrack candidate.
+    This tracks are called triplets.
+    Afterward, the software finds if triplets are converging at the \gls{DUT} position and form a single track, unless multiple triplets are connected at the same position.
+    In this case, the track is rejected.
+
+    The tracks created are then read by Millepede-II, which calculates the residuals of the tracks on each sensor and attempts to shift the position of the sensors and to rotate them in order to minimise the least squares fit function of these tracks.
+    Millepede-II provides these informations into an output file used to create a new GEAR file with the new position and orientation of each plane.
+    
+
+   % Firstly, the raw data files are converted into the LCIO data format to provide a consistency data format during the analysis step.
+   % This file contains the pixel number which fired in a given event, along with the sensor number.
+   % Then, a processor removing the noisy pixel is applied, before using a cluster algorithm to form sets of cluster from the individual activated pixels.
+   % A centre-of-gravity algorithm is then applied to 
+
+   % The specific acquisition which is done with EUDAQ has complicated the analysis.
+   % EUTelescope is coded to expect six telescope planes and a or several \gls{DUT} but at different $z$-positions.
+   % One way to overcome this problem is to perform a biased analysis. 
+   % Instead of performing the alignment of the telescope and followed by the \gls{DUT} alignment, the procedure can be done in one way.
+   % Nevertheless, for an unknown reason GBL and Millepede-II are not working.
+
+    %A prototype software based on GBL and Millepede-II and written by Claus Kleinwort has permitted to perform the alignment, as well as the other measurements.
+    %The software reeds a lcio file containing the hit position of every plane.
+
+    Due to the specific acquisition which was done with EUDAQ, the analysis was a bit complicated.
+    EUTelescope was coded to expect six telescope planes plus a single DUT.
+    One way to overcome this problem was to perform a biased analysis.
+    Instead of performing the alignment of the telescopes and then the DUT for an analysis, this step has to be done in one way.
+    Nevertheless, the alignment procedure was not working.
+
+    To perform the alignment, I have used a python script written by Claus Kleinwort, which reads the hit position of every sensor and use GBL and MP-II to perform the alignment.
+
+    \begin{figure}
+      \centering
+      \includegraphics[width = \textwidth]{Pictures/X0/eutel-strategy.png}
+      \caption{blabla}
+      \label{fig:eutel-strategy}
+    \end{figure}
+
