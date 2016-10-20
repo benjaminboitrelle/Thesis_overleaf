@@ -35,6 +35,12 @@
 \usepackage{mathabx} % For degrees
 \usepackage{float}
 \usepackage{rotating} % To rotate huge tables
+\usepackage{feynmp}
+%\usepackage{feynman}
+\usepackage{ifpdf}
+\ifpdf
+  \DeclareGraphicsRule{*}{mps}{*}{}
+\fi
 
 \hypersetup{
   backref=true, %permet d'ajouter des liens dans... pagebackref=true,%...les bibliographies

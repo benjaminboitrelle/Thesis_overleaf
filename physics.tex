@@ -1,4 +1,5 @@
 \chapter{Physics at the ILC}
+\label{chap:phyiscs}
 
   In the chapter~\ref{chap:SM}, the framework of particles physics was described. 
   Since the beginning of High Energy Physics, different experiments have been done to confirm the exactness of the SM but also to find new physics beyond the SM. 
@@ -195,24 +196,23 @@
     At a centre-of-mass energy $\sqrt{s} = 250$ GeV, the cross-section of the higgs-strahlung depends on the spin and CP numbers.
     For example, if the spin is 0 and the CP even, the cross-section s
     If spin 0 and CP-odd: cross section
-    
-
 
   \section{Analysis of simulated data}
   
-    Due to the restricted time to conduct the thesis, this section is introducing the tools to perform an analysis of some simulated data at the ILD. 
+    Due to the restricted time to conduct the thesis, this section is introducing the tools to perform an analysis of simulated data at the ILD. 
     The results shown are not the latest and were already demonstrated. 
     Nevertheless, the philosophy to perform a study of the Higgs production at the center-of-mass energy $\sqrt{s} = 350$ GeV and a luminosity of 250 $\text{fb}^{-1}$ is here presented.
   
-  \section{Simulation set-up}  
+  \subsection{Simulation set-up}  
+  \label{subsec:ILCSOFT}
   
-    Monte Carlo simulation and analysis software framework were developed for the linear collider community.
-
-    \subsubsection{ILCSoft}
+    The linear collider community has developed Monte-Carlo simulation and analysis software frameworks dedicated for a future linear collider, such as the \gls{ILC}. 
+    The different packages developed by the community are grouped into the ILCSoft framework\cite{ilcsoft}.
+    To keep a persistency between the different frameworks
     
-    The ILCSoft provides a large variety of software packages which were developed for the linear collider community\cite{ilcsoft}.
+    %The ILCSoft provides a large variety of software packages which were developed for the linear collider community\cite{ilcsoft}.
     It includes software for Monte-Carlo simulation, as software for test beam analysis (see section ??) and other tools.
-    The main package is the \gls{LCIO}, a persistency framework and event data model for the linear collider detector studies\cite{lcio}. 
+    The main package is the \gls{LCIO}, a persistence framework and event data model for the linear collider detector studies\cite{lcio}. 
     It provides a common data format and event data model for both the simulation studies and the analysis framework in order to share results and compare reconstruction algorithms.
     A C++ software framework called \gls{Marlin} is used for the reconstruction and the analysis by using the \gls{LCIO} data format.
     Each tasks are structured into module called processors. 
@@ -233,88 +233,163 @@
     For the analysis, the detector model used is ILD\_o1\_v05.
     This model simulates the dead areas due to cabling, cooling system and mechanical structure and has a silicon-tungsten electromagnetic calorimeter, as well as an analog hadronic calorimeter.
     
-    Finally, the events are reconstructed thanks to Marlin.
+    Finally, the events are reconstructed with Marlin.
 
-  \subsection{Signal}
+  \subsection{Event samples}
 
-   The two dominant production processes leading to the $\nu\nu H$ final state are the Higgs-strahlung and the WW-fusion.
-   The leading order Feynman diagrams are displayed on figures~\ref{fig:higgsStrahlung} and~\ref{fig:WW-fusion}.
-   Although only $\nu_{\rm{e}}$ are produced in the WW-fusion process, thee neutrinos does no interact inside the detector and the flavor of the neutrinos cannot be studied. 
+  \subsubsection{Signal}
+
+    The signal to study is the final state $H \nu\nu$, on which the Higgs boson decays into a pair of quarks, such as $H \rightarrow b\overline{b}$, $H \rightarrow c\overline{c}$ and $H \rightarrow gg$. 
+    The other decay modes are considered as a source of background. 
+    The dominant production processes leading to this final state are the Higgs-strahlung and the WW-fusion.
+    Their leading order Feynman diagrams are displayed on figure~\ref{fig:higgsStrahlung} and~\ref{fig:WW-fusion}.
+    Although the neutrinos produced in the WW-fusion process are only $\nu_{\rm{e}}$ and all neutrino flavors are equi-probable in the Higgs-strahlung, the neutrino flavors cannot be detect and only the missing energy is the signature of neutrino production.
+    The two processes are separated from each other by measuring the missing mass.
+    Indeed, for the Higgs-strahlung, the missing mass is described by $\rm{m_Z}$, whereas the WW-fusion as a broader spectrum with is maximum at $200~\rm{GeV}$.
+
+  \subsubsection{Background processes}
+
+    The signal hypothesis is that the final state is consisting of two jets coming from the hadronic decay of the Higgs boson, as well as missing energy coming from the undetected neutrinos.
+    Nonetheless, this signal is drown into the background processes.
+    The background consists to the events with the same final states as the signal, called irreducible background and the events with a similar detector response.
+    Their contribution depends on the beam polarisation.
+    For example, the cross-section for a beam polarisation $\mathcal{P}_{e^-,e^+} = (+0.8,-0.3)$ is smaller by an order of magnitude due to the W boson.
+
+    The irreducible background 
+
+    The figure ... displays the Feynman diagrams for the irreducible backgrounds which are including the exchange of a W boson.
+    The backgrounds which have quarks in the final state are considered.
+    The gluons background is less likely than the quarks background due to the loop in the final state to form a pair of gluons.
+    The background processes which only includes leptons in the final state are not considered in this analysis.
+    These processes are removed by applying a threshold cut on the minimal number of reconstructed particles.
 
 
-
-  \subsection{Background processes}
-
-    The hypothesis is to have a final state consisting of two jets coming from the decay of the Higgs boson plus missing energy from two neutrinos.
-    Are considered as background, the events with the same final states as the signal and the events with a similar detector response.
-
+%   \begin{figure}
+%      \unitlength = 1mm
+%\begin{feynman}
+%    \fermion[color=000000, endcaps=true, flip=false, label=e^-, labelDistance=-0.08, labelLocation=-0.30, showArrow=true, lineWidth=1.4285714285714286]{0, 8}{3, 6}
+%    \fermion[color=000000, endcaps=true, flip=false, label=undefined, labelDistance=0.42, labelLocation=0.50, showArrow=false, lineWidth=1.4285714285714286]{4, 4}{4, 4}
+%    \fermion[color=000000, endcaps=true, flip=false, label=\bar{\nu_e}, labelDistance=0.15, labelLocation=1.11, showArrow=true, lineWidth=1.4285714285714286]{3, 6}{6, 8}
+%    \dashed[color=000000, endcaps=true, flip=false, label=W, labelDistance=-0.65, labelLocation=0.82, showArrow=false, lineWidth=1.4285714285714286]{4, 4}{3, 6}
+%    \fermion[color=000000, endcaps=true, flip=false, label=\nu_{e}, labelDistance=0.19, labelLocation=1.15, showArrow=true, lineWidth=1.4285714285714286]{4, 4}{6, 5}
+%    \fermion[color=000000, endcaps=true, flip=false, label=undefined, labelDistance=0.42, labelLocation=0.50, showArrow=true, lineWidth=1.4285714285714286]{3, 2}{4, 4}
+%    \fermion[color=000000, endcaps=true, flip=false, label=e^+, labelDistance=0.70, labelLocation=-0.16, showArrow=true, lineWidth=1.4285714285714286]{0, 0}{3, 2}
+%    \electroweak[color=000000, endcaps=true, flip=false, label=\gamma / Z, labelDistance=-0.46, labelLocation=0.19, showArrow=false, lineWidth=1.4285714285714286]{3, 2}{5, 1}
+%    \fermion[color=000000, endcaps=true, flip=false, label=\bar{q}, labelDistance=0.20, labelLocation=1.02, showArrow=true, lineWidth=1.4285714285714286]{5, 1}{6, 0}
+%    \fermion[color=000000, endcaps=true, flip=false, label=q, labelDistance=0.02, labelLocation=-0.28, showArrow=true, lineWidth=1.4285714285714286]{6, 2}{5, 1}
+%\end{feynman}
+%      \caption{Blablalb}
+%   \end{figure}
    
-   \begin{description}
-      \item[W-boson pair production] 
+   \begin{itemize}
+      \item \textbf{W-boson pair production}
       \begin{itemize}
-        \item Semi-leptonic decay
-        \item Hadronic decay
+        \item Semi-leptonic decay: $e^{+}e^{-} \rightarrow W^+w^- \rightarrow \nu_{l}l^{\pm}q\overline{q}$
+        \item Hadronic decay: $e^{+}e^{-} \rightarrow W^+w^- \rightarrow q\overline{q} q\overline{q}$
       \end{itemize}
-      \item[Z-boson pair production]
+      \item \textbf{Z-boson pair production}
       \begin{itemize}
-        \item Hadronic decay
-        \item Leptonic decay
-        \item Hadronic decay with missing energy
+        \item Hadronic decay: $e^+e^- \rightarrow ZZ \rightarrow q\overline{q} q\overline{q}$
+        \item Leptonic decay: $e^+e^- \rightarrow ZZ \rightarrow l^+l^- q\overline{q}$
+        \item Hadronic decay with missing energy:  $e^+e^- \rightarrow ZZ \rightarrow \nu_{l}\overline{\nu_{l}}q \overline{q}$
       \end{itemize}
-      \item[Single W-boson production]
-      \item[Single Z-boson production]
+      \item \textbf{Single W-boson production}: $e^+e^- \rightarrow W^{\pm}e^{\pm}\nu_{e} \rightarrow \nu_{e}e^{\pm}q\overline{q}$
+      \item \textbf{Single Z-boson production}
       \begin{itemize}
-        \item Hadronic decay
-        \item Hadronic and electron/positron decay
+        \item Hadronic decay with missing energy : $e^+e^- \rightarrow Z e^+e^- \rightarrow q\overline{q} \nu \overline{\nu}$
+        \item Hadronic and electron/positron decay: $e^+e^- \rightarrow Z e^+e^- \rightarrow q\overline{q} e^+e^-$
       \end{itemize}
-      \item[Higgs-strahlung]
+      \item \textbf{Higgs-strahlung}
       \begin{itemize}
-        \item Hadronic decay
-        \item Leptonic decay
+        \item Hadronic decay: $e^+e^- \rightarrow ZH \rightarrow q\overline{q} q\overline{q}$
+        \item Leptonic decay: $e^+e^- \rightarrow ZH \rightarrow l^{\pm}l^{\pm}$
       \end{itemize}
-   \end{description}
+   \end{itemize}
+
+   \subsection{Event samples}
+
+   The cross-section $\sigma_{LR}$ is for the polarisation $\mathcal{P}_{e^-,e^+} = (-1,+1)$, whereas $\sigma_{RL}$ is the cross-section of the polarisation $\mathcal{P}_{e^-,e^+} = (+1,-1)$.
+   The Higgs-strahlung and WW-fusion processes are equally important for the polarisation $\mathcal{P}_{e^-,e^+} = (-0.8,+0.3)$ as the W-boson couples only to right-handed electrons of left-handed positrons in the \gls{SM}.
+   Thus, at the total cross-section for $\nu\bar{\nu}H$ channel is larger.
+   For the  $\mathcal{P}_{e^-,e^+} = (+0.8,-0.3)$, the WW-fusion process is suppressed, the Higgs-strahlung cross-section is reduced to the coupling dependence of the Z-boson on the weak isospin and the background contaminations are less important.
+
+   \begin{equation}
+     \begin{array}{lrc}
+     \sigma_{\mathcal{P}_{e^-,e^+}} & = & \frac{(1 - P_{e^-})(1+P_{e^+})}{2} \sigma_{LR} + \frac{(1+P_{e^-})(1-P_{e^+})}{2} \sigma_{RL}, \\
+     \sigma_{-0.8,+0.3} & = & 0.585 \times \sigma_{LR} + 0.035 \times \sigma_{RL}, \\
+     \sigma_{+0.8,-0.3} & = & 0.035 \times \sigma_{LR} + 0.585 \times \sigma_{RL}.
+     \end{array}
+   \end{equation}
+
+   The integrated luminosity considered here is $330~\rm{fb}^{-1}$ for each beam polarisation.
+
+  \section{Results}
  
-  \subsection{Event reconstruction}
+    \subsection{Event reconstruction}
 
-  To study the $H \nu\nu$ channel, the signal as to be processed to decrease one part of the background and to reconstruct clusters formed by the jets.
-  A processor is identifying the isolated leptons. 
-  They are considered as background processes.
+    To the study the $H \nu\nu$ channel, the simulated data has to processed in order to reconstruct the final state which is giving a two jets and missing energy detector response.
+    The strategy to reconstruct the signal is explained here.
+    
+    The first step consists to use a processor that identifies the events containing isolated leptons and remove them from the list.
+    Indeed, the presence of a single lepton outside a jet is considered as a source of background.
+    Thus, a neural network is used to identify the different leptons in an event and checks if they belong to a jet.
+    The criteria of selection is based on a cone algorithm, the energy ratio deposited in ECAL, HCAL and muon system.
 
-  Reconstruction of the event according to signal hypothesis.
-
-  \begin{itemize}
-    \item Identification of isolated leptons to remove some of the background processes
-    \item Look for jet-like objects in the forward region corresponding to low pT hadrons coming from $\gamma \gamma$ interactions.
-    \item Jet clustering and flavor tagging
-  \end{itemize}
+    Then, a second processor is used to find low $p_{t}$ hadrons from $\gamma \gamma$ interactions to remove them from the particle list. 
+    This hadrons are detected as jet-like objects in the forward detector
+    This hadrons are identified 
+    kt algorithm used and based on two distances: 
+   
+    \begin{itemize}
+      \item Identification of isolated leptons to remove some of the background processes
+      \item Look for jet-like objects in the forward region corresponding to low pT hadrons coming from $\gamma \gamma$ interactions.
+      \item Jet clustering and flavor tagging
+    \end{itemize}
 
   \subsection{Event selection}
 
+  The event selection consists to improve the signal to noise ratio by applying different cuts that remove the background contribution.
+  The improvement of the signal is done by maximising the significance $s$:
+
+  \begin{equation}
+    s = \frac{\rm{N_{sig}}}{\sqrt{\rm{N_{sig}}+ \rm{N_{bg}}}},
+  \end{equation}
+
+  with, $\rm{N_{bg}}$ the number of remaining background and $\rm{N_{sig}}$, the number of remaining signal.
+  The strategy to maximise $s$ is the following.
+  First, a list of cuts is applied to the data.
+  The significance is measured with each cuts and the cut value which maximises $s$ is selected.
+  Then, the order of cuts are sorted by $s$.
+
+  \begin{equation}
+   \rm{M_{vis}} = \sqrt{E^2_{vis} - P^2_{vis}}
+  \end{equation}
 
     \begin{sidewaystable}
     \scriptsize{
-    \centering
+    \flushleft
       \begin{tabular}{c c c c c c c}
            \hline
-           {Process} & {Cross Section (fb)} & {Events number} & {$\text{Isolated leptons} = 0$} & {$35 <~\rm{{P}_{t}^{vis}} < 155~\rm{GeV} $} & {$95 <~\rm{m_{vis}}< 140~\rm{GeV}$} & {$-1 <~\rm{\cos{\alpha}}< 0.22$} \tabularnewline \hline
+           {Process} & {Cross Section (fb)} & {Events number} & \text{No isolated leptons} & {$35 <~\rm{{P}_{t}^{vis}} < 155~\rm{GeV} $} & {$95 <~\rm{m_{vis}}< 140~\rm{GeV}$} & {$-1 <~\rm{\cos{\alpha}}< 0.22$} \tabularnewline \hline
            \hline
-           Zhad            &$ 3.86\times 10^{4} $&$	1.27\times 10^{7} $&$ 1.26\times 10^{7} $&$ 1.09\times 10^{5} $&$ 5.79\times 10^{2} $ &$	5.05\times 10^{2} $\tabularnewline \hline
-           WW had          &$ 6.53\times 10^{3} $&$	2.16\times 10^{6} $&$	2.14\times 10^{6} $&$	5.27\times 10^{3} $&$	6.29      $         &$	6.29 $\tabularnewline \hline
-           WW semilep      &$ 8.16\times 10^{3} $&$	2.69\times 10^{6} $&$	1.17\times 10^{6} $&$	6.38\times 10^{5} $&$	1.13\times 10^{5} $ &$  6.26\times 10^{4} $\tabularnewline \hline
-           ZZ had          &$ 6.01\times 10^{2} $&$	1.98\times 10^{5} $&$	1.97\times 10^{5} $&$	2.74\times 10^{3} $&$	1.20 $              &$  6.20\times 10^{-1} $\tabularnewline \hline
-           ZZ semilep      &$ 5.65\times 10^{2} $&$ 1.86\times 10^{5} $&$ 1.40\times 10^{5} $&$ 7.49\times 10^{4} $&$ 1.46\times 10^{4} $ &$  8.20\times 10^{3} $\tabularnewline \hline
-           singleW semilep &$ 1.63\times 10^{3} $&$ 5.36\times 10^{5} $&$	2.24\times 10^{4} $&$	8.79\times 10^{3} $&$	1.65\times 10^{3} $ &$	1.63\times 10^{3} $\tabularnewline \hline
-           singleZee semi  &$ 3.10\times 10^{2} $&$	1.02\times 10^{5} $&$	1.30\times 10^{4} $&$	2.17\times 10^{1} $&$	7.00\times 10^{-2} $&$	7.00\times 10^{-2} $\tabularnewline \hline
-           singleZnn semi  &$ 3.55\times 10^{2} $&$	1.17\times 10^{5} $&$ 1.17\times 10^{5} $&$	8.38\times 10^{4} $&$	1.62\times 10^{4} $ &$	1.19\times 10^{4} $\tabularnewline \hline
-           Higgs BG        &$ 1.62\times 10^{2} $&$	5.34\times 10^{4} $&$ 4.19\times 10^{4} $&$ 4.59\times 10^{3} $&$	1.93\times 10^{2} $ &$	1.43\times 10^{2} $\tabularnewline \hline
-           HiggsToOther    &$ 3.05\times 10^{1} $&$	1.01\times 10^{4} $&$	6.66\times 10^{3} $&$	4.95\times 10^{3} $&$ 3.45\times 10^{3} $ &$	2.64\times 10^{3} $\tabularnewline \hline
+           Zhad            &$ 3.86\times 10^{4} $&$	1.27\times 10^{7} $&$ 1.26\times 10^{7} $&$ 1.09\times 10^{5} $&$ 5.79\times 10^{2} $ &$	5.05\times 10^{2}  $\tabularnewline \hline
+           WW had          &$ 6.53\times 10^{3} $&$	2.16\times 10^{6} $&$	2.14\times 10^{6} $&$	5.27\times 10^{3} $&$	6.29              $ &$	6.29               $\tabularnewline \hline
+           WW semilep      &$ 8.16\times 10^{3} $&$	2.69\times 10^{6} $&$	1.17\times 10^{6} $&$	6.38\times 10^{5} $&$	1.13\times 10^{5} $ &$  6.26\times 10^{4}  $\tabularnewline \hline
+           ZZ had          &$ 6.01\times 10^{2} $&$	1.98\times 10^{5} $&$	1.97\times 10^{5} $&$	2.74\times 10^{3} $&$	1.20              $ &$  6.20\times 10^{-1} $\tabularnewline \hline
+           ZZ semilep      &$ 5.65\times 10^{2} $&$ 1.86\times 10^{5} $&$ 1.40\times 10^{5} $&$ 7.49\times 10^{4} $&$ 1.46\times 10^{4} $ &$  8.20\times 10^{3}  $\tabularnewline \hline
+           singleW semilep &$ 1.63\times 10^{3} $&$ 5.36\times 10^{5} $&$	2.24\times 10^{4} $&$	8.79\times 10^{3} $&$	1.65\times 10^{3} $ &$	1.63\times 10^{3}  $\tabularnewline \hline
+           singleZee semi  &$ 3.10\times 10^{2} $&$	1.02\times 10^{5} $&$	1.30\times 10^{4} $&$	2.17\times 10^{1} $&$	7.00\times 10^{-2}$ &$	7.00\times 10^{-2} $\tabularnewline \hline
+           singleZnn semi  &$ 3.55\times 10^{2} $&$	1.17\times 10^{5} $&$ 1.17\times 10^{5} $&$	8.38\times 10^{4} $&$	1.62\times 10^{4} $ &$	1.19\times 10^{4}  $\tabularnewline \hline
+           Higgs BG        &$ 1.62\times 10^{2} $&$	5.34\times 10^{4} $&$ 4.19\times 10^{4} $&$ 4.59\times 10^{3} $&$	1.93\times 10^{2} $ &$	1.43\times 10^{2}  $\tabularnewline \hline
+           HiggsToOther    &$ 3.05\times 10^{1} $&$	1.01\times 10^{4} $&$	6.66\times 10^{3} $&$	4.95\times 10^{3} $&$ 3.45\times 10^{3} $ &$	2.64\times 10^{3}  $\tabularnewline \hline
            \hline						
-           Background     &$ 5.69\times 10^{4} $&$  1.88\times 10^{7} $&$	1.65\times 10^{7} $&$	9.31\times 10^{5} $&$ 1.50\times 10^{5} $ &$  8.76\times 10^{4} $\tabularnewline \hline
-           Signal	        &$ 6.82\times 10^{2} $&$  2.25\times 10^{4} $&$	2.23\times 10^{4} $&$	1.82\times 10^{4} $&$	1.66\times 10^{4} $ &$	1.57\times 10^{4} $\tabularnewline \hline
-           Significance   &                     &$	5.19              $&$	5.48 $             &$	1.87\times 10^{1} $&$	4.06\times 10^{1} $ &$  4.88\times 10^{1} $\tabularnewline \hline
+           Background     &$ 5.69\times 10^{4} $&$  1.88\times 10^{7} $&$	1.65\times 10^{7} $&$	9.31\times 10^{5} $&$ 1.50\times 10^{5} $ &$  8.76\times 10^{4}  $\tabularnewline \hline
+           Signal	        &$ 6.82\times 10^{2} $&$  2.25\times 10^{4} $&$	2.23\times 10^{4} $&$	1.82\times 10^{4} $&$	1.66\times 10^{4} $ &$	1.57\times 10^{4}  $\tabularnewline \hline
+           Significance   &                     &$	5.19              $&$	5.48 $             &$	1.87\times 10^{1} $&$	4.06\times 10^{1} $ &$  4.88\times 10^{1}  $\tabularnewline \hline
      \end{tabular}
     }
-    \caption{Cut flow chart with different cuts applied.}
+    \caption{Cut flow chart with three first cuts applied.}
     \label{tab:cutFlow}
   \end{sidewaystable}
 
+  \section{Outlooks}

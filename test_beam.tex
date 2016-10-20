@@ -269,11 +269,11 @@
    \subsection{Software analysis chain}
 
     The analysis of the test beam data is performed with EUTelescope\cite{Eutel}\cite{Jansen}.
-    It is based on the MARLIN framework, which is a part of the ILCSOFT.
-    The software is used to convert the dart into the LCIO format, but also to perform clustering search, alignment and final analysis.
+    It is based on the MARLIN framework, which is a part of the ILCSOFT (see~\ref{subsec:ILCSOFT} for more details about the ILCSoft package).
+    The software is used to convert the data into the LCIO format and to perform clustering search, alignment and final analysis.
     Each step of the analysis is driven by a dedicated processor.
 
-    From the raw data files, a first processor is used to convert the data into the LCIO format.y
+    From the raw data files, a first processor is used to convert the data into the LCIO format.
     This converter file contains the pixel number which fired in a given event, along with the sensor number.
     Before searching for clusters, the noisy pixels are removed from the list.
     A pixel is considered as noisy if its firing frequency is above a certain value. 
@@ -303,33 +303,10 @@
     The tracks created are then read by Millepede-II, which calculates the residuals of the tracks on each sensor and attempts to shift the position of the sensors and to rotate them in order to minimise the least squares fit function of these tracks.
     Millepede-II provides these informations into an output file used to create a new GEAR file with the new position and orientation of each plane.
     
-
-   % Firstly, the raw data files are converted into the LCIO data format to provide a consistency data format during the analysis step.
-   % This file contains the pixel number which fired in a given event, along with the sensor number.
-   % Then, a processor removing the noisy pixel is applied, before using a cluster algorithm to form sets of cluster from the individual activated pixels.
-   % A centre-of-gravity algorithm is then applied to 
-
-   % The specific acquisition which is done with EUDAQ has complicated the analysis.
-   % EUTelescope is coded to expect six telescope planes and a or several \gls{DUT} but at different $z$-positions.
-   % One way to overcome this problem is to perform a biased analysis. 
-   % Instead of performing the alignment of the telescope and followed by the \gls{DUT} alignment, the procedure can be done in one way.
-   % Nevertheless, for an unknown reason GBL and Millepede-II are not working.
-
-    %A prototype software based on GBL and Millepede-II and written by Claus Kleinwort has permitted to perform the alignment, as well as the other measurements.
-    %The software reeds a lcio file containing the hit position of every plane.
-
-    Due to the specific acquisition which was done with EUDAQ, the analysis was a bit complicated.
-    EUTelescope was coded to expect six telescope planes plus a single DUT.
-    One way to overcome this problem was to perform a biased analysis.
-    Instead of performing the alignment of the telescopes and then the DUT for an analysis, this step has to be done in one way.
-    Nevertheless, the alignment procedure was not working.
-
-    To perform the alignment, I have used a python script written by Claus Kleinwort, which reads the hit position of every sensor and use GBL and MP-II to perform the alignment.
-
     \begin{figure}
       \centering
       \includegraphics[width = \textwidth]{Pictures/X0/eutel-strategy.png}
-      \caption{blabla}
+      \caption{Flow-chart of the analysis strategy by using EUTelescope.}
       \label{fig:eutel-strategy}
     \end{figure}
 
