@@ -236,6 +236,23 @@
     Finally, the events are reconstructed with Marlin.
 
   \subsection{Event samples}
+     
+     \subsubsection{Event samples}
+
+     The cross-section $\sigma_{LR}$ is for the polarisation $\mathcal{P}_{e^-,e^+} = (-1,+1)$, whereas $\sigma_{RL}$ is the cross-section of the polarisation $\mathcal{P}_{e^-,e^+} = (+1,-1)$.
+     The Higgs-strahlung and WW-fusion processes are equally important for the polarisation $\mathcal{P}_{e^-,e^+} = (-0.8,+0.3)$ as the W-boson couples only to right-handed electrons of left-handed positrons in the \gls{SM}.
+     Thus, at the total cross-section for $\nu\bar{\nu}H$ channel is larger.
+     For the  $\mathcal{P}_{e^-,e^+} = (+0.8,-0.3)$, the WW-fusion process is suppressed, the Higgs-strahlung cross-section is reduced to the coupling dependence of the Z-boson on the weak isospin and the background contaminations are less important.
+
+     \begin{equation}
+       \begin{array}{lrc}
+       \sigma_{\mathcal{P}_{e^-,e^+}} & = & \frac{(1 - P_{e^-})(1+P_{e^+})}{2} \sigma_{LR} + \frac{(1+P_{e^-})(1-P_{e^+})}{2} \sigma_{RL}, \\
+       \sigma_{-0.8,+0.3} & = & 0.585 \times \sigma_{LR} + 0.035 \times \sigma_{RL}, \\
+       \sigma_{+0.8,-0.3} & = & 0.035 \times \sigma_{LR} + 0.585 \times \sigma_{RL}.
+       \end{array}
+     \end{equation}
+
+     The integrated luminosity considered here is $330~\rm{fb}^{-1}$ for each beam polarisation.
 
   \subsubsection{Signal}
 
@@ -306,45 +323,41 @@
       \end{itemize}
    \end{itemize}
 
-   \subsection{Event samples}
-
-   The cross-section $\sigma_{LR}$ is for the polarisation $\mathcal{P}_{e^-,e^+} = (-1,+1)$, whereas $\sigma_{RL}$ is the cross-section of the polarisation $\mathcal{P}_{e^-,e^+} = (+1,-1)$.
-   The Higgs-strahlung and WW-fusion processes are equally important for the polarisation $\mathcal{P}_{e^-,e^+} = (-0.8,+0.3)$ as the W-boson couples only to right-handed electrons of left-handed positrons in the \gls{SM}.
-   Thus, at the total cross-section for $\nu\bar{\nu}H$ channel is larger.
-   For the  $\mathcal{P}_{e^-,e^+} = (+0.8,-0.3)$, the WW-fusion process is suppressed, the Higgs-strahlung cross-section is reduced to the coupling dependence of the Z-boson on the weak isospin and the background contaminations are less important.
-
-   \begin{equation}
-     \begin{array}{lrc}
-     \sigma_{\mathcal{P}_{e^-,e^+}} & = & \frac{(1 - P_{e^-})(1+P_{e^+})}{2} \sigma_{LR} + \frac{(1+P_{e^-})(1-P_{e^+})}{2} \sigma_{RL}, \\
-     \sigma_{-0.8,+0.3} & = & 0.585 \times \sigma_{LR} + 0.035 \times \sigma_{RL}, \\
-     \sigma_{+0.8,-0.3} & = & 0.035 \times \sigma_{LR} + 0.585 \times \sigma_{RL}.
-     \end{array}
-   \end{equation}
-
-   The integrated luminosity considered here is $330~\rm{fb}^{-1}$ for each beam polarisation.
-
   \section{Results}
  
     \subsection{Event reconstruction}
 
-    To the study the $H \nu\nu$ channel, the simulated data has to processed in order to reconstruct the final state which is giving a two jets and missing energy detector response.
-    The strategy to reconstruct the signal is explained here.
-    
-    The first step consists to use a processor that identifies the events containing isolated leptons and remove them from the list.
-    Indeed, the presence of a single lepton outside a jet is considered as a source of background.
-    Thus, a neural network is used to identify the different leptons in an event and checks if they belong to a jet.
-    The criteria of selection is based on a cone algorithm, the energy ratio deposited in ECAL, HCAL and muon system.
+    The assumptions to study the $H \nu\nu$ channel is to reconstruct a final state which is giving a two jets and missing energy in the detector response.
+    The reconstruction consists to select and highlight this detector response.
 
-    Then, a second processor is used to find low $p_{t}$ hadrons from $\gamma \gamma$ interactions to remove them from the particle list. 
-    This hadrons are detected as jet-like objects in the forward detector
-    This hadrons are identified 
-    kt algorithm used and based on two distances: 
+    The first step consists to identify in the events the presence of isolated leptons in the final state and to remove them from the physics list.
+    The lepton detected outside a jet are considered as a source of background.
+    Thus, a neural network is used to identify in an event the different leptons and checks if they belong to a jet.
+    This selection is based on different criteria, like the vertex information, the energy deposited inside the \gls{ECAL}, the \gls{HCAL} and the muon system. 
+    The processor used for the identification is called \textit{IsolatedLeptonTagger} and has a veto efficiency of roughly $90~\%$.
+    The $10~\%$ of leptons undetected are coming from events in which the leptons are moving into the forward region and they could escape the detector without being identify by the processor.
+    A better selection is done after the jet reconstruction and is discussed later.
+
+    A second source of background is coming from the $\gamma \gamma$ interactions that are producing low $p_{t}$ hadrons.
+    This hadrons with a small transverse momenta and a small relative angle to the beam axis are detected as jet-like objects in the forward region of the detector.
+    The identification of the beam jets is based on the $k_{T}$ algorithm.
+    It consists to define a "distance" $d_{ij}$ between two particles and to find the first closet constituent.
+    
+    \begin{equation}
+      \begin{array}{lcl}
+        d_{ij} & = & \frac{\rm{min}\left(p^2_{T_i}, p^2_{T_j}\right) \cdot \Delta R^2_{ij}}{R^2}, \\
+        d_{i}  & = & p^2_{T_i},
+      \end{array}
+    \end{equation}
+
+    with $\Delta R^2_{ij} = \left( y_{i} - y_{j}\right)^2 + \left( \phi_{i} - \phi_{j}\right)^2$, $y_{i}$ the pseudo rapidity, $\phi_{i}$ the azimuthal angle and $p_{t_i}$ the transverse momentum of the particle studied.
+    The minimum between $d_{ij}$ and $d_{i}$ is calculated.
+    If $d_{ij}$ is he minimum value, then, the particles $i$ and $j$ are merged into a jet candidate, they are then remove from the physics list and the jet candidate is added instead.
+    If the minimum value is $d_{i}$, the particle is considered to be part of the beam jet and is removed from the particle lists.
+    This algorithm is repeated iteratively until the number of jets created is equal to the number of jets expected.
    
-    \begin{itemize}
-      \item Identification of isolated leptons to remove some of the background processes
-      \item Look for jet-like objects in the forward region corresponding to low pT hadrons coming from $\gamma \gamma$ interactions.
-      \item Jet clustering and flavor tagging
-    \end{itemize}
+    After removing the isolated leptons and the low $p_{t}$ hadrons from the physics list, the jet clustering and the flavor tagging processors are applied. 
+    Because of the $k_{T}$ algorithm, which removes particle from the physics list, the vertex finder is run again before to use the jet clustering algorithm.
 
   \subsection{Event selection}
 
@@ -365,31 +378,60 @@
    \rm{M_{vis}} = \sqrt{E^2_{vis} - P^2_{vis}}
   \end{equation}
 
-    \begin{sidewaystable}
-    \scriptsize{
-    \flushleft
-      \begin{tabular}{c c c c c c c}
-           \hline
-           {Process} & {Cross Section (fb)} & {Events number} & \text{No isolated leptons} & {$35 <~\rm{{P}_{t}^{vis}} < 155~\rm{GeV} $} & {$95 <~\rm{m_{vis}}< 140~\rm{GeV}$} & {$-1 <~\rm{\cos{\alpha}}< 0.22$} \tabularnewline \hline
-           \hline
-           Zhad            &$ 3.86\times 10^{4} $&$	1.27\times 10^{7} $&$ 1.26\times 10^{7} $&$ 1.09\times 10^{5} $&$ 5.79\times 10^{2} $ &$	5.05\times 10^{2}  $\tabularnewline \hline
-           WW had          &$ 6.53\times 10^{3} $&$	2.16\times 10^{6} $&$	2.14\times 10^{6} $&$	5.27\times 10^{3} $&$	6.29              $ &$	6.29               $\tabularnewline \hline
-           WW semilep      &$ 8.16\times 10^{3} $&$	2.69\times 10^{6} $&$	1.17\times 10^{6} $&$	6.38\times 10^{5} $&$	1.13\times 10^{5} $ &$  6.26\times 10^{4}  $\tabularnewline \hline
-           ZZ had          &$ 6.01\times 10^{2} $&$	1.98\times 10^{5} $&$	1.97\times 10^{5} $&$	2.74\times 10^{3} $&$	1.20              $ &$  6.20\times 10^{-1} $\tabularnewline \hline
-           ZZ semilep      &$ 5.65\times 10^{2} $&$ 1.86\times 10^{5} $&$ 1.40\times 10^{5} $&$ 7.49\times 10^{4} $&$ 1.46\times 10^{4} $ &$  8.20\times 10^{3}  $\tabularnewline \hline
-           singleW semilep &$ 1.63\times 10^{3} $&$ 5.36\times 10^{5} $&$	2.24\times 10^{4} $&$	8.79\times 10^{3} $&$	1.65\times 10^{3} $ &$	1.63\times 10^{3}  $\tabularnewline \hline
-           singleZee semi  &$ 3.10\times 10^{2} $&$	1.02\times 10^{5} $&$	1.30\times 10^{4} $&$	2.17\times 10^{1} $&$	7.00\times 10^{-2}$ &$	7.00\times 10^{-2} $\tabularnewline \hline
-           singleZnn semi  &$ 3.55\times 10^{2} $&$	1.17\times 10^{5} $&$ 1.17\times 10^{5} $&$	8.38\times 10^{4} $&$	1.62\times 10^{4} $ &$	1.19\times 10^{4}  $\tabularnewline \hline
-           Higgs BG        &$ 1.62\times 10^{2} $&$	5.34\times 10^{4} $&$ 4.19\times 10^{4} $&$ 4.59\times 10^{3} $&$	1.93\times 10^{2} $ &$	1.43\times 10^{2}  $\tabularnewline \hline
-           HiggsToOther    &$ 3.05\times 10^{1} $&$	1.01\times 10^{4} $&$	6.66\times 10^{3} $&$	4.95\times 10^{3} $&$ 3.45\times 10^{3} $ &$	2.64\times 10^{3}  $\tabularnewline \hline
-           \hline						
-           Background     &$ 5.69\times 10^{4} $&$  1.88\times 10^{7} $&$	1.65\times 10^{7} $&$	9.31\times 10^{5} $&$ 1.50\times 10^{5} $ &$  8.76\times 10^{4}  $\tabularnewline \hline
-           Signal	        &$ 6.82\times 10^{2} $&$  2.25\times 10^{4} $&$	2.23\times 10^{4} $&$	1.82\times 10^{4} $&$	1.66\times 10^{4} $ &$	1.57\times 10^{4}  $\tabularnewline \hline
-           Significance   &                     &$	5.19              $&$	5.48 $             &$	1.87\times 10^{1} $&$	4.06\times 10^{1} $ &$  4.88\times 10^{1}  $\tabularnewline \hline
-     \end{tabular}
-    }
-    \caption{Cut flow chart with three first cuts applied.}
+%    \begin{sidewaystable}
+%    \scriptsize{
+%    \flushleft
+%      \begin{tabular}{c c c c c c c}
+%           \hline
+%           {Process} & {Cross Section (fb)} & {Events number} & \text{No isolated leptons} & {$35 <~\rm{{P}_{t}^{vis}} < 155~\rm{GeV} $} & {$95 <~\rm{m_{vis}}< 140~\rm{GeV}$} & {$-1 <~\rm{\cos{\alpha}}< 0.22$} \tabularnewline \hline
+%           \hline
+%           Zhad            &$ 3.86\times 10^{4} $&$	1.27\times 10^{7} $&$ 1.26\times 10^{7} $&$ 1.09\times 10^{5} $&$ 5.79\times 10^{2} $ &$	5.05\times 10^{2}  $\tabularnewline 
+%           WW had          &$ 6.53\times 10^{3} $&$	2.16\times 10^{6} $&$	2.14\times 10^{6} $&$	5.27\times 10^{3} $&$	6.29              $ &$	6.29               $\tabularnewline 
+%           WW semilep      &$ 8.16\times 10^{3} $&$	2.69\times 10^{6} $&$	1.17\times 10^{6} $&$	6.38\times 10^{5} $&$	1.13\times 10^{5} $ &$  6.26\times 10^{4}  $\tabularnewline 
+%           ZZ had          &$ 6.01\times 10^{2} $&$	1.98\times 10^{5} $&$	1.97\times 10^{5} $&$	2.74\times 10^{3} $&$	1.20              $ &$  6.20\times 10^{-1} $\tabularnewline 
+%           ZZ semilep      &$ 5.65\times 10^{2} $&$ 1.86\times 10^{5} $&$ 1.40\times 10^{5} $&$ 7.49\times 10^{4} $&$ 1.46\times 10^{4} $ &$  8.20\times 10^{3}  $\tabularnewline 
+%           singleW semilep &$ 1.63\times 10^{3} $&$ 5.36\times 10^{5} $&$	2.24\times 10^{4} $&$	8.79\times 10^{3} $&$	1.65\times 10^{3} $ &$	1.63\times 10^{3}  $\tabularnewline 
+%           singleZee semi  &$ 3.10\times 10^{2} $&$	1.02\times 10^{5} $&$	1.30\times 10^{4} $&$	2.17\times 10^{1} $&$	7.00\times 10^{-2}$ &$	7.00\times 10^{-2} $\tabularnewline 
+%           singleZnn semi  &$ 3.55\times 10^{2} $&$	1.17\times 10^{5} $&$ 1.17\times 10^{5} $&$	8.38\times 10^{4} $&$	1.62\times 10^{4} $ &$	1.19\times 10^{4}  $\tabularnewline 
+%           Higgs BG        &$ 1.62\times 10^{2} $&$	5.34\times 10^{4} $&$ 4.19\times 10^{4} $&$ 4.59\times 10^{3} $&$	1.93\times 10^{2} $ &$	1.43\times 10^{2}  $\tabularnewline 
+%           HiggsToOther    &$ 3.05\times 10^{1} $&$	1.01\times 10^{4} $&$	6.66\times 10^{3} $&$	4.95\times 10^{3} $&$ 3.45\times 10^{3} $ &$	2.64\times 10^{3}  $\tabularnewline 
+%           \hline						
+%           Background     &$ 5.69\times 10^{4} $&$  1.88\times 10^{7} $&$	1.65\times 10^{7} $&$	9.31\times 10^{5} $&$ 1.50\times 10^{5} $ &$  8.76\times 10^{4}  $\tabularnewline 
+%           Signal	        &$ 6.82\times 10^{2} $&$  2.25\times 10^{4} $&$	2.23\times 10^{4} $&$	1.82\times 10^{4} $&$	1.66\times 10^{4} $ &$	1.57\times 10^{4}  $\tabularnewline 
+%           Significance   &                     &$	5.19              $&$	5.48 $             &$	1.87\times 10^{1} $&$	4.06\times 10^{1} $ &$  4.88\times 10^{1}  $\tabularnewline 
+%     \end{tabular}
+%    }
+%    \caption{Cut flow chart with three first cuts applied.}
+%    \label{tab:cutFlow}
+%  \end{sidewaystable}
+
+  \begin{table}
+    \begin{tabular}{c c c c}
+      \hline
+      Process                                     & Background          & Signal              & Significance  \tabularnewline
+      \hline
+      \hline
+      Cross-section (fb)                          & $5.69 \cdot 10^{4}$ & $6.82 \cdot 10^{2}$ &               \tabularnewline
+      Expected event number                       & $1.88 \cdot 10^{7}$ & $2.25 \cdot 10^{4}$ & $5.2$         \tabularnewline
+      No isolated leptons                         & $1.65 \cdot 10^{7}$ & $2.23 \cdot 10^{4}$ & $5.5$         \tabularnewline
+      {$35 <~\rm{{P}_{t}^{vis}} < 155~\rm{GeV} $} & $9.31 \cdot 10^{5}$ & $1.82 \cdot 10^{4}$ & $18.7$        \tabularnewline
+      {$95 <~\rm{m_{vis}}< 140~\rm{GeV}$}         & $1.50 \cdot 10^{5}$ & $1.66 \cdot 10^{4}$ & $40.6$        \tabularnewline
+      {$-1 <~\rm{\cos{\alpha}}< 0.22$}            & $8.76 \cdot 10^{4}$ & $1.57 \cdot 10^{4}$ & $48.8$        \tabularnewline
+      $26 < (\rm{N.R.C > 1GeV}) < 99$                    & $2.25 \cdot 10^{4}$ & $1.19 \cdot 10^{4}$ & $56.3$        \tabularnewline
+      $0.11 < \rm{DurhamjD2ym} < 1$               & $1.78 \cdot 10^{4}$ & $1.05 \cdot 10^{4}$ & $62.3$        \tabularnewline
+      $0 < \rm{abs(RefinedjPzvis)} < 113~\rm{GeV}$& $1.51 \cdot 10^{4}$ & $1.01 \cdot 10^{4}$ & $63.5$        \tabularnewline
+      $156 < \rm{RefinedjEmiss} < 230~\rm{GeV}$   & $1.37 \cdot 10^{4}$ & $9.85 \cdot 10^{3}$ & $64.1$        \tabularnewline      
+    \end{tabular}
+    \caption{Cut-flow table for a beam polarisation $\mathcal{P}_{e^{-},e^{+}} = (-0.8, +0.3)$.}
     \label{tab:cutFlow}
-  \end{sidewaystable}
+  \end{table}
 
   \section{Outlooks}
+
+  The cut-flow presented here is done with hard-cuts.
+  For example, all the events on which the particles have a transverse momentum different from the selection $35 <~\rm{{P}_{t}^{vis}} < 155~\rm{GeV}$ are discarded from the physics list.
+  Another technique using boosting decision trees and TMVA can be used to improve the significance.
+  It consists of combining the different variable and the  blablablabla
+
+  Then, the study of the Higgs branching ratio is one of the key point to determine the geometry of the vertex detector.
+  Indeed, the 
