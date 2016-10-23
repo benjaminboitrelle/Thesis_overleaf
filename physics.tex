@@ -200,7 +200,7 @@
   \section{Analysis of simulated data}
   
     Due to the restricted time to conduct the thesis, this section is introducing the tools to perform an analysis of simulated data at the ILD. 
-    The results shown are not the latest and were already demonstrated. 
+    The results shown here are not the last update and are already demonstrated\todo{Citation: thesis Felix}. 
     Nevertheless, the philosophy to perform a study of the Higgs production at the center-of-mass energy $\sqrt{s} = 350$ GeV and a luminosity of 250 $\text{fb}^{-1}$ is here presented.
   
   \subsection{Simulation set-up}  
@@ -233,11 +233,24 @@
     For the analysis, the detector model used is ILD\_o1\_v05.
     This model simulates the dead areas due to cabling, cooling system and mechanical structure and has a silicon-tungsten electromagnetic calorimeter, as well as an analog hadronic calorimeter.
     
-    Finally, the events are reconstructed with Marlin.
+    Finally, the events are reconstructed with the \gls{Marlin} package.
+    It is a C++ framework for reconstruction and analysis using the LCIO data format.
+    It is structure into modules, also called processors, that read an input file, perform defined tasks and write an output file that will be processed by another \gls{Marlin} module.
 
-  \subsection{Event samples}
+  \subsection{Event generation}
      
      \subsubsection{Event samples}
+
+     The \gls{ILD} generator group has produced signal and background sample for two different polarisations:  $\mathcal{P}_{e^-,e^+} = (-1,+1)$ and $\mathcal{P}_{e^-,e^+} = (+1,-1)$.
+     Although the scheduled polarisation are $\mathcal{P}_{e^-,e^+} = (-0.8,+0.3)$ and  $\mathcal{P}_{e^-,e^+} = (+0.8,-0.3)$, the simulated beam polarisation is re-weighted according to:
+     
+     \begin{equation}
+       \begin{array}{lrc}
+       \sigma_{\mathcal{P}_{e^-,e^+}} & = & \frac{(1 - P_{e^-})(1+P_{e^+})}{2} \sigma_{LR} + \frac{(1+P_{e^-})(1-P_{e^+})}{2} \sigma_{RL}, \\
+       \sigma_{-0.8,+0.3} & = & 0.585 \times \sigma_{LR} + 0.035 \times \sigma_{RL}, \\
+       \sigma_{+0.8,-0.3} & = & 0.035 \times \sigma_{LR} + 0.585 \times \sigma_{RL}.
+       \end{array}
+     \end{equation}
 
      The cross-section $\sigma_{LR}$ is for the polarisation $\mathcal{P}_{e^-,e^+} = (-1,+1)$, whereas $\sigma_{RL}$ is the cross-section of the polarisation $\mathcal{P}_{e^-,e^+} = (+1,-1)$.
      The Higgs-strahlung and WW-fusion processes are equally important for the polarisation $\mathcal{P}_{e^-,e^+} = (-0.8,+0.3)$ as the W-boson couples only to right-handed electrons of left-handed positrons in the \gls{SM}.
@@ -272,56 +285,59 @@
     Their contribution depends on the beam polarisation.
     For example, the cross-section for a beam polarisation $\mathcal{P}_{e^-,e^+} = (+0.8,-0.3)$ is smaller by an order of magnitude due to the W boson.
 
-    The irreducible background 
-
-    The figure ... displays the Feynman diagrams for the irreducible backgrounds which are including the exchange of a W boson.
-    The backgrounds which have quarks in the final state are considered.
-    The gluons background is less likely than the quarks background due to the loop in the final state to form a pair of gluons.
-    The background processes which only includes leptons in the final state are not considered in this analysis.
-    These processes are removed by applying a threshold cut on the minimal number of reconstructed particles.
+    Two irreducible backgrounds are considered here, the one involving a W-boson exchange and the one with a Z-boson exchange.
+    The cross-section of this processes is few times larger than the signal one.
+    For both, single W-boson and Z-boson exchange, the final state contains two jets with missing energy.
+    Nevertheless, the final state with quarks is more likely than the final state with two gluons due to the loop formed in the final state on which the gluons are emitted.
 
 
-%   \begin{figure}
-%      \unitlength = 1mm
-%\begin{feynman}
-%    \fermion[color=000000, endcaps=true, flip=false, label=e^-, labelDistance=-0.08, labelLocation=-0.30, showArrow=true, lineWidth=1.4285714285714286]{0, 8}{3, 6}
-%    \fermion[color=000000, endcaps=true, flip=false, label=undefined, labelDistance=0.42, labelLocation=0.50, showArrow=false, lineWidth=1.4285714285714286]{4, 4}{4, 4}
-%    \fermion[color=000000, endcaps=true, flip=false, label=\bar{\nu_e}, labelDistance=0.15, labelLocation=1.11, showArrow=true, lineWidth=1.4285714285714286]{3, 6}{6, 8}
-%    \dashed[color=000000, endcaps=true, flip=false, label=W, labelDistance=-0.65, labelLocation=0.82, showArrow=false, lineWidth=1.4285714285714286]{4, 4}{3, 6}
-%    \fermion[color=000000, endcaps=true, flip=false, label=\nu_{e}, labelDistance=0.19, labelLocation=1.15, showArrow=true, lineWidth=1.4285714285714286]{4, 4}{6, 5}
-%    \fermion[color=000000, endcaps=true, flip=false, label=undefined, labelDistance=0.42, labelLocation=0.50, showArrow=true, lineWidth=1.4285714285714286]{3, 2}{4, 4}
-%    \fermion[color=000000, endcaps=true, flip=false, label=e^+, labelDistance=0.70, labelLocation=-0.16, showArrow=true, lineWidth=1.4285714285714286]{0, 0}{3, 2}
-%    \electroweak[color=000000, endcaps=true, flip=false, label=\gamma / Z, labelDistance=-0.46, labelLocation=0.19, showArrow=false, lineWidth=1.4285714285714286]{3, 2}{5, 1}
-%    \fermion[color=000000, endcaps=true, flip=false, label=\bar{q}, labelDistance=0.20, labelLocation=1.02, showArrow=true, lineWidth=1.4285714285714286]{5, 1}{6, 0}
-%    \fermion[color=000000, endcaps=true, flip=false, label=q, labelDistance=0.02, labelLocation=-0.28, showArrow=true, lineWidth=1.4285714285714286]{6, 2}{5, 1}
-%\end{feynman}
-%      \caption{Blablalb}
-%   \end{figure}
-   
-   \begin{itemize}
-      \item \textbf{W-boson pair production}
-      \begin{itemize}
-        \item Semi-leptonic decay: $e^{+}e^{-} \rightarrow W^+w^- \rightarrow \nu_{l}l^{\pm}q\overline{q}$
-        \item Hadronic decay: $e^{+}e^{-} \rightarrow W^+w^- \rightarrow q\overline{q} q\overline{q}$
-      \end{itemize}
-      \item \textbf{Z-boson pair production}
-      \begin{itemize}
-        \item Hadronic decay: $e^+e^- \rightarrow ZZ \rightarrow q\overline{q} q\overline{q}$
-        \item Leptonic decay: $e^+e^- \rightarrow ZZ \rightarrow l^+l^- q\overline{q}$
-        \item Hadronic decay with missing energy:  $e^+e^- \rightarrow ZZ \rightarrow \nu_{l}\overline{\nu_{l}}q \overline{q}$
-      \end{itemize}
-      \item \textbf{Single W-boson production}: $e^+e^- \rightarrow W^{\pm}e^{\pm}\nu_{e} \rightarrow \nu_{e}e^{\pm}q\overline{q}$
-      \item \textbf{Single Z-boson production}
-      \begin{itemize}
-        \item Hadronic decay with missing energy : $e^+e^- \rightarrow Z e^+e^- \rightarrow q\overline{q} \nu \overline{\nu}$
-        \item Hadronic and electron/positron decay: $e^+e^- \rightarrow Z e^+e^- \rightarrow q\overline{q} e^+e^-$
-      \end{itemize}
-      \item \textbf{Higgs-strahlung}
-      \begin{itemize}
-        \item Hadronic decay: $e^+e^- \rightarrow ZH \rightarrow q\overline{q} q\overline{q}$
-        \item Leptonic decay: $e^+e^- \rightarrow ZH \rightarrow l^{\pm}l^{\pm}$
-      \end{itemize}
-   \end{itemize}
+    The background involving W-bosons, such as $e^{-}e^{+} \rightarrow W^{\pm}e^{\pm}\nu_{e} \rightarrow e^{\pm}\nu_{e}q\overline{q}$ is two orders magnitude bigger than the signal cross-section.
+    The neutrino produced carries a large transverse momentum, whereas the electron or positron has a low transverse momentum.
+    Hence, it can be undetected and be considered as a missing energy.
+    
+    The W-pair production can lead to semi-leptonic, hadronic and leptonic decay modes.
+    The semi-leptonic mode consists of two jets and a lepton with its associated neutrino ($e^{+}e^{-} \rightarrow W^+w^- \rightarrow \nu_{l}l^{\pm}q\overline{q}$) and it is the major background process for the W-pair production.
+    This background is detected by looking for an isolated lepton.
+    Nevertheless, the lepton could escape the detector undetected or be inside a jet.
+    The second W-pair production is the hadronic decay on which there is no missing energy ($e^{+}e^{-} \rightarrow W^+w^- \rightarrow q\overline{q} q\overline{q}$).
+    This background is reduced by applying cuts on the missing momentum and the di-jet invariant mass.
+    The last contribution is the leptonic final state, which is easy to distinguish from the signal.
+    Thus, it is not considered in the study. 
+
+    The Z-pair background is ten times smaller than the W-pair production.
+    The  $e^+e^- \rightarrow ZZ \rightarrow \nu_{l}\overline{\nu_{l}}q \overline{q}$ process is an irreducible background.
+    The hadronic decay $e^+e^- \rightarrow ZZ \rightarrow q\overline{q} q\overline{q}$ is reduced by cutting on the missing momentum and the di-jet invariant mass.
+    The semi-leptonic process $e^+e^- \rightarrow ZZ \rightarrow l^+l^- q\overline{q}$ is easier to detect because of the second isolated lepton in the event.
+
+    Finally, the last background to take into account is the one with the Higgs boson produced in the final state.
+    The Higgs-strahlung can lead to $q\overline{q}H$ and $l^{\pm}l^{\mp}H$ has cross-section three times larger than the signal, but it is easily identify due to the absence of neutrino.
+    All the decay mode of the Higgs different from $H \rightarrow b\overline{b}$, $H \rightarrow c\overline{c}$ and $H \rightarrow gg$ are considered as part of the background.
+
+
+   %@\begin{itemize}
+   %@   \item \textbf{W-boson pair production}
+   %@   \begin{itemize}
+   %@     \item Semi-leptonic decay: $e^{+}e^{-} \rightarrow W^+w^- \rightarrow \nu_{l}l^{\pm}q\overline{q}$
+   %@     \item Hadronic decay: $e^{+}e^{-} \rightarrow W^+w^- \rightarrow q\overline{q} q\overline{q}$
+   %@   \end{itemize}
+   %@   \item \textbf{Z-boson pair production}
+   %@   \begin{itemize}
+   %@     \item Hadronic decay: $e^+e^- \rightarrow ZZ \rightarrow q\overline{q} q\overline{q}$
+   %@     \item Leptonic decay: $e^+e^- \rightarrow ZZ \rightarrow l^+l^- q\overline{q}$
+   %@     \item Hadronic decay with missing energy:  $e^+e^- \rightarrow ZZ \rightarrow \nu_{l}\overline{\nu_{l}}q \overline{q}$
+   %@   \end{itemize}
+   %@   \item \textbf{Single W-boson production}: $e^+e^- \rightarrow W^{\pm}e^{\pm}\nu_{e} \rightarrow \nu_{e}e^{\pm}q\overline{q}$
+   %@   \item \textbf{Single Z-boson production}
+   %@   \begin{itemize}
+   %@     \item Hadronic decay with missing energy : $e^+e^- \rightarrow Z e^+e^- \rightarrow q\overline{q} \nu \overline{\nu}$
+   %@     \item Hadronic and electron/positron decay: $e^+e^- \rightarrow Z e^+e^- \rightarrow q\overline{q} e^+e^-$
+   %@   \end{itemize}
+   %@   \item \textbf{Higgs-strahlung}
+   %@   \begin{itemize}
+   %@     \item Hadronic decay: $e^+e^- \rightarrow ZH \rightarrow q\overline{q} q\overline{q}$
+   %@     \item Leptonic decay: $e^+e^- \rightarrow ZH \rightarrow l^{\pm}l^{\pm}$
+   %@   \end{itemize}
+   %@\end{itemize}
 
   \section{Results}
  
