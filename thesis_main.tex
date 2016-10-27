@@ -15,6 +15,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathrsfs}
+\usepackage{esvect}
 \usepackage{textcomp}
 \usepackage{mathtools}
 \usepackage{verbatim}
@@ -165,8 +166,8 @@
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 
 \begin{document}
-\pagenumbering{roman}
-    \frontmatter
+    
+  \frontmatter
     %\maketitle
     \input{aknowledgements.tex}
     %\setcounter{page}{1}
@@ -178,12 +179,8 @@
     \listoftodos
 %	\sommaire
 	
-    \mainmatter
+  \mainmatter
 
-    %\input{introduction.tex}
-%    \input{introduction.tex}
-
-%\pagenumbering{arabic}
     \input{acronym.tex}
     
     \input{SM.tex}
@@ -207,7 +204,7 @@
  %   \input{conclusions.tex}
 %	  \appendix	  
     
- %   \backmatter
+  \backmatter
 
 	
   \printglossary[type=\acronymtype]
