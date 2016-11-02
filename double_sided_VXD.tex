@@ -6,38 +6,11 @@
   The design of such device is driven by the physics requirement of the experiment and is playing a crucial role at the \acrfull{ILC}.
   For example, one flagship measurement is the study of the Higgs boson couplings to the fermions and other bosons.
   This can be achieved only with a precise heavy flavor tagging and the ability to separate the $b$ quarks from the $c$ quarks. 
-  Actually, the lifetime of the two quarks is of the same magnitude ($1.3 \time 10^{-12}$ s for the $b$ quark and $1.1 \time 10^{-12}$ s for the $c$ quarks), leading to  very close decay vertices. 
+  Actually, the lifetime of the two quarks is of the same magnitude ($1.3 \time 10^{-12}~\rm{s}$ for the $b$ quark and $1.1 \time 10^{-12}~\rm{s}$ for the $c$ quark), leading to very close decay vertices. 
   
   Along this chapter, the role of the vertex detector and the physics requirements to develop one for the \gls{ILC} environment will be presented.
   Then, the different options of the \acrfull{ILD} are shown, to focus on the double-sided ladders developed by the \gls{PLUME} collaboration.
   To finish, the principle of \gls{CMOS} sensors and their use in physics are described.
-
-  %The aim of the \gls{ILC} is to perform precise measurement of new and already known particles. 
-  %It can be achieved only by a proper detector design, driven by flagship measurements like the Higgs coupling to quarks and bosons.
-  %The \acrfull{VXD} at the \gls{ILC} should be able to perform an efficient B-meson tagging and to separate $b$ and $c$ quarks.
-  %The measurement of heavy quark jets and their decay vertices will play a crucial role in the \gls{ILC} physics.
-  %Along this chapter, the role of the vertex detector and the physics requirements in building one suited for the \gls{ILC} environment will be presented.
-  %Then, the different options for the \gls{ILD} are shown to focus on the double-sided options developed by the PLUME collaboration.
-  %To finish, the principle of \gls{CMOS} sensors and their use in physics are described.
-
-  %These silicon layers are forming the vertex detector, the closest detector to the interaction point.
-
-  %To be able to measure the Higgs coupling to the fermions and bosons, the vertex detector has to be able to reconstruct precisely the decay vertices of heavy quark.
-  %
-
-
-  %To perform precise measurement at the \gls{ILC} to discover new particles or to characterise more accurately the ones known, the \gls{VXD} has to be built with respect some flagship measurements.
-  %For example, to study the coupling of the Higgs with the quarks and bosons, this detector has to be able to separate efficiently the $b$ quarks to the $c$ quarks.
-
-  %At the \gls{ILC} flagship measurements such as the Higgs coupling to the quarks and bosons are driving the development of the vertex detector.
-  %For example, to separate $b$ (1.3 10-12)and $c$ (1.1 10-12)quarks
-  %To measure particles with a short lifetime ($\simeq 10^{12}$s) that have a decay length between 150 and 500 $\mu$m, 
-
-
-  %The sub-detector has to be able to separate particles with a time life $\simeq 10^{-12}$s  
-
-
-  %The \gls{ILC} is aiming to perform more precise measurements of new and already known particles. 
 
   \minitoc
   
@@ -46,15 +19,16 @@
     The \gls{VXD} is the closest sub-detector to the \acrfull{IP} in charge of reconstructing the vertex by extrapolating particles back to their origin of production. 
     This detector should be optimised to track particles in a high-density environment and to be able to extract the tracks from the different particles, especially the $b$ and $c$ quarks in the case of the \gls{ILC}.
     The reconstruction of the displaced vertices should be efficient enough to perform a good flavour tagging.
-    Therefore, the detector has to measure particles with a lifetime in the picosecond regime, representing a decay length between 150 and 500 $\mu\text{m}$.
+    Therefore, the detector has to measure particles with a lifetime in the picosecond regime, representing a decay length between 150 and $500~\rm{\mu m}$.
     The minimum distance of the first \gls{VXD} layer is determined by the beam pipe radius, and the background induced by beamstrahlung, to limit the pixel occupancy.
     This sub-detector has a central role in the tracks' reconstruction.
     Depending on the option chosen, the \gls{VXD} has to provide five or six points of measurement with a very high precise spatial resolution.
     For the studies requiring vertex charge identification, it should be able to reconstruct low-momentum and very forward tracks.
     %The typical parameters of such detector are their thickness, especially their material budget to reduce unwanted interaction, and their pitch which defines the spatial resolution that can be achieved.
-   
 
    \subsection{Physics requirements}
+
+
    
    The ideal \gls{VXD} should be made of sensors with a fine granularity in order to increase the ability to distinguish two nearest particles.
    The mechanical structure of the detector should provide a good stiffness and stability of the whole system but has to be at the same time as light as possible to reduce the interaction of the particles traversing it, before they reached another part of the main detector.
@@ -70,39 +44,39 @@
     
     \begin{equation}
       %\sigma_{IP} = 5 \mu\text{m} \oplus \frac{10 \ - \ 15 \mu\text{m}}{p \sin{\theta}^{3/2} }
-      \sigma_{IP} = a \oplus \frac{b}{p \sin{\theta}^{k}} \text{, with k =}
+      \sigma_{IP} = a \oplus \frac{b}{p \sin{\theta}^{k}}~\rm{,~with~k~=}
       \left\{
         \begin{array}{r l}
-          \frac{3}{2} & \text{in the } R - \Phi \text{ projection} \\
-          \frac{5}{2} & \text{in the z projection}
+          \frac{3}{2} & \text{in the } R - \Phi \text{ projection,} \\
+          \frac{5}{2} & \text{in the z projection.}
         \end{array}
       \right. 
       \label{eq:resIP}
     \end{equation}
 
-    Where $\theta$ is the track polar angle, a and b are explained in the following.
+    Where $\theta$ is the track polar angle, $a$ and $b$ are explained in the following.
 
-   The first term $a$ is the impact parameter resolution of the sensors used for the \gls{VXD}, which is linked up to the radius of the inner $R_{int}$ and outer $R_{ext}$ layers and the single point resolution $\sigma_{s.p.}$, as described in equation~\ref{eq:aTerm}.
+   The first term $a$ is the impact parameter resolution of the sensors used for the \gls{VXD}, which is linked up to the radius of the inner $R_{\rm{int}}$ and outer $R_{\rm{ext}}$ layers and the single point resolution $\sigma_{s.p.}$, as described in equation~\ref{eq:aTerm}.
 
    \begin{equation}
-     a = \sigma_{s.p}\frac{R_{int} \oplus R_{ext}}{R_{ext} - R_{in}}
+     a = \sigma_{s.p}\frac{R_{\rm{int}} \oplus R_{\rm{ext}}}{R_{\rm{ext}} - R_{\rm{int}}}
      \label{eq:aTerm}
    \end{equation}
 
-    In the case of the \gls{ILD}, the single point resolution should not be higher than $\sigma_{sp} \simeq 3 \mu\text{m}$, leading to an impact parameter with a resolution of the order of $a \simeq 5 \mu\text{m}$.
+    In the case of the \gls{ILD}, the single point resolution should not be higher than $\sigma_{sp} \simeq 3~\rm{\mu m}$, leading to an impact parameter with a resolution of the order of $a \simeq 5~\rm{\mu m}$.
    
-    The second term presented in the equation~\ref{eq:bTerm}, is related to the multiple scattering inducing an uncertainty on the impact parameter.
+    The second term, $b$, presented in the equation~\ref{eq:bTerm}, is related to the multiple scattering inducing an uncertainty on the impact parameter.
     It depends on the charge $Z$ of the impinging particle, the material crossed by the particle $\frac{x}{X_0 \sin{\theta}}$ and the distance of the innermost layer to the \gls{IP}.
     Depending on the momentum or the crossing angle of the incoming particles, the two parameters are more or less important.
     For low momentum particles or crossing particles with a shallow angle, the $b$ parameter becomes important, while for higher momentum $a$ dominates.
 
 
     \begin{equation}
-      b = R_{int} \frac{13.6 MeV/c}{\beta c}  Z \sqrt{\frac{x}{X_{0}}} \left[ 1 + 0.036 ln \left( \frac{x}{X_{0}\sin{\theta}} \right) \right]
+      b = R_{int} \frac{13.6 MeV/c}{\beta c}  Z \sqrt{\frac{x}{X_{0}}} \left[ 1 + 0.036 ln \left( \frac{x}{X_{0}\sin{\theta}} \right) \right].
       \label{eq:bTerm}
     \end{equation}
    
-   For the \gls{ILC} purpose, the \gls{ILD}-\gls{VXD} should reach an impact parameter resolution better than 5 $\mu$m and a b parameter better than 10 $\mu$m GeV/c. 
+   For the \gls{ILC} purpose, the \gls{ILD}-\gls{VXD} should reach an impact parameter resolution better than $5~\rm{\mu m}$ and a $b$ parameter better than $10~\rm{\mu m~GeV/c}$. 
    This precision on these parameters were never obtained before in other experiments.
    %The values were never obtained before for other experiments. 
    As a comparison, the resolution parameters for the \gls{LHC} are: $a =  12 \ \mu$m and $b = 70 \ \mu$m GeV/c. 

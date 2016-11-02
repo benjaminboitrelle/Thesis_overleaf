@@ -1,5 +1,5 @@
 %\documentclass[a4papper, 12pt, titlepage]{book}
-\documentclass[a4papper, 12pt]{book}
+\documentclass[a4papper, 12pt, parskip, headsepline]{book}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -42,6 +42,21 @@
 \ifpdf
   \DeclareGraphicsRule{*}{mps}{*}{}
 \fi
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%%\fancyhead{}
+%%\fancyhead[RO,LE]{\thsection}
+%%\fancyfoot{}
+%%\fancyfoot[LE,RO]{\thepage}
+%%\fancyfoot[LO,CE]{Chapter \thechapter}
+%%\fancyfoot[CO,RE]{Author Name}
+%\fancyhead[LE,RO]{\slshape \rightmark}
+%\fancyhead[LO,RE]{\slshape \leftmark}
+%\fancyfoot[C]{\thepage}
+\renewcommand{\chaptermark}[1]{%
+ \markboth{\MakeUppercase{%
+ \chaptername}\ \thechapter:%
+ \ #1}{}}
 
 \hypersetup{
   backref=true, %permet d'ajouter des liens dans... pagebackref=true,%...les bibliographies
@@ -165,6 +180,36 @@
 }
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 
+
+\newenvironment{dedication}
+  {\clearpage           % we want a new page
+   \thispagestyle{empty}% no header and footer
+   \vspace*{\stretch{1}}% some space at the top 
+   \itshape             % the text is in italics
+   \raggedleft          % flush to the right margin
+  }
+  {\par % end the paragraph
+   \vspace{\stretch{3}} % space at bottom is three times that at the top
+   \clearpage           % finish off the page
+  }
+
+
+% Better page layout for A4 paper, see memoir manual.
+%\settrimmedsize{297mm}{210mm}{*}
+%\setlength{\trimtop}{0pt} 
+%\setlength{\trimedge}{\stockwidth} 
+%\addtolength{\trimedge}{-\paperwidth} 
+%\settypeblocksize{634pt}{448.13pt}{*} 
+%\setulmargins{4cm}{*}{*} 
+%\setlrmargins{*}{*}{1.5} 
+%\setmarginnotes{17pt}{51pt}{\onelineskip} 
+%\setheadfoot{\onelineskip}{2\onelineskip} 
+%\setheaderspaces{*}{2\onelineskip}{*} 
+%\checkandfixthelayout
+
+
+
+
 \begin{document}
     
   \frontmatter
@@ -178,6 +223,16 @@
     \listoftables
     \listoftodos
 %	\sommaire
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+%\begin{dedication}
+%  À ma famille, mes amis, Frédéric Courant et Jamy Gourmaud.
+%\end{dedication}
+
+
 	
   \mainmatter
 
