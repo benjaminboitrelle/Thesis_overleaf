@@ -62,8 +62,8 @@
     For the first time, the collaboration has decided to use the EUDET telescope and EUDAQ for the acquisition, instead of the Strasbourg telescope and the IPHC acquisition.
     Several configuration are available for the set-up used.
     The first ones consist to use the six planes of the EUDET telescope and to have two separate acquisitions, one for \gls{PLUME} and the second one dedicated for the telescope and then, to merge the data together.
-    As the EUDET telescope are equipped with the same sensors as \gls{PLUME}, the acquisition can be simplified by having only four telescope planes and connecting directly two sensors of the \gls{DUT}.
-    A simulation toolkit developed by Simon Spannagel and based on \gls{GBL} is used to compare the pointing resolution at the \gls{DUT} position for different telescope geometries.
+    As the EUDET telescope is equipped with the same sensors as \gls{PLUME}, the acquisition can be simplified by having only four telescope planes and connecting directly two sensors of the \gls{DUT}.
+    A simulation toolkit developed by Simon Spannagel\cite{spannagel_2016_48795} and based on \gls{GBL} is used to compare the pointing resolution at the \gls{DUT} position for different telescope geometries.
     Here, the six and four telescope planes set-ups are compared for different energies and spacing between the sensors.
     This simulation takes into account the material budget of the telescope, the \gls{DUT} and the multiple scattering of electrons in the air.
     One telescope plane as a material budget of $0.053~\%$ of $\rm{X_{0}}$, whereas \gls{PLUME} is $0.65~\%$ plus two kapton foils used to insulate the ladder from the light.
@@ -113,9 +113,9 @@
       \label{fig:estimationRes4.7GeV}
     \end{figure}
 
-    As the number of telescope planes does not impact the pointing resolution, it has been decided to use only four telescope planes to simplify the acquisition system.
-    The sensors of the telescope and \gls{PLUME} are both \gls{MIMOSA}-26 thinned down to $50~\rm{\mu m}$.
-    Instead of building a DAQ compatible with EUDAQ, two EUDET telescope planes are removed from the set-up and replaced by two \gls{PLUME} sensors (one on each side).
+    As the number of telescope planes does not impact the pointing resolution, it has been decided to use only four telescope planes and two \gls{PLUME} sensors (one on each side) to simplify the acquisition system.
+    %The sensors of the telescope and \gls{PLUME} are both \gls{MIMOSA}-26 thinned down to $50~\rm{\mu m}$.
+    %Instead of building a DAQ compatible with EUDAQ, two EUDET telescope planes are removed from the set-up and replaced by two \gls{PLUME} sensors (one on each side).
     However, the synchronisation and the stability of the acquisition have to be tested before the test beam campaign. 
 
     \subsection{Acquisition system and experimental set-up}
@@ -133,7 +133,7 @@
       \subsubsection{Experimental set-up}
 
       Finally, the integration of \gls{PLUME} for the different measurements to perform is investigated.
-      To perform the deformation studies, the \gls{DUT} is mounted on a rotation stage. 
+      For the deformation studies, the \gls{DUT} is mounted on a rotation stage. 
       With respect to the local coordinate system (or sensor coordinate system), the rotation is along the $u$-direction. 
       The first option considerer to performer the rotation is to orient the ladder in the same direction as the telescope's sensors. 
       Hence, the ladder is in the horizontal position and the rotation needs a complicated frame to ensure the stability of the system.
@@ -141,8 +141,9 @@
       Due to the complexity and the time needed to build this frame, a second option has been considered.
       The ladder is placed vertically on a rotation stage. 
       There is a $90^{\circ}$ rotation between the telescope sensors and the \gls{PLUME} ones.
-      The frame consists of an aluminum plate insulated on which the \gls{DUT} sits.
-      Clamps are used to reduce the force applied by the cable on the flex to avoid to damage the \gls{DUT} during the test beam.
+      The frame consists of an insulated aluminum plate on which the \gls{DUT} sits.
+      To avoid to damage the \gls{DUT} during the test beam, the flex-cable is maintained on the frame by two clamps.
+      In this way, less constraint are applied on the connector. 
       A plate with screws hold the ladder strongly to the frame.
       The frame is then mounted onto a rotation stage, which is mounted on a translation stage.
       The figure~\ref{fig:mechanics} shows a schematic model of the frame designed and built at DESY.
@@ -158,9 +159,9 @@
       On one endcap, a pipe is fixed and connected to the fan.
       Some studies in Strasbourg were done to determine the air flow speed as a function of the voltage applied.
       Hence, an air flow speed of $3~\rm{m.s^{^1}}$ is achieved with $5~\rm{V}$ and an air flow speed of $6~\rm{m.s^{-1}}$ for $10~\rm{V}$.
-      This values result in an operating temperature of all sensors between approximately $40$ and $52^{\degree}\rm{C}$.
+      This values result in an operating temperature of all sensors between approximately $40^{\degree}\rm{C}$ and $52^{\degree}\rm{C}$.
 
-      During the test beam campaign, the \textit{clock} and \textit{marker} are read from one sensor of the \gls{PLUME} module.
+      During the test beam campaign, the \textit{clock} and \textit{marker} are read from one sensor of \gls{PLUME}.
       The \textit{clock} is extended with a $80~\rm{cm}$ long cable to ensure that one frame starts on the rising edge.
       The second input of the acquisition is a \gls{PLUME} sensor (opposite side of the first sensor), followed by the four telescope planes. 
       Moreover, \gls{PMT}s are placed in coincidence on each side of the telescope.
@@ -195,7 +196,7 @@
     
     When charged particles are traveling through matter, they lose energy via inelastic collision with atomic electrons and this leads to the ionisation or excitation of the matter.
     Furthermore, along their path, they are deflected by many small angles from their initial trajectory due to Coulomb scattering from nuclei. 
-    This effect, called multiple Coulomb scattering, is a stochastic effect that leaves on the average the particle undisturbed through its path. 
+    This stochastic effect, called multiple Coulomb scattering, leaves on the average the particle undisturbed through its path. 
     For small angles of deviation, the multiple scattering is following a Gaussian behavior, whereas for larger angles, it behaves like the Rutherford scattering.
     The Highland formula, which is an empirical formula, describes the distribution of the multiple scattering, or the "kink angle" as a function of the momentum $p$ of the incoming charge particles, its velocity $\beta c$, its charge number $z$ and its true path length in radiation length unit $\frac{x}{X_{0}}$:
 
@@ -211,14 +212,14 @@
     \end{equation}
 
     The spread angle $\theta_{0}$ depends on the momentum of the incoming particle, as well as the relative radiation length $\frac{x}{X_{0}}$.
-    Thus, for a given relative radiation length, the kink angle is becoming smaller for higher momentum, and for a given momentum, this kink angle is not the same for different relative radiation length.
+    Thus, for a given relative radiation length, the kink angle is becoming smaller for higher momentum, and for a given momentum, this kink angle is not the same for different relative radiation lengths.
 
     \subsection{Motivation}
 
     The design of a detector is driven by its intrinsic characteristics, such as the pointing resolution or the integration time, but also by some requirements on the material budget.
     For example, the \gls{ILC} sets new goals for the design of the vertex detector, but also for other parts of the detector, as mentioned in chapters~\ref{chap:ILC} and~\ref{chap:vxd}.
-    For such detector, the tracking system should detect precisely the particles path and minimising their energy degradation, while the calorimeters have to measure accurately the energy deposited by the particles.
-    During the physics analysis, the reconstruction of the events depends strongly on the knowledge of the energy loss by the particles inside the different component of the detector before they reach the calorimeters. 
+    For such detector, the tracking system should detect precisely the particles path and minimise their energy degradation, while the calorimeters have to measure accurately the energy deposited by the particles.
+    During the physics analysis, the reconstruction of the events depends strongly on the knowledge of the energy loss by the particles inside the different components of the detector before they reach the calorimeters. 
     To improve the results, a correction on the energy as to be applied.
     Thus, the study of the radiation length $\rm{X_{0}}$ in $\rm{g.cm}^{2}$, which is the amount of matter traversed by the electron is an important part of the detector development.
     For electrons and positrons, the radiation length corresponds to the mean distance over which these particles loss $1/e$ of its energy by bremsstrahlung.
@@ -235,9 +236,9 @@
     \subsection{The DESY II test beam facility}
 
     The \gls{DESY} test beam facility is composed of three areas.
-    Firstly, the electron beam is produced in the LINAC-II and accelerated to 450 MeV before to be injected in the DESY-II synchrotron ring.
-    The DESY-II is used as a storage ring for the PETRA-III. 
-    The beam is accelerated and the particles are stored until enough particles are available to be sent on to PETRA, where they are used for photon science.
+    Firstly, the electron beam is produced in the LINAC-II and accelerated up to 450 MeV before to be injected in the DESY-II synchrotron ring.
+    The DESY-II is used as a storage ring for the PETRA-III accelerator. 
+    The beam is accelerated and stored until enough particles are available to be sent on to PETRA, where they are used for photon science.
     
     \begin{figure}[!h]
       \centering
@@ -278,11 +279,11 @@
     This converter file contains the pixel number which fired in a given event, along with the sensor number.
     Before searching for clusters, the noisy pixels are removed from the list.
     A pixel is considered as noisy if its firing frequency is above a certain value. 
-    The noisy pixels correspond to defect raw or column or single pixels always sending information.
+    The noisy pixels correspond to defect raw or column or single pixels always sending information (see section~\ref{sec:noiseMeasurements}).
     Then, a cluster algorithm forms sets of cluster from the individual activated pixels.
 
-    Afterwards the hit candidates are defined, the alignment steps can starts.
-    It consists to minimise... ... .. .. .. .
+    Afterwards the hit candidates are defined, the alignment steps can start.
+    Almost the same procedure as presented in chapter~\ref{chap:deformation} is performed, except that the alignment is done with \gls{GBL}.
 
     Nevertheless, for my set-up, the alignment step did not work.
     Inside EUTelescope, the number of telescope planes is hard-coded to be six and the sensor IDs in the range $[0; 5]$ are only for the telescope.
@@ -311,3 +312,61 @@
       \label{fig:eutel-strategy}
     \end{figure}
 
+   \subsection{Measurement of the radiation length}
+
+   After the alignment step is done, the extraction of the radiation length from the reconstructed data can start.
+
+   Firstly, the angle between the track reconstructed by the upstream and the downstream telescope arms is studied.
+   \gls{GBL} is providing this information for $xz$ and $yz$-angles.
+   The distribution is fitted by a Gaussian, as seen on figure~\ref{fig:kinkAngle}.
+   As it can be seen, the fit is not performed on the full range because of tails due to systematic errors.
+   The measured kink angle is done for different energies to extract the radiation length.
+   
+   \begin{figure}
+     \centering
+     \missingfigure{Kink angle distribution}
+   \end{figure} 
+
+   This measurement was performed at $5~\rm{GeV}$ and by using the Highland formula, the material budget determined is $\sim 0.6~\%~\rm{X_{0}} \pm $.
+
+   A sanity check is done for energies from 1 to $4~\rm{GeV}$.
+   The same procedure is applied and the distribution of the kink angle measured as a function of the momentum of the beam is plotted and fitted by the Highland formula to determine the radiation length of the \gls{DUT} (see~\ref{fig:theta0vsP}).
+   The uncertainty on the momentum is set to $5~\%$ and is the uncertainty measured at the DESY test beam facility, while the uncertainty used for the kink angle is extracted from the fit procedure.
+   Nonetheless, the fit results is bad and the measured radiation length is $x/X_0 \simeq 0.48~\%~\rm{X_{0}}$.
+   By excluding the $1~\rm{and}~2\rm{GeV}$ measurement, the radiation length is $x/X_0 \simeq 0.53~\%~\rm{X_{0}}$ and the $\chi^2$ is closer to one.
+   The measured radiation length is below the theoretical expectation but other tests have to be performed before to conclude.
+
+   The radiation length depends only on the material and not the energy.
+   Nevertheless, the figure~\ref{fig:X0vsP} which represents the measured radiation length as a function of the momentum, gives a $\rm{X_{0}}$ depending on the momentum.
+   So, the $0.53~\%~\rm{X_{0}}$ measured are likely to be wrong.
+
+   The error could emerge from the small analysis software to produce the plots.
+   To check the exactness of the code, the 
+
+   \begin{figure}
+     \centering
+     \missingfigure{Theta0 Vs energy}
+     \label{fig:theta0vsP}
+   \end{figure}
+
+   \begin{figure}
+     \centering
+     \missingfigure{x/X0 Vs energy}
+     \label{fig:X0vsP}
+   \end{figure}
+
+
+  \section{Conclusions}
+
+  The radiation length measurement of the \gls{PLUME} ladder was performed for the first time and the results are not good enough to conclude if the material budget determined theoretically for the first fully functional ladder is correct.
+  To improve the measurement, it could be useful to perform calibration runs with a known material to check that the analysis is working correctly.
+  Moreover, a correction can be performed then on the measured material budget with \gls{PLUME}.
+
+  During the test beam and the data analysis, there was several problems.
+  Firstly, due to a broken component on the power distribution board, one side of \gls{PLUME} was not working correctly.
+  The sensors were sending the \textit{header} and \textit{trailer} but no data information, leading to two days of fully test before to find the origin of the problem.
+  Fortunately, after replacing the broken component, the ladder was working normally but it is likely that the thresholds set were not correct anymore.
+  Nevertheless, the data could have been corrupted and this should be investigated.
+
+  Besides the analysis was complicated.
+  EUTelescope is expecting a certain sensor IDs order and six telescope planes, even if \gls{GBL} is working from three to a huge amount of plane.
