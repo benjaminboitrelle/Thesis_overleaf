@@ -43,7 +43,7 @@
 
     During the two weeks of test beam available, the measurements planed consist, firstly, to validate the characteristics of the ladder for low momentum particles, such as the spatial resolution, the efficiency or the benefits of the mini-vectors.
     Runs with different tilts (from $0^{\degree}$ to $60^{\degree}$ with a step of $10^{\degree}$) and different air flow speeds for the cooling system ($3~\rm{and}~6~\rm{m.s}^{-1}$) are performed to study again the deformations of the ladder.
-    Finally, for the first time, the radiation length of \gls{PLUME} is measured to compare it to the theoretical estimations, which gives $\rm{X_{0}} = 0.65~\%$ for the version tested.
+    Finally, for the first time, the radiation length of \gls{PLUME} is measured to compare it to the theoretical estimations, which gives $\rm{X_{0}} \simeq 0.65~\%$ for the version tested.
     Although many runs were acquired to performed the different measurements, the test beam was scheduled at the end of my Ph. D.
     Therefore, I am not able to perform a complete analysis of the first prototype for low momentum electrons.
     The section~\ref{sec:X0} presents the study I have performed on the radiation length measurement.
@@ -66,7 +66,7 @@
     A simulation toolkit developed by Simon Spannagel\cite{spannagel_2016_48795} and based on \gls{GBL} is used to compare the pointing resolution at the \gls{DUT} position for different telescope geometries.
     Here, the six and four telescope planes set-ups are compared for different energies and spacing between the sensors.
     This simulation takes into account the material budget of the telescope, the \gls{DUT} and the multiple scattering of electrons in the air.
-    One telescope plane as a material budget of $0.053~\%$ of $\rm{X_{0}}$, whereas \gls{PLUME} is $0.65~\%$ plus two kapton foils used to insulate the ladder from the light.
+    One telescope plane as a material budget of $0.053~\%$ of $\rm{X_{0}}$, whereas \gls{PLUME} is $0.65~\%$ plus two kapton foils used to insulate the ladder from the light ($\sim 0.71~\%~\rm{X_{0}}$).
     For both configurations, the telescope is divided into two arms, two or three planes on each side of the \gls{DUT}.
     The maximal distance between each plane of one frame is $d_{\rm{max}} = 150~\rm{mm}$ for the six sensors configuration, whereas for the second one it is $d_{\rm{max}} = 300~\rm{mm}$.
     
@@ -124,7 +124,7 @@
 
       EUDAQ is a modular cross-platform data taking framework developed for the EUDET-type beam telescopes\cite{Jansen}.
       It is designed to be flexible and to have an easy integration of other devices.
-      The software is based on \textit{producers}, that are linked between the different subdetector systems, such as the beam telescope, the \gls{DUT} user DAQ and the \gls{TLU}.
+      The software is based on \textit{producers}, that are linked between the different subdetector systems, such as the beam telescope, the \gls{DUT} user DAQ and the \gls{TLU}\cite{Cussans2009}.
       The events of each subdetector are then correlated to form one single global event for data belonging to one trigger.
       This step is done by the \textit{Data Collector}.
       The robustness of the acquisition set-up planed is tested by performing multiple runs for multiple configuration in the laboratory.
@@ -271,41 +271,64 @@
    \subsection{Software analysis chain}
 
     The analysis of the test beam data is performed with EUTelescope\cite{Eutel}\cite{Jansen}.
-    It is based on the MARLIN framework, which is a part of the ILCSOFT (see~\ref{subsec:ILCSOFT} for more details about the ILCSoft package).
+    It is based on the MARLIN framework, which is a part of the ILCSOFT (see~\ref{subsec:ILCSOFT} for more details about the ILCSOFT package).
     The software is used to convert the data into the LCIO format and to perform clustering search, alignment and final analysis.
     Each step of the analysis is driven by a dedicated processor.
 
-    From the raw data files, a first processor is used to convert the data into the LCIO format.
-    This converter file contains the pixel number which fired in a given event, along with the sensor number.
-    Before searching for clusters, the noisy pixels are removed from the list.
-    A pixel is considered as noisy if its firing frequency is above a certain value. 
+    A first processor is used to convert the raw data files acquired during the test beam into the LCIO format.
+    The new file created contains the pixel number which fired in a given event, along with the sensor number.
+    During the conversion, a hot pixel search is done to removed the noisy pixels from the list of hits.
+    A pixel is considered as noisy if its firing frequency is above $0.001~\%$
+    %From the raw data files, a first processor is used to convert the data into the LCIO format.
+    %This converter file contains the pixel number which fired in a given event, along with the sensor number.
+    %Before searching for clusters, the noisy pixels are removed from the list.
+    %A pixel is considered as noisy if its firing frequency is above a certain value. 
     The noisy pixels correspond to defect raw or column or single pixels always sending information (see section~\ref{sec:noiseMeasurements}).
-    Then, a cluster algorithm forms sets of cluster from the individual activated pixels.
+    Then, a cluster algorithm forms sets of cluster from the adjacent fired pixels in a row and/or column.
+    Afterward, the hit candidates are defined with a centre-of-gravity method and the position of the hit is determined in the telescope frame and in the sensor frame.
 
-    Afterwards the hit candidates are defined, the alignment steps can start.
-    Almost the same procedure as presented in chapter~\ref{chap:deformation} is performed, except that the alignment is done with \gls{GBL}.
+    Although the alignment procedure looks like the one presented in chapter~\ref{chap:deformation}, the procedure used with EUTElescope is slightly different.
+    The alignment is performed with \gls{GBL} and MILLEPEDE-II.
+    In the case of a complete telescope (six planes), the tracks are built from the reconstruction of triplets in the upstream and downstream telescope planes.
+    Firstly, a hit candidate from the outer plane is extrapolated by a straight line to the inner plane of one arm.
+    Then, a triplet is formed if there is a matching between the middle plane of the arm and the doublet built.
+    This is done on the two arms and a criterion ensures that two triplets are coming from the same track if the distance between the two extrapolated triplets at the middle $z$-position of the telescope is below a cut value.
+    \gls{GBL} form a track from the six hits belonging to the matching triplets.
+    The track candidates are then passed to MILLEPEDE-II, which determines the shift and the rotation to apply for aligning the sensors.
+    This method is applied a couple of times, until the precision of the alignment reaches a submicron order.
 
-    Nevertheless, for my set-up, the alignment step did not work.
-    Inside EUTelescope, the number of telescope planes is hard-coded to be six and the sensor IDs in the range $[0; 5]$ are only for the telescope.
-    These IDs have to be ordered according to the $z$-direction too.
-    In my case, the IDs $0$ and $1$ are used for \gls{PLUME} and the rest for the telescope. 
-    Although \gls{GBL} uses only the $z$-ordering information to perform the alignment, the alignment procedure never worked.
+    Nevertheless, due to the set-up used during the test beam and a limitation in EUTElescope on the number of telescope planes and the ID used, the alignment did not work.
+    Indeed, the number of telescope planes is hard-coded to be six and the sensor IDs in the range $[0; 5]$ are reserved for the telescope. 
+    Here, the IDS $0$ and $1$ are used for \gls{PLUME} and the others for the telescope.
+    Thus, a modification has to be applied to remap the sensor IDs. 
+    Although this solution can work and \gls{GBL} uses only the $z$ ordering information is used to create the tracks, EUTelescope is waiting for six hits.
+
+   % For the upstream and the downstream plane, a hit position from the outer plane is projected on the inner plane with a straight line. 
+
+   % Almost the same procedure as presented in chapter~\ref{chap:deformation} is performed, except that the alignment is done with \gls{GBL}.
+
+   % Nevertheless, for my set-up, the alignment step did not work.
+   % Inside EUTelescope, the number of telescope planes is hard-coded to be six and the sensor IDs in the range $[0; 5]$ are only for the telescope.
+   % These IDs have to be ordered according to the $z$-direction too.
+   % In my case, the IDs $0$ and $1$ are used for \gls{PLUME} and the rest for the telescope. 
+   % Although \gls{GBL} uses only the $z$-ordering information to perform the alignment, the alignment procedure never worked.
 
     Thankfully, a prototype software developed by Claus Kleinwort has permitted to perform the alignment and finish the analysis. 
-    It is based on \gls{GBL} and Millepede-II and reads the hit information created by the hitmaker processor of EUTelescope. 
-    The goal of \gls{GBL} is to create tracks from the hit information.
-    To do so, it combines six hits (one on each plane) to form a single track.
-    Firstly, on each arm, the hit information of the inner and outer planes are used to create subtracks. 
-    It consist to draw a straight line from one plane to the other of the same arm.
-    Then, the subtrack is extrapolated to the middle plane of the arm and \gls{GBL} is looking for the closest hit to the subtrack candidate.
-    This tracks are called triplets.
-    Afterward, the software finds if triplets are converging at the \gls{DUT} position and form a single track, unless multiple triplets are connected at the same position.
-    In this case, the track is rejected.
+    It is based on \gls{GBL} and MILLEPEDE-II and reads the hit information created by the hitmaker processor of EUTelescope. 
+    The modularity of the software allows to select the desire number of telescope planes.
+    In the case of only four telescope planes, the triplets method is not used and tracks are formed only with doublets.
+    Then, the track's information are feed to MILLEPEDE-II, which calculates the residuals of the tracks on each sensor and attempts to shift the position and rotate the sensors to minimise the east square fit function of these tracks.
+    MILLEPEDE-II creates an output file with theses informations and a script update the GEAR file with the new position and orientation of each planes.
 
-    The tracks created are then read by Millepede-II, which calculates the residuals of the tracks on each sensor and attempts to shift the position of the sensors and to rotate them in order to minimise the least squares fit function of these tracks.
-    Millepede-II provides these informations into an output file used to create a new GEAR file with the new position and orientation of each plane.
+    %Then, the subtrack is extrapolated to the middle plane of the arm and \gls{GBL} is looking for the closest hit to the subtrack candidate.
+    %This tracks are called triplets.
+    %Afterward, the software finds if triplets are converging at the \gls{DUT} position and form a single track, unless multiple triplets are connected at the same position.
+    %In this case, the track is rejected.
+
+    %The tracks created are then read by Millepede-II, which calculates the residuals of the tracks on each sensor and attempts to shift the position of the sensors and to rotate them in order to minimise the least squares fit function of these tracks.
+    %Millepede-II provides these informations into an output file used to create a new GEAR file with the new position and orientation of each plane.
     
-    \begin{figure}
+    \begin{figure}[!h]
       \centering
       \includegraphics[width = \textwidth]{Pictures/X0/eutel-strategy.png}
       \caption{Flow-chart of the analysis strategy by using EUTelescope.}
@@ -314,39 +337,72 @@
 
    \subsection{Measurement of the radiation length}
 
-   After the alignment step is done, the extraction of the radiation length from the reconstructed data can start.
+   To extract the radiation length a biased alignment is performed.
+   The hit information of \gls{PLUME} are used to create tracks by using the triplets method.
+   The deviation of the track between its position before \gls{PLUME} and after \gls{PLUME} is measured with \gls{GBL}, that provides information for $xz$ and $yz$-angles.
+   The distribution of the kink angle is fitted by a Gaussian, as represented on figure~\ref{fig:kinkAngle} for an energy of $5~\rm{GeV}$.
+   The distribution displayed here is the kink angle measured on all the reference planes, no fiducial cut was applied. 
 
-   Firstly, the angle between the track reconstructed by the upstream and the downstream telescope arms is studied.
-   \gls{GBL} is providing this information for $xz$ and $yz$-angles.
-   The distribution is fitted by a Gaussian, as seen on figure~\ref{fig:kinkAngle}.
+%
+%   The extraction of the radiation length is done by measuring the kink angle between the track reconstructed before the \gls{DUT} and the track reconstructed after.
+%   \gls{GBL} provides this information for $xz$ and $yz$-angles.
+   %For the results presented here, a track is made of six hits: four coming from the telescope planes and two from the \gls{PLUME} sensors.
+   %The distribution of the kink angle is fitted by a Gaussian, as represented on figure~\ref{fig:kinkAngle} for an energy of $5~\rm{GeV}$.
+   Here, no fiducial cut has been applied and the measured kink angle is done on the overlapping region between the telescope and the \gls{DUT} planes.
    As it can be seen, the fit is not performed on the full range because of tails due to systematic errors.
-   The measured kink angle is done for different energies to extract the radiation length.
+   The measured kink angle is done for the energy range $[1; 5]~\rm{GeV}$ with a step of $1~\rm{GeV}$.
+   The figure~\ref{fig:theta0vsP_all} displays the kink angle measured as a function of the particles momentum.
+   The uncertainty on the momentum is $5~\%$ and is the uncertainty determined at the DESY test beam facility, while the uncertainty used for the kink angle is extracted from the fit procedure.
+   The plot is then fitted with the Highland formula, on which the radiation length is a free parameter.
+   The fit result is not convincing.
+   Two points ($1$ and $5~\rm{GeV}$) are excluded and the $\chi^2 /~\rm{N.D.F}$ measured is bigger than $1$.
+   Nevertheless, the $5~\rm{GeV}$ measurement gives a radiation length of $\sim 0.65~\%~\rm{X_{0}} $.
+
+   During the alignment procedure, the runs at $1$ and $2~\rm{GeV}$ were complicated to be done.
+   At those energies, the electron are more sensitive to the multiple scattering in the air and inside the detectors.
+   By excluding the $1~\rm{and}~2~\rm{GeV}$ measurement, the radiation length is $x/X_0 \simeq 0.53~\%~\rm{X_{0}}$ and the $\chi^2$ is closer to one.
+
+   %After the alignment step is done, the extraction of the radiation length from the reconstructed data can start.
+
+   %Firstly, the angle between the track reconstructed by the upstream and the downstream telescope arms is studied.
+   %\gls{GBL} is providing this information for $xz$ and $yz$-angles.
+   %The distribution is fitted by a Gaussian, as seen on figure~\ref{fig:kinkAngle}.
+   %As it can be seen, the fit is not performed on the full range because of tails due to systematic errors.
+   %The measured kink angle is done for different energies to extract the radiation length.
    
    \begin{figure}
      \centering
      \missingfigure{Kink angle distribution}
+     \caption{Distribution of the kink angle given by GBL for an energy of $5~\rm{GeV}$ without any fiducial cut.}
+     \label{fig:kinkAngle}
    \end{figure} 
 
-   This measurement was performed at $5~\rm{GeV}$ and by using the Highland formula, the material budget determined is $\sim 0.6~\%~\rm{X_{0}} \pm $.
+   %This measurement was performed at $5~\rm{GeV}$ and by using the Highland formula, the material budget determined is $\sim 0.6~\%~\rm{X_{0}} \pm $.
 
-   A sanity check is done for energies from 1 to $4~\rm{GeV}$.
-   The same procedure is applied and the distribution of the kink angle measured as a function of the momentum of the beam is plotted and fitted by the Highland formula to determine the radiation length of the \gls{DUT} (see~\ref{fig:theta0vsP}).
-   The uncertainty on the momentum is set to $5~\%$ and is the uncertainty measured at the DESY test beam facility, while the uncertainty used for the kink angle is extracted from the fit procedure.
-   Nonetheless, the fit results is bad and the measured radiation length is $x/X_0 \simeq 0.48~\%~\rm{X_{0}}$.
-   By excluding the $1~\rm{and}~2\rm{GeV}$ measurement, the radiation length is $x/X_0 \simeq 0.53~\%~\rm{X_{0}}$ and the $\chi^2$ is closer to one.
-   The measured radiation length is below the theoretical expectation but other tests have to be performed before to conclude.
+   %A sanity check is done for energies from 1 to $4~\rm{GeV}$.
+   %The same procedure is applied and the distribution of the kink angle measured as a function of the momentum of the beam is plotted and fitted by the Highland formula to determine the radiation length of the \gls{DUT} (see~\ref{fig:theta0vsP}).
+   %The uncertainty on the momentum is set to $5~\%$ and is the uncertainty measured at the DESY test beam facility, while the uncertainty used for the kink angle is extracted from the fit procedure.
+   %Nonetheless, the fit results is bad and the measured radiation length is $x/X_0 \simeq 0.48~\%~\rm{X_{0}}$.
+   %The measured radiation length is below the theoretical expectation but other tests have to be performed before to conclude.
 
-   The radiation length depends only on the material and not the energy.
-   Nevertheless, the figure~\ref{fig:X0vsP} which represents the measured radiation length as a function of the momentum, gives a $\rm{X_{0}}$ depending on the momentum.
-   So, the $0.53~\%~\rm{X_{0}}$ measured are likely to be wrong.
+   %The radiation length depends only on the material and not the energy.
+   %Nevertheless, the figure~\ref{fig:X0vsP} which represents the measured radiation length as a function of the momentum, gives a $\rm{X_{0}}$ depending on the momentum.
+   %So, the $0.53~\%~\rm{X_{0}}$ measured are likely to be wrong.
 
-   The error could emerge from the small analysis software to produce the plots.
-   To check the exactness of the code, the 
+   %The error could emerge from the small analysis software to produce the plots.
+   %To check the exactness of the code, the 
 
    \begin{figure}
      \centering
-     \missingfigure{Theta0 Vs energy}
-     \label{fig:theta0vsP}
+     \includegraphics[width = \textwidth]{Pictures/X0/theta0VsP_all.png}
+     \caption{Extrapolation of the measured radiation length with a fit between 1 and 5 GeV.}
+     \label{fig:theta0vsP_all}
+   \end{figure}
+   \begin{figure}
+     \centering
+     \includegraphics[width = \textwidth]{Pictures/X0/theta0VsP_3-5GeV.png}
+     \caption{Extrapolation of the measured radiation length in the range 3 to 5 GeV.}
+     \label{fig:theta0vsP_3-5}
    \end{figure}
 
    \begin{figure}
