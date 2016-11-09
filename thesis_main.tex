@@ -25,19 +25,20 @@
 \usepackage{placeins} 
 %\usepackage[table]{xcolor}
 \usepackage{array,multirow,makecell}
-\usepackage[tight]{shorttoc}
 \usepackage{lettrine}
 \usepackage{oldgerm}
 \usepackage{import}
 \usepackage{hyperref}
-\usepackage{titlesec}
+%\usepackage[Bjornstrup]{fncychap}
 
-\makeatletter
-\@addtoreset{chapter}{part}
-\makeatother
-\titleformat{\part}[display]
-{\normalfont\LARGE\bfseries\centering}{}{0pt}{}
+%\usepackage{titlesec}
+%\makeatletter
+%\@addtoreset{chapter}{part}
+%\makeatother
+%\titleformat{\part}[display]
+%{\normalfont\LARGE\bfseries\centering}{}{0pt}{}
 
+\usepackage[tight]{shorttoc}
 \usepackage{todonotes}
 \usepackage{minitoc}
 \usepackage{helvet}
@@ -245,7 +246,7 @@
     
     \input{introduction.tex}
     
-  \part*{Thesis}
+  %\part*{Thesis}
     \input{SM.tex}
 	  
     \input{ILC.tex}
@@ -262,7 +263,7 @@
 
     \input{conclusions.tex}
     
-  \part*{Échelle de détection intelligente pour la trajectométrie en physique des hautes énergies}
+  %\part*{Échelle de détection intelligente pour la trajectométrie en physique des hautes énergies}
     \input{resume.tex}
 
 %	  

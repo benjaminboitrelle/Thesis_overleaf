@@ -2,14 +2,14 @@
 \label{chap:X0}
 
   The discovery of new physics and the characterisation of the already known particles are possible only with performant detectors.
-  As it was presented on chapter~\ref{chap:vxd}, the fabrication of a vertex detector is constrained by two parameters: the pointing resolution and the material budget.
+  As it was presented in chapter~\ref{chap:vxd}, the fabrication of a vertex detector is constrained by two parameters: the pointing resolution and the material budget.
   The first fully functional prototype of \gls{PLUME} was tested in November 2011 at CERN with 120 GeV pions.
   The results have shown that the pointing resolution of the ladder corresponds to the expected value for the \gls{ILD} and moreover, the use of a double-sided structure improves this pointing resolution. 
-  Nevertheless, the material budget ($\rm{X}_0$) of such device is estimated only by calculation and the SPS beam is not suited to a material budget measurement.
+  Nevertheless, the material budget ($\rm{X}_0$) of such device is estimated only by calculation and the SPS beam is not suited to perform this measurement.
   Therefore, a test beam campaign of the PLUME-V1 prototype was done in April 2016 at DESY test beam 21 with positrons up to 5 GeV.
-  Firstly, the test beam preparation is discussed.
+  Firstly, the presentation of the test beam is discussed.
   Then, the motivation, the test beam facility, as well as the tools used for the analysis are presented.
-  Finally, the results on the radiation length measurements are discussed.
+  Finally, the last section is dedicated to the data analysis leading to the radiation length measurement.
   %The reason to test an already known prototype is that the performances have to be the same at low and high-momentum particles.
   %The preparation of the test beam is firstly discussed.
   %Then, the test beam facility, as well as the tools used for the analysis are presented.
@@ -41,32 +41,40 @@
 
     \subsection{Measurements and telescope configuration}
 
-    During the two weeks of test beam available, the measurements planed consist, firstly, to validate the characteristics of the ladder for low momentum particles, such as the spatial resolution, the efficiency or the benefits of the mini-vectors.
+    Although the first prototype was validated with $120~\rm{GeV}$ pions in November 2011 at CERN, two aspects were not yet studied.
+    The first one is the ability of the detector to detect and track low momentum particles such as electrons.
+    The spatial resolution, the detection efficiency and the benefits of mini-vectors with the DESY test beam have to be measured and compared to the values obtained at CERN.
+    %During the two weeks of test beam available, the measurements planed consist, firstly, to validate the characteristics of the ladder for low momentum particles, such as the spatial resolution, the efficiency or the benefits of the mini-vectors.
     Runs with different tilts (from $0^{\degree}$ to $60^{\degree}$ with a step of $10^{\degree}$) and different air flow speeds for the cooling system ($3~\rm{and}~6~\rm{m.s}^{-1}$) are performed to study again the deformations of the ladder.
-    Finally, for the first time, the radiation length of \gls{PLUME} is measured to compare it to the theoretical estimations, which gives $\rm{X_{0}} \simeq 0.65~\%$ for the version tested.
+    The second aspect not yet studied is the measurement of the radiation length of \gls{PLUME}.
+    For the first time, the collaboration wants to confirm the theoretical estimations, which give a weight material budget $\left. \rm{X_{0}}\right|_{\rm{weighted}} \simeq 0.65~\%$ for the version tested.
+    %Finally, for the first time, the radiation length of \gls{PLUME} is measured to compare it to the theoretical estimations, which gives $\rm{X_{0}} \simeq 0.65~\%$ for the version tested.
     Although many runs were acquired to performed the different measurements, the test beam was scheduled at the end of my Ph. D.
     Therefore, I am not able to perform a complete analysis of the first prototype for low momentum electrons.
     The section~\ref{sec:X0} presents the study I have performed on the radiation length measurement.
 
-    A second aspect of the test beam is to determine the geometry of the reference planes to optimise the pointing resolution of the telescope.
+    Before going to the test beam and acquiring data, the geometry of the telescope to optimise the tracking has to be determined.
+    %A second aspect of the test beam is to determine the geometry of the reference planes to optimise the pointing resolution of the telescope.
     This depends on the spacing between the different planes and the position of the \gls{DUT} respectively to the telescope.
     The best resolution is achieved by placing the inner planes of the telescope as close as possible to the \gls{DUT} and the outer planes as far as possible from the \gls{DUT}.
     Because of the deformation study, which needs to rotate the ladder, the inner planes can not be pressed to the \gls{DUT} without modifying the geometry at each steps.
     Hence, to keep a consistent alignment and to reduce the time spending on the off-line alignment, it was decided to fixed the inner planes as close as possible to be able to rotate the ladder without modifying the geometry.
     Moreover the ladder is not centered in its box, so to keep an equal distance between the two sides of the ladder and the two inner planes, the minimal distance between the telescope planes are calculated by taking into account an offset.
+    It has to be noted also, that for the radiation length measurement, the geometry is different.
+    The upstream planes are stacked together and really close to the \gls{DUT}, whereas the downstream planes are distant from each other.
 
     %The telescope has a better pointing resolution when the inner planes are very close to the \gls{DUT} and the outer planes are far away from it.
     %Nevertheless, to perform the deformation measurements and to tilt the \gls{DUT} without moving the telescope planes at every angle and performing the alignment steps one more time, the two inner planes have a distance of ....
     %Moreover, the ladder is not placed in the middle of the box, thus, the distance between one inner telescope plane to the box is different from the distance between the other side and other telescope plane.
 
-    For the first time, the collaboration has decided to use the EUDET telescope and EUDAQ for the acquisition, instead of the Strasbourg telescope and the IPHC acquisition.
+    For the first time, the collaboration has decided to use the EUDET telescope and EUDAQ\cite{EUDAQ} for the acquisition, instead of the Strasbourg telescope and the IPHC acquisition.
     Several configuration are available for the set-up used.
     The first ones consist to use the six planes of the EUDET telescope and to have two separate acquisitions, one for \gls{PLUME} and the second one dedicated for the telescope and then, to merge the data together.
     As the EUDET telescope is equipped with the same sensors as \gls{PLUME}, the acquisition can be simplified by having only four telescope planes and connecting directly two sensors of the \gls{DUT}.
-    A simulation toolkit developed by Simon Spannagel\cite{spannagel_2016_48795} and based on \gls{GBL} is used to compare the pointing resolution at the \gls{DUT} position for different telescope geometries.
+    A simulation toolkit developed by Simon Spannagel\cite{spannagel_2016_48795} and based on \gls{GBL}\cite{GBL} is used to compare the pointing resolution at the \gls{DUT} position for different telescope geometries.
     Here, the six and four telescope planes set-ups are compared for different energies and spacing between the sensors.
     This simulation takes into account the material budget of the telescope, the \gls{DUT} and the multiple scattering of electrons in the air.
-    One telescope plane as a material budget of $0.053~\%$ of $\rm{X_{0}}$, whereas \gls{PLUME} is $0.65~\%$ plus two kapton foils used to insulate the ladder from the light ($\sim 0.71~\%~\rm{X_{0}}$).
+    One telescope plane as a material budget of $\sim 0.053~\%$ of $\rm{X_{0}}$, whereas \gls{PLUME} is $\sim 0.65~\%$ plus two kapton foils used to insulate the ladder from the light ($\sim 0.71~\%~\rm{X_{0}}$).
     For both configurations, the telescope is divided into two arms, two or three planes on each side of the \gls{DUT}.
     The maximal distance between each plane of one frame is $d_{\rm{max}} = 150~\rm{mm}$ for the six sensors configuration, whereas for the second one it is $d_{\rm{max}} = 300~\rm{mm}$.
     
@@ -104,7 +112,7 @@
 
    % The results shown on figure~\ref{fig:estimationRes4.7GeV} depicts the measured resolution at the position of the \gls{DUT} as a function of the distance between two telescope planes of the same arm.
 
-    \begin{figure}[!h]
+    \begin{figure}[!b]
       \centering
       \includegraphics[width = 0.7\textwidth]{Pictures/X0/resolution_4Vs6planes_4-7GeV.png}
       \caption{Estimation of the resolution measured at the DUT position as a function of the distance between two telescope planes of the same arm.
@@ -148,7 +156,7 @@
       The frame is then mounted onto a rotation stage, which is mounted on a translation stage.
       The figure~\ref{fig:mechanics} shows a schematic model of the frame designed and built at DESY.
       
-      \begin{figure}[!h]
+      \begin{figure}[!b]
         \centering
         \includegraphics[width = 0.5\textwidth]{Pictures/X0/Frame/Testbeam1.PNG}
         \caption{TCAD model of the mechanical structure designed for the test beam in April. The ladder is hold on a circular frame fixed to a PI rotation stage, mounted onto a XY-table.}
@@ -198,10 +206,10 @@
     Furthermore, along their path, they are deflected by many small angles from their initial trajectory due to Coulomb scattering from nuclei. 
     This stochastic effect, called multiple Coulomb scattering, leaves on the average the particle undisturbed through its path. 
     For small angles of deviation, the multiple scattering is following a Gaussian behavior, whereas for larger angles, it behaves like the Rutherford scattering.
-    The Highland formula, which is an empirical formula, describes the distribution of the multiple scattering, or the "kink angle" as a function of the momentum $p$ of the incoming charge particles, its velocity $\beta c$, its charge number $z$ and its true path length in radiation length unit $\frac{x}{X_{0}}$:
+    The Highland formula, which is an empirical formula, describes the distribution of the multiple scattering, or the "kink angle" $\theta_0$ as a function of the momentum $p$ of the incoming charge particles, its velocity $\beta c$, its charge number $z$ and its true path length in radiation length unit $\frac{x}{X_{0}}$:
 
     \begin{equation}
-      \theta_{0} = \frac{13.6~\rm{MeV}}{\beta c p} z \sqrt{\frac{x}{X_{0}}}\left(1 + 0.038 \ln{\frac{x}{X_{0}}}\right).
+      \theta_{0} = \frac{13.6~\rm{MeV}}{\beta c p}\cdot z \cdot \sqrt{\frac{x}{X_{0}}}\left(1 + 0.038 \cdot \ln{\left(\frac{x}{X_{0}}\right)}\right).
       \label{eq:Highland}
     \end{equation}
 
@@ -432,6 +440,26 @@
    The uncertainty on the momentum is $5~\%$ and is the uncertainty determined at the DESY test beam facility, while the uncertainty used for the kink angle is extracted from the fit procedure corrected by the $\chi^2 / \rm{NDF}$ obtained by the fitting procedure.
    The plot is then fitted with the Highland formula from equation~\ref{eq:theta0}, on which the radiation length is a free parameter.
    Two points ($1$ and $5~\rm{GeV}$) are outside the trend and the $\chi^2 /~\rm{N.D.F}$ measured is bigger than $1$.
+   The table~\ref{tab:X0} summarises the expected $\theta_0$ for a radiation length of $0.5~\%~\rm{X_0}$ and compare this results to the measured $\theta_0$.
+
+   \begin{table}
+     \centering
+     \begin{tabular}{c c c}
+        \hline %----------------------------
+        Energy (GeV)	& $\left. \theta_0\right|_{\rm{calculated}}~(\rm{rad})$ & $\left. \theta_0\right|_{\rm{measured}}~(\rm{rad})$ \tabularnewline
+        \hline %----------------------------
+        \hline %----------------------------
+
+        	1	  &		$7.186\cdot 10^{-4}$	  &		$5.910\cdot 10^{-4}$	     \tabularnewline
+        	2		&		$3.592\cdot 10^{-4}$	  &		$3.403\cdot 10^{-4}$	     \tabularnewline
+        	3		&		$2.395\cdot 10^{-4}$	  &		$2.380\cdot 10^{-4}$      \tabularnewline
+        	4		&		$1.796\cdot 10^{-4}$	  &	  $1.821\cdot 10^{-4}$       \tabularnewline
+        	5		&		$1.437\cdot 10^{-4}$    &		$1.544\cdot 10^{-4}$	     \tabularnewline
+     
+     \end{tabular}
+     \caption{Determination of $\left. \theta_0\right|_{\rm{calculated}}$ for a material budget of $0.5~\%~\rm{X_0}$ and comparison to $\left. \theta_0\right|_{\rm{measured}}$.}
+     \label{tab:X0}
+   \end{table}
 
    \begin{figure}[!h]
      \centering
