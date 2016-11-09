@@ -275,6 +275,13 @@
     It is based on the MARLIN framework, which is a part of the ILCSOFT (see~\ref{subsec:ILCSOFT} for more details about the ILCSOFT package).
     The software is used to convert the data into the LCIO format and to perform clustering search, alignment and final analysis.
     Each step of the analysis is driven by a dedicated processor.
+    
+    \begin{figure}[!h]
+      \centering
+      \includegraphics[width = \textwidth]{Pictures/X0/eutel-strategy.png}
+      \caption{Flow-chart of the analysis strategy by using EUTelescope.}
+      \label{fig:eutel-strategy}
+    \end{figure}
 
     A first processor is used to convert the raw data files acquired during the test beam into the LCIO format.
     The new file created contains the pixel number which fired in a given event, along with the sensor number.
@@ -313,8 +320,10 @@
    % These IDs have to be ordered according to the $z$-direction too.
    % In my case, the IDs $0$ and $1$ are used for \gls{PLUME} and the rest for the telescope. 
    % Although \gls{GBL} uses only the $z$-ordering information to perform the alignment, the alignment procedure never worked.
+       
 
-    Thankfully, a prototype software developed by Claus Kleinwort has permitted to perform the alignment and finish the analysis. 
+
+    Thankfully, a prototype software developed by Claus \textsc{Kleinwort} has permitted to perform the alignment and finish the analysis. 
     It is based on \gls{GBL} and MILLEPEDE-II and reads the hit information created by the hitmaker processor of EUTelescope. 
     The modularity of the software allows to select the desire number of telescope planes.
     In the case of only four telescope planes, the triplets method is not used and tracks are formed only with doublets.
@@ -328,39 +337,101 @@
 
     %The tracks created are then read by Millepede-II, which calculates the residuals of the tracks on each sensor and attempts to shift the position of the sensors and to rotate them in order to minimise the least squares fit function of these tracks.
     %Millepede-II provides these informations into an output file used to create a new GEAR file with the new position and orientation of each plane.
-    
-    \begin{figure}[!h]
-      \centering
-      \includegraphics[width = \textwidth]{Pictures/X0/eutel-strategy.png}
-      \caption{Flow-chart of the analysis strategy by using EUTelescope.}
-      \label{fig:eutel-strategy}
-    \end{figure}
+
 
    \subsection{Measurement of the radiation length}
 
-   To extract the radiation length a biased alignment is performed.
-   The hit information of \gls{PLUME} are used to create tracks by using the triplets method.
-   The deviation of the track between its position before \gls{PLUME} and after \gls{PLUME} is measured with \gls{GBL}, that provides information for $xz$ and $yz$-angles.
-   Figure~\ref{fig:kinkAngle} displays the distribution of the kink angle fitted by a Gaussian for an energy of $5~\rm{GeV}$ and without a fiducial cut to determine a region of interest to study.
-   The fit is not performed on the full range because of the tails coming from systematic errors.
-   From the equation~\ref{eq:theta0}, the radiation length $\frac{x}{X_0}$ is then:
+     \subsubsection{Theoretical estimation}
+
+     The theoretical estimation of \gls{PLUME} material budget was already discussed in chapter~\ref{chap:vxd}.
+     The calculation of the theoretical radiation length along a sensitive surface is explained here.
+     The region of interest is on the third sensor of each modules. 
+     As a reminder, at this position, the beam is travelling through:
+     
+     \begin{itemize}
+       \item Two \gls{MIMOSA}-26 sensors thinned down to $\sim 50~\rm{\mu m}$ and a material budget of $\left. \frac{x}{X_0} \right|_{\rm{Mi26}} \sim 0.053~\%~\rm{X_{0}}$,
+       \item Four layers of glue (sensor/flex interface and flex/stiffener interface) with an estimated radiation length: $\left. \frac{x}{X_0} \right|_{\rm{Glue}} \sim 0.01~\%~\rm{X_0}$,
+       \item Stiffener made of $8~\%~\rm{SiC}$ with a thickness of $\sim 2~\rm{mm}$ and radiation length: $\left. \frac{x}{X_0} \right|_{\rm{SiC}} ~\sim 0.184~\%~\rm{X_{0}}$,
+       \item Two flex-cables made of two copper layers insulated with three layers of Kapton:
+       \begin{itemize}
+         \item Material budget for $\sim 50~\rm{\mu m}$ of Kapton: $\left. \frac{x}{X_0} \right|_{\rm{Kapton}} \sim 0.014~\%~\rm{X_{0}}$,
+         \item Material budget for $\sim 14~\rm{\mu m}$ of Copper: $\left. \frac{x}{X_0} \right|_{\rm{Cu}} \sim 0.084~\%~\rm{X_{0}}$.
+       \end{itemize}
+     \end{itemize}
+
+     It is assumed that the copper layers have a fill factor between $25~\%$ and $30~\%$.
+     Hence, the flex-cable material budget is: $\left. \frac{x}{X_0} \right|_{\rm{Flex}} \sim 0.084~-~0.092~\%~\rm{X_0}$, leading to a total radiation length of:
+
+     \begin{equation}
+       \begin{array}{lcl}
+         \left. \frac{x}{X_0} \right|_{\rm{PLUME}} & = & 2 \times \left( \left. \frac{x}{X_0} \right|_{\rm{MIMOSA-26}} + \left. \frac{x}{X_0} \right|_{\rm{Flex}} + 2 \times \left. \frac{x}{X_0} \right|_{\rm{Glue}}\right) + \left. \frac{x}{X_0} \right|_{\rm{SiC}}, \\
+         & \simeq & 0.498~-~0.515~\%~\rm{X_0}.
+       \end{array}
+     \end{equation}
+
+     Hence, the material budget expected is around $0.498~\%~\rm{X_0}$ and $0.515~\%~\rm{X_0}$.
+
+     \subsubsection{Kink angle measurement}
+
+   To measure the kink angle of the tracks, the four telescope planes, as well as the two \gls{PLUME} sensors are used.
+   So, the hit information provided by \gls{PLUME} are exploited to create tracks by using the triplets method.
+   The deviation from the incoming tracks and the outgoing ones (after the \gls{PLUME} ladder) is measured with \gls{GBL}, which provides information for $xz$ and $yz$-angles.
+   %The deviation of the track between its position before and after \gls{PLUME} is measured with \gls{GBL}, that provides information for $xz$ and $yz$-angles.
+   Figure~\ref{fig:kinkAngle5GeV} displays the distribution of the kink angle fitted by a Gaussian for an energy of $5~\rm{GeV}$ and without a fiducial cut on a particular region of interest.
+   For small deflection angles, the distribution is roughly Gaussian with larger tails than does a Gaussian distribution\cite{Agashe:2014kda}.
+   Therefore, the fit is performed only on the $1 \sigma$ range of the distribution.
+   To obtain $\theta_0$, the width of the kink angle $\rm{\sigma_{kink~angle}}$ has to be corrected by the mean value of the kink angle fit $<\rm{kink~angle}>$:
    \begin{equation}
-     \frac{x}{X_{0}} = \left( \frac{\theta_0 \cdot p}{13.6~\rm{(MeV)}} \right)^{frac{1}{0.555}}.
+     \theta_0 = \sqrt{\rm{\sigma_{kink~angle}}^2 - <\rm{kink~angle}>}.
+     \label{eq:kink}
+   \end{equation}
+   %The fit is not performed on the full range because of the tails coming from systematic errors.
+   From the equation~\ref{eq:theta0} and by injecting $\theta_0$ defined in equation~\ref{eq:kink}, the radiation length $\frac{x}{X_0}$ is then:
+   \begin{equation}
+     \frac{x}{X_{0}} = \left( \frac{\sqrt{\rm{\sigma_{kink~angle}}^2 - <\rm{kink~angle}>} \cdot p}{13.6~\rm{(MeV)}} \right)^{\frac{1}{0.555}}.
    \end{equation}
 
    The kink angle measured at $5~\rm{GeV}$ is $\sim 1.95 \cdot 10^{-4}~\rm{rad}$, leading to a radiation length of $\sim 0.58~\%~\rm{X_0}$.
    
    \begin{figure}[!h]
      \centering
-     \includegraphics[width = \textwidth]{Pictures/X0/kinkAngle5GeV.png}
+     \includegraphics[width = \textwidth]{Pictures/X0/kinkAngle5GeV_2.png}
      \caption{Distribution of the kink angle given by GBL for an energy of $5~\rm{GeV}$ without any fiducial cut.}
-     \label{fig:kinkAngle}
+     \label{fig:kinkAngle5GeV}
    \end{figure} 
-   
-   This procedure has been repeated to the runs between $1$ and $4~\rm{GeV}$ and the results of the measured kink angles as a function of the beam momentum are represented on figure~\ref{fig:theta0vsP_all}. 
+
+   \begin{figure}[!p]
+     \centering
+     \includegraphics[width = \textwidth]{Pictures/X0/kinkAngle4GeV.png}
+     \caption{Distribution of the kink angle given by GBL for an energy of $4~\rm{GeV}$ without any fiducial cut.}
+     \label{fig:kinkAngle4GeV}
+   \end{figure} 
+
+   \begin{figure}[!p]
+     \centering
+     \includegraphics[width = \textwidth]{Pictures/X0/kinkAngle3GeV.png}
+     \caption{Distribution of the kink angle given by GBL for an energy of $3~\rm{GeV}$ without any fiducial cut.}
+     \label{fig:kinkAngle3GeV}
+   \end{figure} 
+
+   \begin{figure}[!p]
+     \centering
+     \includegraphics[width = \textwidth]{Pictures/X0/kinkAngle2GeV.png}
+     \caption{Distribution of the kink angle given by GBL for an energy of $2~\rm{GeV}$ without any fiducial cut.}
+     \label{fig:kinkAngle2GeV}
+   \end{figure} 
+
+   \begin{figure}[!p]
+     \centering
+     \includegraphics[width = \textwidth]{Pictures/X0/kinkAngle1GeV.png}
+     \caption{Distribution of the kink angle given by GBL for an energy of $1~\rm{GeV}$ without any fiducial cut.}
+     \label{fig:kinkAngle1GeV}
+   \end{figure} 
+
+   This procedure has been repeated to the runs between $1$ and $4~\rm{GeV}$ (see figures~\ref{fig:kinkAngle4GeV} -~\ref{fig:kinkAngle1GeV}) and the results of the measured kink angles as a function of the beam momentum are represented on figure~\ref{fig:theta0vsP_all}. 
    The uncertainty on the momentum is $5~\%$ and is the uncertainty determined at the DESY test beam facility, while the uncertainty used for the kink angle is extracted from the fit procedure corrected by the $\chi^2 / \rm{NDF}$ obtained by the fitting procedure.
    The plot is then fitted with the Highland formula from equation~\ref{eq:theta0}, on which the radiation length is a free parameter.
-   Two points ($1$ and $5~\rm{GeV}$) are excluded and the $\chi^2 /~\rm{N.D.F}$ measured is bigger than $1$.
+   Two points ($1$ and $5~\rm{GeV}$) are outside the trend and the $\chi^2 /~\rm{N.D.F}$ measured is bigger than $1$.
 
    \begin{figure}[!h]
      \centering
@@ -369,7 +440,7 @@
      \label{fig:theta0vsP_all}
    \end{figure}
 
-   During the alignment, the runs at $1$ and $2~\rm{GeV}$ were complicated to be aligned.
+   The alignment of the runs for $1$ and $2~\rm{GeV}$ were complicated to perform.
    At those energies, especially at $1~\rm{GeV}$, the electrons are more sensitive to the multiple scattering in the air and inside the detectors.
    By excluding the $1~\rm{and}~2~\rm{GeV}$ measurements, the radiation length is $x/X_0 \simeq 0.53~\%~\rm{X_{0}}$ and the $\chi^2$ is closer to one, as seen on figure~\ref{fig:theta0vsP_3-5}.
    
@@ -388,17 +459,22 @@
      \frac{x}{X_0} \simeq 3.6 \times 10^{-3} + 3.9 \times 10^{-7}\cdot p
    \end{equation}
 
-   The measurement performed here does not include the complete part of the ladder studied.
-   Indeed, the two \gls{PLUME} sensors are used for the tracking and the measurement of the kink angle.
+   There is a trend on the calculation that could come from the method used to extract the kink angle.
+   %Besides, a calibration run could help to correct the deviation observed.
+
+   Besides, the measurements do not include the complete ladder studied. 
+   As the \gls{PLUME} sensors are used for tracking and the measurement of the kink angle, only one part of them is included in the calculation.
+   %
+   %The measurement performed here does not include the complete part of the ladder studied.
+   %Indeed, the two \gls{PLUME} sensors are used for the tracking and the measurement of the kink angle.
    The thickness of the different \gls{MIMOSA}-26 layers are the followings: 
    \begin{itemize}
      \item Electronics layer: $\sim 6~\rm{\mu m}$,
      \item Epitaxial layer: $\sim 14~\rm{\mu m}$,
      \item Bulk: $\sim 30~\rm{\mu m}$.
    \end{itemize}
-   The sensors are thinned down to $50~\rm{\mu m} \pm 2~\rm{\mu m}$ and the signal is considered to be created in the middle of the epitaxial layer. 
+   The sensors are thinned down to $50 \pm 2~\rm{\mu m}$ and the signal is considered to be created in the middle of the epitaxial layer. 
    Thus, only $\sim 37~\rm{\mu m}$ for a sensor is taken into account during the measurement, leading to approximately $0.028~\%~\rm{X_{0}}$ less than the theoretical value.
-    
 
    The measurement is not perfect and different tests have to done in order to improve the results.
    The code was tested to insure that the calculated radiation length is good.
@@ -406,76 +482,32 @@
    The measured momentum from the Highland Formula is the same as the momentum sets during the test beam.
    The alignment could also be a problem and has to be checked.
 
-
    Firstly, the deviation in the measured radiation length could emerge from the alignment.
   
-%
-%
-   %The distribution of the kink angle is fitted by a Gaussian, as represented on figure~\ref{fig:kinkAngle} for an energy of $5~\rm{GeV}$.
-   %The distribution displayed here is the kink angle measured on all the reference planes, no fiducial cut was applied. 
-%
-%   The extraction of the radiation length is done by measuring the kink angle between the track reconstructed before the \gls{DUT} and the track reconstructed after.
-%   \gls{GBL} provides this information for $xz$ and $yz$-angles.
-   %For the results presented here, a track is made of six hits: four coming from the telescope planes and two from the \gls{PLUME} sensors.
-   %The distribution of the kink angle is fitted by a Gaussian, as represented on figure~\ref{fig:kinkAngle} for an energy of $5~\rm{GeV}$.
-   %Here, no fiducial cut has been applied and the measured kink angle is done on the overlapping region between the telescope and the \gls{DUT} planes.
-   %As it can be seen, the fit is not performed on the full range because of tails due to systematic errors.
-   %The measured kink angle is done for the energy range $[1; 5]~\rm{GeV}$ with a step of $1~\rm{GeV}$.
-   %The figure~\ref{fig:theta0vsP_all} displays the kink angle measured as a function of the particles momentum.
-   %The uncertainty on the momentum is $5~\%$ and is the uncertainty determined at the DESY test beam facility, while the uncertainty used for the kink angle is extracted from the fit procedure.
-   %The plot is then fitted with the Highland formula from equation~\ref{eq:theta0}, on which the radiation length is a free parameter.
-   %The fit result is not convincing.
-   %Two points ($1$ and $5~\rm{GeV}$) are excluded and the $\chi^2 /~\rm{N.D.F}$ measured is bigger than $1$.
-   %Nevertheless, the $5~\rm{GeV}$ measurement gives a radiation length of $\sim 0.65~\%~\rm{X_{0}} $.
-
-
-
-   %After the alignment step is done, the extraction of the radiation length from the reconstructed data can start.
-
-   %Firstly, the angle between the track reconstructed by the upstream and the downstream telescope arms is studied.
-   %\gls{GBL} is providing this information for $xz$ and $yz$-angles.
-   %The distribution is fitted by a Gaussian, as seen on figure~\ref{fig:kinkAngle}.
-   %As it can be seen, the fit is not performed on the full range because of tails due to systematic errors.
-   %The measured kink angle is done for different energies to extract the radiation length.
-   
-
-
-   %This measurement was performed at $5~\rm{GeV}$ and by using the Highland formula, the material budget determined is $\sim 0.6~\%~\rm{X_{0}} \pm $.
-
-   %A sanity check is done for energies from 1 to $4~\rm{GeV}$.
-   %The same procedure is applied and the distribution of the kink angle measured as a function of the momentum of the beam is plotted and fitted by the Highland formula to determine the radiation length of the \gls{DUT} (see~\ref{fig:theta0vsP}).
-   %The uncertainty on the momentum is set to $5~\%$ and is the uncertainty measured at the DESY test beam facility, while the uncertainty used for the kink angle is extracted from the fit procedure.
-   %Nonetheless, the fit results is bad and the measured radiation length is $x/X_0 \simeq 0.48~\%~\rm{X_{0}}$.
-   %The measured radiation length is below the theoretical expectation but other tests have to be performed before to conclude.
-
-   %The radiation length depends only on the material and not the energy.
-   %Nevertheless, the figure~\ref{fig:X0vsP} which represents the measured radiation length as a function of the momentum, gives a $\rm{X_{0}}$ depending on the momentum.
-   %So, the $0.53~\%~\rm{X_{0}}$ measured are likely to be wrong.
-
-   %The error could emerge from the small analysis software to produce the plots.
-   %To check the exactness of the code, the 
-
-
-
-
    \begin{figure}
      \centering
      \missingfigure{x/X0 Vs energy}
+     \caption{Measured radiation lentgh $\frac{x}{X_0}$ as a function of the momentum $p$.}
      \label{fig:X0vsP}
    \end{figure}
 
 
   \section{Conclusions}
 
-  The radiation length measurement of the \gls{PLUME} ladder was performed for the first time and the results are not good enough to conclude if the material budget determined theoretically for the first fully functional ladder is correct.
-  To improve the measurement, it could be useful to perform calibration runs with a known material to check that the analysis is working correctly.
-  Moreover, a correction can be performed then on the measured material budget with \gls{PLUME}.
+  The preparation of the test beam, as well as the data taking were a long and stressful period.
+  Although everything were prepared as mush as possible to avoid any problem during the test beam, a broken component on the power distribution board has disturbed the data taking for two days.
+  One \gls{PLUME} module was not recording data anymore but was still sending \textit{header} and \textit{trailer}.
+  Fortunately, after replacing the broken component, the ladder was working normally, but a shift on the thresholds has appeared.
+  By characterising again the ladder, it has been possible to determine which thresholds were really applied. 
+  Nevertheless, it is likely that some data could have been corrupted and this is under investigation.
 
-  During the test beam and the data analysis, there was several problems.
-  Firstly, due to a broken component on the power distribution board, one side of \gls{PLUME} was not working correctly.
-  The sensors were sending the \textit{header} and \textit{trailer} but no data information, leading to two days of fully test before to find the origin of the problem.
-  Fortunately, after replacing the broken component, the ladder was working normally but it is likely that the thresholds set were not correct anymore.
-  Nevertheless, the data could have been corrupted and this should be investigated.
+  Another problem occurs during the analysis of the data. 
+  EUTelescope was not able to handle the particular configuration used during the test beam.
+  The number of telescope sensors are hard-coded, as well as the expected sensor ID.
+  Besides, the combination of \gls{GBL} and MILLEPEDE-II inside EUTelescope did not work.
+  The use of a different software reading the hitmaker file created by EUTelescope has permitted to overcome this problem and to perform the alignment and analysis 
 
-  Besides the analysis was complicated.
-  EUTelescope is expecting a certain sensor IDs order and six telescope planes, even if \gls{GBL} is working from three to a huge amount of plane.
+  The radiation length measurement of the \gls{PLUME} ladder was performed for the first time.
+  The first results obtained to determine the material budget, which gives a radiation length of $\left. \frac{x}{X_0} \right|_{\rm{measured}} \simeq 0.52~\%~\rm{X_0}$ are confirming the theoretical calculation of $\left. \frac{x}{X_0}\right|_{theoretical} \simeq 0.51~\%~\rm{X_0}$.
+  Nevertheless, this measurement has to be taken carefully. 
+  The measurements at different energies are not consistent and a trend on the material budget as a function of the momentum is seen.

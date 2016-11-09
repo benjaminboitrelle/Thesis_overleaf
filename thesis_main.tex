@@ -30,6 +30,14 @@
 \usepackage{oldgerm}
 \usepackage{import}
 \usepackage{hyperref}
+\usepackage{titlesec}
+
+\makeatletter
+\@addtoreset{chapter}{part}
+\makeatother
+\titleformat{\part}[display]
+{\normalfont\LARGE\bfseries\centering}{}{0pt}{}
+
 \usepackage{todonotes}
 \usepackage{minitoc}
 \usepackage{helvet}
@@ -74,8 +82,8 @@
 \newcommand{\sommaire}{\shorttoc{Sommaire}{1}}
 
 % \usepackage{fullpage}
-\usepackage[nottoc, notlof, notlot]{tocbibind}
-\usepackage[toc,acronym,nomain,indexonlyfirst]{glossaries}
+
+%\usepackage[style=long,nonumberlist,toc,xindy,acronym,nomain]{glossaries}
 
 %\usepackage{geometry}
 %\geometry{hmargin=2.5cm}
@@ -160,6 +168,8 @@
 %Directeur de thèse : Jérôme \textsc{Baudot}\\ % 
 %Co-directeur de thèse : Ingrid \textsc{Maria Gregor}\\ }% 
 
+\usepackage[nottoc, notlof, notlot]{tocbibind}
+\usepackage[toc,acronym,nomain,indexonlyfirst]{glossaries}
 \makeglossaries
 \setacronymstyle{long-short}
 \renewcommand*{\glslinkcheckfirsthyperhook}{% To make a reference only for the first glossary entry
@@ -179,7 +189,6 @@
   \fi  
 }
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
-
 
 \newenvironment{dedication}
   {\clearpage           % we want a new page
@@ -207,9 +216,6 @@
 %\setheaderspaces{*}{2\onelineskip}{*} 
 %\checkandfixthelayout
 
-
-
-
 \begin{document}
     
   \frontmatter
@@ -232,12 +238,14 @@
 %  À ma famille, mes amis, Frédéric Courant et Jamy Gourmaud.
 %\end{dedication}
 
-
-	
   \mainmatter
+    
 
     \input{acronym.tex}
     
+    \input{introduction.tex}
+    
+  \part*{Thesis}
     \input{SM.tex}
 	  
     \input{ILC.tex}
@@ -252,6 +260,9 @@
 
     \input{test_beam.tex}
 
+    \input{conclusions.tex}
+    
+  \part*{Échelle de détection intelligente pour la trajectométrie en physique des hautes énergies}
     \input{resume.tex}
 
 %	  
@@ -260,6 +271,7 @@
 %	  \appendix	  
     
   \backmatter
+    
 
 	
   \printglossary[type=\acronymtype]
