@@ -287,7 +287,7 @@
     \begin{figure}[!h]
       \centering
       \includegraphics[width = \textwidth]{Pictures/X0/eutel-strategy.png}
-      \caption{Flow-chart of the analysis strategy by using EUTelescope.}
+      \caption{Flow-chart of the analysis strategy by using EUTelescope\cite{EUTelFlowChart}.}
       \label{fig:eutel-strategy}
     \end{figure}
 
@@ -440,17 +440,17 @@
    The uncertainty on the momentum is $5~\%$ and is the uncertainty determined at the DESY test beam facility, while the uncertainty used for the kink angle is extracted from the fit procedure corrected by the $\chi^2 / \rm{NDF}$ obtained by the fitting procedure.
    The plot is then fitted with the Highland formula from equation~\ref{eq:theta0}, on which the radiation length is a free parameter.
    Two points ($1$ and $5~\rm{GeV}$) are outside the trend and the $\chi^2 /~\rm{N.D.F}$ measured is bigger than $1$.
-   The table~\ref{tab:X0} summarises the expected $\theta_0$ for a radiation length of $0.5~\%~\rm{X_0}$ and compare this results to the measured $\theta_0$.
+   The table~\ref{tab:theta0Calcultation} summarises the expected $\theta_0$ for a radiation length of $0.5~\%~\rm{X_0}$ and compare this results to the measured $\theta_0$.
 
    \begin{table}
      \centering
-     \begin{tabular}{c c c}
+     \begin{tabular}{c c c c}
         \hline %----------------------------
         Energy (GeV)	& $\left. \theta_0\right|_{\rm{calculated}}~(\rm{rad})$ & $\left. \theta_0\right|_{\rm{measured}}~(\rm{rad})$ \tabularnewline
         \hline %----------------------------
         \hline %----------------------------
 
-        	1	  &		$7.186\cdot 10^{-4}$	  &		$5.910\cdot 10^{-4}$	     \tabularnewline
+        	1	  &		$7.186\cdot 10^{-4}$	  &		$5.910\cdot 10^{-4}$	    \tabularnewline
         	2		&		$3.592\cdot 10^{-4}$	  &		$3.403\cdot 10^{-4}$	     \tabularnewline
         	3		&		$2.395\cdot 10^{-4}$	  &		$2.380\cdot 10^{-4}$      \tabularnewline
         	4		&		$1.796\cdot 10^{-4}$	  &	  $1.821\cdot 10^{-4}$       \tabularnewline
@@ -458,7 +458,7 @@
      
      \end{tabular}
      \caption{Determination of $\left. \theta_0\right|_{\rm{calculated}}$ for a material budget of $0.5~\%~\rm{X_0}$ and comparison to $\left. \theta_0\right|_{\rm{measured}}$.}
-     \label{tab:X0}
+     \label{tab:theta0Calcultation}
    \end{table}
 
    \begin{figure}[!h]
@@ -468,9 +468,13 @@
      \label{fig:theta0vsP_all}
    \end{figure}
 
-   The alignment of the runs for $1$ and $2~\rm{GeV}$ were complicated to perform.
-   At those energies, especially at $1~\rm{GeV}$, the electrons are more sensitive to the multiple scattering in the air and inside the detectors.
-   By excluding the $1~\rm{and}~2~\rm{GeV}$ measurements, the radiation length is $x/X_0 \simeq 0.53~\%~\rm{X_{0}}$ and the $\chi^2$ is closer to one, as seen on figure~\ref{fig:theta0vsP_3-5}.
+   %The alignment of the runs for $1$ and $2~\rm{GeV}$ were complicated to perform.
+   %At those energies, especially at $1~\rm{GeV}$, the electrons are more sensitive to the multiple scattering in the air and inside the detectors.
+   %By excluding the $1~\rm{and}~2~\rm{GeV}$ measurements, the radiation length is $x/X_0 \simeq 0.53~\%~\rm{X_{0}}$ and the $\chi^2$ is closer to one, as seen on figure~\ref{fig:theta0vsP_3-5}.
+
+   The alignment of the $1~\rm{GeV}$ runs are complicated to perform.
+   At this energy, the electrons are more sensitive to the multiple scattering in the air and inside the detectors.
+   Besides, at $5~\rm{GeV}$, the electrons are less sensitive to the multiple scattering.
    
    \begin{figure}[!h]
      \centering
@@ -536,6 +540,6 @@
   The use of a different software reading the hitmaker file created by EUTelescope has permitted to overcome this problem and to perform the alignment and analysis 
 
   The radiation length measurement of the \gls{PLUME} ladder was performed for the first time.
-  The first results obtained to determine the material budget, which gives a radiation length of $\left. \frac{x}{X_0} \right|_{\rm{measured}} \simeq 0.52~\%~\rm{X_0}$ are confirming the theoretical calculation of $\left. \frac{x}{X_0}\right|_{theoretical} \simeq 0.51~\%~\rm{X_0}$.
+  The first results obtained to determine the material budget, which gives a radiation length of $\left. \frac{x}{X_0} \right|_{\rm{measured}} \simeq 0.52~\%~\rm{X_0}$ are confirming the theoretical calculation of $\left. \frac{x}{X_0}\right|_{\rm{theoretical}} \simeq 0.51~\%~\rm{X_0}$.
   Nevertheless, this measurement has to be taken carefully. 
   The measurements at different energies are not consistent and a trend on the material budget as a function of the momentum is seen.

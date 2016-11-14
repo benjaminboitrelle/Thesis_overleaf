@@ -7,7 +7,7 @@
   The design of such device is driven by the physics requirement of the experiment and is playing a crucial role at the \acrfull{ILC}.
   For example, one flagship measurement is the study of the Higgs boson couplings to the fermions and other bosons.
   This can be achieved only with a precise heavy flavor tagging and the ability to separate the $b$ quarks from the $c$ quarks. 
-  Actually, the lifetime of the two quarks is of the same magnitude ($1.3 \time 10^{-12}~\rm{s}$ for the $b$ quark and $1.1 \time 10^{-12}~\rm{s}$ for the $c$ quark), leading to very close decay vertices. 
+  Actually, the lifetime of the two quarks is of the same magnitude ($1.3 \cdot 10^{-12}~\rm{s}$ for the $b$ quark and $1.1 \cdot 10^{-12}~\rm{s}$ for the $c$ quark), leading to very close decay vertices. 
   
   Along this chapter, the role of the vertex detector and the physics requirements to develop one for the \gls{ILC} environment will be presented.
   Then, the different options of the \acrfull{ILD} are shown, to focus on the double-sided ladders developed by the \gls{PLUME} collaboration.
@@ -60,7 +60,7 @@
    The first term $a$ is the impact parameter resolution of the sensors used for the \gls{VXD}, which is linked up to the radius of the inner $R_{\rm{int}}$ and outer $R_{\rm{ext}}$ layers and the single point resolution $\sigma_{s.p.}$, as described in equation~\ref{eq:aTerm}.
 
    \begin{equation}
-     a = \sigma_{s.p}\frac{R_{\rm{int}} \oplus R_{\rm{ext}}}{R_{\rm{ext}} - R_{\rm{int}}}
+     a = \sigma_{s.p} \cdot \frac{R_{\rm{int}} \oplus R_{\rm{ext}}}{R_{\rm{ext}} - R_{\rm{int}}}
      \label{eq:aTerm}
    \end{equation}
 
@@ -73,7 +73,7 @@
 
 
     \begin{equation}
-      b = R_{int} \frac{13.6 MeV/c}{\beta c}  Z \sqrt{\frac{x}{X_{0}}} \left[ 1 + 0.036 ln \left( \frac{x}{X_{0}\sin{\theta}} \right) \right].
+      b = R_{int} \frac{13.6 MeV/c}{\beta c} \cdot Z \cdot \sqrt{\frac{x}{X_{0}}} \left[ 1 + 0.036 \cdot \ln{ \left( \frac{x}{X_{0}\sin{\theta}} \right)} \right].
       \label{eq:bTerm}
     \end{equation}
    
@@ -84,13 +84,13 @@
 
    \subsection{Layout of the vertex detector}
 
-   The \gls{VXD} will be made of 12 cm long ladders arranged cylindrically in concentric layers to form long-barrels surrounding the \gls{IP}, contrary to the \gls{SiD} vertex detector with a design based on a 5 layers barrel, four endcap disks and three additional forward pixel disks\cite{Behnke2010}.
+   The \gls{VXD} will be made of $12~\rm{cm}$ long ladders arranged cylindrically in concentric layers to form long-barrels surrounding the \gls{IP}, contrary to the \gls{SiD} vertex detector with a design based on a 5 layers barrel, four endcap disks and three additional forward pixel disks\cite{Behnke2010}.
    Two different geometries are under consideration for the \gls{ILC}-{ILD}, nevertheless, they are both based on long ladders. 
    The first option is based on five single-sided layers with a material budget not exceeding 0.11 \% of $X_0$ per layer.
-   The five layers are in a radius range varying from 15 mm for the first layer to 60 mm for the last one.
+   The five layers are in a radius range varying from $15~\rm{mm}$ for the first layer to $60~\rm{mm}$ for the last one.
    The second option is based on three double-sided layers.
-   The material budget should be less than 0.16 \% of $X_0$ for one detecting face.
-   The mechanical structure, which holds the two layers, is 2 mm thick and will be in a radius range varying from 15 to 60 mm.
+   The material budget should be less than $0.16~\%~\rm{X_0}$ for one detecting face.
+   The mechanical structure, which holds the two layers, is $2~\rm{mm}$ thick and will be in a radius range varying from $15$ to $60~\rm{mm}$.
 
    
   %  whereas the second one is based on three double-sided layers.
@@ -119,15 +119,15 @@
    \subsubsection{FPCCD}
    
      The \gls{FPCCD} \cite{CalanchaParedes} is based on the \gls{CCD} processes.
-     The sensor is using small pixels size (approximately $\sim 5 \mu\text{m}$) to provide a sub-micron spatial resolution and an excellent capability to separate two nearby tracks.
-     Its thickness is 50 $\mu\text{m}$ and the epitaxial layer (15 $\mu\text{m}$ thick) is completely depleted to limit the charge spreading around pixels and to reduce the number of hits per pixel.
+     The sensor is using small pixels size (approximately $\sim 5~\rm{\mu m}$) to provide a sub-micron spatial resolution and an excellent capability to separate two nearby tracks.
+     Its thickness is $50~\rm{\mu m}$ and the epitaxial layer ($15~\rm{\mu m}$ thick) is completely depleted to limit the charge spreading around pixels and to reduce the number of hits per pixel.
      However, the \gls{CCD} architecture provides slow readout and the matrix will be read between consecutive bunch trains, helping to reduce the power consumption and avoiding beam induced RF noise.
      The \gls{FPCCD} are planned to be operated at $-40 \degres$C.
 
    \subsubsection{DEPFET}
     
     The \gls{DEPFET} \cite{Richter2003} is an \gls{APS} in which field effect transistors are incorporated into each pixel.
-    The single point resolution is $\sim 3$ $\mu\text{m}$ for pixels with a size of 20 $\mu\text{m}$.
+    The single point resolution is $\sim 3~\rm{\mu m}$ for pixels with a size of $20~\rm{\mu m}$.
     The silicon itself is used as sensitive part but also as a mechanical structure, minimising the support and services.
     The sensor is completely depleted of free charged carries thanks to a voltage applied to the thickness.
     The rolling-shutter approach is used for reading each row and the column readout is done by two auxiliary \glspl{ASIC}.
@@ -156,7 +156,7 @@
    
    Another aspect not discussed yet is the radiation tolerance of the detector, which is directly related to the beam background.
    The first layer is the most affected by the background and it should have a high radiation tolerance. 
-   The required radiation tolerance is about 1 kGy for the total ionising dose and a fluence of $10^{11}\text{n}_{eq}\text{/cm}^2$\cite{Behnke2013}.
+   The required radiation tolerance is about $1~\rm{kGy}$ for the total ionising dose and a fluence of $10^{11}\rm{n}_{\rm{eq}}\rm{/cm}^2$\cite{Behnke2013}.
 
    The efficiency of the \gls{VXD} has also to be excellent in order to maximise the tracking performances.
    The efficiency is defined here as the ratio of detected particles over all the particles crossing the detector.
@@ -175,9 +175,9 @@
 
    To summarise, the expected parameters expected for the \gls{ILC} are: 
    \begin{itemize}
-     \item An excellent impact parameter resolution: $ a \sim 5 \mu\text{m}$ and $b \sim 10 \mu\text{m}$
-     \item A material budget not exceeding 0.1 \% $X_0$ per layer for the single-sided option (0.16 \% $X_0$ for the double one)
-     \item Radius of the first layer $\sim$ 15/16 mm
+     \item An excellent impact parameter resolution: $ a \sim 5~\rm{\mu m}$ and $b \sim 10~\rm{\mu m}$,
+     \item A material budget not exceeding $0.1~\%~\rm{X_0}$ per layer for the single-sided option ($0.16~\%~\rm{X_0}$ for the double one),
+     \item Radius of the first layer $\sim~15/16~\rm{mm}$.
    \end{itemize}
 
   \section{PLUME}
@@ -187,7 +187,7 @@
   The collaboration is studying the feasibility to build such vertex detector using \gls{MAPS} thinned down to $50 \mu\text{m}$ and is exploring the benefits of this design.
   Strasbourg is in charge to develop and mount the sensors on the modules, to take care of the readout and the \gls{DAQ}, and to provide a cooling system.
   The mechanical design, stability measurements and building the ladders are done by the University of Bristol, while DESY has studied the ladder mock-up, performed power-pulsing tests and is now characterising and validating the modules in the lab.
-  In 2016, DESY has provided the opportunity to test the ladder in real conditions thanks to the test beam facility and the possibility to use the \gls{DAQ} software developed at DESY: EUDAQ\todo{REF: EUDAQ}.
+  In 2016, DESY has provided the opportunity to test the ladder in real conditions thanks to the test beam facility and the possibility to use the \gls{DAQ} software developed at DESY: EUDAQ\cite{EUDAQ}.
 
     \subsection{Design and goals}
 
@@ -195,7 +195,7 @@
     The ladder structure is defined by the sensors arrangement on the mechanical structure (positioned next to each other).
     In this design, the stiffener is a 2 mm thick \gls{SiC} foam which has a density varying between 8 \% and 4 \% (depending on the ladder version) and could be reduced to only 2 or 3 \%.
     %The mechanical structure is made of a 2 mm thick silicon carbide foam which has a density varying between 8\% for the prototype build before 2011 and 4\% for the new ones.
-    The choice of this foam is a good compromise between the stiffness and the thickness compare to other materials. \todo{REF Joel paper}
+    The choice of this foam is a good compromise between the stiffness and the thickness compare to other materials\cite{LectureJoel}.
     The figure~\ref{fig:SiC} is representing the structure of this foam.
     It is macroscopically uniform and has the advantage to be easily machinable.
     Nevertheless, it has a low thermal conductivity (50 W/m/K) and can't be used to dissipate the heat.
@@ -235,11 +235,11 @@
     Each module of the ladder was made of Kapton flex-cable with a thickness of 0.14 mm, using copper traces.
     They are denoted \gls{OKF}, where Optiprint is the vendor of these flex-cable.
     It is the first version to embed six MIMOSA-26 binary output sensors working simultaneously on each side of the stiffener.
-    The material budget is estimated to be 0.65 \% of $X_0$ in the sensor's sensitive area. 
+    The material budget is estimated to be $0.65~\% ~\rm{of}~\rm{X_0}$ in the sensor's sensitive area. 
     The aim of this prototype was to validate the operation of multiple sensors in a chain.
     Two ladders were tested in real conditions.
     The first one was tested with 120 GeV pions at CERN-SPS in 2011, while the second ladder was tested in April 2016 with up to 5 GeV positrons at DESY in Hamburg. 
-    The DESY test beam results are presented in chapter ???, while a specific study of the sensor's deformation observed at CERN is discussed in chapter ???.
+    The DESY test beam results are presented in chapter~\ref{chap:X0}, while a specific study of the sensor's deformation observed at CERN is discussed in chapter~\ref{chap:deformation}.
 
     \begin{figure}[!h]
       \centering
@@ -622,8 +622,8 @@
 
 
 
-    The PICSEL group has then developed digital output sensors for the pixel vertex detector at the START experiment at Brookhaven National Laboratory\cite{}.
-    The figure~\ref{fig:Mi28} is showing a half-section of the STAR vertex detector (subfigure~\ref{fig:vxdSTAR}) and a \gls{MIMOSA}-28 bounded on a PCB(subfigure~\ref{fig:ultimate}).
+    The PICSEL group has then developed digital output sensors for the pixel vertex detector at the START experiment at Brookhaven National Laboratory\cite{1748-0221-7-01-C01102}.
+    The figure~\ref{fig:Mi28} is showing a half-section of the STAR vertex detector (subfigure~\ref{fig:vxdSTAR}) and a \gls{MIMOSA}-28 bounded on a PCB (subfigure~\ref{fig:ultimate}).
     They are based on the architecture of \gls{MIMOSA}-26 with some modifications.
     The matrix contains 960 columns and 928 rows for a pitch of $20.7 \times 20.7 \mu\text{m}^2$.
     The sensitive area is 19.7 x 19.2 $\text{cm}^2$, for an integration time of less than $200\mu\text{s}$.
@@ -667,7 +667,7 @@
     This chapter has depicted the purpose of the vertex detector for the \gls{ILD}.
     Different technologies were introduced, to focus specifically on the \gls{CMOS} sensors and their use in high-energy physics.
     The \gls{PLUME} collaboration aims to integrate \gls{MAPS} onto light double-sided ladders, in order to reach the requirements of the \gls{ILC}.
-    The collaboration has reach different steps to produce the first full-scale ladder, which have only a material budget of only $0.35\% X_0$ and a spatial resolution better than $4\mu\text{m}$.
+    The collaboration has reach different steps to produce the first full-scale ladder, which have only a material budget of only $0.35~\%~\rm{X_0}$ and a spatial resolution better than $4~\rm{\mu m}$.
     The principle of the \gls{CMOS} technology was presented. 
     The next chapter is focusing on the electrical validation of this sensors mounted onto a PLUME ladder.
 
