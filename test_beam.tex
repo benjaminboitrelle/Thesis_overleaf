@@ -76,7 +76,7 @@
     This simulation takes into account the material budget of the telescope, the \gls{DUT} and the multiple scattering of electrons in the air.
     One telescope plane as a material budget of $\sim 0.053~\%$ of $\rm{X_{0}}$, whereas \gls{PLUME} is $\sim 0.65~\%$ plus two kapton foils used to insulate the ladder from the light ($\sim 0.71~\%~\rm{X_{0}}$).
     For both configurations, the telescope is divided into two arms, two or three planes on each side of the \gls{DUT}.
-    The maximal distance between each plane of one frame is $d_{\rm{max}} = 150~\rm{mm}$ for the six sensors configuration, whereas for the second one it is $d_{\rm{max}} = 300~\rm{mm}$.
+    The maximal distance between each plane of one frame is $\rm{d}_{\rm{max}} = 150~\rm{mm}$ for the six sensors configuration, whereas for the second one it is $\rm{d}_{\rm{max}} = 300~\rm{mm}$.
     
     \begin{table}[!h]
       \centering
@@ -166,7 +166,7 @@
       To control the heating of the ladder during the test beam, a cooling system consisting of a simple fan is used.
       On one endcap, a pipe is fixed and connected to the fan.
       Some studies in Strasbourg were done to determine the air flow speed as a function of the voltage applied.
-      Hence, an air flow speed of $3~\rm{m.s^{^1}}$ is achieved with $5~\rm{V}$ and an air flow speed of $6~\rm{m.s^{-1}}$ for $10~\rm{V}$.
+      Hence, an air flow speed of $3~\rm{m.s^{-1}}$ is achieved with $5~\rm{V}$ and an air flow speed of $6~\rm{m.s^{-1}}$ for $10~\rm{V}$.
       This values result in an operating temperature of all sensors between approximately $40^{\degree}\rm{C}$ and $52^{\degree}\rm{C}$.
 
       During the test beam campaign, the \textit{clock} and \textit{marker} are read from one sensor of \gls{PLUME}.
@@ -263,8 +263,8 @@
     One is made of copper, whereas the other one is made of aluminum.
     Then, a dipole magnet bends the particles and spread them according to their energy.
     Afterward, a tungsten collimator cuts away the unwanted particles, those having a too high or too low momentum, before the test beam area.
-    A second collimator is located in the test beam area and it determines the size of the beam spot.
-    The figure~\ref{fig:desyTb-sketch} summarises the different step to generate a beam of electrons or positrons in test beam 21, while the energies and the rates available are displayed in figure~\ref{fig:rateTB21}
+    A second collimator is located inside the test beam area and it determines the size of the beam spot.
+    The figure~\ref{fig:desyTb-sketch} summarises the different steps to generate a beam of electrons or positrons in test beam 21, while the energies and the rates available are displayed in figure~\ref{fig:rateTB21}
 
     \begin{figure}[!h]
       \centering
@@ -294,7 +294,7 @@
     A first processor is used to convert the raw data files acquired during the test beam into the LCIO format.
     The new file created contains the pixel number which fired in a given event, along with the sensor number.
     During the conversion, a hot pixel search is done to removed the noisy pixels from the list of hits.
-    A pixel is considered as noisy if its firing frequency is above $0.001~\%$
+    A pixel is considered noisy if its firing frequency is above a threshold value determined by the user.
     %From the raw data files, a first processor is used to convert the data into the LCIO format.
     %This converter file contains the pixel number which fired in a given event, along with the sensor number.
     %Before searching for clusters, the noisy pixels are removed from the list.
@@ -303,7 +303,7 @@
     Then, a cluster algorithm forms sets of cluster from the adjacent fired pixels in a row and/or column.
     Afterward, the hit candidates are defined with a centre-of-gravity method and the position of the hit is determined in the telescope frame and in the sensor frame.
 
-    Although the alignment procedure looks like the one presented in chapter~\ref{chap:deformation}, the procedure used with EUTElescope is slightly different.
+    Although the alignment procedure looks like the one presented in chapter~\ref{chap:deformation}, the procedure used with EUTelescope is slightly different.
     The alignment is performed with \gls{GBL} and MILLEPEDE-II.
     In the case of a complete telescope (six planes), the tracks are built from the reconstruction of triplets in the upstream and downstream telescope planes.
     Firstly, a hit candidate from the outer plane is extrapolated by a straight line to the inner plane of one arm.
@@ -313,9 +313,9 @@
     The track candidates are then passed to MILLEPEDE-II, which determines the shift and the rotation to apply for aligning the sensors.
     This method is applied a couple of times, until the precision of the alignment reaches a submicron order.
 
-    Nevertheless, due to the set-up used during the test beam and a limitation in EUTElescope on the number of telescope planes and the ID used, the alignment did not work.
+    Nevertheless, due to the set-up used during the test beam and a limitation in EUTelescope on the number of telescope planes and the ID used, the alignment did not work.
     Indeed, the number of telescope planes is hard-coded to be six and the sensor IDs in the range $[0; 5]$ are reserved for the telescope. 
-    Here, the IDS $0$ and $1$ are used for \gls{PLUME} and the others for the telescope.
+    Here, the IDs $0$ and $1$ are used for \gls{PLUME} and the others for the telescope.
     Thus, a modification has to be applied to remap the sensor IDs. 
     Although this solution can work and \gls{GBL} uses only the $z$ ordering information is used to create the tracks, EUTelescope is waiting for six hits.
 
@@ -372,7 +372,7 @@
 
      \begin{equation}
        \begin{array}{lcl}
-         \left. \frac{x}{X_0} \right|_{\rm{PLUME}} & = & 2 \times \left( \left. \frac{x}{X_0} \right|_{\rm{MIMOSA-26}} + \left. \frac{x}{X_0} \right|_{\rm{Flex}} + 2 \times \left. \frac{x}{X_0} \right|_{\rm{Glue}}\right) + \left. \frac{x}{X_0} \right|_{\rm{SiC}}, \\
+         \left. \frac{x}{X_0} \right|_{\rm{PLUME}} & = & 2 \times \left( \left. \frac{x}{X_0} \right|_{\rm{Mi26}} + \left. \frac{x}{X_0} \right|_{\rm{Flex}} + 2 \times \left. \frac{x}{X_0} \right|_{\rm{Glue}}\right) + \left. \frac{x}{X_0} \right|_{\rm{SiC}}, \\
          & \simeq & 0.498~-~0.515~\%~\rm{X_0}.
        \end{array}
      \end{equation}
@@ -436,7 +436,7 @@
      \label{fig:kinkAngle1GeV}
    \end{figure} 
 
-   This procedure has been repeated to the runs between $1$ and $4~\rm{GeV}$ (see figures~\ref{fig:kinkAngle4GeV} -~\ref{fig:kinkAngle1GeV}) and the results of the measured kink angles as a function of the beam momentum are represented on figure~\ref{fig:theta0vsP_all}. 
+   This procedure has been repeated to the runs between $1$ and $4~\rm{GeV}$ (see figures~\ref{fig:kinkAngle4GeV} to~\ref{fig:kinkAngle1GeV}) and the results of the measured kink angles as a function of the beam momentum are represented on figure~\ref{fig:theta0vsP_all}. 
    The uncertainty on the momentum is $5~\%$ and is the uncertainty determined at the DESY test beam facility, while the uncertainty used for the kink angle is extracted from the fit procedure corrected by the $\chi^2 / \rm{NDF}$ obtained by the fitting procedure.
    The plot is then fitted with the Highland formula from equation~\ref{eq:theta0}, on which the radiation length is a free parameter.
    Two points ($1$ and $5~\rm{GeV}$) are outside the trend and the $\chi^2 /~\rm{N.D.F}$ measured is bigger than $1$.
@@ -446,7 +446,7 @@
      \centering
      \begin{tabular}{c c c c}
         \hline %----------------------------
-        Energy (GeV)	& $\left. \theta_0\right|_{\rm{calculated}}~(\rm{rad})$ & $\left. \theta_0\right|_{\rm{measured}}~(\rm{rad})$ \tabularnewline
+        Energy (GeV)	& $\left. \theta_0\right|_{\rm{expected}}~(\rm{rad})$ & $\left. \theta_0\right|_{\rm{measured}}~(\rm{rad})$ \tabularnewline
         \hline %----------------------------
         \hline %----------------------------
 
@@ -457,7 +457,7 @@
         	5		&		$1.437\cdot 10^{-4}$    &		$1.544\cdot 10^{-4}$	     \tabularnewline
      
      \end{tabular}
-     \caption{Determination of $\left. \theta_0\right|_{\rm{calculated}}$ for a material budget of $0.5~\%~\rm{X_0}$ and comparison to $\left. \theta_0\right|_{\rm{measured}}$.}
+     \caption{Determination of $\left. \theta_0\right|_{\rm{expected}}$ for a material budget of $0.5~\%~\rm{X_0}$ and comparison to $\left. \theta_0\right|_{\rm{measured}}$.}
      \label{tab:theta0Calcultation}
    \end{table}
 
@@ -478,8 +478,8 @@
    
    \begin{figure}[!h]
      \centering
-     \includegraphics[width = \textwidth]{Pictures/X0/theta0VsP_3-5GeV.png}
-     \caption{Extrapolation of the measured radiation length in the range 3 to 5 GeV.}
+     \includegraphics[width = \textwidth]{Pictures/X0/theta0VsP_2-4GeV.png}
+     \caption{Extrapolation of the measured radiation length in the range 2 to 4 GeV.}
      \label{fig:theta0vsP_3-5}
    \end{figure}
 
@@ -518,11 +518,10 @@
   
    \begin{figure}
      \centering
-     \missingfigure{x/X0 Vs energy}
+     \includegraphics[width =\textwidth]{Pictures/X0/radiationLength_2-4GeV.png}
      \caption{Measured radiation lentgh $\frac{x}{X_0}$ as a function of the momentum $p$.}
      \label{fig:X0vsP}
    \end{figure}
-
 
   \section{Conclusions}
 
