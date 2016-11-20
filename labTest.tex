@@ -45,7 +45,7 @@
 
     The module assembly is performed at the IPHC by the microelectronics group and is done in three steps.
     First of all, the passive components are soldered onto a flex-cable.
-    Then, an epoxy layer with a thickness of $300~\mu\rm{m}$ is applied under the connector side.
+    Then, an epoxy layer with a thickness of $300~\rm{\mu m}$ is applied under the connector side.
     Due to the force applied by pulling and pushing the jumper cable on the ZIF connector, the epoxy layer has the role to reinforce this area and to avoid the flex-cable to be damaged.
     The module is then placed on a metal jig to ensure its flatness using a vacuum suction.
     The next step consists of gluing the six sensors onto the flex.
@@ -86,7 +86,7 @@
     The second module receives some glue on the backside before the jigs are assembled together.
     The glue is then cured for one day.
     The amount of glue needed for the assembly was studied carefully. 
-    Indeed, the surface of the foam is irregular, so if not enough glue is used, the foam will not be glued on the module.
+    The surface of the foam is irregular, so if not enough glue is used, the foam will not be glued on the module.
     On the other hand, using too much glue might stick the jigs together.
     When the ladder is finally ready, it is placed into an aluminum box used for shipping but also testing.
    
@@ -116,7 +116,7 @@
   To tune properly the robot which is in charge of gluing the sensors on the flex-cable, the microelectronic group needs a position feedback.
   The modules are then inspected under a microscope to measure the gap between two sensors, and their position relatively to each other.
   The distance between the last pixel of a sensor to the neighboring one should be less than $500~\mu\rm{m}$, taking into account the $20~\mu\rm{m}$ robot's mismatch.
-  The figure~\ref{fig:visAlign} is a picture taken with a microscope showing the relative position of two sensors on the bottom of the matrix for an aluminum straight module.
+  Figure~\ref{fig:visAlign} is a picture taken with a microscope showing the relative position of two sensors on the bottom of the matrix for an aluminum straight module.
   %A visual inspection of the position,  as well as any problem on the matrix, as a crack, as well as a check of the wire-bonds have to be done before any electrical validation.
   The gap between the two edges is $\sim 51~\mu\rm{m}$. 
   
@@ -130,7 +130,7 @@
   The visual inspection is also needed to check if the wire-bonds are correctly connected to the right sensor's pad, to verify that the gluing of the sensors on the flex-cable did not break the matrix due to some dust and also to control that the shipping of the module between the labs (for example between Strasbourg and DESY) did not damage it.
   The modules are fragile objects that have to be manipulated with care.
   Any wrong manipulation can damage severely the vital functionality.
-  For example, the figure~\ref{fig:wireBondsCrashed} shows a picture taken with a microscope of wire-bonds crashed due to a falling cable on it.
+  For example, figure~\ref{fig:wireBondsCrashed} shows a picture taken with a microscope of wire-bonds crashed due to a falling cable on it.
   The sensitive part and the electronics were not damaged, but some wires were touching leading to a shortcut.
   Fortunately, the microelectronic group at Strasbourg was able to unbend the wires and repair the most damaged one.
   This module is fully operational and working correctly.
@@ -177,7 +177,7 @@
     \item \textbf{Reset}: reset the registers to default value. 
   \end{itemize}
 
-  The principle of the connection between the auxiliary board and the different components to operate one module is depicted on the figure~\ref{fig:plumeAux}.
+  The principle of the connection between the auxiliary board and the different components to operate one module is depicted on figure~\ref{fig:plumeAux}.
 
   Before connecting a PLUME module to the auxiliary board, the voltages have to be set and the \gls{JTAG} communication has to be checked on the auxiliary card.
   Two external power supplies are delivering $8~\rm{V}$ D.C. to the power supply board and are giving an information on the consumption of the whole system.
@@ -208,7 +208,7 @@
 
   After the validation of the auxiliary board (and the power supplies switched off), the module can be linked to it via a jumper cable.
   The voltages applied to the device have to be adjusted again due to the dissipation inside the flex-cable and the jumper cable.
-  The $V_{DD_D}$, $V_{DD_A}$ and $V_{clp}$ can be measured on different pads of the ladder: three pads are closed to the connector, while the three others are at the edge of the flex-cable, as seen on the figure~\ref{fig:voltagePads}
+  The $V_{DD_D}$, $V_{DD_A}$ and $V_{clp}$ can be measured on different pads of the ladder: three pads are closed to the connector, while the three others are at the edge of the flex-cable, as seen on figure~\ref{fig:voltagePads}
 
   \begin{figure}[!h]
     \centering
@@ -220,7 +220,7 @@
   Two versions of the jumper cable were produced, one very flexible with a high resistivity and the second one stiff with a low resistivity.
  % The first one was not used during the test because of a problem during the fabrication.
   The most flexible cable was not used because of an important voltage drop between the auxiliary board and the module, but also because of a wrong fabrication.
-  Indeed, after setting the voltages to the nominal value and plug in the module, a short-circuit happened.
+  After setting the voltages to the nominal value and plug in the module, a short-circuit happened.
   The auxiliary board tests were correct and were proofed one more time without the module.
   Then, a thermal camera was used to find if a sensor was responsible for the short-circuit.
   One sensor was hotter than the others, nevertheless, the wire-bonds were correctly assigned.
@@ -260,7 +260,7 @@
   The useful data is split into \textit{states/line}, which contains the address of the line which has a hit and an overflow flag if the number of states is bigger than the memory limitation.
   It is followed by the \textit{state} giving the number of consecutive hits and the address of the first column.
   Finally, the \textit{trailer} is ending the data transmission followed by 32 bits of zero.
-  The figure~\ref{fig:mi26Output} is a picture of an oscilloscope output of a MIMOSA-26 data output. From the top to the bottom, it shows the 80 MHz \textit{clock}, the four clock's cycle \textit{marker}, the \textit{data0} and \textit{data1} with the \textit{header} and the \textit{frame counter}.
+  Figure~\ref{fig:mi26Output} is a picture of an oscilloscope output of a MIMOSA-26 data output. From the top to the bottom, it shows the 80 MHz \textit{clock}, the four clock's cycle \textit{marker}, the \textit{data0} and \textit{data1} with the \textit{header} and the \textit{frame counter}.
   More information about the MIMOSA-26 can be found in the MIMOSA-26 user manual \cite{manualMi26}.
 
   \begin{figure}[h]
@@ -308,7 +308,7 @@
   The control of the discriminators is divided into four sub-matrices, each containing 288 columns.
   Thus, for one sub-matrix a threshold value in DAC units in the \gls{JTAG} software is driving all the discriminators, depending on a baseline value.
   For one line, usually one located in the middle of the matrix, its baseline response is studied to find the "middle-points" by looking for the threshold of each sub-matrix, in which the discriminators are reaching a half activation.
-  When this "middle-points" are determined, the homogeneity of the matrix is checked, as shown on the figure~\ref{fig:homogeneityMi26}.
+  When this "middle-points" are determined, the homogeneity of the matrix is checked, as shown on figure~\ref{fig:homogeneityMi26}.
   Due to the structure of the sensor, the homogeneity is not perfect and some dispersions in the discriminator response are observed between the beginning and the end of a sub-matrix.
   Moreover, to reduce this dispersion, the reference baseline, and the clamping voltage have to be adjusted.
   
@@ -321,11 +321,11 @@
   
   Afterward, the thresholds are set to the lowest and highest value to look for defect pixels in the matrix.
   On the one hand, few pixels can be always activated even if the discriminators were closed.
-  The figure~\ref{fig:openPixel} depicts the matrix output for all the discriminators closed.
+  Figure~\ref{fig:openPixel} depicts the matrix output for all the discriminators closed.
   Therefore, a line is always activated, as well as few pixels in a column and they are increasing the fake hit rate of the matrix.
   A solution exists to disconnect some discriminators in order to reduce the noise of defect columns thanks to the \gls{JTAG} program, nevertheless, no solution during the sensor programming exists to remove the defect lines.
   On the other hand, few pixels can be always deactivated even if the discriminators are completely opened, thus, they are not able to detect any physics signal.
-  This behavior is represented on the figure~\ref{fig:closePixel} and no solution exists to make them working properly.
+  This behavior is represented on figure~\ref{fig:closePixel} and no solution exists to make them working properly.
    
   \begin{figure}[!h]
     \centering
@@ -352,11 +352,11 @@
   The files created are used to firstly, build a configuration file containing the DAC values of each sub-matrix for the different thresholds applied.
   The threshold is here defined has the voltage applied to the discriminators.
   Afterward, this file is analysed and converted to create an output file containing a hit average picture of each sub-matrix for each step.
-  Then, a macro based on C++ and ROOT framework is reading the hit average picture to plot the transfer function, also called "S" curve, as represented on the figure~\ref{fig:transfer}.
+  Then, a macro based on C++ and ROOT framework is reading the hit average picture to plot the transfer function, also called "S" curve, as represented on figure~\ref{fig:transfer}.
   It shows the normalised response of the 288 discriminators and the pixels contained in this sub-matrix as a function of the threshold applied in millivolts.
-  The temporal noise of each pixel is calculated from the derivative of the "S" curve and is represented here in the left plot of the figure~\ref{fig:TN&FPN}.
+  The temporal noise of each pixel is calculated from the derivative of the "S" curve and is represented here in the left plot of figure~\ref{fig:TN&FPN}.
   The mean value of the distribution obtained the mid-point threshold of a pixel.
-  The dispersion of the mid-point threshold corresponds to the fixed pattern noise, represented on the right plot of the figure~\ref{fig:TN&FPN}.
+  The dispersion of the mid-point threshold corresponds to the fixed pattern noise, represented on the right plot of figure~\ref{fig:TN&FPN}.
   
   \begin{figure}[!h]
     \centering
@@ -404,7 +404,7 @@
     \rm{F.H.R} = \frac{\rm{Number~of~hits}}{\rm{Number~of~events} \times \rm{Number~of~pixels}} 
   \end{equation}
   
-  The figure~\ref{fig:darkEvents} is representing the accumulation in the dark of ten thousand events for a threshold five times bigger than the noise.
+  Figure~\ref{fig:darkEvents} is representing the accumulation in the dark of ten thousand events for a threshold five times bigger than the noise.
   The measured fake hit rate was below $10^{-4}~\rm{hits/pixel/events}$.
 
    \begin{figure}[!h]
@@ -415,7 +415,7 @@
   \end{figure}
 
   Then, an iron 55 source is used to control the homogeneity of the thresholds determined before.
-  The figure~\ref{fig:fe55} represents the accumulation of ten thousand events for a threshold five time bigger than the noise with an iron source on top of the sensor.
+  Figure~\ref{fig:fe55} represents the accumulation of ten thousand events for a threshold five time bigger than the noise with an iron source on top of the sensor.
   
   \begin{figure}[!h]
     \centering
@@ -443,7 +443,7 @@
   The software reads the information of the hit pixels, reconstructs the clusters of hit pixels and in the case of a test beam is able to reconstruct tracks from the hit information.
 
   A method is used to determine the fake hit rate with respect to the number of pixels hit per event.
-  From the distribution shown on the figure~\ref{fig:pixel/event}, which represents the number of pixels fired per event, the average fake hit rate is calculated as the mean of this distribution divided by the total number of pixels contained in the matrix.
+  From the distribution shown on figure~\ref{fig:pixel/event}, which represents the number of pixels fired per event, the average fake hit rate is calculated as the mean of this distribution divided by the total number of pixels contained in the matrix.
     \begin{figure}
     \centering
     \includegraphics[width = \textwidth]{Pictures/labTests/FHR_AS01_chip3.png}
@@ -451,7 +451,7 @@
     \label{fig:pixel/event}
   \end{figure}
   The error on the measurement is then the root mean squared of the distribution divided by the number of entries and the number of pixels inside the matrix.
-  This calculation is done for different thresholds and the figure~\ref{fig:FHR} represents the average fake hit rate per pixel per event as a function of the threshold for one sensor of an aluminum module.
+  This calculation is done for different thresholds and figure~\ref{fig:FHR} represents the average fake hit rate per pixel per event as a function of the threshold for one sensor of an aluminum module.
   The results are matching the expected behavior for a standalone MIMOSA-26 sensor as shown in figure~\ref{fig:mi26Perf}.
 
   \begin{figure}
@@ -470,7 +470,7 @@
   The first ladder using copper module was assembled in January 2016.
   New ladders are currently being built and the collaboration is expecting to test them in the DESY test beam facility in November.
   Nevertheless, the aluminum ladder seems to be more challenging to build.
-  Indeed, the three first mirrored versions produced have a connector problem, that could have been damaged by plugging and unplugging the jumper cable.
+  The three first mirrored versions produced have a connector problem, that could have been damaged by plugging and unplugging the jumper cable.
   This problem did not occur with the copper mirrored versions and this might come from a more fragile flex-cable.
   Ideally, each module should have is own jumper cable and this should not be disconnected.
   Nevertheless, for shipping them, there is no other solution.

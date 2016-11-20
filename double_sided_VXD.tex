@@ -40,7 +40,7 @@
    %The distance of the first layer to the \gls{IP} should be as slow as possible and the power consumption should 
    %The first layer has to be as close as possible to the \gls{IP} and the lowest power consumption as possible
    %The flavour tagging ability, vertex charge measurement and track and displaced vertices reconstruction are the main physics parameter that is driving the design of such detector.
-   The distance of closest approach of a particle to the colliding beam is called the impact parameter and the resolution achievable by the detector is described by the formula~\ref{eq:resIP} \cite{Battaglia2011}.
+   The distance of closest approach of a particle to the colliding beam is called the impact parameter and the resolution achievable by the detector is described by formula~\ref{eq:resIP} \cite{Battaglia2011}.
    %The resolution on the impact parameter $\sigma_{IP}$, defined as the distance of closest approach of the particle to the colliding beam can be parametrised by the formula~\ref{eq:resIP}.\todo{REPHRASE}
     
     \begin{equation}
@@ -60,13 +60,13 @@
    The first term $a$ is the impact parameter resolution of the sensors used for the \gls{VXD}, which is linked up to the radius of the inner $R_{\rm{int}}$ and outer $R_{\rm{ext}}$ layers and the single point resolution $\sigma_{s.p.}$, as described in equation~\ref{eq:aTerm}.
 
    \begin{equation}
-     a = \sigma_{s.p} \cdot \frac{R_{\rm{int}} \oplus R_{\rm{ext}}}{R_{\rm{ext}} - R_{\rm{int}}}
+     a = \sigma_{s.p} \cdot \frac{R_{\rm{int}} \oplus R_{\rm{ext}}}{R_{\rm{ext}} - R_{\rm{int}}}.
      \label{eq:aTerm}
    \end{equation}
 
     In the case of the \gls{ILD}, the single point resolution should not be higher than $\sigma_{sp} \simeq 3~\rm{\mu m}$, leading to an impact parameter with a resolution of the order of $a \simeq 5~\rm{\mu m}$.
    
-    The second term, $b$, presented in the equation~\ref{eq:bTerm}, is related to the multiple scattering inducing an uncertainty on the impact parameter.
+    The second term, $b$, presented in equation~\ref{eq:bTerm}, is related to the multiple scattering inducing an uncertainty on the impact parameter.
     It depends on the charge $Z$ of the impinging particle, the material crossed by the particle $\frac{x}{X_0 \sin{\theta}}$ and the distance of the innermost layer to the \gls{IP}.
     Depending on the momentum or the crossing angle of the incoming particles, the two parameters are more or less important.
     For low momentum particles or crossing particles with a shallow angle, the $b$ parameter becomes important, while for higher momentum $a$ dominates.
@@ -80,13 +80,13 @@
    For the \gls{ILC} purpose, the \gls{ILD}-\gls{VXD} should reach an impact parameter resolution better than $5~\rm{\mu m}$ and a $b$ parameter better than $10~\rm{\mu m~GeV/c}$. 
    This precision on these parameters were never obtained before in other experiments.
    %The values were never obtained before for other experiments. 
-   As a comparison, the resolution parameters for the \gls{LHC} are: $a =  12 \ \mu$m and $b = 70 \ \mu$m GeV/c. 
+   As a comparison, the resolution parameters for the \gls{LHC} are: $a =  12~\rm{\mu m}$ and $b = 70~\rm{\mu m}~\rm{GeV/c}$. 
 
    \subsection{Layout of the vertex detector}
 
    The \gls{VXD} will be made of $12~\rm{cm}$ long ladders arranged cylindrically in concentric layers to form long-barrels surrounding the \gls{IP}, contrary to the \gls{SiD} vertex detector with a design based on a 5 layers barrel, four endcap disks and three additional forward pixel disks \cite{Behnke2010}.
    Two different geometries are under consideration for the \gls{ILC}-{ILD}, nevertheless, they are both based on long ladders. 
-   The first option is based on five single-sided layers with a material budget not exceeding 0.11 \% of $X_0$ per layer.
+   The first option is based on five single-sided layers with a material budget not exceeding 0.11 \% of $\rm{X_0}$ per layer.
    The five layers are in a radius range varying from $15~\rm{mm}$ for the first layer to $60~\rm{mm}$ for the last one.
    The second option is based on three double-sided layers.
    The material budget should be less than $0.16~\%~\rm{X_0}$ for one detecting face.
@@ -146,7 +146,7 @@
    %One of the technology developed is described in section~\ref{sec:CMOS}.
 
    For all the technologies, the sensors' power consumption has to be minimised in a way to reduce the cooling system and in the same time the added material budget in the sensitive detector volume.
-   As it was shown on the figure~\ref{fig:bunches} of the chapter~\ref{chap:ILC}, the bunch train will last less than 1 ms for a dead time of 200 ms.
+   As it was shown on figure~\ref{fig:bunches} of chapter~\ref{chap:ILC}, the bunch train will last less than 1 ms for a dead time of 200 ms.
    Two possibilities are envisaged to benefit from the beam structure.
    The first one consists to store the hits information thanks to a time stamp during the bunch crossing and to read out the data after the last collision.
    This method might be used by the \gls{FPCCD} technology due to the slow integration time of the \gls{CCD}.
@@ -156,21 +156,12 @@
    
    Another aspect not discussed yet is the radiation tolerance of the detector, which is directly related to the beam background.
    The first layer is the most affected by the background and it should have a high radiation tolerance. 
-   The required radiation tolerance is about $1~\rm{kGy}$ for the total ionising dose and a fluence of $10^{11}\rm{n}_{\rm{eq}}\rm{/cm}^2$ \cite{Behnke2013}.
+   The required radiation tolerance is about $1~\rm{kGy}$ for the total ionising dose and a fluence of $10^{11}\rm{n}_{\rm{eq}}\rm{.cm}^{-2}$ \cite{Behnke2013}.
 
    The efficiency of the \gls{VXD} has also to be excellent in order to maximise the tracking performances.
    The efficiency is defined here as the ratio of detected particles over all the particles crossing the detector.
    If one layer of the vertex detector misses a hit, the track reconstruction will be less accurate 
    
-   % the vertex detector optimisation can be only achieved by taking into account the beam structure.
-   %As it was shown on the figure~\ref{fig:bunches} of the chapter~\ref{chap:ILC}, the bunch train will last less than 1 ms for a dead time of 200 ms.
-   %Instead of reading the data during the bunch train, the sensors can be read out right after the end of the bunch train, then they can be switched off, or reduce their consumption as mush as possible, and they can be switched on at their nominal working value right before the first collisions. 
-   %This dead time can also be used to cool down the system.
-   %Indeed, the cooling system add an additional material 
-  
-   
-   
-
    \todo{Cooling system, integration time, radiation tolerance, electromagnetic interference}
 
    To summarise, the expected parameters expected for the \gls{ILC} are: 
@@ -184,30 +175,29 @@
 
   The \acrfull{PLUME} project aims to produce double-sided ladder prototypes with respect to the \gls{ILC} requirements \cite{PLUME}.
   Three labs in the Europe are involved: the IPHC-PICSEL in Strasbourg, the University of Bristol and DESY in Hamburg.
-  The collaboration is studying the feasibility to build such vertex detector using \gls{MAPS} thinned down to $50 \mu\text{m}$ and is exploring the benefits of this design.
+  The collaboration is studying the feasibility to build such vertex detector using \gls{MAPS} thinned down to $50~\rm{\mu m}$ and is exploring the benefits of this design.
   Strasbourg is in charge to develop and mount the sensors on the modules, to take care of the readout and the \gls{DAQ}, and to provide a cooling system.
   The mechanical design, stability measurements and building the ladders are done by the University of Bristol, while DESY has studied the ladder mock-up, performed power-pulsing tests and is now characterising and validating the modules in the lab.
   In 2016, DESY has provided the opportunity to test the ladder in real conditions thanks to the test beam facility and the possibility to use the \gls{DAQ} software developed at DESY: EUDAQ \cite{EUDAQ}.
 
     \subsection{Design and goals}
 
-    The figure~\ref{fig:PLUME} illustrates the design of a PLUME ladder.
+    Figure~\ref{fig:PLUME} illustrates the design of a PLUME ladder.
     The ladder structure is defined by the sensors arrangement on the mechanical structure (positioned next to each other).
-    In this design, the stiffener is a 2 mm thick \gls{SiC} foam which has a density varying between 8 \% and 4 \% (depending on the ladder version) and could be reduced to only 2 or 3 \%.
-    %The mechanical structure is made of a 2 mm thick silicon carbide foam which has a density varying between 8\% for the prototype build before 2011 and 4\% for the new ones.
+    In this design, the stiffener is a $2~\rm{mm}$ thick \gls{SiC} foam which has a density varying between $8~\%$ and $4~\%$ (depending on the ladder version) and could be reduced to only $2$ or $3~\%$.
     The choice of this foam is a good compromise between the stiffness and the thickness compare to other materials \cite{LectureJoel}.
-    The figure~\ref{fig:SiC} is representing the structure of this foam.
+    Figure~\ref{fig:SiC} is representing the structure of this foam.
     It is macroscopically uniform and has the advantage to be easily machinable.
-    Nevertheless, it has a low thermal conductivity (50 W/m/K) and can't be used to dissipate the heat.
+    Nevertheless, it has a low thermal conductivity ($50~\rm{W.m^{-1}.K^{-1}}$) and cannot be used to dissipate the heat.
     On each side, a low mass flex-cable is glued, which is used to connect the sensors for powering and managing them.
     It is made of copper traces coated in Kapton, but new prototypes using aluminum traces are developed and currently tested in order to reduce the material budget.
     %It is made of copper traces (prototype before 2011) or aluminum traces (new prototypes) coated in Kapton. 
     The ladder embeds twelve sensors, six on each face, that are glued and connected to the flex cable.
     On one edge of the flex-cable, a single \gls{ZIF} connector is used to link the ladder to the external board servicing, via a jumper cable.
-    For the moment, the design is dedicated to the MIMOSA-26 sensors thinned down to $50 \mu\text{m}$ but it can be adapted to any kind of \gls{MAPS} sensors having the same thickness. 
-    Although the MIMOSA-26 has a spatial resolution better than 3$\mu$m (see subsection~\ref{subsec:Mi26}), the integration time is not suited for the bunch train structures of the \gls{ILC}.
+    For the moment, the design is dedicated to the \gls{MIMOSA}-26 sensors thinned down to $50~\rm{\mu m}$ but it can be adapted to any kind of \gls{MAPS} sensors having the same thickness. 
+    Although the \gls{MIMOSA}-26 has a spatial resolution better than $3~\rm{\mu m}$ (see section~\ref{subsec:Mi26}), the integration time is not suited for the bunch train structures of the \gls{ILC}.
 
-    The aims of the collaboration are to build ladders with a material budget better than 0.35\% of $X_0$ for a spatial resolution better than 3$\mu$m, and thus to evaluate the benefits of a double-sided measurement.
+    The aims of the collaboration are to build ladders with a material budget better than $0.35~\%~\rm{X_0}$ for a spatial resolution better than $3~\rm{\mu m}$, and thus to evaluate the benefits of a double-sided measurement.
 
     \begin{figure}[!h]
       \centering
@@ -228,17 +218,17 @@
     Since 2009, the collaboration is studying the design, the production, the impact of the mechanical structure on the ladder's performances, but also how to power and control the sensors together.
     The first ladder prototype, called version-0 (V-0) was developed and tested in 2009.
     The purpose of this prototype was to settle the fabrication and the test beam procedures, without trying to reach the desired material budget goal.
-    Two MIMOSA-20 analog output sensors were mounted on each side of a stiffener, providing a $1 \times 4 \text{ cm}^2$ sensitive area.
-    The prototype was tested in 120 GeV pion beam at the CERN-SPS and the results have demonstrated the benefits of the double-sided measurement on the spatial resolution, which is improved by about $25~\%$ \cite{Nomerotski}.
+    Two MIMOSA-20 analog output sensors were mounted on each side of a stiffener, providing a $1 \times 4~\rm{cm}^2$ sensitive area.
+    The prototype was tested in $120~\rm{GeV}$ pion beam at the CERN-SPS and the results have demonstrated the benefits of the double-sided measurement on the spatial resolution, which is improved by about $25~\%$ \cite{Nomerotski}.
 
     Then in 2010, a second prototype featuring a design closer to the wanted goal, called version-1 (V-1), was developed.
-    Each module of the ladder was made of Kapton flex-cable with a thickness of 0.14 mm, using copper traces.
+    Each module of the ladder was made of Kapton flex-cable with a thickness of $0.14~\rm{mm}$, using copper traces.
     They are denoted \gls{OKF}, where Optiprint is the vendor of these flex-cable.
-    It is the first version to embed six MIMOSA-26 binary output sensors working simultaneously on each side of the stiffener.
+    It is the first version to embed six \gls{MIMOSA}-26 binary output sensors working simultaneously on each side of the stiffener.
     The material budget is estimated to be $0.65~\% ~\rm{of}~\rm{X_0}$ in the sensor's sensitive area. 
     The aim of this prototype was to validate the operation of multiple sensors in a chain.
     Two ladders were tested in real conditions.
-    The first one was tested with 120 GeV pions at CERN-SPS in 2011, while the second ladder was tested in April 2016 with up to 5 GeV positrons at DESY in Hamburg. 
+    The first one was tested with $120~\rm{GeV}$ pions at CERN-SPS in 2011, while the second ladder was tested in April 2016 with up to $5~\rm{GeV}$ positrons at DESY in Hamburg. 
     The DESY test beam results are presented in chapter~\ref{chap:X0}, while a specific study of the sensor's deformation observed at CERN is discussed in chapter~\ref{chap:deformation}.
 
     \begin{figure}[!h]
@@ -249,7 +239,7 @@
 
     At the beginning of 2016, the third prototype versions were mounted but have not yet been completely tested.
     In fact, this new version is divided into two sub-versions: one using copper traces and the other one aluminum traces.
-    Nevertheless, both sub-versions have a new design featuring reduced traces thickness to have a narrower flex-cable (18 mm width) adjusted to the sensors width in order to minimise the dead areas.
+    Nevertheless, both sub-versions have a new design featuring reduced traces thickness to have a narrower flex-cable ($18~\rm{mm}$ width) adjusted to the sensors width in order to minimise the dead areas.
     The flex-design has slightly changed to have a mirrored geometry (figure~\ref{fig:AM01}) and a straight geometry in order to minimize the dead area too and have a better alignment solution.
     The stiffener is made of a lower density \gls{SiC} foam reducing the global material budget. 
 
@@ -259,22 +249,8 @@
       \caption{Picture of the first mirrored module made with aluminum traces. The cable width is adjusted to the size of the sensor.}
       \label{fig:AM01}
     \end{figure}
-    The table~\ref{tab:X0} summarises the material budget reached by the different prototypes.
-
-    %Before to reach the lightest ladder with a material budget of only 0.35 \%, the collaboration has studied the design, production and impact of the mechanical structure, but also how to power and control the sensors.
     
-    %%The first ladder prototype (here labeled V0) was developed and test in 2009.
-    %It has two MIMOSA-20 analog output sensors on each side of a stiffener, providing a $1 \times 4 \text{ cm}^2$ sensitive area.
-    %As the purpose of this prototype was to settle the fabrication and the beam test procedure, the sensors and the flex-cables were not optimised.
-     
-    %The second prototype featuring the final device design (V1) was developed in 2010. 
-    %The material budget is estimated to be 0.65 \% of $X_0$ in the sensor's sensitive area. 
-    %It is the first version to embed six MIMOSA-26 binary output sensors on each side of the stiffener that were working simultaneously.
-    %Two ladders were tested, one with 120 GeV pions at CERN-SPS in 2011 and the second one with positrons up to 5 GeV at DESY.
-    %The test beam at DESY is presented in chapter ... and some results of sensor's deformation observed at CERN are discussed in chapter ...
-
-    %The third prototype was mounted at the beginning of 2016 and has not been yet tested. 
-    %The traces thickness was reduced, the flex-cable width was adjusted to the sensors width and the stiffener was made of a lower density Silicon Carbide foam reducing the material budget and the dead areas.
+    Table~\ref{tab:X0} summarises the material budget reached by the different prototypes.
 
     \begin{table}
       \begin{center}
@@ -301,9 +277,10 @@
 
     Although the collaboration has shown their expertise to build light mechanical structures, more tests and optimisations have to be done.
     MIMOSA-26 sensors are not designed to match the \gls{ILC} specs. 
-    The integration time of this sensor is 115.2 $\mu$s, whereas the bunch train last only 0.95 ms (bunch crossing spaced out by 337 ns), a new CPS with a faster integration time has to be integrated.
-    Another problem of the MIMOSA-26 sensors is that they are not suited for a power pulsing. As a reminder, the principle of the power pulsing is to reduce the consumption of the sensor during the 200 ms dead time. 
-    Nevertheless, a power-pulsing study on a single Mi-26 sensor has been done and the results have shown that the nominal supply voltage of the MIMOSA-26 can be lowered from 3.3 V to 1.85 V without losing the sensor's registers. 
+    The integration time of this sensor is $115.2~\rm{\mu s}$, whereas the bunch train last only $0.95~\rm{ms}$ (bunch crossing spaced out by $337~\rm{ns}$), a new CPS with a faster integration time has to be integrated.
+    Another problem of the MIMOSA-26 sensors is that they are not suited for a power pulsing. 
+    As a reminder, the principle of the power pulsing is to reduce the consumption of the sensor during the $200~\rm{ms}$ dead time. 
+    Nevertheless, a power-pulsing study on a single Mi-26 sensor has been done and the results have shown that the nominal supply voltage of the MIMOSA-26 can be lowered from $3.3~\rm{V}$ to $1.85~\rm{V}$ without losing the sensor's registers. 
     The fake hit rate measured was close to the one obtained in  normal conditions after the sensor reaches a stable operation.
     Moreover, the power consumption was reduced by a factor 6.34 \cite{Kuprash2013}. 
 
@@ -320,7 +297,7 @@
     A closer perspective for the collaboration is to integrate two ladders in the physics commissioning of the BEAST experiment at KEK.
     The version-2 ladder will be used but a second option is foreseen.
     MISTRAL sensors will be mounted on the flex-cable instead of the MIMOSA-26.
-    These sensors have a bigger sensitive area, a faster integration time  ($\sim 20\mu\text{s}$) but a worth spatial resolution ($< 10 \mu\text{m}$) due to the pixel size (pitch of $36 \text{x} 62.5 \mu\text{m}^2$).
+    These sensors have a bigger sensitive area, a faster integration time  ($\sim 20~\rm{\mu s}$) but a worth spatial resolution ($< 10~\rm{\mu m}$) due to the pixel size (pitch of $36 \times 62.5~\rm{\mu m}^2$).
 
   \section{Integration of CMOS sensors}
   \label{sec:CMOS}
@@ -342,20 +319,7 @@
   \end{itemize}
 
   The motivation to use this technology or any other silicon sensor in particle physics is due to the minimum energy needed to create an electron/hole pair by a traversing particle.
-  In silicon, this minimum energy is only 3.6 eV, while for a gaseous detector, it is close to 30 eV.
-  %The first sensor developed by the PICSEL group of the IPHC of Strasbourg was born in 1999.
-  %It was the first sensors prototype for physics of the PICSEL-family, called MIMOSA for \textit{Minimum Ionizing MOS Active pixel sensor}.
-  %They are \gls{MAPS} because the sensitive
-
-  %The PICSEL group of the IPHC of Strasbourg is developing \gls{MAPS} for the particle physics community since 1999.
-  %They are called monolithic because the sensitive volume and the microelectronic circuitry form one physical block.
-  
-    %\subsection{Principle of a CMOS sensor}
-
-    %When a particle is traveling through matter, it loses energy via interaction with electrons and nuclei.
-    %For a thin layer of material, particles can cross all of the environment and lose a small fraction of their energy.
-    %It is admitted that \gls{MIP} creates 80 electrons per microns. 
-    %For thin layer, energy loss is described by a Landau while thick material by a Gaussian.
+  In silicon, this minimum energy is only $3.6~\rm{eV}$, while for a gaseous detector, it is close to $30~\rm{eV}$.
 
     \subsection{Charges creation and signal collection}   
 
@@ -386,14 +350,14 @@
     Next to the N-well implants are sitting highly doped P-well in charge to reflect the charge carriers to the implants.
     The difference of doping between the bulk and the epitaxial layer is also used to reflect the charge carriers to the collection diode.
 
-    The typical doping concentration are $10^{15} \text{at/cm}^3$ for the epitaxial layer, $10^{19} \text{at/cm}^3$ in the substrate and $10^{17} \text{at/cm}^3$ for the other layers.
+    The typical doping concentration are $10^{15}~\rm{at.cm}^{-3}$ for the epitaxial layer, $10^{19}~\rm{at.cm}^{-3}$ in the substrate and $10^{17}~\rm{at.cm}^{-3}$ for the other layers.
     The doping concentration defines the size of the depleted region.
     For this doping concentrations, only a small region around the P-N junction is depleted, while the epitaxial layer is mainly undepleted. 
     As no external voltage is applied to the sensor to increase the depleted region, the charge carriers created by crossing particles are thermally diffused into the epitaxial layer to the diode.
     Nevertheless, the different doping levels produce a built-in voltage defined as: 
 
     \begin{equation}
-      V_b = \frac{kT}{q}ln\left( \frac{N_{p+}}{N_{p-}}\right)
+      V_b = \frac{kT}{q}ln\left( \frac{N_{p+}}{N_{p-}}\right)i.
     \end{equation}
     
     The built-in voltage depends on the Boltzmann constant $k$, the temperature $T$, the elementary charge $q$ and the different concentrations doping $N_{p\pm}$ of the interface.
@@ -419,17 +383,17 @@
     
     Secondly, due to the size of the depleted area, the charge carriers tend to spread more over neighboring pixels.
     On the one hand, the signal collected per pixel is smaller, but on the other hand, the reconstruction of the hit position with a centre of gravity algorithm is improving the spatial resolution.
-    To give an idea, a binary output sensor with a pitch of 18.4 $\mu\text{m}$ can achieve a spatial resolution better than 3 $\mu\text{m}$.
+    To give an idea, a binary output sensor with a pitch of $18.4~\rm{\mu m}$ can achieve a spatial resolution better than $3~\rm{\mu m}$.
 
     Thirdly, the distinct doping of the different layers is responsible for the reflection of the charge carriers to the collection diodes.
     However, only the interface between two different doped regions is responsible for this reflection.
-    Thus, the substrate can be thinned down to few microns leading to a sensor with a thickness of 50 $\mu\text{m}$, while keeping the possibility to manipulate them.
-    In this way, the material budget can be reduced down to 0.053\% $X_0$.
+    Thus, the substrate can be thinned down to few microns leading to a sensor with a thickness of $50~\rm{\mu m}$, while keeping the possibility to manipulate them.
+    In this way, the material budget can be reduced down to $0.053~\%~\rm{X_0}$.
     %The bulk is not entirely responsible for the charge carriers reflection, only the interface between the substrate and the epitaxial layer is mainly responsible for the reflection.
     %The substrate can be thinned down to few microns leading to a sensor with a thickness of 50 $\mu\text{m}$ while keeping the possibility to manipulate them.
     %The material budget can then be reduced to 0.053 \%.
 
-    Nevertheless, the thickness of the epitaxial layer (usually between 10 and 15$\mu$m) and the small depleted region are responsible for a small charge collection.
+    Nevertheless, the thickness of the epitaxial layer (usually between $10$ and $15~\rm{\mu m}$) and the small depleted region are responsible for a small charge collection.
     As a matter of fact, a \gls{MIP} is creating 80 electron/hole pairs per microns, so the number of charges collecting by the diode is of the order of a thousand electrons.
     Hence, the signal created is only a few millivolts and low noise electronics have to be used for processing the signal.
 
@@ -450,7 +414,7 @@
     If no charge is collected by the pixel, the voltage at the equivalent capacitor of the diode is evolving because of the leakage current inherent in the junction.
     The pixel reading can be done in two different ways, depending on the method used to minimise the leakage current effect.
     Currently, two pixel's architectures are used to compensate the diode's leakage current: the \textit{3 Transistors pixel design}, mainly used in imaging, and the \textit{self-biased pixel design}.
-    The circuit diagram which is shown on the figure~\ref{fig:elecArch} represents the two methods to design pixel.
+    The circuit diagram which is shown on figure~\ref{fig:elecArch} represents the two methods to design pixel.
 
     The first one, presented on figure~\ref{fig:3T}, consists to reinitialise the collection diode's voltage to a reference voltage thanks to a \textit{reset} transistor, denoted M1 on the diagram.
     This method works in two steps. 
@@ -465,7 +429,7 @@
    % In order to limit the impact of the noise created by thermal fluctuations during the reinitialisation, a \textit{correlated double sampling} is used. A first voltage reading from the output of the pixel stores the \textit{reset} level and a second reading subtracts the measured voltage previously read to reduce the noise impact.
    % Although the compensation is fast, it generates a dead time for detection between two readings.
     
-    The figure~\ref{fig:selfBiased} depicts the \textit{self-biased pixel design} method \cite{Deveaux2009}.
+    Figure~\ref{fig:selfBiased} depicts the \textit{self-biased pixel design} method \cite{Deveaux2009}.
     It is using a P-N junction (symbolised here by a diode mounted on the other side) coupled to the N-well implant to absorb the leakage current.
     The inverted diode is continuously compensated the diode's leakage current, thus the dead time vanishes.
     %Using a forward p-n junction has the advantage to avoid any dead-time because the diode's leakage current is continuously compensated by the second diode.
@@ -476,7 +440,7 @@
     Nevertheless, if the recharge procedure is too fast compare to the integration time, the physics signal is masked and the passage of the particle is never notified.
     %Nevertheless, the recharge procedure should be slower than the integration time to be able to detect physics signal during detection.
     %Indeed, when the recharge is too fast, the physics signal is masked and the passage of particle will never be notified.
-    Even if the time interval to recharge the capacitor $C_d$ is set properly, an important charge collection per pixel could disturb the recharge phase and the pixel will reach a stable level again only a long time interval of the order of 10 ms.
+    Even if the time interval to recharge the capacitor $C_d$ is set properly, an important charge collection per pixel could disturb the recharge phase and the pixel will reach a stable level again only a long time interval of the order of $10~\rm{ms}$.
 
     \begin{figure}[!h]
     \centering
@@ -500,7 +464,7 @@
     \subsubsection{Integration time and readout}
 
     For a non-depleted epitaxial layer, the charge carriers are thermally diffused to the collection diodes.
-    The time to collect these charges in a pixel is $\sim$ 100 ns, setting a maximal limit to read the signal.
+    The time to collect these charges in a pixel is $\sim 100~\rm{ns}$, setting a maximal limit to read the signal.
     This integration time is not reachable due to other factors, like the pixel occupancy or the time needed to obtain the information of all the pixels.
     Also, a compromise to reach fast integration time has to be done.
     Faster is the sensor, more important is the power consumption of the electronic.
@@ -523,10 +487,10 @@
     \end{figure}
     
     To overcome this problem, an approach is to group the pixels in columns and to read them in parallel.
-    The figure~\ref{fig:rollShut} depicts the principle of this method called \textit{column parallel readout} or \textit{rolling-shutter}.
+    Figure~\ref{fig:rollShut} depicts the principle of this method called \textit{column parallel readout} or \textit{rolling-shutter}.
     Instead of having one bus line for the whole matrix, each column has its own bus and a data sparsification logic is integrated on the periphery of the sensor.
-    One row is read out between 100 ns and 200 ns, independently to the number of pixels contained in it.
-    In consequence, a matrix containing thousands of rows has an integration time of $\mathcal{O}(100\mu$s).
+    One row is read out between $100~\rm{ns}$ and $200~\rm{ns}$, independently to the number of pixels contained in it.
+    In consequence, a matrix containing thousands of rows has an integration time of $\mathcal{O}(100~\rm{\mu s})$.
     Moreover, to increase the integration time an output memory is duplicated at the periphery of the sensor.
     Hence, when one line is read, the precedent one is processed by the electronics at the end of each bus line of each column.
     To minimise the data bandwidth, only the pixels above certain thresholds are read thanks to discriminators coupling to a zero suppression logic, called \gls{SUZE}.
@@ -574,7 +538,7 @@
     
     To remove the \gls{FPN} and the reset noise, a \gls{CDS} is performed inside the pixel or at the bottom of the column.
     It consists to acquire two frames and to subtract the first one to the second one to search for possible signals.
-    The chapter~\ref{chap:labTests} describes the steps to characterise the \gls{FPN} and \gls{TN} and to select an appropriate \gls{SNR} in order to minimise the noise contribution, and to find a range on which the sensor is working properly.
+    Chapter~\ref{chap:labTests} describes the steps to characterise the \gls{FPN} and \gls{TN} and to select an appropriate \gls{SNR} in order to minimise the noise contribution, and to find a range on which the sensor is working properly.
 
 
     \subsection{State of the art in high energy physics}
@@ -589,17 +553,17 @@
 
     The first full-scale digital sensor developed by the PICSEL group was the \gls{MIMOSA}-26.
     They were designed to equip the reference planes of the EUDET beam telescope and are used since 2010 to build the PLUME prototypes.
-    It is fabricated in the AMS $0.35\mu\text{m}$ technology, and has a matrix containing approximately $6.6 \times 10^5$ pixels, distributed in 1152 columns and 576 rows.
-    The pixel pitch is $18.4\mu\text{m}$ and the sensitive area represents $21.2 \times 10.6 \text{cm}^2$.
-    The readout of the matrix is ensured by a rolling-shutter working at 80MHz frequency, hence the integration time is $115.2\mu\text{s}$.
+    It is fabricated in the AMS $0.35~\rm{\mu m}$ technology, and has a matrix containing approximately $6.6 \times 10^5$ pixels, distributed in $1152$ columns and $576$ rows.
+    The pixel pitch is $18.4~\rm{\mu m}$ and the sensitive area represents $21.2 \times 10.6~\rm{cm}^2$.
+    The readout of the matrix is ensured by a rolling-shutter working at $80~\rm{MHz}$ frequency, hence the integration time is $115.2~\rm{\mu s}$.
     The signal produces by the charge collection inside the pixel is firstly amplified.
     Then, the \gls{CDS} technique is used to subtract successive frames before to send the signal at the bottom of the pixel array, where the signal processing circuitry is placed.
     Analog to digital conversion is done, coupled to a second double sampling, in order to reduce the \gls{FPN}.
     The output of the discriminators is then connected to a zero suppression logic, in which an output memory is duplicated to ensure a continuous readout.
     The signal is finally transmitted to the outside world.
     The architecture of the \gls{MIMOSA}-26 is represented by a block-diagram on figure~\ref{fig:archMi26}.
-    The power consumption is $1.1\mu\text{W/pixel}$ and the sensor is thinned down to $50\mu\text{m}$ in order to minimise the multiple scattering inside the volume.
-    The performances obtained with a \gls{MIMOSA}-26 are shown on the figure~\ref{fig:mi26Perf}.
+    The power consumption is $1.1~\rm{\mu W/pixel}$ and the sensor is thinned down to $50~\rm{\mu m}$ in order to minimise the multiple scattering inside the volume.
+    The performances obtained with a \gls{MIMOSA}-26 are shown on figure~\ref{fig:mi26Perf}.
 
   \begin{figure}[!h]
     \hspace{-2cm}
@@ -623,13 +587,13 @@
 
 
     The PICSEL group has then developed digital output sensors for the pixel vertex detector at the START experiment at Brookhaven National Laboratory \cite{1748-0221-7-01-C01102}.
-    The figure~\ref{fig:Mi28} is showing a half-section of the STAR vertex detector (subfigure~\ref{fig:vxdSTAR}) and a \gls{MIMOSA}-28 bounded on a PCB (subfigure~\ref{fig:ultimate}).
+    Figure~\ref{fig:Mi28} is showing a half-section of the STAR vertex detector (figure~\ref{fig:vxdSTAR}) and a \gls{MIMOSA}-28 bounded on a PCB (figure~\ref{fig:ultimate}).
     They are based on the architecture of \gls{MIMOSA}-26 with some modifications.
-    The matrix contains 960 columns and 928 rows for a pitch of $20.7 \times 20.7 \mu\text{m}^2$.
-    The sensitive area is 19.7 x 19.2 $\text{cm}^2$, for an integration time of less than $200\mu\text{s}$.
-    The sensor can reach a particle detection rate of $10^6$ particles/$\text{cm}^2$/s. 
-    Finally, their power consumption is lower or equal to 150 mW/$\text{cm}^2$.
-    The spatial resolution obtained for ULTIMATE is less than 4 $\mu\text{m}$.
+    The matrix contains 960 columns and 928 rows for a pitch of $20.7 \times 20.7~\rm{\mu m}^2$.
+    The sensitive area is $19.7 \times 19.2~\rm{cm}^2$, for an integration time of less than $200~\rm{\mu s}$.
+    The sensor can reach a particle detection rate of $10^6~\rm{partices.cm}^{-2}\rm{.s}^{-1}$. 
+    Finally, their power consumption is lower or equal to $150~\rm{mW.cm}^{-2}$.
+    The spatial resolution obtained for ULTIMATE is less than $4~\rm{\mu m}$.
 
   
 
