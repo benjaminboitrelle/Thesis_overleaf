@@ -377,19 +377,19 @@
   To calculate the discriminator thresholds of each sub-matrix for a given \gls{SNR}, the total noise is determined as:
   
   \begin{equation}
-    \rm{Total~noise} = \sqrt{<\rm{TN}>^2 + <\rm{FPN}>^2}
+    \rm{Total~noise} = \sqrt{<\rm{TN}>^2 + <\rm{FPN}>^2}.
   \end{equation}
 
   For a given S/N cut $\sigma$, the thresholds are determined by:
 
   \begin{equation}
-    \rm{Threshold~(mV)} = \rm{Total~Noise} \times \sigma + \rm{offset}
+    \rm{Threshold~(mV)} = \rm{Total~Noise} \times \sigma + \rm{offset}.
   \end{equation}
 
   This is converted into the DAC values by taking into account the DAC offset and the DAC slope, which is assumed to be $0.25~\rm{mV}$:
   
   \begin{equation}
-    \rm{Threshold~(DAC)} = \frac{\rm{Threshold~(mV)} - \rm{DAC}_{\rm{offset}}}{\rm{DAC}_{\rm{slope}}}
+    \rm{Threshold~(DAC)} = \frac{\rm{Threshold~(mV)} - \rm{DAC}_{\rm{offset}}}{\rm{DAC}_{\rm{slope}}}.
   \end{equation}
 
 
@@ -401,7 +401,7 @@
   The fake hit rate per event per pixel is then considered as:
 
   \begin{equation}
-    \rm{F.H.R} = \frac{\rm{Number~of~hits}}{\rm{Number~of~events} \times \rm{Number~of~pixels}} 
+    \rm{F.H.R} = \frac{\rm{Number~of~hits}}{\rm{Number~of~events} \times \rm{Number~of~pixels}}. 
   \end{equation}
   
   Figure~\ref{fig:darkEvents} is representing the accumulation in the dark of ten thousand events for a threshold five times bigger than the noise.

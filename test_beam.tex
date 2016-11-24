@@ -2,83 +2,59 @@
 \label{chap:X0}
 
   The discovery of new physics and the characterisation of the already known particles are possible only with performant detectors.
-  As it was presented in chapter~\ref{chap:vxd}, the fabrication of a vertex detector is constrained by two parameters: the pointing resolution and the material budget.
+  As it was presented in chapter~\ref{chap:vxd}, the fabrication of a vertex detector is mostly constrained by two parameters: the pointing resolution and the material budget.
   The first fully functional prototype of \gls{PLUME} was tested in November 2011 at CERN with 120 GeV pions.
   The results have shown that the pointing resolution of the ladder corresponds to the expected value for the \gls{ILD}.
   Moreover, the use of a double-sided structure improves this pointing resolution. 
-  Nevertheless, the material budget ($\rm{X}_0$) of such device is estimated only by calculation and the SPS beam is not suited to perform this measurement.
-  Therefore, a test beam campaign of the PLUME-V1 prototype was done in April 2016 at DESY test beam 21 with positrons up to 5 GeV.
+  Nevertheless, the material budget ($\rm{X_0}$) of \gls{PLUME} has not been studied yet and only estimated by calculation.
+  SPS beam is involving particles with too high momentum, so they suffer less from the effect of the multiple scattering.
+  %Nevertheless, the material budget ($\rm{X}_0$) of such device is estimated only by calculation and the SPS beam is involving particles with too high momentum that are not suited to perform this measurement.
+  Therefore, a test beam campaign of the PLUME-V1 prototype was done in April 2016 at DESY test beam 21 with positrons up to $5~\rm{GeV}$.
   Firstly, the presentation of the test beam is discussed.
   Secondly, the motivation, the test beam facility, as well as the tools used for the analysis are presented.
   Finally, the last section is dedicated to the data analysis leading to the radiation length measurement.
-  %The reason to test an already known prototype is that the performances have to be the same at low and high-momentum particles.
-  %The preparation of the test beam is firstly discussed.
-  %Then, the test beam facility, as well as the tools used for the analysis are presented.
-  %Finally, the radiation length measurements are discussed..
-
-  %The first fully functional prototype of \gls{PLUME} was tested in November 2011 at CERN with 120 GeV pions. 
-  %Due to the environment, the ladder has to be able to track high momentum particles, as well as ones with low momentum.
-  %The material budget on the sensitive area for incoming particles is estimated to be about 0.65 \% $X_0$.
 
 \minitoc
 
   \section{Preparation of the test beam}
 
-  In April 2016, a test beam campaign with electrons up to 5 GeV was performed at the DESY-II test beam facility.
+  In April 2016, a test beam campaign with electrons up to 5 GeV was performed at the DESY-II test beam facility \cite{DESYII}.
   The preparation of a test beam campaign is a long, intense and stressing period.
-  The different aspects of the test beam have to be carefully though to minimise the problems and the time spent for debugging during the test period.
-  This consists to schedule precisely the different measurements that have to be performed during the restricted time, as well as the set-up to use, the integration of the \gls{DUT} and the acquisition system to use.
+  The different aspects of the test beam have to be carefully thought to minimise the problems and the time spent for debugging during the test period.
+  This consists in scheduling precisely the different measurements that have to be performed during the restricted time, as well as the set-up to use, the integration of the \gls{DUT} and the acquisition system to use.
   
-  %The first fully functional PLUME ladder (PLUME-V1) was tested again to study the performances of this device with low-momentum particles.
-  %The different measurements scheduled are presented here, as well as the preparation of the test beam, from the PLUME integration to the data acquisition.
-
-  % A second test beam was performed in April 2016 at DESY with positrons up to 5 GeV. 
-  % The goal of this test beam was to study the performances of this device with low-momentum particles.
-  % The ladder tested is a second PLUME-V1 prototype.
-  % The steps, from the preparation to the analysis are explained here.
-  % Different measurements were planned to fully test the ladder.
-  % Nevertheless, as this test beam was at the end of my Ph. D., I could not perform all the measurements.
-  % The preparation are presented for all the measurements, but the analysis itself is focused only on the radiation length measurement.
-
     \subsection{Measurements and telescope configuration}
 
     Although the first prototype was validated with $120~\rm{GeV}$ pions in November 2011 at CERN, two aspects were not yet studied.
     The first one is the ability of the detector to detect and track low momentum particles such as electrons.
     The spatial resolution, the detection efficiency and the benefits of mini-vectors with the DESY test beam have to be measured and compared to the values obtained at CERN.
-    %During the two weeks of test beam available, the measurements planed consist, firstly, to validate the characteristics of the ladder for low momentum particles, such as the spatial resolution, the efficiency or the benefits of the mini-vectors.
-    Runs with different tilts (from $0^{\degree}$ to $60^{\degree}$ with a step of $10^{\degree}$) and different air flow speeds for the cooling system ($3~\rm{and}~6~\rm{m.s}^{-1}$) are performed to study again the deformations of the ladder.
-    The second aspect not yet studied is the measurement of the radiation length of \gls{PLUME}.
-    For the first time, the collaboration wants to confirm the theoretical estimations, which give a weight material budget $\left. \rm{X_{0}}\right|_{\rm{weighted}} \simeq 0.65~\%$ for the version tested.
-    %Finally, for the first time, the radiation length of \gls{PLUME} is measured to compare it to the theoretical estimations, which gives $\rm{X_{0}} \simeq 0.65~\%$ for the version tested.
-    Although many runs were acquired to performed the different measurements, the test beam was scheduled at the end of my Ph. D.
+    Runs with different tilts (from $0^{\degree}$ to $60^{\degree}$ with a step of $10^{\degree}$) and different air flow speeds for the cooling system ($3~\rm{and}~6~\rm{m.s}^{-1}$) are performed to study again the mechanical deformations of the ladder.
+    The second aspect not yet studied is the measurement of the equivalent radiation length of \gls{PLUME}.
+    For the first time, the collaboration wants to confirm the theoretical estimations, which give a weighted material budget $\left. \rm{X_{0}}\right|_{\rm{weighted}} \simeq 0.65~\%$ for the version tested.
+    Although many runs were acquired to perform the different measurements, the test beam was scheduled at the end of my Ph. D.
     Therefore, I am not able to perform a complete analysis of the first prototype for low momentum electrons.
     Section~\ref{sec:X0} presents the study I have performed on the radiation length measurement.
 
     Before going to the test beam and acquiring data, the geometry of the telescope has to be determined to optimise the tracking.
-    %A second aspect of the test beam is to determine the geometry of the reference planes to optimise the pointing resolution of the telescope.
     This depends on the spacing between the different planes and the position of the \gls{DUT} respectively to the telescope.
-    The best resolution is achieved by placing the inner planes of the telescope as close as possible to the \gls{DUT} and the outer planes as far as possible from the \gls{DUT}.
-    Because of the deformation study, which needs to rotate the ladder, the inner planes can not be pressed to the \gls{DUT} without modifying the geometry at each steps.
+    The best track extrpolated on the \gls{DUT} position is achieved by placing the inner planes of the telescope as close as possible to the \gls{DUT} and the outer planes as far as possible from the \gls{DUT}.
+    Because of the deformation study, which needs to rotate the ladder (see chapter~\ref{chap:deformation}), the inner planes can not be pressed to the \gls{DUT} without modifying the geometry at each steps.
     Hence, to keep a consistent alignment and to reduce the time spending on the off-line alignment, it was decided to fix the inner planes as close as possible to be able to rotate the ladder without modifying the geometry.
     Moreover the ladder is not centered in its box, so to keep an equal distance between the two sides of the ladder and the two inner planes, the minimal distance between the telescope planes are calculated by taking into account an offset.
     It has to be noted also, that for the radiation length measurement, the geometry is different.
     The upstream planes are stacked together and really close to the \gls{DUT}, whereas the downstream planes are distant from each other.
 
-    %The telescope has a better pointing resolution when the inner planes are very close to the \gls{DUT} and the outer planes are far away from it.
-    %Nevertheless, to perform the deformation measurements and to tilt the \gls{DUT} without moving the telescope planes at every angle and performing the alignment steps one more time, the two inner planes have a distance of ....
-    %Moreover, the ladder is not placed in the middle of the box, thus, the distance between one inner telescope plane to the box is different from the distance between the other side and other telescope plane.
-
     For the first time, the collaboration has decided to use the EUDET telescope and EUDAQ \cite{EUDAQ} for the acquisition, instead of the Strasbourg telescope and the IPHC acquisition.
     Several configuration are available for the set-up used.
-    The first ones consist to use the six planes of the EUDET telescope and to have two separate acquisitions, one for \gls{PLUME} and the second one dedicated for the telescope.
+    The first ones consist to use the six planes of the EUDET telescope \cite{Jansen} and to have two separate acquisitions, one for \gls{PLUME} and the second one dedicated for the telescope.
     Then, the data have to be merged together.
     As the EUDET telescope is equipped with the same sensors as \gls{PLUME}, the acquisition can be simplified by having only four telescope planes and connecting directly two sensors of the \gls{DUT}.
     A simulation toolkit developed by Simon \textsc{Spannagel} \cite{spannagel_2016_48795} and based on \gls{GBL} \cite{GBL} is used to compare the pointing resolution at the \gls{DUT} position for different telescope geometries.
     Here, the six and four telescope planes set-ups are compared for different energies and spacing between the sensors.
-    This simulation takes into account the material budget of the telescope, the \gls{DUT} and the multiple scattering of electrons in the air.
-    One telescope plane has a material budget of $\sim 0.053~\%$ of $\rm{X_{0}}$, whereas \gls{PLUME} is $\sim 0.65~\%$ plus two kapton foils used to insulate the ladder from the light ($\sim 0.71~\%~\rm{X_{0}}$).
+    This simulation takes into account the material budget of the telescope, the \gls{DUT} and the multiple scattering of electrons in the air\footnote{The simulation is not based on a Monte-Carlo tool, but calculates the multiple scattering with an approximation of a Gaussian process}.
+    One telescope plane has a material budget of $\sim 0.053~\%$ of $\rm{X_{0}}$, whereas \gls{PLUME} is $\sim 0.65~\%$ plus two kapton foils used to insulate the ladder from the light ($\sim 0.071~\%~\rm{X_{0}}$).
     For both configurations, the telescope is divided into two arms, two or three planes on each side of the \gls{DUT}.
-    The maximal distance between each plane of one frame is $\rm{d}_{\rm{max}} = 150~\rm{mm}$ for the six sensors configuration, whereas for the second one it is $\rm{d}_{\rm{max}} = 300~\rm{mm}$.
+    The maximal distance between each reference plane of one frame is $\rm{d}_{\rm{max}} = 150~\rm{mm}$ for the six sensors configuration, whereas for the second one it is $\rm{d}_{\rm{max}} = 300~\rm{mm}$.
     
     \begin{table}[!h]
       \centering
@@ -88,44 +64,30 @@
                               &  4 planes & 6 planes \tabularnewline
         \hline %----------------------------
         \hline %----------------------------
-        2 & 4.85 & 4.78 \tabularnewline
-        3 & 3.79 & 3.83 \tabularnewline
-        4 & 3.35 & 3.40 \tabularnewline
-        5 & 3.12 & 3.15 \tabularnewline
-        6 & 2.98 & 2.99 \tabularnewline
+        2 & 4.9 & 4.8 \tabularnewline
+        3 & 3.8 & 3.8 \tabularnewline
+        4 & 3.4 & 3.4 \tabularnewline
+        5 & 3.1 & 3.2 \tabularnewline
+        6 & 3.0 & 3.0 \tabularnewline
         \hline %----------------------------
       \end{tabular}
-      \caption{Estimation of the resolution measured $\sigma_{\rm{res}}$ at the DUT position for a telescope with four planes and six planes.}
+      \caption{Estimation of the resolution on the track extrapolation $\sigma_{\rm{res}}$ at the DUT position for a telescope with four planes and six planes. Practical issues, such as the alignment, will limit the precision on the track extrapolation to $100~\rm{nm}$.}
       \label{tab:estimationRes}
     \end{table}
 
-    Table~\ref{tab:estimationRes} summarises the measured resolution at the \gls{DUT} position for different energies and the use of four or six telescope planes does not have an impact on the telescope pointing resolution.
+    Table~\ref{tab:estimationRes} summarises the resolution on the track extrapolation at the \gls{DUT} position for different energies and the use of four or six telescope planes does not have an impact on the telescope pointing resolution.
     Figure~\ref{fig:estimationRes4.7GeV} displays the pointing resolution as a function of the different spacing between two telescope planes of the same frame, for an energy sets to $4.7~\rm{GeV}$.
-    %Several solutions were available.
-    %The first one consists to use the six telescope planes of EUDET and a separate acquisition for \gls{PLUME}.
-    %As the acquisition is limited to six inputs and the ladder requires at least one sensor on each side to be acquired, a solution to merge the data has to be thought.
-    %As the EUDET telescope and \gls{PLUME} are equipped with the same sensors, the acquisition can be simplified by having only four telescope planes and connecting directly two sensors of \gls{DUT}.
-    %A simulation tool was used to define which configuration is giving the best pointing resolution at the \gls{DUT} positions.
-    %This toolkit was developed by Simon Spannagel and is based on \gls{GBL}.
-    %For different energy, the resolution at the PLUME position was calculated for a set-up with four telescope planes and a set-up with six.
-    %The material budget of the \gls{DUT} is determined by the material budget of \gls{PLUME} plus two kapton foils used to insulate the ladder from light.
-    %For both configuration, the telescope is made of two arms on each side of the \gls{DUT}.
-    %With six sensors, the maximal distance between each plane of one frame is $d_{\rm{max}} = 150~\rm{mm}$, whereas for the four sensors configuration it is $d_{\rm{max} = 300~\rm{mm}}$.
-
-   % The results shown on figure~\ref{fig:estimationRes4.7GeV} depicts the measured resolution at the position of the \gls{DUT} as a function of the distance between two telescope planes of the same arm.
 
     \begin{figure}[!b]
       \centering
       \includegraphics[width = 0.7\textwidth]{Pictures/X0/resolution_4Vs6planes_4-7GeV.png}
-      \caption{Estimation of the resolution measured at the DUT position as a function of the distance between two telescope planes of the same arm.
+      \caption{Estimation of the track extrapolation resolution at the DUT position as a function of the distance between two telescope planes of the same arm for an energy of $4.7~\rm{GeV}$.
       The blue lines is the results for six planes, whereas the red line is for four planes. 
       The dashed lines are the maximal distance between two planes due to the rail limitation of the telescope frame.}
       \label{fig:estimationRes4.7GeV}
     \end{figure}
 
     As the number of telescope planes does not impact the pointing resolution, it has been decided to use only four telescope planes and two \gls{PLUME} sensors (one on each side) to simplify the acquisition system.
-    %The sensors of the telescope and \gls{PLUME} are both \gls{MIMOSA}-26 thinned down to $50~\rm{\mu m}$.
-    %Instead of building a DAQ compatible with EUDAQ, two EUDET telescope planes are removed from the set-up and replaced by two \gls{PLUME} sensors (one on each side).
     However, the synchronisation and the stability of the acquisition have to be tested before the test beam campaign. 
 
     \subsection{Acquisition system and experimental set-up}
@@ -145,7 +107,7 @@
       Finally, the integration of \gls{PLUME} for the different measurements to perform is investigated.
       For the deformation studies, the \gls{DUT} is mounted on a rotation stage. 
       With respect to the local coordinate system (or sensor coordinate system), the rotation is along the $u$-direction. 
-      The first option considered to performer the rotation is to orient the ladder in the same direction as the telescope's sensors. 
+      The first option considered to perform the rotation is to orient the ladder in the same direction as the telescope's sensors. 
       Hence, the ladder is in the horizontal position and the rotation needs a complicated frame to ensure the stability of the system.
       The weight of the box and ladder is applied only on the rotation stage. 
       Due to the complexity and the time needed to build this frame, a second option has been considered.
@@ -179,7 +141,6 @@
       Hence, the fake events are reduced and the data stream is smaller.
       Figure~\ref{fig:testBeamAcq} shows a schematic of the acquisition and set-up used during the test beam, while figure~\ref{fig:testBeam} is a picture of the system taken during the test beam.
 
-      
     \begin{figure}[!h]
       \centering
       \includegraphics[width = \textwidth]{Pictures/X0/testBeamAcquisition.png}
@@ -190,10 +151,18 @@
     \begin{figure}
       \centering
       \includegraphics[width = 0.8\textwidth]{Pictures/X0/testBeam.png}
-      \caption{Picture taken during the test beam. The beam is going out of the magnet before to reach the four telescope planes, the DUT and the PMTs. The set-up is mounted on a floating frame insuring the grounded.}
+      \caption{Picture taken during the test beam. The beam is going out of the magnet (large red frame) before reaching the four detection planes (aluminum square frames), the DUT (elongated box) and the PMTs (one is visible at the left-end of the picture). The set-up is mounted on a floating frame insuring the electrical grounding.}
       \label{fig:testBeam}
     \end{figure}
 
+    \subsection{Issues during the test beam}
+
+    The preparation of the test beam, as well as the data taking were a long and stressful period.
+    Although everything were prepared as mush as possible to avoid any problem during the test beam, a broken component on the power distribution board has disturbed the data taking for two days.
+    One \gls{PLUME} module was not recording data anymore but was still sending \textit{header} and \textit{trailer}.
+    Fortunately, after replacing the broken component, the ladder was working normally, but a shift on the thresholds has appeared.
+    By characterising again the ladder, it has been possible to determine which thresholds were really applied. 
+    Nevertheless, it is likely that some data could have been corrupted and this is under investigation.
    
   \section{Measuring the radiation length}
 
@@ -219,7 +188,9 @@
 
     The spread angle $\theta_{0}$ depends on the momentum of the incoming particle, as well as the relative radiation length $\frac{x}{X_{0}}$.
     Thus, for a given relative radiation length, the kink angle is becoming smaller for higher momentum.
-    The kink angle is also different depending on the relative radiation length for a given momentum. 
+    %The kink angle is also different depending on the relative radiation length for a given momentum. 
+
+    It is possible to determine the radiation length $\rm{X_0}$ of a material knowing the energy of the particle, its thickness $x$ and by measuring the kink angle $\theta_0$.
 
     \subsection{Motivation}
 
@@ -227,9 +198,9 @@
     For example, the \gls{ILC} sets new goals for the design of the vertex detector, but also for other parts of the detector, as mentioned in chapters~\ref{chap:ILC} and~\ref{chap:vxd}.
     For such detector, the tracking system should detect precisely the particles path and minimise their energy degradation, while the calorimeters have to measure accurately the energy deposited by the particles.
     During the physics analysis, the reconstruction of the events depends strongly on the knowledge of the energy loss by the particles inside the different components of the detector before they reach the calorimeters. 
-    To improve the results, a correction on the energy as to be applied.
+    To improve the results, a correction on the energy has to be applied.
     Thus, the study of the radiation length $\rm{X_{0}}$ in $\rm{g.cm}^{2}$, which is the amount of matter traversed by the electron is an important part of the detector development.
-    For electrons and positrons, the radiation length corresponds to the mean distance over which these particles loss $1/e$ of its energy by bremsstrahlung.
+    For electrons and positrons, the radiation length corresponds to the mean distance over which these particles loss $1/e$ of their energy by bremsstrahlung.
 
     As detector are made of different layers, the radiation length for composite materials is given as:
 
@@ -237,12 +208,11 @@
       \frac{1}{X_{0}} = \sum_{j} \frac{\omega_{j}}{X_{j}},
     \end{equation}
 
-   where $\omega_{j}$ and $X_{j}$ are the fraction by weight and radiation length for the $j^{\rm{th}}$ element.
-
+   where $\omega_{j}$ and $X_{j}$ are respectively the fraction by weight and radiation length for the $j^{\rm{th}}$ element.
 
     \subsection{The DESY II test beam facility}
 
-    The \gls{DESY} test beam facility is composed of three areas.
+    The \gls{DESY} test beam facility \cite{DESYII} is composed of three areas.
     The electron beam is produced in the LINAC-II and accelerated up to 450 MeV before to be injected in the DESY-II synchrotron ring.
     The DESY-II is used as a storage ring for the PETRA-III accelerator. 
     The beam is accelerated and stored until enough particles are available to be sent into PETRA, where they are used for photon science experiments.
@@ -258,7 +228,7 @@
     While the electrons are hitting the target, they lose energy and emit bremsstrahlung photons.
     The photons travel through the air and hit another target, on which the photons are converted to pairs of electrons and positrons.
     Different targets with different thicknesses are available and this will impact the particles rate.
-    One is made of copper, whereas the other one is made of aluminum.
+    One is made of copper, whereas the other one is made of aluminum \cite{ConversionTargets}.
     Then, a dipole magnet bends the particles and spread them according to their energy.
     Afterward, a tungsten collimator cuts away the unwanted particles, those having a too high or too low momentum, before the test beam area.
     A second collimator is located inside the test beam area and it determines the size of the beam spot.
@@ -271,7 +241,6 @@
       \label{fig:rateTB21}
     \end{figure}
 
-
   \section{Analysis}
   \label{sec:X0}
 
@@ -280,7 +249,7 @@
     The analysis of the test beam data is performed with EUTelescope \cite{Eutel}\cite{Jansen}.
     It is based on the MARLIN framework, which is a part of the ILCSOFT (see~\ref{subsec:ILCSOFT} for more details about the ILCSOFT package).
     The software is used to convert the data into the LCIO format and to perform clustering search, alignment and final analysis.
-    Each step of the analysis is driven by a dedicated processor.
+    Each step of the analysis is driven by a dedicated processor and is described in figure~\ref{fig:eutel-strategy}.
     
     \begin{figure}[!h]
       \centering
@@ -291,43 +260,34 @@
 
     A first processor is used to convert the raw data files acquired during the test beam into the LCIO format.
     The new file created contains the pixel number which fired in a given event, along with the sensor number.
-    During the conversion, a hot pixel search is done to removed the noisy pixels from the list of hits.
-    A pixel is considered noisy if its firing frequency is above a threshold value determined by the user.
-    %From the raw data files, a first processor is used to convert the data into the LCIO format.
-    %This converter file contains the pixel number which fired in a given event, along with the sensor number.
-    %Before searching for clusters, the noisy pixels are removed from the list.
-    %A pixel is considered as noisy if its firing frequency is above a certain value. 
-    The noisy pixels correspond to defect raw or column or single pixels always sending information (see section~\ref{sec:noiseMeasurements}).
-    Then, a cluster algorithm forms sets of cluster from the adjacent fired pixels in a row and/or column.
-    Afterward, the hit candidates are defined with a centre-of-gravity method and the position of the hit is determined in the telescope frame and in the sensor frame.
+    During the conversion, a hot pixel search is done to remove the noisy pixels from the list of hits.
+    A pixel is considered noisy if its firing frequency is above a threshold value determined by the user (typically the cut value is between $0.001~\rm{and}~0.003~\%$).
+    The noisy pixels correspond to defective raw or column or single pixels always sending information (see section~\ref{sec:noiseMeasurements}).
+    Then, a cluster algorithm forms clusters from adjacent fired pixels in a row and/or column.
+    Afterward, the hit candidates are defined with a centre-of-gravity method and the position of the hit is determined in the telescope frame and in the sensor frame using the alignment constant.
 
     Although the alignment procedure looks like the one presented in chapter~\ref{chap:deformation}, the procedure used with EUTelescope is slightly different.
-    The alignment is performed with \gls{GBL} and MILLEPEDE-II.
+    The alignment is performed with \gls{GBL} and MILLEPEDE-II \cite{MPII}.
     In the case of a complete telescope (six planes), the tracks are built from the reconstruction of triplets in the upstream and downstream telescope planes.
-    Firstly, a hit candidate from the outer plane is extrapolated by a straight line to the inner plane of one arm.
+    Firstly, a hit candidate from the outer plane is extrapolated by a horizontal straight line to the inner plane of one arm.
     Then, a triplet is formed if there is a matching between the middle plane of the arm and the doublet built.
     This is done on the two arms and a criterion ensures that two triplets are coming from the same track if the distance between the two extrapolated triplets at the middle $z$-position of the telescope is below a cut value.
-    \gls{GBL} form a track from the six hits belonging to the matching triplets.
+    This was set to \todo{CUT VALUE matching triplets}
+    \gls{GBL} forms a track from the six hits belonging to the matching triplets.
     The track candidates are then passed to MILLEPEDE-II, which determines the shift and the rotation to apply for aligning the sensors.
     This method is applied a couple of times, until the precision of the alignment reaches a submicron order.
 
-    Nevertheless, due to the set-up used during the test beam and a limitation in EUTelescope on the number of telescope planes and the ID used, the alignment did not work.
+    Nevertheless, due to the set-up used during the test beam and a limitation in EUTelescope on the number of telescope planes and the ID used, the alignment did not work for practical reasons.
     The number of telescope planes is hard-coded to be six and the sensor IDs in the range $[0; 5]$ are reserved for the telescope. 
     Here, the IDs $0$ and $1$ are used for \gls{PLUME} and the others for the telescope.
     Thus, a modification has to be applied to remap the sensor IDs. 
     Although this solution can work and \gls{GBL} uses only the $z$ ordering information is used to create the tracks, EUTelescope is waiting for six hits.
-
-   % For the upstream and the downstream plane, a hit position from the outer plane is projected on the inner plane with a straight line. 
-
-   % Almost the same procedure as presented in chapter~\ref{chap:deformation} is performed, except that the alignment is done with \gls{GBL}.
-
-   % Nevertheless, for my set-up, the alignment step did not work.
-   % Inside EUTelescope, the number of telescope planes is hard-coded to be six and the sensor IDs in the range $[0; 5]$ are only for the telescope.
-   % These IDs have to be ordered according to the $z$-direction too.
-   % In my case, the IDs $0$ and $1$ are used for \gls{PLUME} and the rest for the telescope. 
-   % Although \gls{GBL} uses only the $z$-ordering information to perform the alignment, the alignment procedure never worked.
-       
-
+      
+    %Another problem occurs during the analysis of the data. 
+    %EUTelescope is not able to handle the particular configuration used during the test beam.
+    %The number of telescope sensors are hard-coded, as well as the expected sensor ID.
+    %Besides, the combination of \gls{GBL} and MILLEPEDE-II inside EUTelescope did not work.
+    %The use of a different software reading the hitmaker file created by EUTelescope has permitted to overcome this problem and to perform the alignment and analysis 
 
     Thankfully, a prototype software developed by Claus \textsc{Kleinwort} has permitted to perform the alignment and finish the analysis. 
     It is based on \gls{GBL} and MILLEPEDE-II and reads the hit information created by the hitmaker processor of EUTelescope. 
@@ -336,28 +296,21 @@
     Then, the track's information are feed to MILLEPEDE-II, which calculates the residuals of the tracks on each sensor and attempts to shift the position and rotate the sensors to minimise the east square fit function of these tracks.
     MILLEPEDE-II creates an output file with theses informations and a script update the GEAR file with the new position and orientation of each planes.
 
-    %Then, the subtrack is extrapolated to the middle plane of the arm and \gls{GBL} is looking for the closest hit to the subtrack candidate.
-    %This tracks are called triplets.
-    %Afterward, the software finds if triplets are converging at the \gls{DUT} position and form a single track, unless multiple triplets are connected at the same position.
-    %In this case, the track is rejected.
-
-    %The tracks created are then read by Millepede-II, which calculates the residuals of the tracks on each sensor and attempts to shift the position of the sensors and to rotate them in order to minimise the least squares fit function of these tracks.
-    %Millepede-II provides these informations into an output file used to create a new GEAR file with the new position and orientation of each plane.
-
+    \todo{Alignment plots}
 
    \subsection{Measurement of the radiation length}
 
      \subsubsection{Theoretical estimation}
 
      The theoretical estimation of \gls{PLUME} material budget was already discussed in chapter~\ref{chap:vxd}.
-     The value defined in this chapter was a weighted radiation length, which takes into account the passive component and the dead areas.
+     The value defined in this chapter was a weighted radiation length, which takes into account the passive component and the insensitive areas.
      For the measurement done here, only the region over a sensitive surface is studied.
      There is no passive component and the beam is travelling through:
      
      \begin{itemize}
        \item Two \gls{MIMOSA}-26 sensors thinned down to $\sim 50~\rm{\mu m}$ and a material budget of $\left. \frac{x}{X_0} \right|_{\rm{Mi26}} \sim 0.053~\%~\rm{X_{0}}$,
        \item Four layers of glue (sensor/flex interface and flex/stiffener interface) with an estimated radiation length: $\left. \frac{x}{X_0} \right|_{\rm{Glue}} \sim 0.01~\%~\rm{X_0}$,
-       \item Stiffener made of $8~\%~\rm{SiC}$ with a thickness of $\sim 2~\rm{mm}$ and radiation length: $\left. \frac{x}{X_0} \right|_{\rm{SiC}} ~\sim 0.184~\%~\rm{X_{0}}$,
+       \item Stiffener made of $8~\%$ density \gls{SiC} with a thickness of $\sim 2~\rm{mm}$ and radiation length: $\left. \frac{x}{X_0} \right|_{\rm{SiC}} ~\sim 0.184~\%~\rm{X_{0}}$,
        \item Two flex-cables made of two copper layers insulated with three layers of Kapton:
        \begin{itemize}
          \item Material budget for $\sim 50~\rm{\mu m}$ of Kapton: $\left. \frac{x}{X_0} \right|_{\rm{Kapton}} \sim 0.014~\%~\rm{X_{0}}$,
@@ -371,29 +324,32 @@
      \begin{equation}
        \begin{array}{lcl}
          \left. \frac{x}{X_0} \right|_{\rm{PLUME}} & = & 2 \times \left( \left. \frac{x}{X_0} \right|_{\rm{Mi26}} + \left. \frac{x}{X_0} \right|_{\rm{Flex}} + 2 \times \left. \frac{x}{X_0} \right|_{\rm{Glue}}\right) + \left. \frac{x}{X_0} \right|_{\rm{SiC}}, \\
+         \\
          & \simeq & 0.498~-~0.515~\%~\rm{X_0}.
        \end{array}
        \label{eq:X0_theory}
      \end{equation}
 
-     Hence, the material budget expected is around $0.498~\%~\rm{X_0}$ and $0.515~\%~\rm{X_0}$.
+     Hence, the material budget expected is between $0.498~\%~\rm{X_0}$ and $0.515~\%~\rm{X_0}$.
 
      \subsubsection{Kink angle measurement}
 
    To measure the kink angle of the tracks, the four telescope planes, as well as the two \gls{PLUME} sensors are used.
    So, the hit information provided by \gls{PLUME} are exploited to create tracks by using the triplets method.
    The deviation from the incoming tracks and the outgoing ones (after the \gls{PLUME} ladder) is measured with \gls{GBL}, which provides information for $xz$ and $yz$-angles.
-   %The deviation of the track between its position before and after \gls{PLUME} is measured with \gls{GBL}, that provides information for $xz$ and $yz$-angles.
    Figure~\ref{fig:kinkAngle5GeV} shows the distribution of the kink angle fitted by a Gaussian for an energy of $5~\rm{GeV}$ and without a fiducial cut on a particular region of interest.
-   For small deflection angles, the distribution is roughly Gaussian with larger tails than does a Gaussian distribution \cite{Agashe:2014kda}.
-   Therefore, the fit is performed only on the $1 \sigma$ range of the distribution.
+   For small deflection angles, the distribution is roughly Gaussian with larger tails than expected for a Gaussian distribution \cite{Agashe:2014kda}.
+   Therefore, the fit is performed in a range corresponding to the standard deviation of the distribution.
+   %Therefore, the fit is performed only on the $1 \sigma$ range of the distribution.
    To obtain $\theta_0$, the width of the kink angle $\rm{\sigma_{kink~angle}}$ has to be corrected by the mean value of the kink angle fit $<\rm{kink~angle}>$:
+   
    \begin{equation}
      \theta_0 = \sqrt{\rm{\sigma_{kink~angle}}^2 - <\rm{kink~angle}>}.
      \label{eq:kink}
    \end{equation}
-   %The fit is not performed on the full range because of the tails coming from systematic errors.
+   
    From the equation~\ref{eq:theta0} and by injecting $\theta_0$ defined in equation~\ref{eq:kink}, the radiation length $\frac{x}{X_0}$ is then:
+   
    \begin{equation}
      \frac{x}{X_{0}} = \left( \frac{\sqrt{\rm{\sigma_{kink~angle}}^2 - <\rm{kink~angle}>} \cdot p}{13.6~\rm{(MeV)}} \right)^{\frac{1}{0.555}}.
    \end{equation}
@@ -449,11 +405,11 @@
         \hline %----------------------------
         \hline %----------------------------
 
-        	1	  &		$7.186\cdot 10^{-4}$	  &		$5.910\cdot 10^{-4}$	    \tabularnewline
-        	2		&		$3.592\cdot 10^{-4}$	  &		$3.403\cdot 10^{-4}$	     \tabularnewline
-        	3		&		$2.395\cdot 10^{-4}$	  &		$2.380\cdot 10^{-4}$      \tabularnewline
-        	4		&		$1.796\cdot 10^{-4}$	  &	  $1.821\cdot 10^{-4}$       \tabularnewline
-        	5		&		$1.437\cdot 10^{-4}$    &		$1.544\cdot 10^{-4}$	     \tabularnewline
+        	1	  &		$7.186 \cdot 10^{-4}$	  &		$5.740 \cdot 10^{-4} \pm 2.783 \cdot 10^{-6}$	      \tabularnewline
+        	2		&		$3.592 \cdot 10^{-4}$	  &		$3.337 \cdot 10^{-4} \pm 7.764 \cdot 10^{-7}$	      \tabularnewline
+        	3		&		$2.395 \cdot 10^{-4}$	  &		$2.380 \cdot 10^{-4} \pm 1.610 \cdot 10^{-6}$       \tabularnewline
+        	4		&		$1.796 \cdot 10^{-4}$	  &	  $1.821 \cdot 10^{-4} \pm 7.483 \cdot 10^{-7}$       \tabularnewline
+        	5		&		$1.437 \cdot 10^{-4}$   &		$1.549 \cdot 10^{-4} \pm 1.136 \cdot 10^{-4}$	      \tabularnewline
         \hline %----------------------------
      
      \end{tabular}
@@ -464,7 +420,8 @@
    \begin{figure}[!h]
      \centering
      \includegraphics[width = \textwidth]{Pictures/X0/theta0VsP_all.png}
-     \caption{Extrapolation of the measured radiation length with a fit between 1 and 5 GeV.}
+     %\caption{Extrapolation of the measured radiation length with a fit between 1 and 5 GeV.}
+     \caption{Dependence of the measured standard deviation of the kink angle with the energy, over the full range of the energies used. Superimposed is a fit using the Highland formula where the radiation length is left as a free parameter.}
      \label{fig:theta0vsP_all}
    \end{figure}
 
@@ -472,13 +429,15 @@
    At this energy, the electrons are more sensitive to the multiple scattering in the air and inside the detectors.
    At $5~\rm{GeV}$, the electrons suffer less from the multiple scattering but the alignment procedure did not work well. 
    On figure~\ref{fig:kinkAngle5GeV}, the distribution of the kink angle is not centered and the reason of this offset comes from a wrong alignment.
-   For the rest of the study, this two measurements are excluded to determine the radiation length, as seen on figure~\ref{fig:theta0vs_2-4}.
-   The radiation length measured is $0.47~\%~\rm{X_0}$.
+   For the rest of the study, this two measurements are excluded to determine the radiation length, as seen on figure~\ref{fig:theta0vsP_2-4}.
+   The radiation length measured is $0.47 \pm 0.02~\%~\rm{X_0}$.
    
    \begin{figure}[!h]
      \centering
      \includegraphics[width = \textwidth]{Pictures/X0/theta0VsP_2-4GeV.png}
-     \caption{Extrapolation of the measured radiation length in the range 2 to 4 GeV.}
+     %\caption{Extrapolation of the measured radiation length in the range 2 to 4 GeV.}
+     \caption{Extrapolation of the kink angle with the energy, over a restricted range of the energies used.
+     Superimposed is a fit using the Highland formula, where the radiation length is left as a free parameter.}
      \label{fig:theta0vsP_2-4}
    \end{figure}
 
@@ -509,21 +468,21 @@
 
   \section{Conclusions}
 
-  The preparation of the test beam, as well as the data taking were a long and stressful period.
-  Although everything were prepared as mush as possible to avoid any problem during the test beam, a broken component on the power distribution board has disturbed the data taking for two days.
-  One \gls{PLUME} module was not recording data anymore but was still sending \textit{header} and \textit{trailer}.
-  Fortunately, after replacing the broken component, the ladder was working normally, but a shift on the thresholds has appeared.
-  By characterising again the ladder, it has been possible to determine which thresholds were really applied. 
-  Nevertheless, it is likely that some data could have been corrupted and this is under investigation.
+%  The preparation of the test beam, as well as the data taking were a long and stressful period.
+%  Although everything were prepared as mush as possible to avoid any problem during the test beam, a broken component on the power distribution board has disturbed the data taking for two days.
+%  One \gls{PLUME} module was not recording data anymore but was still sending \textit{header} and \textit{trailer}.
+%  Fortunately, after replacing the broken component, the ladder was working normally, but a shift on the thresholds has appeared.
+%  By characterising again the ladder, it has been possible to determine which thresholds were really applied. 
+%  Nevertheless, it is likely that some data could have been corrupted and this is under investigation.
 
-  Another problem occurs during the analysis of the data. 
-  EUTelescope is not able to handle the particular configuration used during the test beam.
-  The number of telescope sensors are hard-coded, as well as the expected sensor ID.
-  Besides, the combination of \gls{GBL} and MILLEPEDE-II inside EUTelescope did not work.
-  The use of a different software reading the hitmaker file created by EUTelescope has permitted to overcome this problem and to perform the alignment and analysis 
+  %Another problem occurs during the analysis of the data. 
+  %EUTelescope is not able to handle the particular configuration used during the test beam.
+  %The number of telescope sensors are hard-coded, as well as the expected sensor ID.
+  %Besides, the combination of \gls{GBL} and MILLEPEDE-II inside EUTelescope did not work.
+  %The use of a different software reading the hitmaker file created by EUTelescope has permitted to overcome this problem and to perform the alignment and analysis 
 
-  The radiation length measurement of the \gls{PLUME} ladder was performed for the first time.
-  The first results obtained to determine the material budget, which gives a radiation length of $\left. \frac{x}{X_0} \right|_{\rm{measured}} \simeq 0.498~\%~\rm{X_0}$ are confirming the theoretical calculation of $\left. \frac{x}{X_0}\right|_{\rm{theoretical}} \simeq 0.498~~\%~\rm{X_0}$ for a flex with a fill factor of $25~\%$.
+  The radiation length measurement of the \gls{PLUME} ladder was performed for the first time with a dedicated setup placed in beam.
+  The first results obtained to determine the material budget, which gives a radiation length of $\left. \frac{x}{X_0} \right|_{\rm{measured}} \simeq 0.47 \pm 0.02~\%~\rm{X_0}$ are confirming the theoretical calculation of $\left. \frac{x}{X_0}\right|_{\rm{theoretical}} \simeq 0.498~~\%~\rm{X_0}$ for a flex with a fill factor of $25~\%$.
   The origin of the shifts on the measured radiation length at $1$ and $5~\rm{GeV}$ has to be investigated.
   In both cases, the alignment has to be done again.
   Another solution consists to perform a calibration run with a known material to apply then a correction on the radiation length measurement for \gls{PLUME}.
