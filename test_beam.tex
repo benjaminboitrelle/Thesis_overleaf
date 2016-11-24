@@ -51,7 +51,7 @@
     As the EUDET telescope is equipped with the same sensors as \gls{PLUME}, the acquisition can be simplified by having only four telescope planes and connecting directly two sensors of the \gls{DUT}.
     A simulation toolkit developed by Simon \textsc{Spannagel} \cite{spannagel_2016_48795} and based on \gls{GBL} \cite{GBL} is used to compare the pointing resolution at the \gls{DUT} position for different telescope geometries.
     Here, the six and four telescope planes set-ups are compared for different energies and spacing between the sensors.
-    This simulation takes into account the material budget of the telescope, the \gls{DUT} and the multiple scattering of electrons in the air\footnote{The simulation is not based on a Monte-Carlo tool, but calculates the multiple scattering with an approximation of a Gaussian process}.
+    This simulation takes into account the material budget of the telescope, the \gls{DUT} and the multiple scattering of electrons in the air\footnote{The simulation is not based on a proper Monte-Carlo tool, but calculates the multiple scattering with an approximation of a Gaussian process}.
     One telescope plane has a material budget of $\sim 0.053~\%$ of $\rm{X_{0}}$, whereas \gls{PLUME} is $\sim 0.65~\%$ plus two kapton foils used to insulate the ladder from the light ($\sim 0.071~\%~\rm{X_{0}}$).
     For both configurations, the telescope is divided into two arms, two or three planes on each side of the \gls{DUT}.
     The maximal distance between each reference plane of one frame is $\rm{d}_{\rm{max}} = 150~\rm{mm}$ for the six sensors configuration, whereas for the second one it is $\rm{d}_{\rm{max}} = 300~\rm{mm}$.
@@ -232,7 +232,8 @@
     Then, a dipole magnet bends the particles and spread them according to their energy.
     Afterward, a tungsten collimator cuts away the unwanted particles, those having a too high or too low momentum, before the test beam area.
     A second collimator is located inside the test beam area and it determines the size of the beam spot.
-    Figure~\ref{fig:desyTb-sketch} summarises the different steps to generate a beam of electrons or positrons in test beam 21, while the energies and the rates available are displayed in figure~\ref{fig:rateTB21}
+    Figure~\ref{fig:desyTb-sketch} summarises the different steps to generate a beam of electrons or positrons in test beam 21, while the energies and the rates available are displayed in figure~\ref{fig:rateTB21}.
+    The energy resolution achieved at DESY test beam reaches $5~\%$.
 
     \begin{figure}[!h]
       \centering
@@ -272,7 +273,7 @@
     Firstly, a hit candidate from the outer plane is extrapolated by a horizontal straight line to the inner plane of one arm.
     Then, a triplet is formed if there is a matching between the middle plane of the arm and the doublet built.
     This is done on the two arms and a criterion ensures that two triplets are coming from the same track if the distance between the two extrapolated triplets at the middle $z$-position of the telescope is below a cut value.
-    This was set to \todo{CUT VALUE matching triplets}
+    This was set to $10~\rm{\mu m}$.
     \gls{GBL} forms a track from the six hits belonging to the matching triplets.
     The track candidates are then passed to MILLEPEDE-II, which determines the shift and the rotation to apply for aligning the sensors.
     This method is applied a couple of times, until the precision of the alignment reaches a submicron order.
@@ -359,7 +360,7 @@
    \begin{figure}[!h]
      \centering
      \includegraphics[width = \textwidth]{Pictures/X0/kinkAngle5GeV_2.png}
-     \caption{Distribution of the kink angle given by GBL for an energy of $5~\rm{GeV}$ without any fiducial cut.}
+     \caption{Distribution of the kink angle given by GBL for an energy of $5~\rm{GeV}$ without any fiducial cut. The asymmetric fit arises from a wrong alignment procedure.}
      \label{fig:kinkAngle5GeV}
    \end{figure} 
 
@@ -430,7 +431,7 @@
    At $5~\rm{GeV}$, the electrons suffer less from the multiple scattering but the alignment procedure did not work well. 
    On figure~\ref{fig:kinkAngle5GeV}, the distribution of the kink angle is not centered and the reason of this offset comes from a wrong alignment.
    For the rest of the study, this two measurements are excluded to determine the radiation length, as seen on figure~\ref{fig:theta0vsP_2-4}.
-   The radiation length measured is $0.47 \pm 0.02~\%~\rm{X_0}$.
+   The radiation length measured is then $0.47 \pm 0.02~\%~\rm{X_0}$.
    
    \begin{figure}[!h]
      \centering
@@ -445,7 +446,7 @@
    Although the fit shows a dependency on the momentum, the error on the second polynom is larger than the value determined by the fit.
    The different radiation lengths determined at different momentum are of the same order and this is consistent with the definition of the material budget.
 
-   The results show here do not include the complete ladder studied.
+   The results shown here do not include the complete ladder studied.
    As the \gls{PLUME} sensors are used for tracking and the measurement of the kink angle, only one part of them is included in the calculation.
    The thickness of the different \gls{MIMOSA}-26 layers are the followings: 
 
