@@ -59,7 +59,7 @@
     In order to avoid this situation, the sensors are probe-tested at the IK in Frankfurt, to select only the good ones before the module assembly.
     The final step consists of soldering the 540 wire-bonds (a single MIMOSA-26 requires 90 wire-bonds) using a semi-automatic machine.
     The wire-bonds can be protected by applying a glob-top epoxy\todo{Citation to a glob-top paper}.
-    It has the advantage to offer a protection against moisture or contaminants, an electrically insulation and prohibits their movement during other manipulations (see~\ref{subsec:visualInspection} for the utility of the glob-top epoxy). 
+    It has the advantage to offer a protection against moisture or contaminants, an electrically insulation and prohibits their movement during other manipulations (see section~\ref{subsec:visualInspection} for the utility of the glob-top epoxy). 
     Nevertheless, it increases the material budget locally and if an electrical problem occurs, the wire-bonds can't be disconnected.
     When the module is assembled, it is finally transferred onto a plastic sole, which has alignment pins.
     This sole helps to manipulate the modules, but also reduces the stress on the flex-cable, by holding it as flat as possible.
@@ -112,7 +112,7 @@
   \subsection{Visual inspections}
   \label{subsec:visualInspection}
 
-  As explain in subsection~\ref{subsec:modAssembly}, the sensors positioning was performed firstly manually and later was switched to an automatic procedure.
+  As explain in section~\ref{subsec:modAssembly}, the sensors positioning was performed firstly manually and later was switched to an automatic procedure.
   To tune properly the robot which is in charge of gluing the sensors on the flex-cable, the microelectronic group needs a position feedback.
   The modules are then inspected under a microscope to measure the gap between two sensors, and their position relatively to each other.
   The distance between the last pixel of a sensor to the neighboring one should be less than $500~\mu\rm{m}$, taking into account the $20~\mu\rm{m}$ robot's mismatch.
@@ -130,7 +130,7 @@
   The visual inspection is also needed to check if the wire-bonds are correctly connected to the right sensor's pad, to verify that the gluing of the sensors on the flex-cable did not break the matrix due to some dust and also to control that the shipping of the module between the labs (for example between Strasbourg and DESY) did not damage it.
   The modules are fragile objects that have to be manipulated with care.
   Any wrong manipulation can damage severely the vital functionality.
-  For example, figure~\ref{fig:wireBondsCrashed} shows a picture taken with a microscope of wire-bonds crashed due to a falling cable on it.
+  For example, figure~\ref{fig:wireBondsCrashed} shows a picture taken with a microscope of crushed wire-bonds due to a falling cable on it.
   The sensitive part and the electronics were not damaged, but some wires were touching leading to a shortcut.
   Fortunately, the microelectronic group at Strasbourg was able to unbend the wires and repair the most damaged one.
   This module is fully operational and working correctly.
@@ -139,7 +139,7 @@
   \begin{figure}[!h]
     \centering
     \includegraphics[width=0.6\textwidth]{Pictures/labTests/crash_bonds.jpg}
-    \caption{Picture taken with a microscope showing wire-bonds crashed due to a falling cable. Some of the wire-bonds are in contact leading to a shortcut and a non-functional module.}
+    \caption{Picture taken with a microscope showing crushed wire-bonds due to a falling cable. Some of the wire-bonds are in contact leading to a shortcut and a non-functional module.}
     \label{fig:wireBondsCrashed}
   \end{figure}
 
@@ -425,7 +425,7 @@
   \end{figure}
 
   Finally, in order to validate the sensor, the acquisition system used during the test beam is used to calculate quantitatively the fake hit rate.
-  The auxiliary board is connected to a  Flex RIO board instead of the digital card.
+  The auxiliary board is connected to a Flex RIO board instead of the digital card.
   The test beam DAQ software developed by the IPHC is using a LabVIEW interface for the run control.
   It provides several useful information, such as the number of events acquired, the \textit{header}, the \textit{trailer} and the \textit{frame counter} of the sensor.
   This helps the user to know if the acquisition is running properly.

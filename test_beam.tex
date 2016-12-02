@@ -431,7 +431,20 @@
    At $5~\rm{GeV}$, the electrons suffer less from the multiple scattering but the alignment procedure did not work well. 
    On figure~\ref{fig:kinkAngle5GeV}, the distribution of the kink angle is not centered and the reason of this offset comes from a wrong alignment.
    For the rest of the study, this two measurements are excluded to determine the radiation length, as seen on figure~\ref{fig:theta0vsP_2-4}.
-   The radiation length measured is then $0.47 \pm 0.02~\%~\rm{X_0}$.
+   The radiation length measured is then $0.47 \pm 0.02~\%~\rm{X_0}$, smaller than the expected calculation.
+   The determination of the material budget is done here without taking into account the complete ladder.
+   The \gls{PLUME} sensors are used for tracking and measuring the kink angle.
+   As the signal is considered to be created in the middle of the epitaxial layer, only one part of the \gls{MIMOSA}-26 is included in the calculation.
+   The thickness of the different \gls{MIMOSA}-26 layers are the followings:
+   
+   \begin{itemize}
+     \item Electronics layer: $\sim 6~\rm{\mu m}$,
+     \item Epitaxial layer: $\sim 14~\rm{\mu m}$,
+     \item Bulk: $\sim 30~\rm{\mu m}$.
+   \end{itemize}
+
+   The sensors are thinned down to $50 \pm 2~\rm{\mu m}$, but only $\sim 37~\rm{\mu m}$ of silicon are taken into account during the calculation.
+   In total, $0.028~\%~\rm{X_{0}}$ are missing in the calculation.
    
    \begin{figure}[!h]
      \centering
@@ -446,19 +459,10 @@
    Although the fit shows a dependency on the momentum, the error on the second polynom is larger than the value determined by the fit.
    The different radiation lengths determined at different momentum are of the same order and this is consistent with the definition of the material budget.
 
-   The results shown here do not include the complete ladder studied.
-   As the \gls{PLUME} sensors are used for tracking and the measurement of the kink angle, only one part of them is included in the calculation.
-   The thickness of the different \gls{MIMOSA}-26 layers are the followings: 
 
-   \begin{itemize}
-     \item Electronics layer: $\sim 6~\rm{\mu m}$,
-     \item Epitaxial layer: $\sim 14~\rm{\mu m}$,
-     \item Bulk: $\sim 30~\rm{\mu m}$.
-   \end{itemize}
-   
-   The sensors are thinned down to $50 \pm 2~\rm{\mu m}$ and the signal is considered to be created in the middle of the epitaxial layer. 
-   Thus, only $\sim 37~\rm{\mu m}$ for a sensor is taken into account during the measurement, leading to approximately $0.028~\%~\rm{X_{0}}$ less than the theoretical value.
-   By adding the $0.028~\%$ missing, the total radiation length over a sensitive surface is $0.498~\%$, the material budget determined for a flex with a $25~\%$ fill factor (see equation~\ref{eq:X0_theory}).
+   %The sensors are thinned down to $50 \pm 2~\rm{\mu m}$ and the signal is considered to be created in the middle of the epitaxial layer. 
+   %Thus, only $\sim 37~\rm{\mu m}$ for a sensor is taken into account during the measurement, leading to approximately $0.028~\%~\rm{X_{0}}$ less than the theoretical value.
+   %By adding the $0.028~\%$ missing, the total radiation length over a sensitive surface is $0.498~\%$, the material budget determined for a flex with a $25~\%$ fill factor (see equation~\ref{eq:X0_theory}).
 
    \begin{figure}
      \centering
