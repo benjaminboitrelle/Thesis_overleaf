@@ -395,12 +395,12 @@
     \begin{equation}
       \mathcal{L}_{\rm{YM}} = - \frac{1}{4}\textbf{W}^a_{\mu\nu} \textbf{W}^{a\mu\nu} - \frac{1}{4}\textbf{B}_{\mu\nu}\textbf{B}^{\mu\nu},
     \end{equation}
-    where $\textbf{W}^{a}_{\mu\nu}$ ($i=1,2,3$) and $\textbf{B}_{\mu\nu}$ are the gauge fields corresponding respectively to $\rm{SU}(2)$ and $\rm{U}(1)$.
+    where $\textbf{W}^{a}_{\mu\nu}$ ($i=1,2,3$) and $\textbf{B}_{\mu\nu}$ are the gauge fields corresponding respectively to $\rm{SU}(2)$ and $\rm{U}(1)$ groups.
     The tensors of these fields are written:
 
     \begin{equation}
         \textbf{W}_{\mu\nu}  =  \partial_{\mu}\textbf{W}_{\nu} - \partial_{\nu}\textbf{W}_{\mu} - i g [\textbf{W}_{\mu},\textbf{W}_{\nu}]~\rm{and}
-      \label{eq:Wmunu},
+      \label{eq:Wmunu}
     \end{equation}
 
     \begin{equation}
@@ -411,7 +411,7 @@
     Where $g$ is the coupling constant of the $\rm{SU}(2)$ gauge group. 
     In equation~\ref{eq:Wmunu}, $\textbf{W}_{\mu} = \sum W^i_{\mu}\sigma^i/2$ is a vector of three gauge fields associated to $\rm{SU}(2)_{\rm{L}}$ and $\sigma^i$ are the Pauli matrices. 
     The term $[\textbf{W}_{\mu},\textbf{W}_{\nu}]$ is associated to the interactions between the gauge fields.
-    In equation~\ref{eq:Bmu}, $\textbf{B}_{\mu}$ is the only gauge field associated to the $\rm{U}(1)_{\rm{Y}}$.
+    In equation~\ref{eq:Bmu}, $\textbf{B}_{\mu}$ is the only gauge field associated to the $\rm{U}(1)_{\rm{Y}}$ gauge group.
 
     The Lagrangian describing the fermions field is given by:
 
@@ -421,7 +421,10 @@
     with:
       
     \begin{equation}
-      D_{\mu}\Psi_L = \left( \partial_{\mu} + ig \textbf{W}_{\mu} - i \frac{g'}{2}Y\textbf{B}_{\mu}\right)\Psi_L~\rm{and}~D_{\mu}\Psi_R = \left(\partial_{\mu} - i\frac{g'}{2}Y\textbf{B}_{\mu}\right)\Psi_R.
+      \begin{array}{lcl}
+      D_{\mu}\Psi_L & = & \left( \partial_{\mu} + ig \textbf{W}_{\mu} - i \frac{g'}{2} Y \textbf{B}_{\mu}\right)\Psi_L~\rm{and} \\
+      D_{\mu}\Psi_R & = & \left(\partial_{\mu} - i\frac{g'}{2} Y \textbf{B}_{\mu}\right)\Psi_R.
+      \end{array}
       \label{eq:derivativeEW}
     \end{equation}
     
@@ -431,7 +434,7 @@
     With the \gls{EW} Lagrangian described above, the gauge bosons are considered as massless fields.
     The electroweak interaction does not allow a $m\overline{\Psi}\Psi$ term because it does not transform as a scalar under $\rm{SU}(2)_{\rm{L}} \otimes \rm{U}(1)_{\rm{Y}}$.
     Moreover, the $m^2 \textbf{W}_{\mu} \textbf{W}^{\mu}$ violates the $\rm{SU}(2)_{\rm{L}}$ gauge invariance of the Lagrangian.
-    The mass terms associated with the physical fields of the gauge bosons are given by spontaneous symmetry breaking via the Higgs mechanism.
+    The mass terms associated with the physical fields of the gauge bosons are given by a spontaneous symmetry breaking via the Higgs mechanism.
 
       \subsection{Symmetry Breaking mechanism and Goldston theorem}
     
@@ -444,7 +447,7 @@
         \mathcal{L} = \partial^{\mu}\phi^{*} \partial_{\mu}\phi - \mu^2\phi^{*}\phi - \lambda (\phi^{*}\phi)^2,
         \label{eq:ssbLagrangian}
       \end{equation}
-      where $\partial^{\mu}\phi^{*} \partial_{\mu}\phi$ is the kinetic term of a complex the complex scalar field and $\mu^2\phi^{*}\phi - \lambda (\phi^{*}\phi)^2$ is related to a scalar potential.
+      where $\partial^{\mu}\phi^{*} \partial_{\mu}\phi$ is the kinetic term of a complex scalar field and $\mu^2\phi^{*}\phi - \lambda (\phi^{*}\phi)^2$ is related to a scalar potential.
       The coefficient $\mu^2$ is a real parameter. 
       Nevertheless, depending on its sign, the potential can take two forms.
 
@@ -474,7 +477,7 @@
       \end{equation}
       where the field $\rho(x)$ describes a state of mass $m_{\rho} = 2 \mu^2$, coupled to the massless field $\Theta(x)$.
       The field $\Theta(x)$ describes excitations around a direction in the potential.
-      The excitations are not costing any energy, so they correspond to massless bosons called Goldstone bosons.
+      These excitations are not costing any energy to the system and they correspond to massless bosons called Goldstone bosons.
 
       \subsection{Higgs mechanism}
       \label{sec:higgsMechanism}
@@ -508,28 +511,27 @@
           0 \\
           v
         \end{pmatrix}
-        \text{ with } \ v = \sqrt{\frac{- \mu^2}{\lambda}} > 0
+        ~\rm{with}~v = \sqrt{\frac{- \mu^2}{\lambda}} > 0.
         \label{eq:v2}
       \end{equation}
       
-      By expanding the field $\Phi$ around its minima and by including a field\todo{REPHRASE} 
-
-      Let's expand the field $\Phi$ around its minima by including a field $h(x)$ which describes quantum fluctuations and three massless Goldstone fields, denoted $\theta^i(x)$:
+      The field $\Phi$ is expanding around its minima using a new field $h(x)$, which describes quantum fluctuations.
+      Moreover, three massless Goldstone fields $\theta^{i}(x)$ are included:
 
       \begin{equation}
         \Phi(x) = e^{i\frac{\sigma_i}{2}\theta^i(x)} \frac{1}{\sqrt{2}}
                   \begin{pmatrix}
                      0 \\
                      v + h(x)
-                   \end{pmatrix}
+                   \end{pmatrix}.
         \label{eq:fieldHiggs}
       \end{equation}
        
-      A particular gauge can be defined in a way that the Goldstone fields are absorbed by the physical field of $\rm{SU}(2)_{\rm{L}} \otimes \rm{U}(1)_{\rm{Y}}$.
-      It implies the apparition of mass terms in equation \ref{eq:lagrangianHiggs}.
-
-      First, we are interested in the mass generation mechanism.
-      We consider only on the impact of the new field on the derivative covariant and omit any terms containing $h$ and remove down the partial derivative:
+      By choosing a particular gauge field, the Goldstone fields are absorbed into the physical field defined by $\rm{SU}(2)_{\rm{L}} \otimes \rm{U}(1)_{\rm{Y}}$.
+      The absorption of the massless Goldstone bosons leads to the apparition of a mass term in equation~\ref{eq:lagrangianHiggs}.
+      The mass generation mechanism is explained in the following.
+      The new field injected in equation~\ref{eq:lagrangianHiggs} modifies the derivative covariant.
+      By omitting any terms containing $h$ and by removing the partial derivative: 
 
       \begin{equation}
         \left|\left(i\frac{g}{2}\textbf{W}_{\mu} +i\frac{g'}{2}Y\textbf{B}_{\mu}\right) \Phi \right|^2 = \frac{1}{8}\left|
@@ -541,30 +543,29 @@
                   0 \\
                   v
                 \end{pmatrix}
-           \right|^2
+           \right|^2.
         \label{eq:derHiggs}
       \end{equation}
 
       The charged fields can be expressed as a linear combination of gauge fields:
 
       \begin{equation}
-        W^{\pm}_{\mu} = \frac{W^1_{\mu} \mp iW^2_{\mu}}{\sqrt{2}}
+        W^{\pm}_{\mu} = \frac{W^1_{\mu} \mp iW^2_{\mu}}{\sqrt{2}}.
       \end{equation}
 
-      The eigenstates are rewritten as decorrelated terms representing the neutral fields from the EW symmetry group:
+      The eigenstates are rewritten as decorrelated terms representing the neutral fields from the \gls{EW} symmetry group:
 
       \begin{equation}
-        Z_{\mu} = \cos{\theta_{w}W^3_{\mu}} - \sin{\theta_{w}B_{\mu}}
+        Z_{\mu} = \cos{\theta_{w}W^3_{\mu}} - \sin{\theta_{w}B_{\mu}},
       \end{equation}
       \begin{equation}
-        A_{\mu} = \sin{\theta_{w}W^3_{\mu}} + \cos{\theta_{w}B_{\mu}}
+        A_{\mu} = \sin{\theta_{w}W^3_{\mu}} + \cos{\theta_{w}B_{\mu}},
       \end{equation}
-
-     $\theta_{w}$ is the Weinberg angle and represent a bound between the coupling $g$ and $g'$:
+      with $\theta_{w}$ the Weinberg angle, which represents a bound between the couplings $g$ and $g'$:
      
-     \begin{equation}
-     \sin{\theta_{w}} = \frac{g'}{\sqrt{g^2+g'^2}} \ and \ \cos{\theta_{w}} = \frac{g}{\sqrt{g^2+g'^2}}
-     \end{equation} 
+      \begin{equation}
+        \sin{\theta_{w}} = \frac{g'}{\sqrt{g^2+g'^2}} \ and \ \cos{\theta_{w}} = \frac{g}{\sqrt{g^2+g'^2}}.
+      \end{equation} 
 
       Equation~\ref{eq:derHiggs} becomes:
 
@@ -606,22 +607,25 @@
   \section{Beyond the Standard Model}
 
   The \gls{SM} constitutes one of the most successful achievements in modern physics.
-  One of its strength is to provide an elegant theoretical framework to describe the known experimental facts about particles, but it is also able to predict the existence of a mechanism to generate the particle masses via the Higgs mechanism.
-  Nevertheless, a lot of mysteries in the Universe are not explained by this theory. 
+  One of its strength is to provide an elegant theoretical framework to describe the known experimental facts about particles, but it also predicts the existence of a mechanism to generate the particle masses via the Higgs mechanism.
+  Nevertheless, this theory does not solved all the questions about the Universe.
+  \todo{Add plots to confirm the good SM predictions.}
   
     \subsection{Limitations of the Standard Model}
 
-    Despite the fact that the experimental results are in good agreement with the \gls{SM} predictions, this theory does not provide answers to may questions.
-    The particle physics community tries to unify theories.
+    In the following, the limitations of the \gls{SM} are described.
+
+    %Despite the fact that the experimental results are in good agreement with the \gls{SM} predictions, this theory does not provide answers to may questions.
+    %The particle physics community tries to unify theories.
 
       \subsubsection{Free parameters}
 
       Up to 19 free parameters are used in the \gls{SM} and this theory does not explain their existence.
       Even if it is not as major problem for the physics itself, the particle physics community has a lack of understanding and explaining these values.
-      The free parameters are: 
+      These free parameters are: 
       \begin{itemize}
         \item the masses of the nine fermions,
-        \item the coupling constants $g$ and $g'$ of the $U(1)$, $SU(2)$ groups,
+        \item the coupling constants $g$ and $g'$ of respectively the $U(1)$ and $SU(2)$ groups,
         \item the coupling constant of the strong interaction $\alpha_s$,
         \item the three mixing angles, as well as the CP-violating phase of the CKM matrix,
         \item the Higgs boson mass and the expected vacuum value for the Higgs field $vev$,
@@ -663,17 +667,15 @@
       \subsubsection{Matter-antimatter asymmetry}
 
       As discussed at the beginning of this chapter, the \gls{SM} defines an equal number types of particles and anti-particles. 
-      In the case of the Big Bang theory, it is assumed that the matter and antimatter were created in an exactly equal amount, but a mechanism has favoured electrons, protons, and neutrons with respect to positrons, antiprotons and antineutrons.
-      If the amount of matter and antimatter was equal, our Universe would have been completely annihilated.
-      The matter domination could be a local phenomenon with an antimatter surrounding the region. 
-      However, the region of contact between matter and antimatter would be a violent place of interaction, which would disturb the cosmic microwave background.
+      In the case of the Big Bang theory, it is assumed that the matter and antimatter were created in an exactly equal amount.
+      However, if the amount of matter and antimatter was equal, the Universe would have been completely annihilated.
+      A mechanism has favoured electrons, protons and neutrons with respect to positrons, antiprotrons and antineutrons.
+      The asymmetry between the matter and antimatter proportion could come from a smaller production of antimatter compared to the matter during the Big Bang.
+      The matter and antimatter have annihilated, but a part of matter has survived. 
 
-      An assumption to explain the asymmetry is that the antimatter was produced in an infinity proportion compared to the matter.
-      Hence, the annihilation as lead to create a Universe only made of matter.
-      A mechanism which tends to prefer the matter has been observed in the study of the kaon oscillation.
-      This particle is able to transform spontaneously to its own anti-particle and vice-versa.
+      The study of the kaon oscillation has shown that this particle is able to transform spontaneously to its own antiparticle and vice-versa.
       Nevertheless, this transformation is not symmetric: the kaon is slower to turn into an anti-kaon than the inverse transformation.
- 
+
       \subsubsection{Dark Matter and dark energy}
       
      % \todo{Rephrase dark matter and dark energy}
@@ -739,7 +741,7 @@
   Along this chapter, the successes and limits of the \gls{SM} were discussed.
   The high energy physics community is trying to study as far as possible the limit of the \gls{SM} and is also trying to find some proof of new physics beyond the \gls{SM}.
   The \gls{LHC} at CERN has permitted in 2012 to point out the existence of a Higgs boson.  
-  Nevertheless, the beam structure of the LHC is not efficient enough to perform very precise measurements.
+  Nevertheless, the beam structure of the \gls{LHC} is not efficient enough to perform very precise measurements.
   Because of the collision between protons, the energy of the collision can't be exactly known.
   The next chapter deals with a future experiment in high energy physics, where electrons and positrons are used to probe the matter instead of protons and anti-protons.
 

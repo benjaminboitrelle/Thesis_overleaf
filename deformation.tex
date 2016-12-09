@@ -55,8 +55,7 @@
 
     \subsection{Measurements}
 
-    The prototype validation was done under several conditions.
-    Firstly, three different geometric configurations were used.
+    The prototype validation was done under several conditions and with three different geometrical configurations.
     On the first one presented on figure~\ref{fig:tbNormal}, the \gls{DUT} is parallel to the telescope planes and the beam is hitting the device in a normal incidence.
     The ladder is placed in between the two arms.
     The middle of the foam is at equal distance from both inner telescope planes.
@@ -98,7 +97,7 @@
 
   \section{Spatial resolution studies}
    
-    One of the measurements performed during the analysis is to determine the pointing resolution of the ladder.
+    One of the measurements performed during the analysis is to determine the pointing resolution of the sensors on each side of the ladder.
     As the sensors used are well-known, the performance of the ladder should be similar to the one expected.
     Any deviations on the pointing resolution or the efficiency might point out an unexpected impact of the mechanical structure or the flex-cable design over the whole system.
     The alignment steps to obtained the pointing resolution of the ladders are explained below for different run configurations. 
@@ -106,7 +105,6 @@
     \subsection{Normal incidence track}
      
     For each event, the acquisition is recording the position of the pixels hit, the frame number, as well as the sensor ID.
-    %The sensors are sending to the acquisition the position of the pixel hit, on which frame this event was recorded, as well as the sensor ID.
     The binary file created contains no information about the relative position of each sensor.
     To perform an analysis, the telescope planes have to be aligned each other.
     The hits information of every plane is combined in order to create tracks. 
@@ -482,15 +480,15 @@
           Order & $\chi^2 \rm{/NDF}$ & $\sigma_{U}^{\rm{front}}$ & $\chi^2 \text{/NDF}$ & $\sigma_{U}^{\rm{back}}$ \tabularnewline
           \hline %----------------------------
           \hline %----------------------------
-          3 & 21683.9/84 & 6.508 & 35575.2/72 & 13.28 \tabularnewline
-          4 & 1449.91/83 & 6.176 & 25129.8/71 & 12.38 \tabularnewline
-          5 & 1449.79/82 & 5.998 & 1718.81/70 & 6.918 \tabularnewline
-          6 & 653.738/81 & 5.924 & 1480.55/69 & 6.817 \tabularnewline
-          7 & 304.206/80 & 5.922 & 634.696/68 & 6.406 \tabularnewline
-          8 & 288.376/79 & 5.937 & 269.296/67 & 6.228 \tabularnewline
-          9 & 225.376/78 & 5.9 & 250.565/66 & 6.239 \tabularnewline
-          10 & 225.353/77 & 5.914 & 152.236/65 & 6.159 \tabularnewline
-          11 & 158.053/76 & 5.913 & 131.727/64 & 6.176 \tabularnewline
+          3 & 21683.9/84 & 6.51 & 35575.2/72 & 13.28 \tabularnewline
+          4 & 1449.91/83 & 6.18 & 25129.8/71 & 12.38 \tabularnewline
+          5 & 1449.79/82 & 6.00 & 1718.81/70 & 6.92 \tabularnewline
+          6 & 653.738/81 & 5.92 & 1480.55/69 & 6.82 \tabularnewline
+          7 & 304.206/80 & 5.92 & 634.696/68 & 6.41 \tabularnewline
+          8 & 288.376/79 & 5.94 & 269.296/67 & 6.23 \tabularnewline
+          9 & 225.376/78 & 5.90 & 250.565/66 & 6.24 \tabularnewline
+          10 & 225.353/77 & 5.91 & 152.236/65 & 6.16 \tabularnewline
+          11 & 158.053/76 & 5.91 & 131.727/64 & 6.18 \tabularnewline
           \hline %----------------------------
          \end{tabular}
          \caption{Fit results of the scatter plot $\Delta U = f(U)$ for Legendre polynomials order and the residual obtained on each side of the PLUME ladder.}
@@ -593,23 +591,14 @@
         \centering
         \begin{tabular}{c c c c c}
           \hline %----------------------------------------------------------------------------------------------------------------
-          %Run Number  &  Plane Number &  Fan speed (m/s)   & Tilted angle  &   $\sigma_{U}^{Def}$ ($\mu m$) &   $\sigma_{U}^{Cor}$ ($\mu m$) & $\sigma_{U}^{DUT}$ ($\mu m$)\\
-          %Side &  Tilted angle  &   $\sigma_{U}^{Def}$ ($\mu m$) &   $\sigma_{U}^{Cor}$ ($\mu m$) & $\sigma_{U}^{DUT}$ ($\mu m$)\\
           Side &  Tilted angle ($^{\degree}$)  &   $\sigma_{U}^{\rm{Def}}~(\rm{\mu m}$) &   $\sigma_{U}^{\rm{Cor}}~\rm{\mu m}$) & Improvement \\
           \hline %----------------------------------------------------------------------------------------------------------------
           \hline %----------------------------------------------------------------------------------------------------------------
-          %Front   & 3         &      28       &      9.586 &      5.568                       &    5.115           \\
-          %Back    & 3         &      28       &      6.507 &      5.533                       &    5.077           \\
-          %\hline %----------------------------------------------------------------------------------------------------------------
-          %Front &      28       & $ 8.8 \ \pm \ 0.1 $ & $ 4.8 \ \pm \ 0.1 $ &    $45.5 \ \%$  \\
-          %Back  &      28       & $ 5.6 \ \pm \ 0.1 $ & $ 4.5 \ \pm \ 0.1 $ &    $19.6 \ \%$ \\
           Front &      28       & $ 9.0 \ \pm \ 0.1 $ & $ 4.9 \ \pm \ 0.1 $ &    $46.6 \ \%$  \tabularnewline
           Back  &      28       & $ 5.7 \ \pm \ 0.1 $ & $ 4.7 \ \pm \ 0.1 $ &    $17.5 \ \%$  \tabularnewline
-          %\hline %----------------------------------------------------------------------------------------------------------------
           \hline %----------------------------------------------------------------------------------------------------------------
           Front &      36       & $ 14.1 \ \pm \ 0.1 $ & $ 6.1 \ \pm \ 0.1 $ &    $56.0 \ \%$ \tabularnewline
           Back  &      36       & $ 6.8 \ \pm \ 0.1 $ & $ 5.9 \ \pm \ 0.1 $ &    $13.2 \ \%$  \tabularnewline
-          %\hline %----------------------------------------------------------------------------------------------------------------
           \hline %----------------------------------------------------------------------------------------------------------------
           Front &      60       & $ 41.2 \ \pm \ 0.15$ & $25.8 \ \pm \ 0.2$  &    $37.4 \ \%$ \tabularnewline
           Back  &      60       & $ 23.3 \ \pm \ 0.13$ & $21.7 \ \pm \ 0.1$  &    $6.8 \ \%$  \tabularnewline

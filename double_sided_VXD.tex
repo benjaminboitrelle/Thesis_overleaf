@@ -1,9 +1,8 @@
-%\chapter{Double-sided VXD: PLUME}
 \chapter{As light as a feather}
 \label{chap:vxd}
   
   Since the end of the 1960's, the development of position sensitive silicon sensors has permitted to confirm the prediction of the \acrfull{SM} with a high precision, as well as the discovery of the top quark.
-  These sensors, called \acrfull{VXD}, are in charge to track the particles down to their decay vertices.
+  These sensors, mostly employed for the \acrfull{VXD}, are in charge to track the particles down to their decay vertices.
   The design of such device is driven by the physics requirement of the experiment and is playing a crucial role at the \acrfull{ILC}.
   For example, one flagship measurement is the study of the Higgs boson couplings to the fermions and other bosons.
   This can be achieved only with a precise heavy flavor tagging and the ability to separate the $b$ quarks from the $c$ quarks. 
@@ -18,20 +17,17 @@
   \section{The ILD vertex detector specifications}
    
     The \gls{VXD} is the closest sub-detector to the \acrfull{IP} in charge of reconstructing the vertex by extrapolating particles back to their origin of production. 
-    This detector should be optimised to track particles in a high-density environment and to be able to extract the tracks from the different particles, especially the $b$ and $c$ quarks in the case of the \gls{ILC}.
+    This detector should be optimised to track particles in a high-density environment and to be able to extract the tracks from the different particles, especially those originating from the decay of the $b$ and $c$ quarks in the case of the \gls{ILC}.
     The reconstruction of the displaced vertices should be efficient enough to perform a good flavour tagging.
     Therefore, the detector has to measure particles with a lifetime in the picosecond regime, representing a decay length between 150 and $500~\rm{\mu m}$.
     The minimum distance of the first \gls{VXD} layer is determined by the beam pipe radius, and the background induced by beamstrahlung, to limit the pixel occupancy.
     This sub-detector has a central role in the tracks' reconstruction.
-    Depending on the option chosen, the \gls{VXD} has to provide five or six points of measurement with a very high precise spatial resolution.
+    Depending on the option chosen (see section~\ref{subsec:design}), the \gls{VXD} has to provide five or six points of measurement with a very high precise spatial resolution.
     For the studies requiring vertex charge identification, it should be able to reconstruct low-momentum and very forward tracks.
-    %The typical parameters of such detector are their thickness, especially their material budget to reduce unwanted interaction, and their pitch which defines the spatial resolution that can be achieved.
 
    \subsection{Physics requirements}
-
-
    
-   The ideal \gls{VXD} should be made of sensors with a fine granularity in order to increase the ability to distinguish two nearest particles.
+   The ideal \gls{VXD} should be made of sensors with a fine granularity in order to increase the ability to locate precisely the particle impacts and to distinguish two nearest particles.
    The mechanical structure of the detector should provide a good stiffness and stability of the whole system but has to be at the same time as light as possible to reduce the interaction of the particles traversing it, before they reached another part of the main detector.
    As well, in order to reduce the unwanted interactions, the sensor technology used has to have a low power consumption to avoid any special cooling system which can have a bad impact on the material budget.
    The design of such detector, like the minimal distance of the first layer to the \gls{IP} and the spacing between different layers, is determined by both the beam background and the physics to study.
@@ -40,7 +36,7 @@
    %The distance of the first layer to the \gls{IP} should be as slow as possible and the power consumption should 
    %The first layer has to be as close as possible to the \gls{IP} and the lowest power consumption as possible
    %The flavour tagging ability, vertex charge measurement and track and displaced vertices reconstruction are the main physics parameter that is driving the design of such detector.
-   The distance of closest approach of a particle to the colliding beam is called the impact parameter and the resolution achievable by the detector is described by formula~\ref{eq:resIP} \cite{Battaglia2011}.
+   The distance of closest approach of a particle to the collision point is called the impact parameter and the resolution achievable by the detector can be approximated with formula~\ref{eq:resIP} \cite{Battaglia2011}.
    %The resolution on the impact parameter $\sigma_{IP}$, defined as the distance of closest approach of the particle to the colliding beam can be parametrised by the formula~\ref{eq:resIP}.\todo{REPHRASE}
     
     \begin{equation}
@@ -55,7 +51,7 @@
       \label{eq:resIP}
     \end{equation}
 
-    Where $\theta$ is the track polar angle, $a$ and $b$ are explained in the following.
+    Where $\theta$ is the track polar angle, $a$ and $b$ are explained in the following.\todo{Define geometry}
 
    The first term $a$ is the impact parameter resolution of the sensors used for the \gls{VXD}, which is linked up to the radius of the inner $R_{\rm{int}}$ and outer $R_{\rm{ext}}$ layers and the single point resolution $\sigma_{s.p.}$, as described in equation~\ref{eq:aTerm}.
 
@@ -79,42 +75,27 @@
    
    For the \gls{ILC} purpose, the \gls{ILD}-\gls{VXD} should reach an impact parameter resolution better than $5~\rm{\mu m}$ and a $b$ parameter better than $10~\rm{\mu m~GeV/c}$. 
    This precision on these parameters were never obtained before in other experiments.
-   %The values were never obtained before for other experiments. 
-   As a comparison, the resolution parameters for the \gls{LHC} are: $a =  12~\rm{\mu m}$ and $b = 70~\rm{\mu m}~\rm{GeV/c}$. 
+   As a comparison, typical parameter values for \gls{LHC} experiments are: $a =  12~\rm{\mu m}$ and $b = 70~\rm{\mu m}~\rm{GeV/c}$. 
 
    \subsection{Layout of the vertex detector}
+   \label{subsec:design}
 
    The \gls{VXD} will be made of $12~\rm{cm}$ long ladders arranged cylindrically in concentric layers to form long-barrels surrounding the \gls{IP}, contrary to the \gls{SiD} vertex detector with a design based on a 5 layers barrel, four endcap disks and three additional forward pixel disks \cite{Behnke2010}.
    Two different geometries are under consideration for the \gls{ILC}-{ILD}, nevertheless, they are both based on long ladders. 
-   The first option is based on five single-sided layers with a material budget not exceeding 0.11 \% of $\rm{X_0}$ per layer.
+   The first option is based on five single-sided layers with a material budget not exceeding $0.11~\%$ of $\rm{X_0}$ per layer.
    The five layers are in a radius range varying from $15~\rm{mm}$ for the first layer to $60~\rm{mm}$ for the last one.
    The second option is based on three double-sided layers.
    The material budget should be less than $0.16~\%~\rm{X_0}$ for one detecting face.
    The mechanical structure, which holds the two layers, is $2~\rm{mm}$ thick and will be in a radius range varying from $15$ to $60~\rm{mm}$.
 
-   
-  %  whereas the second one is based on three double-sided layers.
-  % The material budget to be reached is 0.11 \% of $X_0$ per layer for the single-sided option and 0.16 \% of $X_0$ per layer for the double-sided.
-  % The radius of the first layer depends strongly on the beam background as it is the first layer which is the most impacted.
-  % For the single-sided option, the idea is to have five layers with a radius range from 15 to 60 mm.
-  % The material budget per layer should be better than 0.1 \% of $X_0$.
-  % The second option is made of three double-sided layers with a radius range from 16 to 60 mm.
-  % The material budget for each detecting face should not exceed 0.16 \% of $X_O$.
-  % At the moment the mechanical structure that holds the two layers is 2 mm thick, but some geometry optimisation depending on the physics to study might consider having closer layers on the first ladder, while the last ladder could have a thicker mechanical structure.
-   
    \begin{figure}[!h]
      \centering
      \includegraphics[width = 10 cm]{Pictures/vxd/ild_VXD.png}
      \caption{Overview of the two vertex detector option for the ILC. On the left, it is made of five single sided layers, whereas the right one represents three double-sided layers.}
    \end{figure}
-   
-   %They are two different geometrical designs understudied to build the \gls{VXD}. 
-   %The first idea is to have a \gls{VXD} with five single-sided layers with a radii range from 15 to 60 mm.
-   %The other option is to have three double-sided layers, which will have pixel sensors on both sides separated by a mechanical structure of 2 mm thickness. 
-   %The radii range is from 16 to 60 mm.
 
    Both geometry designs are based on  pixel sensors instead of strips detectors.
-   A non-exhaustive list of the possible technologies are presented below:
+   The currently considered technologies are presented below: 
     
    \subsubsection{FPCCD}
    
@@ -122,7 +103,7 @@
      The sensor is using small pixels size (approximately $\sim 5~\rm{\mu m}$) to provide a sub-micron spatial resolution and an excellent capability to separate two nearby tracks.
      Its thickness is $50~\rm{\mu m}$ and the epitaxial layer ($15~\rm{\mu m}$ thick) is completely depleted to limit the charge spreading around pixels and to reduce the number of hits per pixel.
      However, the \gls{CCD} architecture provides slow readout and the matrix will be read between consecutive bunch trains, helping to reduce the power consumption and avoiding beam induced RF noise.
-     The \gls{FPCCD} are planned to be operated at $-40 \degres$C.
+     The requirements for the radiation tolerance imposes the \gls{FPCCD} to be operated at $-40 \degres \rm{C}$.
 
    \subsubsection{DEPFET}
     
@@ -140,7 +121,7 @@
 
    \subsubsection{CMOS}
 
-   Different options for \gls{CMOS} pixel sensors are studied, such as the 3D integrated \gls{CMOS}, but due to the context of this thesis, the work will focus on the \gls{CMOS} sensors based on the \gls{MIMOSA} architecture developed by the IPHC of Strasbourg. 
+   Different options for \gls{CMOS} pixel sensors are studied, such as the 3D integrated \gls{CMOS}, but due to the context of this thesis, the work will focus on the \gls{CMOS} sensors based on the \gls{MIMOSA} architecture developed by the \gls{IPHC} of Strasbourg. 
    This technology is described in section~\ref{sec:CMOS}.
   % The STAR experiment at RHIC is the first one to get an entire vertex detector made of ULTIMATE-MIMOSA28 CMOS sensors.
    %One of the technology developed is described in section~\ref{sec:CMOS}.
@@ -164,7 +145,7 @@
    
    \todo{Cooling system, integration time, radiation tolerance, electromagnetic interference}
 
-   To summarise, the expected parameters expected for the \gls{ILC} are: 
+   To summarise, the expected parameters for the \gls{ILC} are: 
    \begin{itemize}
      \item An excellent impact parameter resolution: $ a \sim 5~\rm{\mu m}$ and $b \sim 10~\rm{\mu m}$,
      \item A material budget not exceeding $0.1~\%~\rm{X_0}$ per layer for the single-sided option ($0.16~\%~\rm{X_0}$ for the double one),
@@ -173,29 +154,37 @@
 
   \section{PLUME}
 
-  The \acrfull{PLUME} project aims to produce double-sided ladder prototypes with respect to the \gls{ILC} requirements \cite{PLUME}.
-  Three labs in the Europe are involved: the IPHC-PICSEL in Strasbourg, the University of Bristol and DESY in Hamburg.
-  The collaboration is studying the feasibility to build such vertex detector using \gls{MAPS} thinned down to $50~\rm{\mu m}$ and is exploring the benefits of this design.
+  The \acrfull{PLUME} project aims to produce double-sided ladder prototypes driven by \gls{ILC} requirements \cite{PLUME}.
+  Three labs in Europe are involved: the \gls{IPHC}-\gls{PICSEL} in Strasbourg, the University of Bristol and \gls{DESY} in Hamburg.
+  The collaboration is studying the feasibility to build such elements of vertex detector using \gls{MAPS} thinned down to $50~\rm{\mu m}$ and is exploring the benefits of this design.
   Strasbourg is in charge to develop and mount the sensors on the modules, to take care of the readout and the \gls{DAQ}, and to provide a cooling system.
-  The mechanical design, stability measurements and building the ladders are done by the University of Bristol, while DESY has studied the ladder mock-up, performed power-pulsing tests and is now characterising and validating the modules in the lab.
+  The mechanical design, stability measurements and building the ladders are done by the University of Bristol, while \gls{DESY} has studied the ladder mock-up, performed power-pulsing tests and is now characterising and validating the modules in the lab.
   In 2016, DESY has provided the opportunity to test the ladder in real conditions thanks to the test beam facility and the possibility to use the \gls{DAQ} software developed at DESY: EUDAQ \cite{EUDAQ}.
 
     \subsection{Design and goals}
 
     Figure~\ref{fig:PLUME} illustrates the design of a PLUME ladder.
-    The ladder structure is defined by the sensors arrangement on the mechanical structure (positioned next to each other).
+    The ladder structure is defined by the sensors arrangement on the mechanical support (positioned next to each other).
     In this design, the stiffener is a $2~\rm{mm}$ thick \gls{SiC} foam which has a density varying between $8~\%$ and $4~\%$ (depending on the ladder version) and could be reduced to only $2$ or $3~\%$.
-    The choice of this foam is a good compromise between the stiffness and the thickness compare to other materials \cite{LectureJoel}.
-    Figure~\ref{fig:SiC} is representing the structure of this foam.
+    The choice of this foam results a good compromise between the stiffness and the thickness compare to other materials \cite{LectureJoel}.
+    Figure~\ref{gih:YongModulus} represents the Young Modulus as a function of the radiation length for different materials.
+    The structure of the \gls{SiC} foam is shown on figure~\ref{fig:SiC}.
     It is macroscopically uniform and has the advantage to be easily machinable.
-    Nevertheless, it has a low thermal conductivity ($50~\rm{W.m^{-1}.K^{-1}}$) and cannot be used to dissipate the heat.
+    Nevertheless, it has a low thermal conductivity ($50~\rm{W.m^{-1}.K^{-1}}$) and cannot be used to dissipate the heat though contact.
     On each side, a low mass flex-cable is glued, which is used to connect the sensors for powering and managing them.
     It is made of copper traces coated in Kapton, but new prototypes using aluminum traces are developed and currently tested in order to reduce the material budget.
     %It is made of copper traces (prototype before 2011) or aluminum traces (new prototypes) coated in Kapton. 
-    The ladder embeds twelve sensors, six on each face, that are glued and connected to the flex cable.
+    The ladder embeds twelve sensors, six on each face, that are glued and wire-bonded to the flex cable.
     On one edge of the flex-cable, a single \gls{ZIF} connector is used to link the ladder to the external board servicing, via a jumper cable.
     For the moment, the design is dedicated to the \gls{MIMOSA}-26 sensors thinned down to $50~\rm{\mu m}$ but it can be adapted to any kind of \gls{MAPS} sensors having the same thickness. 
     Although the \gls{MIMOSA}-26 has a spatial resolution better than $3~\rm{\mu m}$ (see section~\ref{subsec:Mi26}), the integration time is not suited for the bunch train structures of the \gls{ILC}.
+
+    \begin{figure}[!h]
+      \centering
+      \includegraphics[width = \textwidth]{Pictures/vxd/youngModulus_vs_radiationLength-004.jpg}
+      \caption{Graph of the Young modulus in GPa as a function of the radiation length in cm for different materials.}
+      \label{fig:YoungModulus}
+    \end{figure}
 
     The aims of the collaboration are to build ladders with a material budget better than $0.35~\%~\rm{X_0}$ for a spatial resolution better than $3~\rm{\mu m}$, and thus to evaluate the benefits of a double-sided measurement.
 
@@ -219,9 +208,15 @@
     The first ladder prototype, called version-0 (V-0) was developed and tested in 2009.
     The purpose of this prototype was to settle the fabrication and the test beam procedures, without trying to reach the desired material budget goal.
     Two MIMOSA-20 analog output sensors were mounted on each side of a stiffener, providing a $1 \times 4~\rm{cm}^2$ sensitive area.
-    The prototype was tested in $120~\rm{GeV}$ pion beam at the CERN-SPS and the results have demonstrated the benefits of the double-sided measurement on the spatial resolution, which is improved by about $25~\%$ \cite{Nomerotski}.
+    The prototype was tested in $120~\rm{GeV}$ pion beam at the CERN-SPS and the results have demonstrated the benefits of the double-sided measurement on the spatial resolution, which is improved by about a $1/\sqrt{2}$ factor \cite{Nomerotski}.
 
-    Then in 2010, a second prototype featuring a design closer to the wanted goal, called version-1 (V-1), was developed.
+    \begin{figure}[!h]
+      \centering
+      \includegraphics[width = \textwidth]{Pictures/vxd/bos_ladder_v1_PLUME0.png}
+      \caption{Side and top view of the first PLUME prototype built in 2009.}
+    \end{figure}
+
+    Then in 2010, a second prototype featuring the wanted sensitive surface, called version-1 (V-1), was developed.
     Each module of the ladder was made of Kapton flex-cable with a thickness of $0.14~\rm{mm}$, using copper traces.
     They are denoted \gls{OKF}, where Optiprint is the vendor of these flex-cable.
     It is the first version to embed six \gls{MIMOSA}-26 binary output sensors working simultaneously on each side of the stiffener.
@@ -282,7 +277,7 @@
     As a reminder, the principle of the power pulsing is to reduce the consumption of the sensor during the $200~\rm{ms}$ dead time. 
     Nevertheless, a power-pulsing study on a single Mi-26 sensor has been done and the results have shown that the nominal supply voltage of the MIMOSA-26 can be lowered from $3.3~\rm{V}$ to $1.85~\rm{V}$ without losing the sensor's registers. 
     The fake hit rate measured was close to the one obtained in  normal conditions after the sensor reaches a stable operation.
-    Moreover, the power consumption was reduced by a factor 6.34 \cite{Kuprash2013}. 
+    Moreover, the power consumption was reduced by a factor 6.3 \cite{Kuprash2013}. 
 
     A complete power-pulsing study of the whole ladder in the lab has to be done in order to make sure that the sensors are still behaving correctly.
     If the first results are comforting, the power-pulsing will be tested under real conditions with a high magnetic field.
@@ -295,9 +290,6 @@
     And secondly, this structure has the advantage to apply the mechanical stress on the polymer wrapping, thus reducing it on the sensor.
 
     A closer perspective for the collaboration is to integrate two ladders in the physics commissioning of the BEAST experiment at KEK.
-    The version-2 ladder will be used but a second option is foreseen.
-    MISTRAL sensors will be mounted on the flex-cable instead of the MIMOSA-26.
-    These sensors have a bigger sensitive area, a faster integration time  ($\sim 20~\rm{\mu s}$) but a worth spatial resolution ($< 10~\rm{\mu m}$) due to the pixel size (pitch of $36 \times 62.5~\rm{\mu m}^2$).
 
   \section{Integration of CMOS sensors}
   \label{sec:CMOS}
@@ -481,7 +473,7 @@
     
     \begin{figure}[!h]
       \centering
-      \missingfigure{Rolling shutter}
+      \includegraphics[width = 0.8\textwidth]{Pictures/vxd/parallelColumnPrinciple_2bis.png}
       \caption{Parallel column readout.}
       \label{fig:rollShut}
     \end{figure}
@@ -499,17 +491,6 @@
     In order to increase the readout speed, two techniques are conceivable \cite{Winter:2009zz}.
     The first one provides elongated pixels in the vertical direction in order to reduce the number of rows, thus degrading the spatial resolution in the same direction.
     The second one consists of dividing the columns into two distinct parts, which have its dedicated output.
-
-    %When one line is read, the precedent line is processed by the electronics on the bottom each column.
-    %Only the pixels having a signal above certain thresholds are read.
-    %A zero suppression logic, called \gls{SUZE}, is in charge to determine the number of fired pixels in a raw and to send the address of the first pixel hit and the number of adjacent ones hit, as shown on figure~\ref{fig:SUZE}.
-    %The sequence of fired pixels feed one output memory, while a second memory is read out by the outside world.
-    %This technique has the advantage to reduce the data bandwidth.
-    %The integration time is then defined as the time to read one line by the number of rows in the matrix.
-    %For example, sensors containing a thousand of lines have an integration time of $\mathcal{O}(100\mu$s). 
-    %Two techniques can be used to increase the readout speed\cite{Winter:2009zz}.
-    %The first one provides elongated pixels in the vertical direction in order to reduce the number of rows, thus degrading the spatial resolution in the same direction.
-    %The second one consists of dividing the columns into two distinct parts, which have its dedicated output.
 
     \begin{figure}[!h]
       \centering
@@ -584,9 +565,7 @@
     \caption{Block-diagram and a picture of the MIMOSA-26}\label{fig:Mi26}
     \end{figure}    
 
-
-
-    The PICSEL group has then developed digital output sensors for the pixel vertex detector at the START experiment at Brookhaven National Laboratory \cite{1748-0221-7-01-C01102}.
+    The PICSEL group has then developed digital output sensors for the pixel vertex detector at the START experiment at Brookhaven National Laboratory \cite{1748-0221-7-01-C01102}\cite{1748-0221-10-03-C03026}.
     Figure~\ref{fig:Mi28} is showing a half-section of the STAR vertex detector (figure~\ref{fig:vxdSTAR}) and a \gls{MIMOSA}-28 bounded on a PCB (figure~\ref{fig:ultimate}).
     They are based on the architecture of \gls{MIMOSA}-26 with some modifications.
     The matrix contains 960 columns and 928 rows for a pitch of $20.7 \times 20.7~\rm{\mu m}^2$.
@@ -594,19 +573,6 @@
     The sensor can reach a particle detection rate of $10^6~\rm{partices.cm}^{-2}\rm{.s}^{-1}$. 
     Finally, their power consumption is lower or equal to $150~\rm{mW.cm}^{-2}$.
     The spatial resolution obtained for ULTIMATE is less than $4~\rm{\mu m}$.
-
-  
-
-    %The PICSEL group has developed sensors, called ULTIMATE, for the STAR experiment at Brookhaven National Laboratory\todo{REF to a paper}.
-    %They are based on \gls{MIMOSA}-28 sensors and are integrated into the vertex detector.
-    %The choice for this technology was made because of their characteristics.
-    %Indeed, the thickness of a sensor is around 50 $\mu\text{m}$ in order to minimise the multiple scattering of particles.
-    %The matrix is made of roughly $9 \times 10^5$ pixels, corresponding to 960 columns and 928 rows for a pitch of 20.7 x 20.7 $\mu\text{m}^2$.
-    %The sensitive area is 19.7 x 19.2 $\text{cm}^2$.
-    %They have a binary output integrating a zero suppression technology (SUZE) and the integration time of the whole matrix is 200 $\mu\text{s}$.
-    %Thanks to this architecture, the sensors can reach a particle detection rate of $10^6$ particles/$\text{cm}^2$/s. 
-    %Finally, their power consumption is lower or equal to 150 mW/$\text{cm}^2$.
-    %The spatial resolution obtained for ULTIMATE is less than 4 $\mu\text{m}$.
 
   \begin{figure}[!h]
     \centering
@@ -626,7 +592,6 @@
     \end{subfigure}
     \caption{Pictures of the STAR vertex detector and an ULTIMATE chip}\label{fig:Mi28}
     \end{figure}    
-
 
     This chapter has depicted the purpose of the vertex detector for the \gls{ILD}.
     Different technologies were introduced, to focus specifically on the \gls{CMOS} sensors and their use in high-energy physics.
