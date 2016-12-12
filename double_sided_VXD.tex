@@ -22,7 +22,7 @@
     Therefore, the detector has to measure particles with a lifetime in the picosecond regime, representing a decay length between 150 and $500~\rm{\mu m}$.
     The minimum distance of the first \gls{VXD} layer is determined by the beam pipe radius, and the background induced by beamstrahlung, to limit the pixel occupancy.
     This sub-detector has a central role in the tracks' reconstruction.
-    Depending on the option chosen (see section~\ref{subsec:design}), the \gls{VXD} has to provide five or six points of measurement with a very high precise spatial resolution.
+    Depending on the option chosen (see section~\ref{subsec:layout}), the \gls{VXD} has to provide five or six points of measurement with a very high precise spatial resolution.
     For the studies requiring vertex charge identification, it should be able to reconstruct low-momentum and very forward tracks.
 
    \subsection{Physics requirements}
@@ -51,7 +51,7 @@
       \label{eq:resIP}
     \end{equation}
 
-    Where $\theta$ is the track polar angle, $a$ and $b$ are explained in the following.\todo{Define geometry}
+    Where $\theta$ is the track polar angle (\gls{ILD} coordinate systems are presented in section~\ref{sec:ILD}), $a$ and $b$ are explained in the following.
 
    The first term $a$ is the impact parameter resolution of the sensors used for the \gls{VXD}, which is linked up to the radius of the inner $R_{\rm{int}}$ and outer $R_{\rm{ext}}$ layers and the single point resolution $\sigma_{s.p.}$, as described in equation~\ref{eq:aTerm}.
 
@@ -78,7 +78,7 @@
    As a comparison, typical parameter values for \gls{LHC} experiments are: $a =  12~\rm{\mu m}$ and $b = 70~\rm{\mu m}~\rm{GeV/c}$. 
 
    \subsection{Layout of the vertex detector}
-   \label{subsec:design}
+   \label{subsec:layout}
 
    The \gls{VXD} will be made of $12~\rm{cm}$ long ladders arranged cylindrically in concentric layers to form long-barrels surrounding the \gls{IP}, contrary to the \gls{SiD} vertex detector with a design based on a 5 layers barrel, four endcap disks and three additional forward pixel disks \cite{Behnke2010}.
    Two different geometries are under consideration for the \gls{ILC}-{ILD}, nevertheless, they are both based on long ladders. 
@@ -167,7 +167,7 @@
     The ladder structure is defined by the sensors arrangement on the mechanical support (positioned next to each other).
     In this design, the stiffener is a $2~\rm{mm}$ thick \gls{SiC} foam which has a density varying between $8~\%$ and $4~\%$ (depending on the ladder version) and could be reduced to only $2$ or $3~\%$.
     The choice of this foam results a good compromise between the stiffness and the thickness compare to other materials \cite{LectureJoel}.
-    Figure~\ref{gih:YongModulus} represents the Young Modulus as a function of the radiation length for different materials.
+    Figure~\ref{fig:YoungModulus} represents the Young Modulus as a function of the radiation length for different materials.
     The structure of the \gls{SiC} foam is shown on figure~\ref{fig:SiC}.
     It is macroscopically uniform and has the advantage to be easily machinable.
     Nevertheless, it has a low thermal conductivity ($50~\rm{W.m^{-1}.K^{-1}}$) and cannot be used to dissipate the heat though contact.
@@ -175,9 +175,12 @@
     It is made of copper traces coated in Kapton, but new prototypes using aluminum traces are developed and currently tested in order to reduce the material budget.
     %It is made of copper traces (prototype before 2011) or aluminum traces (new prototypes) coated in Kapton. 
     The ladder embeds twelve sensors, six on each face, that are glued and wire-bonded to the flex cable.
-    On one edge of the flex-cable, a single \gls{ZIF} connector is used to link the ladder to the external board servicing, via a jumper cable.
+    On each flex-cable, a \gls{ZIF} connector is used for linking the modules to two external servicing boards, using a jumper cable.
+    %On one edge of the flex-cable, a single \gls{ZIF} connector is used to link a module to the external board servicing, via a jumper cable.
     For the moment, the design is dedicated to the \gls{MIMOSA}-26 sensors thinned down to $50~\rm{\mu m}$ but it can be adapted to any kind of \gls{MAPS} sensors having the same thickness. 
-    Although the \gls{MIMOSA}-26 has a spatial resolution better than $3~\rm{\mu m}$ (see section~\ref{subsec:Mi26}), the integration time is not suited for the bunch train structures of the \gls{ILC}.
+    The main issues for the integration of \gls{MIMOSA}-16 comes the power pulsing ability, as well as the power dissipation of these sensors.
+    This issues will be discussed in the next section (see~\ref{sec:prototypes}).
+    %Although the \gls{MIMOSA}-26 has a spatial resolution better than $3~\rm{\mu m}$ (see section~\ref{subsec:Mi26}), the integration time is not suited for the bunch train structures of the \gls{ILC}.
 
     \begin{figure}[!h]
       \centering
@@ -203,6 +206,7 @@
     \end{figure}
 
     \subsection{Prototypes}
+    \label{sec:prototypes}
 
     Since 2009, the collaboration is studying the design, the production, the impact of the mechanical structure on the ladder's performances, but also how to power and control the sensors together.
     The first ladder prototype, called version-0 (V-0) was developed and tested in 2009.
@@ -289,7 +293,7 @@
     The advantages of this technique are, firstly, the direct connection of metal traces to the pads that avoid wire-bonding and can reduce, at the same time, the width of the module.
     And secondly, this structure has the advantage to apply the mechanical stress on the polymer wrapping, thus reducing it on the sensor.
 
-    A closer perspective for the collaboration is to integrate two ladders in the physics commissioning of the BEAST experiment at KEK.
+    A closer perspective for the collaboration is to integrate two ladders in the physics commissioning of the \gls{BEAST} experiment at KEK.
 
   \section{Integration of CMOS sensors}
   \label{sec:CMOS}
@@ -301,13 +305,13 @@
   %This technology is well used in the industry and equipped most of the camera produced.
 
   The PICSEL group of the IPHC at Strasbourg is developing since 1999 CMOS sensors called MIMOSA for \textit{Minimum Ionizing MOS Active pixel sensor}. 
-  They are semi-conducting pixel sensors based on the \gls{APS}, an alternative to the \gls{CCD} developed at the beginning of the 1990's by the imaging industry and used nowadays for the smartphone's cameras.
-  One particularity of the sensors developed by Strasbourg is that the different region of the \gls{CMOS}, such the sensitive area or the electronic layer where the signal is processed, are made of the same material.
+  They are semi-conducting pixel sensors based on the \gls{APS}, an alternative to the \gls{CCD} developed at the beginning of the 1990's by the imaging industry and widely used in nowadays commercial applications like smartphone's cameras.
+  One particularity of the sensors developed by Strasbourg is that the various functionalities, such the sensitive area and the electronic layer where the signal is processed, are made of the same material.
   This device is called then \acrfull{MAPS} and the different layers are:
   \begin{itemize}
     \item A substrate providing a mechanical stability;
     \item An epitaxial layer which is the sensitive volume of the sensor;
-    \item An electronic layer where are located the diodes collecting the charges and the microelectronic processing the signal.
+    \item An electronic layer where are located the diodes collecting the charges and the micro-circuits processing the signal.
   \end{itemize}
 
   The motivation to use this technology or any other silicon sensor in particle physics is due to the minimum energy needed to create an electron/hole pair by a traversing particle.
@@ -315,12 +319,12 @@
 
     \subsection{Charges creation and signal collection}   
 
-    The \gls{CMOS} sensor can detect crossing particles thanks to their structure, but also to the interaction of particles with matter.
-    When a particle is traversing a layer of matter, it loses energy via interactions with electrons and nuclei.
-    Due to the size of a \gls{MAPS}, it loses only a small fraction of its energy, and the energy loss can be described by a Landau.
+    The \gls{CMOS} sensor can detect impinging particles thanks to their structure, but also to the interaction of particles with matter.
+    When a charged particle is traversing a layer of matter, it loses energy via ionisations due to electromagnetic interactions with electrons and nuclei.
+    Due to the size of a \gls{MAPS}, it loses only a small fraction of its energy, and the distribution of the energy loss can be described by a Landau.
     A \gls{MIP} creates 80 electrons per microns inside the silicon.
 
-    At the beginning, the microelectronic industry has insulated the transistors from the substrate thanks to a high resistivity layer, called the epitaxial layer.
+    At the beginning, the microelectronic industry has insulated the transistors from the substrate using a high resistivity layer, called the epitaxial layer.
     The development of \gls{CMOS} sensors was accelerated due to the properties offered by these semiconductors.
     
     %The different structure of the sensor has distinct doping.
@@ -379,13 +383,21 @@
 
     Thirdly, the distinct doping of the different layers is responsible for the reflection of the charge carriers to the collection diodes.
     However, only the interface between two different doped regions is responsible for this reflection.
+    Figure~\ref{fig:collectionEfield} represents the principle of the charge collection at the interface between the substrate and the epitaxial layer.
     Thus, the substrate can be thinned down to few microns leading to a sensor with a thickness of $50~\rm{\mu m}$, while keeping the possibility to manipulate them.
     In this way, the material budget can be reduced down to $0.053~\%~\rm{X_0}$.
     %The bulk is not entirely responsible for the charge carriers reflection, only the interface between the substrate and the epitaxial layer is mainly responsible for the reflection.
     %The substrate can be thinned down to few microns leading to a sensor with a thickness of 50 $\mu\text{m}$ while keeping the possibility to manipulate them.
     %The material budget can then be reduced to 0.053 \%.
 
-    Nevertheless, the thickness of the epitaxial layer (usually between $10$ and $15~\rm{\mu m}$) and the small depleted region are responsible for a small charge collection.
+    \begin{figure}
+      \centering
+      \includegraphics[width = \textwidth]{Pictures/vxd/collectionEfield.png}
+      \caption{Principle of charge collection in a MAPS. The difference of doping between the substrate and the epitaxial layers create a reflection region.}
+      \label{fig:collectionEfield}
+    \end{figure}
+
+    Nevertheless, the thickness of the epitaxial layer (usually between $10$ and $15~\rm{\mu m}$) and the small depleted region (in the order of $1$ to $5~\rm{\mu m}$) are responsible for a small charge collection.
     As a matter of fact, a \gls{MIP} is creating 80 electron/hole pairs per microns, so the number of charges collecting by the diode is of the order of a thousand electrons.
     Hence, the signal created is only a few millivolts and low noise electronics have to be used for processing the signal.
 
@@ -394,10 +406,10 @@
     The recombination rate is increasing and reduces the signal collected.
     To avoid this effect, two solutions are possible.
     The first one is to reduce the size of the pixels in order to decrease the path of the particles from the epitaxial layer to the collection diodes.
-    Nevertheless, the cost to build sensors with a smaller pitch is increasing.
+    Nevertheless, a smaller pitch size induces a slower readout and the cost to build such sensor is increasing.
     The second solution is to increase the resistivity of the epitaxial layer to expand the depleted area.
     
-    The ionizing radiations are responsible for charges accumulation in the electronic layer.
+    The ionizing radiations are responsible for charges accumulation in oxides at the interface with silicon layers.
     The leakage current is increasing in the pixel and diode collection.
     To reduce the leakage current, smaller diodes can be used to reduce the impact of the leakage current but as it was explained before, the cost of fabrication is increasing.
     
@@ -408,7 +420,7 @@
     Currently, two pixel's architectures are used to compensate the diode's leakage current: the \textit{3 Transistors pixel design}, mainly used in imaging, and the \textit{self-biased pixel design}.
     The circuit diagram which is shown on figure~\ref{fig:elecArch} represents the two methods to design pixel.
 
-    The first one, presented on figure~\ref{fig:3T}, consists to reinitialise the collection diode's voltage to a reference voltage thanks to a \textit{reset} transistor, denoted M1 on the diagram.
+    The first one, presented on figure~\ref{fig:3T}, consists reinitialising the collection diode's voltage to a reference voltage thanks to a \textit{reset} transistor, denoted M1 on the diagram.
     This method works in two steps. 
     Firstly, the M1 transistor is closed and the charge of the equivalent capacitor $C_d$ associated to the junction P-N, represented by a diode on the diagram, is slowly decreasing because of the diode's leakage current. 
     During this phase, the pixel is sensitive and is read.
@@ -455,14 +467,14 @@
 
     \subsubsection{Integration time and readout}
 
-    For a non-depleted epitaxial layer, the charge carriers are thermally diffused to the collection diodes.
+    For a non-depleted epitaxial layer, the charge carriers are mostly thermally diffused to the collection diodes.
     The time to collect these charges in a pixel is $\sim 100~\rm{ns}$, setting a maximal limit to read the signal.
     This integration time is not reachable due to other factors, like the pixel occupancy or the time needed to obtain the information of all the pixels.
     Also, a compromise to reach fast integration time has to be done.
-    Faster is the sensor, more important is the power consumption of the electronic.
-    Moreover, to reduce the integration time, a solution consists of increasing the size of the pixels.
+    Faster is the sensor, more important is the power consumption in the electronic.
+    Moreover, to reduce the integration time, a solution consists in increasing the size of the pixels.
     In consequence, the pointing resolution of the device is impacted.
-    For the case of the \gls{ILC}, the integration time is dictated by the pixel occupancy that should not be bigger than a percent, to stay in the using sensor's range and to be able to reconstruct the impact.
+    For the case of the \gls{ILC}, the integration time is dictated by the pixel occupancy that should not be bigger than a percent, to stay in the using sensor's range and to be able to use the pattern recognition for tracking.
 
     The first sensors developed were using an analog output.
     With this approach, the pixels were addressed sequentially and their output was multiplexing in one bus line.
@@ -474,7 +486,7 @@
     \begin{figure}[!h]
       \centering
       \includegraphics[width = 0.8\textwidth]{Pictures/vxd/parallelColumnPrinciple_2bis.png}
-      \caption{Parallel column readout.}
+      \caption{Schematic operation of the parallel column readout.}
       \label{fig:rollShut}
     \end{figure}
     
@@ -484,8 +496,8 @@
     One row is read out between $100~\rm{ns}$ and $200~\rm{ns}$, independently to the number of pixels contained in it.
     In consequence, a matrix containing thousands of rows has an integration time of $\mathcal{O}(100~\rm{\mu s})$.
     Moreover, to increase the integration time an output memory is duplicated at the periphery of the sensor.
-    Hence, when one line is read, the precedent one is processed by the electronics at the end of each bus line of each column.
-    To minimise the data bandwidth, only the pixels above certain thresholds are read thanks to discriminators coupling to a zero suppression logic, called \gls{SUZE}.
+    Hence, when one line is read, the precedent one is processed by the micro-circuits at the end of each bus line of each column.
+    To minimise the data bandwidth, only the pixels above certain thresholds are read thanks to discriminators coupling to a zero suppression logic, called \gls{SUZE}~\cite{Himmi}.
     In this way, only the address of the first pixel hit in a row and the number of the adjacent fired ones are stored.
     This memory is duplicated to be able to process one row, while the previous one is read out by the outside world.
     In order to increase the readout speed, two techniques are conceivable \cite{Winter:2009zz}.
@@ -501,9 +513,9 @@
 
     \subsubsection{Noise}
 
-    The \gls{CMOS} sensors are sensitive to the noise.
-    Many factors are causing it and the different kind of noise is divided into two categories: the \gls{FPN} and the \gls{TN}.
-    The non-uniformity responses of the pixel in a sub-array is responsible for the \gls{FPN} and is regarded as an offset or pedestal, which is subtracted from the pixel response to reduce the impact of this noise.
+    An important figure of merits is the effective noise equivalent for one pixel.
+    Many factors are driving this noise value and the different kind of noise is divided into two categories: the \gls{FPN} and the \gls{TN}.
+    The non-uniformity responses of the pixel in a sub-array is responsible for the \gls{FPN} and is regarded as an offset between the pixel pedestals, which is subtracted from the pixel response to reduce the impact of this noise.
     The \gls{TN} has different origins, as the shot noise, the pink noise or the thermal noise.
     The different operational phases to read the signal are contributing to the noise.
     
@@ -512,7 +524,7 @@
     It is dependent on the temperature and the diode's capacitance.
     
     The second one is the noise during integration and is caused by statistical fluctuations of the leakage current (shot noise).
-    Faster is the integration time, slower is the shot noise contribution.
+    Faster is the integration time, smaller is the shot noise contribution.
     
     Finally, the third one arises from the readout, while the column switch and the source follower capacitors are working.
     This noise depends on the contribution of each capacitor.
@@ -528,7 +540,7 @@
     \begin{figure}
       \centering
       \includegraphics[width=0.8\textwidth]{Pictures/vxd/MIMOSA26_chip26_HR15_20deg}
-      \caption{Plots representing the efficiency, the fake hit rate per pixel and the spatial resolution as a function of the discriminator threshold.}
+      \caption{Plots representing the efficiency, the fake hit rate per pixel and the spatial resolution as a function of the discriminator threshold. This results were obtained with minimum ionizing particles (pions of $120~\rm{GeV}$).}
       \label{fig:mi26Perf}
     \end{figure}
 
@@ -537,7 +549,7 @@
     It is fabricated in the AMS $0.35~\rm{\mu m}$ technology, and has a matrix containing approximately $6.6 \times 10^5$ pixels, distributed in $1152$ columns and $576$ rows.
     The pixel pitch is $18.4~\rm{\mu m}$ and the sensitive area represents $21.2 \times 10.6~\rm{cm}^2$.
     The readout of the matrix is ensured by a rolling-shutter working at $80~\rm{MHz}$ frequency, hence the integration time is $115.2~\rm{\mu s}$.
-    The signal produces by the charge collection inside the pixel is firstly amplified.
+    The signal produce by the charge collection inside the pixel is firstly amplified.
     Then, the \gls{CDS} technique is used to subtract successive frames before to send the signal at the bottom of the pixel array, where the signal processing circuitry is placed.
     Analog to digital conversion is done, coupled to a second double sampling, in order to reduce the \gls{FPN}.
     The output of the discriminators is then connected to a zero suppression logic, in which an output memory is duplicated to ensure a continuous readout.
@@ -565,7 +577,7 @@
     \caption{Block-diagram and a picture of the MIMOSA-26}\label{fig:Mi26}
     \end{figure}    
 
-    The PICSEL group has then developed digital output sensors for the pixel vertex detector at the START experiment at Brookhaven National Laboratory \cite{1748-0221-7-01-C01102}\cite{1748-0221-10-03-C03026}.
+    The PICSEL group has then developed digital output sensors for the pixel vertex detector at the STAR experiment at Brookhaven National Laboratory \cite{1748-0221-7-01-C01102}\cite{1748-0221-10-03-C03026}.
     Figure~\ref{fig:Mi28} is showing a half-section of the STAR vertex detector (figure~\ref{fig:vxdSTAR}) and a \gls{MIMOSA}-28 bounded on a PCB (figure~\ref{fig:ultimate}).
     They are based on the architecture of \gls{MIMOSA}-26 with some modifications.
     The matrix contains 960 columns and 928 rows for a pitch of $20.7 \times 20.7~\rm{\mu m}^2$.
