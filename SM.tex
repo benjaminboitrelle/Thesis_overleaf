@@ -165,7 +165,7 @@
     The gauge symmetry group associated to the strong interaction is $\rm{SU}_{\rm{C}}(3)$.
     The subscript $C$ means that only the particles that have a color charge are interacting via the strong interaction.
 
-    The gauge theory is invariant under a continuous set of local transformation.
+    The gauge theory is invariant under a continuous set of local transformations.
     Taking the gauge symmetries and the least action into account, physicists were able to set up equations that describe the dynamic of the interactions by a Lagrangian.
     The steps to build Lagrangian for the three forces and the unification of the \gls{EM} and weak interactions are going to be presented. 
 
@@ -361,7 +361,7 @@
     Finally, the \gls{QCD} Lagrangian is given by:
 
     \begin{equation}
-      \mathcal{L} = \sum_{i=1}^6  \bar{q_i} \left(i \gamma^{\mu}D_{\mu} -m_i \right)q_i - \frac{1}{4} G_{\mu \nu}^{a} G_{a}^{\mu \nu}
+      \mathcal{L} = \sum_{i=1}^6  \bar{q_i} \left(i \gamma^{\mu}D_{\mu} -m_i \right)q_i - \frac{1}{4} G_{\mu \nu}^{a} G_{a}^{\mu \nu}.
     \end{equation}
     
     %\section{The Glashow-Weinberg-Salam model}
@@ -637,11 +637,10 @@
     
       \subsubsection{Hierarchy problem}
 
-      The hierarchy problem refers to two main energy scales problem of the \gls{SM}.
 
+      The hierarchy problem refers to two main energy scales problem of the \gls{SM}.
       First of all, the difference between the energy scale of the \gls{SM} and the Planck scale is of seventeen orders of magnitude.
       No "intermediate" physics has been found between the two scales.
-
       A second problem occurs while considering the Higgs boson mass.
       The \gls{SM} does not predict its mass, but it sets some theoretical bounds with respect to $\Lambda$, the energy scale at which the \gls{SM} is not valid anymore.
       The theoretical Higgs boson mass is higher than what it should be compared to the EW scale.
@@ -661,7 +660,7 @@
       Nevertheless at the end of the year 1990, the Super Kamiokande experiment had surprising results \cite{Super-Kamiokande-Oscillation}.
       The measured flux of solar and atmosphere neutrons was lower than expected.
       The result was interpreted by an oscillation of neutrinos between the three leptonic flavors.
-      However, the oscillation is possible only if the neutrino has a mass.
+      However, the oscillation is possible only if the neutrino has a mass and if the leptonic number is violated \cite{Dib}.
       That phenomenon could be considered as a proof of physics beyond the \gls{SM}.
 
       \subsubsection{Matter-antimatter asymmetry}
@@ -689,10 +688,15 @@
 
     \subsection{Theories beyond the Standard Model}
 
+      Several theories try to complete the \gls{SM}. 
+      They do not try to solve completely all the problem enumerated above, but they focus on either a specific problem, either on adding new degrees of freedom.
+      This section presents the different problems that can be solved with these theories beyond the \gls{SM}.
+
       \subsubsection{Supersymmetry}
     
-      The \gls{SUSY} is a \gls{QFT}, that relates the elementary fermions known to corresponding bosons, called sfermions and the bosons to corresponding fermions, called sbosons \cite{Signer2009}.
+      The \gls{SUSY} is a \gls{QFT}, that relates the elementary fermions known to corresponding new bosons, called sfermions and the bosons to corresponding new fermions, called sbosons \cite{Signer2009}.
       The new particles introduced are called super-partners.
+      Table~\ref{tab:SUSY} summarises the super-partners associated to the \gls{SM} particles for the exact \gls{SUSY} and he broken \gls{SUSY}.
       They have the same mass, the same quantum numbers but the spin is differing by a half factor.
       \gls{SUSY} is a broken symmetry. 
       This will allow the super-particles to acquire very high masses.
@@ -702,8 +706,37 @@
       It would be able to provide a framework for the unification of the three gauge interactions at a GUT scale.
       The lightest super-particle is a good candidate for the Dark Matter.
 
-      Despite it will answer many questions from the \gls{SM}, there is a lack of understanding why \gls{SUSY} is a broken symmetry.
+      Despite it will answer many questions from the \gls{SM}, the \gls{SUSY} breaking mechanism is not clearly identified and there are many possible ways to implement \gls{SUSY}.
       
+      \begin{table}[!h]
+        \centering
+        \begin{tabular}{c c c c c}
+        \hline %----------------------------
+        & \multicolumn{2}{ c }{Exact SUSY} & \multicolumn{2}{ c }{Broken SUSY} \tabularnewline
+        \hline %----------------------------
+        Particle & \multicolumn{2}{ c }{Super-partner} & \multicolumn{2}{ c }{Corresponding physics} \tabularnewline
+        & Symbol & Name & Symbol & Name \tabularnewline
+        \hline %----------------------------
+        \hline %----------------------------
+        $q$ & $\widetilde{q}_R,~\widetilde{q}_L$ & squarks & $\widetilde{q}_1,~\widetilde{q}_2$ & squarks \tabularnewline
+        $l$ & $\widetilde{l}_R,~\widetilde{l}_L$ & sleptons & $\widetilde{l}_1,~\widetilde{l}_2$ & squarks \tabularnewline
+        $\nu$ & $\widetilde{\nu}$ & sneutrino & $\widetilde{\nu}$ & sneutrino \tabularnewline
+        $g$ & $\widetilde{g}$ & sgluino & $\widetilde{g}$ & sgluino \tabularnewline
+        \hline %----------------------------
+        $W^{\pm}$ & $\widetilde{W}^{\pm}$ & wino & \multirow{3}*{$\widetilde{\chi}^{\pm}_{1,2}$} & \multirow{3}*{charginos} \tabularnewline
+        $H^{+}_{1}$ & $\widetilde{H}^{+}_{1}$ & higgsino & \tabularnewline
+        $H^{-}_{2}$ & $\widetilde{H}^{-}_{2}$ & higgsino & \tabularnewline
+        \hline %----------------------------
+        $\gamma$ & $\widetilde{\gamma}$ & photino & \multirow{4}*{$\widetilde{\chi}^{0}_{1,2,3,4}$} & \multirow{4}*{neutralinos} \tabularnewline
+        $Z$ & $\widetilde{Z}$ & zino & \tabularnewline
+        $H^{0}_1$ & $\widetilde{H}^{0}_{1}$ & higgsino & \tabularnewline
+        $H^{0}_2$ & $\widetilde{H}^{0}_{2}$ & higgsino & \tabularnewline
+        \hline %----------------------------
+        \end{tabular} 
+        \caption{List of particles and the SUSY super-partners associated. The gauge fields are described before and after broken SUSY.}
+        \label{tab:SUSY}
+      \end{table}
+
       \subsubsection{Grand unification theory}
       
       After the success of the electroweak unification, the next step is to include the strong interaction to build the \gls{GUT}, an extension of the \gls{SM}.

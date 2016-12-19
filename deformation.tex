@@ -1,7 +1,7 @@
 \chapter{Deformation studies of a ladder under the test beam}
 \label{chap:deformation}
 
-  The first full-scale prototype which embeds twelve sensors glued on a copper flex-cable and a 8 \% density \gls{SiC} foam was tested in November 2011 at CERN-SPS facility with a pions beam of $120~\rm{GeV}$.
+  The first full-scale prototype which embeds twelve sensors glued on a copper flex-cable and a 8 \% density \gls{SiC} foam was tested in November 2011 at \gls{CERN}-\gls{SPS} facility with a pions beam of $120~\rm{GeV}$.
   The motivations to perform such a test in real conditions are first, to make sure that the ladder is working properly.
   Secondly, to verify the response homogeneity of each sensor.
   Finally, it has to prove the benefits of a double sided measurement.
@@ -18,7 +18,7 @@
 
     \subsection{Test beam facility and beam test set-up}
 
-    The test beam was performed at CERN-SPS in the North hall on the H6 beam line \cite{SPS}.
+    The test beam was performed at \gls{CERN}-\gls{SPS} in the North hall on the H6 beam line \cite{SPS}.
     Negative pions with an energy of $120~\rm{GeV}$ were used.
     The spill structure was $9.6~\rm{s}$ with a dead time of $45.6~\rm{s}$. 
     The bench set-up is composed of a telescope equipped with four standard MIMOSA-26 sensors, thinned down to $120~\rm{\mu m}$ and used as reference planes.
@@ -61,7 +61,7 @@
     The middle of the foam is at equal distance from both inner telescope planes.
     For the second configuration, as shown on figure~\ref{fig:tilt36}, the distance between the telescope planes are the same, but the \gls{DUT} is tilted between $28$ and $40^{\degree}$ along the $y$-axis.
     Runs with a larger angle ($60^{\degree}$) were done.
-    Due to the PLUME box's size, the cabling for the acquisition, the air cooling system and the design of the telescope stage, limiting the spacing between the two arms, the \gls{DUT} was placed behind the two arms, as presented on figure~\ref{fig:tilt60}.
+    Due to the \gls{PLUME} box's size, the cabling for the acquisition, the air cooling system and the design of the telescope stage, limiting the spacing between the two arms, the \gls{DUT} was placed behind the two arms, as presented on figure~\ref{fig:tilt60}.
     For both configurations, different parameters were modified.
     The thresholds were set to $5$ and $6~\rm{mV}$, different sensors were aimed and the air flow speed was set to $3~\rm{m.s}^{-1}$ and $6~\rm{m.s}^{-1}$.
 
@@ -93,7 +93,7 @@
       \label{fig:tilt}
     \end{figure}   
 
-    The analysis and the results shown in the following sections were performed with \gls{TAF}, the analysis software developed by the IPHC and presented in chapter~\ref{chap:labTests}.
+    The analysis and the results shown in the following sections were performed with \gls{TAF}, the analysis software developed by the \gls{IPHC} and presented in chapter~\ref{chap:labTests}.
 
   \section{Spatial resolution studies}
    
@@ -363,7 +363,7 @@
       Naturally, without any mechanical structure, the sensors tend to be very flexible and not self-supporting.
       Nevertheless, the gluing procedure to the flex-cable and the \gls{SiC} foam induces permanent deformations of the surface that can not be flattened.
       Also, the foam has an open-cell structure with small bumps and the glue spots might be more or less important on some positions.
-      The Bristol group has performed a mechanical survey on a mechanical prototype, which has non-functioning MIMOSA-20 sensors.
+      The Bristol group has performed a mechanical survey on a mechanical prototype, which has non-functioning \gls{MIMOSA}-20 sensors.
       The chips were thinned and attached to the standard flex-circuits.
       The measurements done with an optical survey equipment have revealed a peak-to-peak flatness of the order of the $100~\rm{\mu m}$ on both sides.
       Figure~\ref{fig:mechanicalSurvey} shows the result of this survey.
@@ -419,7 +419,7 @@
       As this method is done manually and is time-consuming, an automatic method has to be implemented.
       A similar effect was observed in the CMS tracker during the alignment procedure with cosmic rays and a method was developed to compensate the deformations \cite{CMSalignment}. 
       They have used modified two-dimensions Legendre polynomials to parametrise the sensors' deformations and therefore, they were able to minimise the effect of the deviations during the alignment procedure of the tracker.
-      The method implemented in TAF was inspired by the work which was done by the CMS collaboration.
+      The method implemented in \gls{TAF} was inspired by the work which was done by the CMS collaboration.
       Nonetheless, contrary to the CMS tracker, the tilt was produced only in one direction.
       Hence, the two-dimensions Legendre polynomials can not be used to parametrise the sensor's deformations, but the problem is still the same.
       Tracks with a large angle of incidence are more sensitive to the exact position of the plane in three dimensions, so the coordinates of the hits have to be exactly known.
@@ -477,7 +477,7 @@
           \hline %----------------------------
            & \multicolumn{2}{ c }{Front plane} & \multicolumn{2}{ c }{Back plane} \tabularnewline
           \hline %----------------------------
-          Order & $\chi^2 \rm{/NDF}$ & $\sigma_{U}^{\rm{front}}$ & $\chi^2 \text{/NDF}$ & $\sigma_{U}^{\rm{back}}$ \tabularnewline
+          Order & $\chi^2 \rm{/NDF}$ & $\sigma_{U}^{\rm{front}}$ & $\chi^2 \rm{/NDF}$ & $\sigma_{U}^{\rm{back}}$ \tabularnewline
           \hline %----------------------------
           \hline %----------------------------
           3 & 21683.9/84 & 6.51 & 35575.2/72 & 13.28 \tabularnewline
@@ -785,13 +785,13 @@
 
   \section{Conclusions}
 
-  Along this chapter, the test beam campaign done in November 2011 at CERN was discussed. 
+  Along this chapter, the test beam campaign done in November 2011 at \gls{CERN} was discussed. 
   The results were focused on the alignment procedure, as well as the performances of the ladder in normal and tilted positions.
   The runs in tilted position were challenging to align due to some deviations between the track-hit residual and the actual hit position on the plane.
   This has the effect of increasing the spatial residual measured.
   A higher pointing resolution is expected for bending tracks but in a smaller proportion.
   An algorithm using Legendre polynomials to describe the sensor's shape was discussed.
-  The results obtained for small angles are close to the value expected for a single MIMOSA-26 sensor in normal incidence. 
+  The results obtained for small angles are close to the value expected for a single \gls{MIMOSA}-26 sensor in normal incidence. 
   Nevertheless, the pointing resolution depends strongly on the incidence angle.
   For $36^{\degree}$ and higher, the correction is less efficient to achieve the normal performances.
   It might also be possible that the heating is increasing the deformation and that the cooling system could induce some vibrations which induce some deformation too.
@@ -805,5 +805,5 @@
 
   The first results obtained are encouraging the mechanical structure.
   Nevertheless, the material budget of the ladder is estimated theoretically.
-  The next chapter will introduce a test beam performed at DESY in 2016 and will specifically talk about the measurement of the radiation length for a PLUME-V1 prototype.
+  The next chapter will introduce a test beam performed at \gls{DESY} in 2016 and will specifically talk about the measurement of the radiation length for a \gls{PLUME}-V1 prototype.
 

@@ -1,23 +1,57 @@
 %\chapter*{Conclusions}
 \chapter*{Conclusions\markboth{CONCLUSIONS}{CONCLUSIONS}} \addcontentsline{toc}{chapter}{\protect\numberline{}Conclusions}
 
-This thesis was performed in the context of the \gls{ILC}.
-This work addresses is mainly focused on the detector development for \gls{ILD} and gives different steps from the construction of a double-sided vertex detector to the test in real conditions.
+Over the last years, the scientific community has shown its conviction to build the future high-energy physics experiments, the \gls{ILC}.
+With the technical design report~\cite{Baer2013}, the physicists have confirmed that the community is ready to build the future linear collider.
+A governmental decision is eagerly awaited to start the project.
+The precision on the measurements targeted will help fully characterising the electroweak symmetry breaking, as well as looking for events compatible with physics beyond the standard model.
+The work performed during this thesis was specifically focused on the feasibility to construct double-sided vertex detector that has a low material budget (below $0.35~\%~\rm{X_{0}}$) and a spatial resolution below $\sim 3~\rm{\mu m}$.
 
+This work is introduced with a physics analysis of simulated data of the \gls{ILC} at a centre-of-mass energy $\sqrt{s} = 350~\rm{GeV}$.
+The channel studied is the one leading to a $\nu \overline{\nu} H$ final state, with the Higgs boson decaying into pair of quarks or gluons.
+To reduce the contribution of events leading to the same detector response or a similar event signature, several hard cuts depending on different parameters are applied. 
+After eight cuts, the background events are three orders smaller but this method implies a lose of half of the signal.
+Due to the restricted time to conduct this work, a different selection technique could not be used.
+The work performed by Felix \textsc{Mueller} has nevertheless, shown that a TMVA solution will keep the signal significant while reducing the background contribution \cite{Mueller}.
+This analysis has to be completed with a study of the Higgs boson decaying into a pair of charmed and anti-charmed quarks.
+The ability of measuring the coupling of the Higgs boson to the $c$ quarks is needed. 
+This measurement is challenging to perform at the \gls{LHC} due to the \gls{QCD} background. 
+Moreover, the life-time of the $b$ and $c$ quarks are similar, leading to a close vertex decay. 
+Thus, the vertex detector has to be optimised to separate this two quarks.
 
-Although the physics studied at the \gls{ILC} is presented, the thesis focuses on the detector development and presents different steps of this development.
+The main topic of this thesis is the study of the \gls{PLUME} vertex detector, a double-sided ladder embedding in total 12 \gls{CMOS} sensors on each side of a mechanical structure.
+Since the first prototype developed in 2009, the collaboration has shown its capability to build fully functional \gls{PLUME} ladders.
+The work done during this three years was split into checking the basic assessments of individual \gls{PLUME} module before assembling them into ladders, studying the impact of the mechanical deformations on the pointing resolution and preparing a protocol to measure the radiation length of complete ladders.
 
-Firstly, the physics program of the \gls{ILC} was introduced and a physics analysis was presented.
+The validation and characterisation done in laboratory have shown that the combination of six sensors running in the same time does not degrade the performances of the \gls{MIMOSA}-26.
 
+During the data analysis of the test beam performed in 2011 at \gls{CERN}, runs where the ladder was tilted with respect to the track direction have shown deviation on the pointing resolution, as well as a correlation between the position of the hit on the sensor and the track residual measured.
+These deviations are coming from mechanical deformation induced by the mounting procedure of a \gls{PLUME} ladder.
+An algorithm to reduce the impact of these deformations have been implemented and has shown a good improvement on the pointing resolution measured for titled tracks.
+A second study during this data analysis has permitted to present the benefits of a double-sided measurement. 
+The pointing resolution has been improve by a factor $\sim 1/\sqrt{2}$ and the creation of mini-vectors give access to a new parameter, the angular resolution.
 
-Secondly, the history of the \gls{PLUME} development was presented.
-The basic assessments were explained.
+Finally, the last work performed during the thesis was to set-up a test beam with a lower beam energy (up to $5~\rm{GeV}$ electrons) to measure the radiation length of the first fully functional prototype.
+After analysing the data, the radiation length measured is $\left. \frac{x}{X_0} \right|_{\rm{measured}} \simeq 0.47 \pm 0.02~\%~\rm{X_0}$, confirming the theoretical calculation of $\left. \frac{x}{X_0}\right|_{\rm{theoretical}} \simeq 0.498~~\%~\rm{X_0}$.
 
-Thirdly, the study of the mechanical deformation 
+Although the collaboration has shown their expertise to build light mechanical structures, more tests and optimisations have to be done.
+\gls{MIMOSA}-26 sensors do not have a dead time, but they have a slow integration time ($115.2~\rm{\mu s}$).
+They could be used anyway for the \gls{ILC} by benefiting of the long dead time between two bunch crossings to readout the data. 
+Nevertheless, this sensors are not suited for a power pulsing concept.
+As a reminder, the principle of the power pulsing is to reduce the consumption of the sensor during the $200~\rm{ms}$ dead time. 
+Nevertheless, a power-pulsing study on a single \gls{MIMOSA}-26 sensor has been done and the results have shown that the nominal supply voltage of the \gls{MIMOSA}-26 can be lowered from $3.3~\rm{V}$ to $1.85~\rm{V}$ without losing the sensor's registers. 
+The fake hit rate measured was close to the one obtained in  normal conditions after the sensor reaches a stable operation.
+Moreover, the power consumption was reduced by a factor 6.3 \cite{Kuprash2013}. 
 
-Finally, the radiation length measurement
+A complete power-pulsing study of the whole ladder in the lab has to be done in order to make sure that the sensors are still behaving correctly.
+If the first results are comforting, the power-pulsing will be tested under real conditions with a high magnetic field.
+The impact of the Lorentz forces due to the coupling of the power-pulsing and the magnetic field is going to be studied, especially is this structure will induce unwanted deformations or vibrations. 
 
-
+The collaboration is considering to embed the sensors directly inside the multi-layer micro-cable \cite{Baudot2012}.
+The chips are glued on the first polyimide substrate layer, then the metal layer is deposited on top of it and the metal traces are directly connected to the chips pads.
+Then an insulator is added to the module.
+The advantages of this technique are, firstly, the direct connection of metal traces to the pads that avoid wire-bonding and can reduce, at the same time, the width of the module.
+And secondly, this structure has the advantage to apply the mechanical stress on the polymer wrapping, thus reducing it on the sensor.
 
 %Context: ILC
 %Topics: Higgs analysis
