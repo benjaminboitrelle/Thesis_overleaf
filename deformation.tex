@@ -2,11 +2,11 @@
 \label{chap:deformation}
 
   The first full-scale prototype which embeds twelve sensors glued on a copper flex-cable and a 8 \% density \gls{SiC} foam was tested in November 2011 at \gls{CERN}-\gls{SPS} facility with a pions beam of $120~\rm{GeV}$.
-  The motivations to perform such a test in real conditions are first, to make sure that the ladder is working properly.
+  The motivations to perform such a test in real conditions are first, to make sure that the individual sensor performances (detection efficiency, spatial resolution) are preserved on the ladder.
   Secondly, to verify the response homogeneity of each sensor.
   Finally, it has to prove the benefits of a double sided measurement.
   This chapter does not aim to present fully the test beam campaign and all the results but to focus on a specific study of the ladder's deformation observed during the alignment procedure.
-  More results about this test beam are presented in Loic \textsc{Cousin}'s thesis \cite{cousin}.
+  More results about this test beam are presented in Loic \textsc{Cousin}'s thesis~\cite{cousin} and also in Robert \textsc{Daniel}~\cite{maria}.
   This chapter will present the test beam facility, as well as the experimental set-up.
   The alignment procedure is explained and some results for the ladder positioned in a normal incidence, as well as the ladder tilted in one direction, are discussed.
   The second part of the chapter will focus on the deviation observed during the alignment and will discuss a method to overcome these deformations.
@@ -21,26 +21,27 @@
     The test beam was performed at \gls{CERN}-\gls{SPS} in the North hall on the H6 beam line \cite{SPS}.
     Negative pions with an energy of $120~\rm{GeV}$ were used.
     The spill structure was $9.6~\rm{s}$ with a dead time of $45.6~\rm{s}$. 
-    The bench set-up is composed of a telescope equipped with four standard MIMOSA-26 sensors, thinned down to $120~\rm{\mu m}$ and used as reference planes.
+    The bench set-up is composed of a telescope equipped with four standard \gls{MIMOSA}-26 sensors, thinned down to $120~\rm{\mu m}$ and used as reference planes.
     It is made of two arms and the distance between two sensors of the same arm is $5~\rm{mm}$.
     The reference planes are stabilised to a temperature of $15^{\degree}\rm{C}$ and a 8 sigma S/N threshold cut was applied.
     The \gls{PLUME} ladder is positioned between the two telescope arms for the tests.
     For the rest of the chapter, the ladder is called the \gls{DUT}.
-    The bench has also $7 \times 7$ scintillators used for triggering the data.
+    The bench has also $7 \times 7$ scintillators used for triggering the data when the spill arrives.
     Most of the runs were taken with a trigger frequency between $2$ and $8~\rm{kHz}$, except for two days where the frequency was oscillating between $1$ and $1.3~\rm{kHz}$.
-    The acquisition system is limited to eight inputs and four of them are used by the telescope.
+    The acquisition system is limited to eight inputs (one input per \gls{MIMOSA}-26 sensor) and four of them are used by the telescope.
     Thus, only four sensors of the \gls{DUT} were connected to the acquisition, two on each side.
-    The temperature of the \gls{DUT} was stabilised thanks to an air flow cooling system, provided by a fan.
+    The temperature of the \gls{DUT} was stabilised using an air flow cooling system, provided by a fan.
+    The air speed typically reaches few $\rm{m.s}^{-1}$.
 
     \subsection{Cartesian coordinate systems}
 
-    Although the sensors have their own ID to distinguish them during the analysis, the position of each plane has to be known exactly.
+    Although the sensors have their own ID to distinguish them during the analysis, the position of each plane has to be known at the micrometer level.
     Two Cartesian coordinate systems are then defined.
-    The first one is the global one and is determined by the position of each sensor of the telescope.
+    The first one is the global one and is determined by the position of each sensor of the telescope in the laboratory.
     The notation used for this coordinate system is $(x,y,z)$.
     The $x$-axis corresponds to the horizontal direction, the $y$-axis is the vertical one and the $z$-axis is along the beam direction.
-    The origin $(0,0,0)$ of the system is usually defined by the position of the first plane hit.
-    The second coordinate system is the local one and is determined by a single sensor.
+    The origin $(0,0,0)$ of the system is usually defined by the position of the first plane along the beam path.
+    The second coordinate system is the local one and is determined by the position of the pixels of a single sensor inside this sensor.
     To differentiate this reference system to the other one, the $(u,v,w)$ notation is used.
     The $u$-axis corresponds to the pixel rows, the $v$-axis is along the pixel columns and the $w$-axis is perpendicular to the matrix.
     The origin of the local system is the center of the pixel matrix.
@@ -49,19 +50,19 @@
     \begin{figure}[!h]
       \centering
       \includegraphics[width = 0.7\textwidth]{Pictures/deformation/lab_frame.png}
-      \caption{Drawing of the laboratory coordinates.}
+      \caption{Drawing of the laboratory coordinates. The $x$ and $z$-axes define the horizontal plane. If detector planes (reference or DUT) are not rotated, then $(u,v,w)$ directions match $(x,y,z)$ directions.}
       \label{fig:labCoordinates}
     \end{figure}
 
     \subsection{Measurements}
 
     The prototype validation was done under several conditions and with three different geometrical configurations.
-    On the first one presented on figure~\ref{fig:tbNormal}, the \gls{DUT} is parallel to the telescope planes and the beam is hitting the device in a normal incidence.
+    On the first one presented on figure~\ref{fig:tbNormal}, the \gls{DUT} is parallel to the telescope planes and the beam is impinging the device at normal incidence.
     The ladder is placed in between the two arms.
     The middle of the foam is at equal distance from both inner telescope planes.
-    For the second configuration, as shown on figure~\ref{fig:tilt36}, the distance between the telescope planes are the same, but the \gls{DUT} is tilted between $28$ and $40^{\degree}$ along the $y$-axis.
+    For the second configuration, as shown on figure~\ref{fig:tilt36}, the distances between the telescope planes are the same, but the \gls{DUT} is tilted between $28$ and $40^{\degree}$ around the $y$-axis.
     Runs with a larger angle ($60^{\degree}$) were done.
-    Due to the \gls{PLUME} box's size, the cabling for the acquisition, the air cooling system and the design of the telescope stage, limiting the spacing between the two arms, the \gls{DUT} was placed behind the two arms, as presented on figure~\ref{fig:tilt60}.
+    Due to the size of the variation elements, the \gls{PLUME} box, the cabling for the acquisition, the air cooling system and the design of the telescope stage, limiting the spacing between the two arms, the \gls{DUT} was placed behind the two arms, as presented on figure~\ref{fig:tilt60}.
     For both configurations, different parameters were modified.
     The thresholds were set to $5$ and $6~\rm{mV}$, different sensors were aimed and the air flow speed was set to $3~\rm{m.s}^{-1}$ and $6~\rm{m.s}^{-1}$.
 
@@ -97,10 +98,10 @@
 
   \section{Spatial resolution studies}
    
-    One of the measurements performed during the analysis is to determine the pointing resolution of the sensors on each side of the ladder.
+    One of the measurements performed during the analysis is to determine the spatial resolution of the sensors on each side of the ladder.
     As the sensors used are well-known, the performance of the ladder should be similar to the one expected.
-    Any deviations on the pointing resolution or the efficiency might point out an unexpected impact of the mechanical structure or the flex-cable design over the whole system.
-    The alignment steps to obtained the pointing resolution of the ladders are explained below for different run configurations. 
+    Any deviations on the resolution or the efficiency might point out an unexpected impact of the mechanical structure or the flex-cable design over the whole system.
+    The alignment steps to obtained the resolution of the ladders are explained below for different run configurations. 
 
     \subsection{Normal incidence track}
      
@@ -176,25 +177,25 @@
       \subsubsection{Alignment of the DUT}
 
       When the telescope alignment is done, the reference tracks reconstructed by the reference planes are used to align the \gls{DUT}.
-      Its $z$ position is fixed, nonetheless, two degrees of freedom are added to the three degrees defined above: the rotations along the $x$ and $y$-axes.
+      Its $z$ position is fixed, nonetheless, two degrees of freedom are added to the three degrees defined above: the rotations around the $x$ and $y$-axes.
       To assist the user in the alignment steps, several scatter plots are produced (see figure~\ref{fig:alignmentDUT}).
       For examples, figures~\ref{fig:alignUV} and~\ref{fig:alignVU} help to indicate a tilt in the $z$-direction, whereas figures~\ref{fig:alignUU} and~\ref{fig:alignVV} help to find shift and/or tilt in the respective $u$ and $v$-directions.
       Figures~\ref{fig:residualU} and~\ref{fig:residualV} show the residuals distribution in both direction for one sensor of the \gls{DUT}.
-      The width of these distributions, called spatial residual $\sigma_{\rm{res}}$, is approximately $4.1~\rm{m}$ and is a combination of the telescope resolution $\sigma_{\rm{tel}}$, the multiple scattering $\sigma_{\rm{M.S.}}$ and the pointing resolution or spatial resolution of the sensor $\sigma_{\rm{DUT}}$, as described in equation~\ref{eq:pointingResolution}.
+      The width of these distributions, called spatial residual $\sigma_{\rm{res}}$, is approximately $4.1~\rm{m}$ and is a combination of the telescope resolution $\sigma_{\rm{tel}}$, the multiple scattering $\sigma_{\rm{M.S.}}$ and the spatial resolution of the sensor $\sigma_{\rm{DUT}}$, as described in equation~\ref{eq:pointingResolution}.
       
       \begin{equation}
         \sigma_{\rm{res}}^2 = \sigma_{\rm{tel}}^2 + \sigma_{\rm{DUT}}^2 + \sigma_{\rm{M.S.}}^2.
         \label{eq:pointingResolution}
       \end{equation}
 
-      With $120~\rm{GeV}$ pions, the effects of the Coulomb multiple scattering are neglected, thus the pointing resolution of the sensor is:
+      With $120~\rm{GeV}$ pions, the effects of the Coulomb multiple scattering are neglected, thus the resolution of the sensor is:
 
       \begin{equation}
         \sigma_{\rm{DUT}} = \sqrt{\sigma_{\rm{res}}^2 - \sigma_{\rm{tel}}^2}.
       \end{equation}
 
-      For the configuration of the telescope used, the spatial resolution of the whole system measured is $\sigma_{\rm{tel}} \simeq 1.8~\rm{\mu m}$, thus the sensor studied here has a pointing resolution $\sigma_{\rm{DUT}} \simeq 3.7~\rm{\mu m}$ for a threshold of $6~\rm{mV}$.
-      This result is corroborating the pointing resolution of a single MIMOSA-26, as shown on figure~\ref{fig:mi26Perf} in chapter~\ref{chap:vxd}.
+      For the configuration of the telescope used, the spatial resolution of the whole system measured is $\sigma_{\rm{tel}} \simeq 1.8~\rm{\mu m}$, thus the sensor studied here has a resolution $\sigma_{\rm{DUT}} \simeq 3.7~\rm{\mu m}$ for a threshold of $6~\rm{mV}$.
+      This result is corroborating the resolution of a single MIMOSA-26, as shown on figure~\ref{fig:mi26Perf} in chapter~\ref{chap:vxd}.
 
       \begin{figure}[H]
         \centering
@@ -246,12 +247,12 @@
     \subsection{Ladder tilted in one direction}
     \label{subsec:deformation}
 
-      The performances of the \gls{DUT} are also studied for tilted tracks by rotating the ladder with respect to the beam axis along the $v$-direction.
+      The performances of the \gls{DUT} are also studied for tilted tracks by rotating the ladder with respect to the beam axis around the $v$-direction.
       Three different angles were tested ($28^{\degree}$, $36^{\degree}$ and $60^{\degree}$), as well as different threshold cuts and air flow speed. 
       The results presented below are for a run with a $36^{\degree}$ tilt, a threshold sets to $5~\rm{mV}$ and an air flow speed of $3~\rm{m.s}^{-1}$.
       The same alignment procedure as presented in the subsection above is used, nevertheless, the alignment of the plane along the $u$-direction is more complicated than the other direction.
       The scatter plot in the $v$-direction for the front plane which is shown on figure~\ref{fig:scatterDVV_deformed} represents a good alignment and the spatial residual (see figure~\ref{fig:residualVDef}) is comparable to the one find for normal incidence tracks.
-      But, the scatter plot $\Delta u = f(u_{\rm{hit}})$ as presented on figure~\ref{fig:scatterDUU_deformed} shows a banana shape that can not be flatten with a traditional alignment procedure.
+      But, the scatter plot $\Delta u = f(u_{\rm{hit}})$ as presented on figure~\ref{fig:scatterDUU_deformed} shows a non-trivial distribution (dubbed banana shape) that can not be flatten with a traditional alignment procedure.
       Moreover, the spatial residual measured on figure~\ref{fig:residualUDef} is larger ($6.8~\rm{\mu m}$ instead of $\sim 4~\rm{\mu m}$ in the $v$-direction) and the distribution has a large tail on the positive values.
       Concerning the back plane, the deformation is also visible on figure~\ref{fig:scatterDUU_deformed_back} but have a different form.
       The spatial residual measured for this plane is more than two times larger than the other side ($14.1~\rm{\mu m}$) as it is depicted on figure~\ref{fig:residualUDef_back}.
@@ -360,12 +361,12 @@
 
       The deviations observed are mainly caused by the characteristics of the ladder.
       Ultra-thin sensors with a thickness of approximately $50~\rm{\mu m}$ are used.
-      Naturally, without any mechanical structure, the sensors tend to be very flexible and not self-supporting.
+      Naturally, without any external mechanical constraint, the internal sensor stress tend to bend it.
       Nevertheless, the gluing procedure to the flex-cable and the \gls{SiC} foam induces permanent deformations of the surface that can not be flattened.
       Also, the foam has an open-cell structure with small bumps and the glue spots might be more or less important on some positions.
       The Bristol group has performed a mechanical survey on a mechanical prototype, which has non-functioning \gls{MIMOSA}-20 sensors.
       The chips were thinned and attached to the standard flex-circuits.
-      The measurements done with an optical survey equipment have revealed a peak-to-peak flatness of the order of the $100~\rm{\mu m}$ on both sides.
+      The measurements done with a laser interferometry survey equipment have revealed a peak-to-peak flatness of the order of the $100~\rm{\mu m}$ on both sides.
       Figure~\ref{fig:mechanicalSurvey} shows the result of this survey.
       The overall shape is due to the intrinsic shape of the foam.
        
@@ -383,7 +384,7 @@
           \includegraphics[width = 1.2\textwidth]{Pictures/deformation/surveyResultsB.pdf}
         \end{subfigure}
 
-        \caption{Results of the mechanical survey of each side of the PLUME mechanical prototype.}
+        \caption{Results of the mechanical survey of each side of a dummy PLUME mechanical prototype. The $x$ coordinate used in this plot is along the ladder length, while $y$ is along its width.}
         \label{fig:mechanicalSurvey}
       \end{figure}
 
@@ -415,9 +416,9 @@
       \subsubsection{Algorithm to estimate the deformations}
 
       The sensor deformations were already studied in Strasbourg by Robert Daniel \textsc{Maria}.
-      The sensor was mapped for the alignment in order to remove the contribution of the deviation on the residual \cite{maria}.
+      One part of the sensor was mapped for the alignment in order to remove successfully the contribution of the deviation on the residual \cite{maria}.
       As this method is done manually and is time-consuming, an automatic method has to be implemented.
-      A similar effect was observed in the CMS tracker during the alignment procedure with cosmic rays and a method was developed to compensate the deformations \cite{CMSalignment}. 
+      A similar effect but over a structure composed of several modules was observed in the CMS tracker during the alignment procedure with cosmic rays and a method was developed to compensate the deformations \cite{CMSalignment}. 
       They have used modified two-dimensions Legendre polynomials to parametrise the sensors' deformations and therefore, they were able to minimise the effect of the deviations during the alignment procedure of the tracker.
       The method implemented in \gls{TAF} was inspired by the work which was done by the CMS collaboration.
       Nonetheless, contrary to the CMS tracker, the tilt was produced only in one direction.
@@ -425,7 +426,7 @@
       Tracks with a large angle of incidence are more sensitive to the exact position of the plane in three dimensions, so the coordinates of the hits have to be exactly known.
       The deviations observed on figure~\ref{fig:scatterDUU_deformed} provide an information on the behaviour of the deformation, that is extrapolated to the position of the plane on the $w$-direction.
       Thus, the hit position is calculated again with respect to the sensor's surface shape extrapolated.
-      This shape is guessed from the track-hit residuals as a function of the hit position in the same direction.
+      This shape is estimated from the track-hit residuals as a function of the hit position in the same direction.
       A Legendre function is used to fit the curve and the coefficient given by the fit steps are used to calculate the deformation of the plane.
       The equation~\ref{eq:polynomials} represents the extrapolated shape of the plane in the $w$-direction calculated with respect to the expected hit position $u_{r}$, which is normalised to the sensor width.
 
@@ -459,7 +460,8 @@
           \label{fig:profileFitted_back}
         \end{subfigure}
         \caption{Profile of the scatter plot showing the track-hit residual in the $u$-direction as a function of the hit position on the plane for the same direction: \ref{fig:profileFitted_front} is the profile of the front plane and \ref{fig:profileFitted_back} is the profile of the back plane.
-        Both profiles were fitted with a sum of Legendre polynomials up to the eleventh order.} 
+        Both profiles were fitted with a sum of Legendre polynomials up to the eleventh order. 
+        p1 to p10 are the coefficients ($\omega_k$ of equation~\ref{eq:polynomials}) of the polynomials.} 
         \label{fig:profileFitted}
       \end{figure}
 
@@ -480,15 +482,15 @@
           Order & $\chi^2 \rm{/NDF}$ & $\sigma_{U}^{\rm{front}}$ & $\chi^2 \rm{/NDF}$ & $\sigma_{U}^{\rm{back}}$ \tabularnewline
           \hline %----------------------------
           \hline %----------------------------
-          3 & 21683.9/84 & 6.51 & 35575.2/72 & 13.28 \tabularnewline
-          4 & 1449.91/83 & 6.18 & 25129.8/71 & 12.38 \tabularnewline
-          5 & 1449.79/82 & 6.00 & 1718.81/70 & 6.92 \tabularnewline
-          6 & 653.738/81 & 5.92 & 1480.55/69 & 6.82 \tabularnewline
-          7 & 304.206/80 & 5.92 & 634.696/68 & 6.41 \tabularnewline
-          8 & 288.376/79 & 5.94 & 269.296/67 & 6.23 \tabularnewline
-          9 & 225.376/78 & 5.90 & 250.565/66 & 6.24 \tabularnewline
-          10 & 225.353/77 & 5.91 & 152.236/65 & 6.16 \tabularnewline
-          11 & 158.053/76 & 5.91 & 131.727/64 & 6.18 \tabularnewline
+          3 & 21684/84 & 6.5 & 35575/72 & 13.3 \tabularnewline
+          4 & 1450/83 & 6.2 & 25130/71 & 12.4 \tabularnewline
+          5 & 1450/82 & 6.0 & 1719/70 & 6.9 \tabularnewline
+          6 & 654/81 & 5.9 & 1481/69 & 6.8 \tabularnewline
+          7 & 304/80 & 5.9 & 635/68 & 6.4 \tabularnewline
+          8 & 288/79 & 5.9 & 269/67 & 6.2 \tabularnewline
+          9 & 225/78 & 5.9 & 251/66 & 6.2 \tabularnewline
+          10 & 225/77 & 5.9 & 152/65 & 6.2 \tabularnewline
+          11 & 158/76 & 5.9 & 132/64 & 6.2 \tabularnewline
           \hline %----------------------------
          \end{tabular}
          \caption{Fit results of the scatter plot $\Delta U = f(U)$ for Legendre polynomials order and the residual obtained on each side of the PLUME ladder.}
@@ -498,14 +500,14 @@
       A second-order Legendre function does not fit well the profile of $\Delta U=f(u_{\rm{hit}})$ and does not provide a good improvement on the compensation of deformation.
       The best improvement was achieved on both sides from the $8^{th}$ order Legendre polynomials to higher values.
       Although the $\chi^2 \text{/NDF}$ is better for higher order, the width of the residual distribution is of the same order ($\sigma_{\rm{front}}\simeq 5.9~\rm{\mu m}$ and $\sigma_{\rm{back}} \simeq 6.2~\rm{\mu m}$).
-      Figure~\ref{fig:profileFitted_front} depicts the fit results for the front plane ans figure~\ref{fig:profileFitted_back} is for the back plane.
+      Figure~\ref{fig:profileFitted_front} depicts the fit results for the front plane and figure~\ref{fig:profileFitted_back} is for the back plane.
       For both figures, the deviation is not well fitted for the negative values.
       The dispersion of the residuals is wider. 
 
       For example, using a $11^{th}$ order Legendre polynomials has improved the spatial residual for both planes. 
-      Instead of $\sigma_{u} \simeq 6.8~\rm{\mu m}$ for the front plane, the spatial residual is $\sigma_{u} \simeq 5.9~\rm{\mu m}$, namely an improvement of $13.2~\%$ of the measured spatial residual and achieving a pointing resolution of $5.6~\rm{\mu m}$ for a tilt at $36^{\degree}$.
+      Instead of $\sigma_{u} \simeq 6.8~\rm{\mu m}$ for the front plane, the spatial residual is $\sigma_{u} \simeq 5.9~\rm{\mu m}$, namely an improvement of $13.2~\%$ of the measured spatial residual and achieving a resolution of $5.6~\rm{\mu m}$ for a tilt at $36^{\degree}$.
       Concerning the back plane, the spatial residual measured was $14.1~\rm{\mu m}$ and after the correction it achieves $6.2~\rm{\mu m}$, namely an improvement of $56.0~\%$ on the measured spatial residual.
-      The point resolution of the plane is then $5.9~\rm{\mu m}$
+      The pointing resolution of the plane is then $5.9~\rm{\mu m}$
       As it can be seen on figure~\ref{fig:scatterDUU_corrected_front}, the deviations are reduced. 
       Nevertheless, the edges of the plot are less corrected.
       This is due to the fact that the length of the sensor used to parametrise the Legendre function is a bit different to the real size of the sensor due to the deformation.
@@ -581,11 +583,11 @@
       \end{figure}
 
       This method was applied for different angles and the results are summarised in table~\ref{tab:correctionOfDeformation}. 
-      The correction based on Legendre polynomials shows good results for the $28^{\degree}$ angle with a pointing resolution of $4.6~\rm{\mu m}$.
+      The correction based on Legendre polynomials shows good results for the $28^{\degree}$ angle with a resolution of $4.6~\rm{\mu m}$.
       Although for larger angles the precision is not expecting to reach the normal value, the results obtained are less positive.
       For the large angle ($60^{\degree}$), the position of the \gls{DUT} on the outside of the telescope arms does not provide a good telescope resolution ($\sigma_{\rm{tel}} = 18.8~\rm{\mu m}$).
-      The pointing resolution achieved for the front and back planes are respectively $10.8~\rm{\mu m}$ and $17.7~\rm{\mu m}$.
-      The sensitivity of the reconstruction to large tracks angle, as well as a unadapted telescope configuration impact severely the spatial resolution of the sensors.
+      The resolution achieved for the front and back planes are respectively $10.8~\rm{\mu m}$ and $17.7~\rm{\mu m}$.
+      The sensitivity of the reconstruction to large tracks angle, as well as a unadapted telescope configuration impact severely the estimation of the spatial resolution of the sensors.
 
       \begin{table}[!h]
         \centering
@@ -607,8 +609,9 @@
         \caption{Alignment results for different angles before and after using the correction based on Legendre polynomials.}
         \label{tab:correctionOfDeformation}
       \end{table}
+      \todo{Specify if telescope res or not}
 
-      A hypothesis on the deformation of the origin might come from heating or the cooling system that induces vibration.
+      A hypothesis on the origin of the deformation might come from heating or the cooling system that induces vibration.
       Although few runs were performed with a different air flow speed, the impact of the cooling system and the heat was not planned for this test beam.
       Thus, the results are not relevant enough to conclude for any vibration or the heat that tends to deform more the surface.
     
@@ -616,7 +619,8 @@
   
   As two modules are sharing the same mechanical structure, the information provided by each side can be combined together.
   A mini-vector is created by connecting two hits on each side of the ladder for the same event.
-  This combination gives access to a new information compared to a single sensor: the angular resolution.
+  This combination gives access to a new information compared to a single sensor: the angle of the incoming particle.
+  In this section, the resolution on this angle is studied.
 
     \subsection{Spatial resolution with mini-vectors}
 
@@ -639,13 +643,13 @@
     \end{equation}
 
     Where $\sigma_{\rm{m}}$ is the resolution on the intermediate plane, $\sigma_{\rm{front}}$ and $\sigma_{\rm{back}}$ are the resolution of the two sides of the \gls{DUT}, $\sigma_{\rm{tel}}$ the resolution of the telescope and $(d_{\rm{front}} - d_{\rm{back}})$ the distance between the front and back planes and $d_{\rm{m}}^2$ the position of the intermediate plane.
-    For the plume ladder, the \gls{SiC} as a thickness of $2~\rm{mm}$ and the intermediate plane is located in the middle, the equation~\ref{eq:resolutionMV} can be rewritten:
+    For the plume ladder, the \gls{SiC} has a thickness of $2~\rm{mm}$ and the intermediate plane is located in the middle, the equation~\ref{eq:resolutionMV} can be rewritten:
 
     \begin{equation}
       \sigma_{\rm{m}}^2 = \frac{\sigma_{\rm{front}}^2 + \sigma_{\rm{back}}^2}{4} + \sigma_{\rm{tel}}^2.
     \end{equation}
 
-    Thus, if the resolution on both side of the telescope are similar with $\sigma_{\rm{front}} = \sigma_{\rm{back}} = \sigma$, the resolution of the mini-vector $\sigma_{\rm{res}}$ is then:
+    Thus, if the resolution on both side of the telescope are similar with $\sigma_{\rm{front}} = \sigma_{\rm{back}} = \sigma$, the position resolution of the mini-vector $\sigma_{\rm{res}}$ is then:
 
     \begin{equation}
       \sigma_{\rm{res}} = \frac{\sigma}{\sqrt{2}}.
@@ -675,16 +679,16 @@
       \label{fig:residualMV}
     \end{figure}
 
-    For a run in normal incidence, the spatial resolution measured on each side is $\sigma_{\rm{front}} \simeq \sigma_{\rm{back}} \simeq 4~\rm{\mu m}$, according to figure~\ref{fig:residualFrontBackLadder}.
-    The resolution of the mini-vector should be then $\sigma_{\rm{res}} \simeq 2.8~\rm{\mu m}$.
-    The measurement of the residual for the mini-vector displayed on figure~\ref{fig:residualMV} gives a residual of $3.2~\rm{\mu m}$.
-    Taking into account the resolution of the telescope, the spatial resolution achieved by the mini-vector is $\sigma_{\rm{res}} \simeq 2.9~\rm{\mu m}$.
+    For a run in normal incidence, the spatial resolution measured on each side is $\sigma_{\rm{front}} = \sigma_{\rm{back}} = 4 \pm 0.04~\rm{\mu m}$, according to figure~\ref{fig:residualFrontBackLadder}.
+    The resolution of the mini-vector should be then $\sigma_{\rm{res}} = 2.8 \pm 0.1~\rm{\mu m}$.
+    The measurement of the residual for the mini-vector displayed on figure~\ref{fig:residualMV} gives a residual of $\sigma_{\rm{m}} = 3.2 \pm 0.026 ~\rm{\mu m}$.
+    Taking into account the resolution of the telescope ($\sigma_{\rm{tel}} = 1.8 \pm 0.5~\rm{\mu m}$), the spatial resolution achieved by the mini-vector is $\sigma_{\rm{res}} = 2.9 \pm 0.1~\rm{\mu m}$.
 
    \subsection{Angular resolution}
 
-   The mini-vectors give an access to new information not provided by a single sensor, the angular resolution.
+   The mini-vectors give access to new information not provided by a single sensor, the particle incoming angle.
    The direction of the track can be compared to the direction of the mini-vector.
-   The estimation of the angular resolution is given by:
+   The estimation of uncertainty on the estimated angle is given by:
 
    \begin{equation}
      \sigma_{\theta} = \frac{\sqrt{\sigma_{\rm{front}}^2 + \sigma_{\rm{back}}^2}}{d}.
@@ -693,7 +697,7 @@
 
    With $\sigma_{\rm{front}}$ and $\sigma_{\rm{back}}$ the spatial resolution on each side of the \gls{DUT} in microns and d the distance between the two sides in microns.
    The spatial resolution here is $\sigma \simeq 3.6~\rm{\mu m}$ and the distance between the two planes $2000~\rm{\mu m}$.
-   The angular resolution estimated is then $\sigma_{\theta} = 0.146^{\degree}$.  
+   The angular uncertainty is then $\sigma_{\theta} = 0.15^{\degree}$.  
    
    \begin{figure}[!h]
      \centering
@@ -702,8 +706,8 @@
      \label{fig:angRes}
    \end{figure}
 
-   Figure~\ref{fig:angRes} depicts the distribution of the angle between the tracks direction and the mini-vectors direction.
-   As it can be seen, several peaks are present and the distribution can't be extrapolated by a Gaussian fit.
+   Figure~\ref{fig:angRes} depicts the distribution of the angle residual between the tracks direction and the mini-vectors direction.
+   As it can be seen, several peaks are present and the distribution cannot be reproduced by a Gaussian fit.
    The sensors have a binary output and the hit position is determined by the centre-of-gravity of the clusters.
    If the cluster is only one pixel, the centre-of-gravity will be in the middle of the pixel, but if the clusters contain more pixels, this centre-of-gravity will be displaced.
    Moreover, they are some deviations in the distance between the hit projected to one side to the real hit position on this side.
@@ -788,20 +792,21 @@
   Along this chapter, the test beam campaign done in November 2011 at \gls{CERN} was discussed. 
   The results were focused on the alignment procedure, as well as the performances of the ladder in normal and tilted positions.
   The runs in tilted position were challenging to align due to some deviations between the track-hit residual and the actual hit position on the plane.
-  This has the effect of increasing the spatial residual measured.
-  A higher pointing resolution is expected for bending tracks but in a smaller proportion.
+  This has the effect of improving the spatial residual measured.
+  A pointing resolution is expected for bending tracks but in a smaller proportion.
   An algorithm using Legendre polynomials to describe the sensor's shape was discussed.
   The results obtained for small angles are close to the value expected for a single \gls{MIMOSA}-26 sensor in normal incidence. 
-  Nevertheless, the pointing resolution depends strongly on the incidence angle.
+  Nevertheless, the resolution depends strongly on the incidence angle.
   For $36^{\degree}$ and higher, the correction is less efficient to achieve the normal performances.
   It might also be possible that the heating is increasing the deformation and that the cooling system could induce some vibrations which induce some deformation too.
   Nevertheless, the results obtained here for different air flow speed can not lead to a conclusion on a possible impact of the cooling system.
 
-  The second part of this chapter was talking about the benefits of double-sided measurements.
-  For normal incidence, the pointing resolution of the mini-vector, which is the combination of the pointing resolution on each side,  is better than the spatial resolution of a single sensor.
+  The second part of this chapter was addressing the benefits of double-sided measurements.
+  For normal incidence, the resolution of the mini-vector, which is the combination of the resolution on each side,  is better than the spatial resolution of a single sensor.
   Moreover, the mini-vectors give access to another information: the angular resolution.
   Due to the binary output and the centre-of-gravity hit position reconstruction, multiple peaks are visible and a simple Gaussian fit can not be used. 
   The same work has to be done with ladder titled with respect to the beam to study the impact of the deformation on the mini-vectors.
+  This additional study was unfortunately outside the time reach of this work.
 
   The first results obtained are encouraging the mechanical structure.
   Nevertheless, the material budget of the ladder is estimated theoretically.

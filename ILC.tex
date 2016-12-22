@@ -85,7 +85,7 @@
   \section{The ILC machine}
   
     The \gls{ILC} should be the next lepton collider experiment and will be situated in Japan.
-    In 2016, the physics community was waiting for an official decision of the Japan government concerning the final experimental site. \todo{Reference to the decision but which one?}
+    In 2016, the physics community was waiting for an official decision of the Japan government concerning the final experimental site.
     At the time when this thesis was written, the scientific community has chosen a site candidate in the north of Japan, in the region of Kitakami. 
     
     \subsection{Baseline design}
@@ -156,13 +156,13 @@
     \begin{figure}[!h]
       \centering
       \includegraphics[width = 10cm]{Pictures/ILC/bunch.png}
-      \caption{Schematic view of the bunch structure at the ILC. One bunch train is made of 2625 bunches and lasts $0.95~\rm{ms}$. Each bunch crossing is spaced out by $337~\rm{ns}$. Two bunch trains are $0.2~\rm{s}$ apart from each other \cite{Li2010}.}
+      \caption{Schematic view of the bunch structure at the ILC. One bunch train is made of 1312 bunches and lasts $1~\rm{ms}$ long. Each bunch crossing is spaced out by $554~\rm{ns}$. Two bunch trains are $199~\rm{ms}$ apart from each other \cite{Li2010}.}
       \label{fig:bunches}
     \end{figure}
 
     The accelerator described above will create bunch trains at a repetition rate of $5~\rm{Hz}$. 
-    Each train is composed of 2625 bunches that contain $2\times 10^{10}$ particles and lasts $0.95~\rm{ms}$. 
-    The interval between two trains is $2~\rm{ms}$ long. 
+    Each train is composed of 1312 bunches that contain $2\times 10^{10}$ particles and lasts $1~\rm{ms}$ long. 
+    The interval between two trains is $199~\rm{ms}$ long. 
     This structure is a key feature to develop detectors able to be switched off during the dead time in order to reduce the power consumption.
     \todo{Write TDR values, see Marcel's talk}
 
@@ -368,18 +368,29 @@
 
       \begin{table}[!h]
         \centering
-          \begin{tabular}{c K{2.5cm} c K{2.5cm}}
+          \begin{tabular}{K{1.2cm} K{2cm} K{1cm} c K{2.3cm} K{2.2cm}}
           \hline %----------------------------
-          Detector &  Single point resolution ($\mu$m) &  Coverage  & Material budget $\rm{X_0}$ (\%) / layer\tabularnewline
+          Detector & \multicolumn{3}{c}{Geometry}  & \multirow{2}*{Resolution ($\mu$m)} & Material budget \tabularnewline
+                   & $\rm{R}~\rm{(mm)}$ & $\rm{Z}~\rm{(mm)}$ & $\cos{\theta}$ & & / layer $\rm{X_{0}}~(\%)$ \tabularnewline
           \hline %----------------------------
           \hline %----------------------------
-          \multirow{2}*{SIT}  & $\sigma_{R-\phi} = 7.0 $  & \multirow{2}*{$\cos{\theta} \sim 0.91$ } & \multirow{2}*{0.65} \tabularnewline
-                              & $\sigma_Z = 50.0 $ & & \tabularnewline
-          SET      & $\sigma_R = 7.0$ & $\cos{\theta} \sim 0.79$ & 0.65 \tabularnewline
-          ETD      & $\sigma_X = 7.0$ & $\cos{\theta} \sim 0.799 - 0.985 $ & 0.65 \tabularnewline
+          \multirow{2}*{SIT} & 153  & 368  & \multirow{2}*{$0.91$ } & $\sigma_{R-\phi} = 7.0 $   & \multirow{2}*{0.65} \tabularnewline
+                             & 300  & 644  & & $\sigma_Z = 50.0 $  & \tabularnewline
+          SET                & 1811 & 2350 & $0.79$ & $\sigma_R = 7.0$ & 0.65 \tabularnewline
+          \hline %----------------------------
+          ETD                & $419.2-1822.7$ & 2420 & $0.799 - 0.985 $ &  $\sigma_X = 7.0$ & 0.65 \tabularnewline
+          \hline %----------------------------
+          \multirow{7}*{FTD} & $39-134$ & 220 & $0.985 - 0.802$ & \multirow{3}*{$\sigma_{R-\phi} = 3~-~6$}  & \multirow{2}*{$0.25-0.5$} \tabularnewline
+                             & $49.6-164$ & 371.3 & $0.991-0.914$ & & \tabularnewline
+                             & $70.1-308$ & 644.9 & $0.994-0.902$ & & \multirow{5}*{0.65} \tabularnewline
+                             & $100.3-309$ & 1046.1 & $0.994-0.959$& \multirow{4}*{$\sigma_{R-\phi} = 7.0$} & \tabularnewline
+                             & $130.4-309$ & 1447.3 & $0.995-0.998$& & \tabularnewline
+                             & $160.5-309$ & 1848.5 & $0.996-0.986$& & \tabularnewline
+                             & $190.5-309$ & 2250 & $0.996-0.990$ & & \tabularnewline
           \hline %----------------------------
           \end{tabular}
-          \caption{Parameters aimed for the silicon tracker using micro-strips sensors.}
+          \caption{Summary of parameters aimed for the silicon tracker using micro-strips sensors. 
+                   These detectors are complementary to the TPC and the vertex detector.}
           \label{tab:siTrackParam}
       \end{table}
 
@@ -387,9 +398,6 @@
      It consists of seven tracking disks: the two firsts are pixel detectors to cope with expected high occupancies and the five others are strip detectors.
      The pointing resolution will vary between $3.0-6.0~\rm{\mu m}$ for the two first layers and $7.0~\rm{\mu m}$ for the five other ones.
      
-
-      \todo{Check the table and values....}
-
       \subsubsection{Calorimeters}
 
       The calorimeters design is driven by the particle flow requirements.

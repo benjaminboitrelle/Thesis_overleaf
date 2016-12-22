@@ -122,14 +122,15 @@
   % The STAR experiment at RHIC is the first one to get an entire vertex detector made of ULTIMATE-MIMOSA28 CMOS sensors.
    %One of the technology developed is described in section~\ref{sec:CMOS}.
 
-   For all the technologies, the sensors' power consumption has to be minimised in a way to reduce the cooling system and in the same time the added material budget in the sensitive detector volume.
-   As it was shown on figure~\ref{fig:bunches} of chapter~\ref{chap:ILC}, the bunch train will last less than 1 ms for a dead time of 200 ms.
+   For all the technologies, the sensors' power consumption has to be minimised in a way to reduce the cooling system and its impact on the material budget in the sensitive detector volume.
+   As it was shown on figure~\ref{fig:bunches} of chapter~\ref{chap:ILC}, the bunch train will last less than $1~\rm{ms}$ for a dead time of $199~\rm{ms}$.
    Two possibilities are envisaged to benefit from the beam structure.
    The first one consists to store the hits information thanks to a time stamp during the bunch crossing and to read out the data after the last collision.
-   This method might be used by the \gls{FPCCD} technology due to the slow integration time of the \gls{CCD}.
-   Another solution is to use power-pulsing.
-   Right after the last collision, the sensors are switched off or the power consumption is reduced as mush as possible, and before the first collision, the sensors is switch on again.
-   This pulsing method is studied by different collaborations. 
+   This method might be used by the \gls{FPCCD} technology due to the slow integration time of the \gls{CCD} or with the \gls{MIMOSA}-26 sensors.
+   Another solution is to use a \textit{power-pulsing} method.
+   Right after the last collision, the sensors are switched off or the power consumption is reduced as mush as possible.
+   Before the first collision, the sensors are switched on again.
+   This pulsing method is investigated by different collaborations and is introduced for a single \gls{MIMOSA}-26 sensors in section~\ref{sec:perspectives}. 
    
    Another aspect not discussed yet is the radiation tolerance of the detector, which is directly related to the beam background.
    The first layer is the most affected by the background and it should have a high radiation tolerance. 
@@ -139,13 +140,12 @@
    The efficiency is defined here as the ratio of detected particles over all the particles crossing the detector.
    If one layer of the vertex detector misses a hit, the track reconstruction will be less accurate 
    
-   \todo{Cooling system, integration time, radiation tolerance, electromagnetic interference}
-
    To summarise, the expected parameters for the \gls{ILC} are: 
    \begin{itemize}
      \item An excellent impact parameter resolution: $a \sim 5~\rm{\mu m}$ and $b \sim 10~\rm{\mu m}$,
-     \item A material budget not exceeding $0.1~\%~\rm{X_0}$ per layer for the single-sided option ($0.16~\%~\rm{X_0}$ for the double one),
-     \item Radius of the first layer $\sim~15/16~\rm{mm}$.
+     \item a material budget not exceeding $0.1~\%~\rm{X_0}$ per layer for the single-sided option ($0.16~\%~\rm{X_0}$ for the double one),
+     \item radius of the first layer $\sim~15/16~\rm{mm}$,
+     \item an occupancy below the percent level.
    \end{itemize}
 
   \section{PLUME}
@@ -269,6 +269,7 @@
     \end{table}
 
     \subsection{Perspectives}
+    \label{sec:perspectives}
 
     Although the collaboration has shown their expertise to build light mechanical structures, more tests and optimisations have to be done.
     MIMOSA-26 sensors are not designed to match the \gls{ILC} specs. 

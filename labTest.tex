@@ -97,7 +97,8 @@
           \caption{}
           \label{fig:ladderAssemblyStep1}
       \end{subfigure}
-      \qquad
+      
+      %\qquad
        %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
         %(or a blank line to force the subfigure onto a new line)
       \begin{subfigure}[t]{0.4\textwidth}
@@ -188,13 +189,13 @@
   The observed signals should be:
 
   \begin{description}
-    \item[\gls{TDI}:]
-    \item[\gls{TDO}:]
+    %\item[\gls{TDI}:]
+    %\item[\gls{TDO}:]
     \item[\gls{TMS}:] by default is fixed to 1 and change to 0 at every register selection
     \item[\gls{TCK}:] this clock is slower (30 kHz) than the 80 MHz needed by the sensors and is only dedicated for the slow control
     \item[Reset:] by default is fixed to 1 and should change to 0 every time the reset is called by the \gls{JTAG} software
-    \item[Start:] 
-    \item[Clock:] Independently of the method used, the 80 MHz clock has to be correctly distributed along the auxiliary card
+    \item[Start:] during the test, the start signal is provided by the \gls{DAQ} software
+    \item[Clock:] independently of the method used, the 80 MHz clock has to be correctly distributed along the auxiliary card
   \end{description}
 
   \begin{figure}[!h]
