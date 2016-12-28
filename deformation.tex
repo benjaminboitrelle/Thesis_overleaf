@@ -626,7 +626,7 @@
 
     To study the benefits of the mini-vector, a virtual intermediate plane is defined at the center of the ladder.
     The two hits of each side of the \gls{DUT} are connected to form a mini-vector and the intersection of this vector to the intermediate plane is determined.
-    The intersection of the extrapolated track to the intermediate plane is also performed and the distance between the position of the track and the position of the mini is then measured.
+    The intersection of the extrapolated track to the intermediate plane is also performed and the distance between the position of the track and the position of the mini-vector is then measured.
 
     \begin{figure}[!h]
       \centering
@@ -635,7 +635,7 @@
       \label{fig:MV}
     \end{figure}
 
-    A theoretical estimation of the spatial resolution for the mini-vector can be done thanks to the formula above:
+    A theoretical estimation of the incertitude on the spatial resolution for the mini-vector is given by the formula below:
 
     \begin{equation}
       \sigma_{\rm{m}}^2 = \frac{\sigma_{\rm{front}}^2 + \sigma_{\rm{back}}^2}{(d_{\rm{front}} - d_{\rm{back}})^2} \cdot d_{\rm{m}}^2 + \sigma_{\rm{tel}}^2.
@@ -680,15 +680,17 @@
     \end{figure}
 
     For a run in normal incidence, the spatial resolution measured on each side is $\sigma_{\rm{front}} = \sigma_{\rm{back}} = 4 \pm 0.04~\rm{\mu m}$, according to figure~\ref{fig:residualFrontBackLadder}.
-    The resolution of the mini-vector should be then $\sigma_{\rm{res}} = 2.8 \pm 0.1~\rm{\mu m}$.
-    The measurement of the residual for the mini-vector displayed on figure~\ref{fig:residualMV} gives a residual of $\sigma_{\rm{m}} = 3.2 \pm 0.026 ~\rm{\mu m}$.
-    Taking into account the resolution of the telescope ($\sigma_{\rm{tel}} = 1.8 \pm 0.5~\rm{\mu m}$), the spatial resolution achieved by the mini-vector is $\sigma_{\rm{res}} = 2.9 \pm 0.1~\rm{\mu m}$.
+    Consequently, the uncertainty on the estimated position of the mini-vector should be $\sigma_{\rm{res}} = 2.8 \pm 0.1~\rm{\mu m}$.
+    The measurement of the standard deviation of the mini-vector displayed on figure~\ref{fig:residualMV} corresponds of $\sigma_{\rm{m}} = 3.2 \pm 0.026 ~\rm{\mu m}$.
+    %The measurement of the residual for the mini-vector displayed on figure~\ref{fig:residualMV} gives a residual of $\sigma_{\rm{m}} = 3.2 \pm 0.026 ~\rm{\mu m}$.
+    Taking into account the resolution of the telescope ($\sigma_{\rm{tel}} = 1.8 \pm 0.5~\rm{\mu m}$), the spatial resolution achieved by the mini-vector is $\sigma_{\rm{res}} = 2.9 \pm 0.1~\rm{\mu m}$, when aligned with expected uncertainty.
 
    \subsection{Angular resolution}
 
    The mini-vectors give access to new information not provided by a single sensor, the particle incoming angle.
    The direction of the track can be compared to the direction of the mini-vector.
-   The estimation of uncertainty on the estimated angle is given by:
+   The uncertainty estimation associated to the measured angle is given by:
+   %The estimation of uncertainty on the estimated angle is given by:
 
    \begin{equation}
      \sigma_{\theta} = \frac{\sqrt{\sigma_{\rm{front}}^2 + \sigma_{\rm{back}}^2}}{d}.
