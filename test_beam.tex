@@ -171,7 +171,7 @@
     Furthermore, along their path, they are deflected by many small angles from their initial trajectory due to Coulomb scattering from nuclei. 
     This stochastic effect, called multiple Coulomb scattering, leaves on the average the particle undisturbed through its path. 
     For small angles of deviation, the multiple scattering is following a Gaussian behavior, whereas for larger angles, it behaves like the Rutherford scattering.
-    The Highland formula, which is an empirical formula, describes the distribution of the multiple scattering, or the "kink angle" $\theta_0$ as a function of the momentum $p$ of the incoming charge particles, its velocity $\beta c$, its charge number $z$ and its true path length in radiation length unit $\frac{x}{X_{0}}$:
+    The Highland formula~\cite{Highland:1975pq}, which is an empirical formula, describes the distribution of the multiple scattering, or the "kink angle" $\theta_0$ as a function of the momentum $p$ of the incoming charge particles, its velocity $\beta c$, its charge number $z$ and its true path length in radiation length unit $\frac{x}{X_{0}}$:
 
     \begin{equation}
       \theta_{0} = \frac{13.6~\rm{MeV}}{\beta c p}\cdot z \cdot \sqrt{\frac{x}{X_{0}}}\left(1 + 0.038 \cdot \ln{\left(\frac{x}{X_{0}}\right)}\right).
@@ -206,13 +206,12 @@
     \begin{equation}
       \frac{1}{X_{0}} = \sum_{j} \frac{\omega_{j}}{X_{j}},
     \end{equation}
-
    where $\omega_{j}$ and $X_{j}$ are respectively the fraction by weight and radiation length for the $j^{\rm{th}}$ element.
 
     \subsection{The DESY II test beam facility}
 
     The \gls{DESY} test beam facility \cite{DESYII} is composed of three areas.
-    The electron beam is produced in the LINAC-II and accelerated up to 450 MeV before to be injected in the DESY-II synchrotron ring.
+    The electron beam is produced in the LINAC-II and accelerated up to $450~\rm{MeV}$ before being injected in the DESY-II synchrotron ring.
     The DESY-II is used as a storage ring for the PETRA-III accelerator. 
     The beam is accelerated and stored until enough particles are available to be sent into PETRA, where they are used for photon science experiments.
     
@@ -227,12 +226,12 @@
     While the electrons are hitting the target, they lose energy and emit bremsstrahlung photons.
     The photons travel through the air and hit another target, on which the photons are converted to pairs of electrons and positrons.
     Different targets with different thicknesses are available and this will impact the particles rate.
-    One is made of copper, whereas the other one is made of aluminum \cite{ConversionTargets}.
+    One is made of copper, whereas the other one is made of aluminum~\cite{ConversionTargets}.
     Then, a dipole magnet bends the particles and spread them according to their energy.
     Afterward, a tungsten collimator cuts away the unwanted particles, those having a too high or too low momentum, before the test beam area.
     A second collimator is located inside the test beam area and it determines the size of the beam spot.
     Figure~\ref{fig:desyTb-sketch} summarises the different steps to generate a beam of electrons or positrons in test beam 21, while the energies and the rates available are displayed in figure~\ref{fig:rateTB21}.
-    The energy resolution achieved at DESY test beam reaches $5~\%$.
+    The energy resolution achieved at \gls{DESY} test beam reaches $5~\%$.
 
     \begin{figure}[!h]
       \centering
@@ -330,7 +329,7 @@
        \label{eq:X0_theory}
      \end{equation}
 
-     Hence, the material budget expected is between $0.498~\%~\rm{X_0}$ and $0.515~\%~\rm{X_0}$.
+     Hence, the material budget expected is between $0.498~\%$ of $\rm{X_0}$ and $0.515~\%$ of $\rm{X_0}$.
 
      \subsubsection{Kink angle measurement}
 
@@ -354,7 +353,7 @@
      \frac{x}{X_{0}} = \left( \frac{\sqrt{\rm{\sigma_{kink~angle}}^2 - <\rm{kink~angle}>} \cdot p}{13.6~\rm{(MeV)}} \right)^{\frac{1}{0.555}}.
    \end{equation}
 
-   The kink angle measured at $5~\rm{GeV}$ is $\sim 1.95 \cdot 10^{-4}~\rm{rad}$, leading to a radiation length of $\sim 0.58~\%~\rm{X_0}$, which is over the estimated calculation.
+   The kink angle measured at $5~\rm{GeV}$ is $\sim 1.95 \cdot 10^{-4}~\rm{rad}$, leading to a radiation length of $\sim 0.58~\%$ of $\rm{X_0}$, which is over the estimated calculation.
    
    \begin{figure}[!h]
      \centering
@@ -395,7 +394,7 @@
    The uncertainty on the momentum is $5~\%$ and is the uncertainty determined at the DESY test beam facility, while the uncertainty used for the kink angle is extracted from the fit procedure corrected by the $\chi^2 / \rm{NDF}$ measured.
    The plot is then fitted with the Highland formula from equation~\ref{eq:theta0}, on which the radiation length is a free parameter.
    Two points ($1$ and $5~\rm{GeV}$) are outside the trend and the $\chi^2 /~\rm{N.D.F}$ measured is bigger than $1$.
-   Table~\ref{tab:theta0Calcultation} summarises the expected $\theta_0$ for a radiation length of $0.5~\%~\rm{X_0}$ and compare this results to the measured $\theta_0$.
+   Table~\ref{tab:theta0Calcultation} summarises the expected $\theta_0$ for a radiation length of $0.5~\%$ of $\rm{X_0}$ and compare this results to the measured $\theta_0$.
 
    \begin{table}
      \centering
@@ -430,7 +429,7 @@
    At $5~\rm{GeV}$, the electrons suffer less from the multiple scattering but the alignment procedure did not work well. 
    On figure~\ref{fig:kinkAngle5GeV}, the distribution of the kink angle is not centered and the reason of this offset comes from a wrong alignment.
    For the rest of the study, this two measurements are excluded to determine the radiation length, as seen on figure~\ref{fig:theta0vsP_2-4}.
-   The radiation length measured is then $0.47 \pm 0.02~\%~\rm{X_0}$, smaller than the expected calculation.
+   The radiation length measured is then $0.47 \pm 0.02~\%$ of $\rm{X_0}$, smaller than the expected calculation.
    The determination of the material budget is done here without taking into account the complete ladder.
    The \gls{PLUME} sensors are used for tracking and measuring the kink angle.
    As the signal is considered to be created in the middle of the epitaxial layer, only one part of the \gls{MIMOSA}-26 is included in the calculation.
@@ -443,7 +442,7 @@
    \end{itemize}
 
    The sensors are thinned down to $50 \pm 2~\rm{\mu m}$, but only $\sim 37~\rm{\mu m}$ of silicon are taken into account during the calculation.
-   In total, $0.028~\%~\rm{X_{0}}$ are missing in the calculation.
+   In total, $0.028~\%$ of $\rm{X_{0}}$ are missing in the calculation.
    
    \begin{figure}[!h]
      \centering
@@ -472,21 +471,8 @@
 
   \section{Conclusions}
 
-%  The preparation of the test beam, as well as the data taking were a long and stressful period.
-%  Although everything were prepared as mush as possible to avoid any problem during the test beam, a broken component on the power distribution board has disturbed the data taking for two days.
-%  One \gls{PLUME} module was not recording data anymore but was still sending \textit{header} and \textit{trailer}.
-%  Fortunately, after replacing the broken component, the ladder was working normally, but a shift on the thresholds has appeared.
-%  By characterising again the ladder, it has been possible to determine which thresholds were really applied. 
-%  Nevertheless, it is likely that some data could have been corrupted and this is under investigation.
-
-  %Another problem occurs during the analysis of the data. 
-  %EUTelescope is not able to handle the particular configuration used during the test beam.
-  %The number of telescope sensors are hard-coded, as well as the expected sensor ID.
-  %Besides, the combination of \gls{GBL} and MILLEPEDE-II inside EUTelescope did not work.
-  %The use of a different software reading the hitmaker file created by EUTelescope has permitted to overcome this problem and to perform the alignment and analysis 
-
   The radiation length measurement of the \gls{PLUME} ladder was performed for the first time with a dedicated setup placed in beam.
-  The first results obtained to determine the material budget, which gives a radiation length of $\left. \frac{x}{X_0} \right|_{\rm{measured}} \simeq 0.47 \pm 0.02~\%~\rm{X_0}$ are confirming the theoretical calculation of $\left. \frac{x}{X_0}\right|_{\rm{theoretical}} \simeq 0.498~~\%~\rm{X_0}$ for a flex with a fill factor of $25~\%$.
+  The first results obtained to determine the material budget, which gives a radiation length of $\left. \frac{x}{X_0} \right|_{\rm{measured}} \simeq 0.47 \pm 0.02~\%$ of $\rm{X_0}$ are confirming the theoretical calculation of $\left. \frac{x}{X_0}\right|_{\rm{theoretical}} \simeq 0.498~~\%$ of $\rm{X_0}$ for a flex with a fill factor of $25~\%$.
   The origin of the shifts on the measured radiation length at $1$ and $5~\rm{GeV}$ has to be investigated.
   In both cases, the alignment has to be done again.
   Another solution consists to perform a calibration run with a known material to apply then a correction on the radiation length measurement for \gls{PLUME}.

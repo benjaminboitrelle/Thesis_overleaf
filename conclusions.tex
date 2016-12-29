@@ -6,31 +6,48 @@ This next generation accelerator is required for high-precision measurements, sp
 So far, the most advanced candidate is the \gls{ILC}.
 With the technical design report~\cite{Baer2013}, the physicists have confirmed that the community is ready to build this future linear collider.
 A governmental decision is eagerly awaited to start the project.
-The work performed during this thesis was specifically focused on the feasibility to construct double-sided vertex detector that has a low material budget (below $0.35~\%~\rm{X_{0}}$) and a spatial resolution below $\sim 3~\rm{\mu m}$ for the \gls{ILD}.
+The work performed during this thesis was specifically focused on the feasibility to construct double-sided pixelated layers suited for a vertex detector at the \gls{ILC}, that features a low material budget (below $0.35~\%~\rm{X_{0}}$) and a spatial resolution below $\sim 3~\rm{\mu m}$ for the \gls{ILD}.
 
-This work is introduced with a physics analysis of simulated data of the \gls{ILC} at a centre-of-mass energy $\sqrt{s} = 350~\rm{GeV}$.
-The channel studied is the one leading to a $\nu \overline{\nu} H$ final state, with the Higgs boson decaying into pair of quarks or gluons.
-To reduce the contribution of events leading to the same detector response or a similar event signature, several hard cuts depending on different parameters are applied. 
-After eight cuts, the background events are three orders smaller but this method implies a lose of half of the signal.
-Due to the restricted time to conduct this work, a different selection technique could not be used.
-The work performed by Felix \textsc{Mueller} has nevertheless, shown that a TMVA solution will keep the signal significant while reducing the background contribution \cite{Mueller}.
-This analysis has to be completed with a study of the Higgs boson decaying into a pair of charmed and anti-charmed quarks.
-The ability of measuring the coupling of the Higgs boson to the $c$ quarks is needed. 
-This measurement is challenging to perform at the \gls{LHC} due to the \gls{QCD} background. 
-Moreover, the life-time of the $b$ and $c$ quarks are similar, leading to a close vertex decay. 
-Thus, the vertex detector has to be optimised to separate this two quarks.
+This work is introduced with a physics analysis on simulated data corresponding to collision in the \gls{ILC} at a centre-of-mass energy $\sqrt{s} = 350~\rm{GeV}$.
+The channel studied underlines the benefits of event types produced by $e^{+}e^{-}$ collisions, it is the one leading to a $\nu \overline{\nu} H$ final state, with the Higgs boson decaying into pair of quarks or gluons.
 
-The main topic of this thesis is the study of the \gls{PLUME} vertex detector, a double-sided ladder embedding in total 12 \gls{CMOS} sensors on each side of a mechanical structure.
-Since the first prototype developed in 2009, the collaboration has shown its capability to build fully functional \gls{PLUME} ladders.
+The large part of the final particles produced in such events are invisible to the detector. 
+Hence a corner stone of the analysis of this channel is the ability to drastically reduce the contribution of events leading to the same detector response or a similar event signature. 
+The result presented in this work shows that applying a sequence of cuts on eight identified discriminating variables allows to reach a significance of 64 for the signal within the selected events. 
+This level is however not sufficient for the precision measurement targeted with these events, which requires a significance of 70. 
+Though sequential cuts are able to reduce by three orders of magnitude the background events, in the meantime they also remove half of the signal onces. 
+To improve on our result, another thesis work conducted by Felix \textsc{Mueller}~\cite{Mueller} developed a multivariate analysis  approach, which finally reached the desired significance for the event selection process.
+
+After this first important analysis step, actual characterization of the Higgs boson can start. 
+But this second study was beyond the scope of this work even if it is strongly related to our goal. 
+Indeed this characterization requires among others to identify jets issued from $c$ quark against those produced by $b$ quarks. 
+This ability sets stringent specifications on the vertex detector layers, since the identification relies on the short lifetime difference between these two types of quarks. 
+The \gls{PLUME} collaboration ambitions to demonstrate the feasibility of such layers, exploiting the concept of double-sided ladders.
+
+
+%To reduce the contribution of events leading to the same detector response or a similar event signature, several hard cuts depending on different parameters are applied. 
+%After eight cuts, the background events are three orders smaller but this method implies a lose of half of the signal.
+%Due to the restricted time to conduct this work, a different selection technique could not be used.
+%The work performed by Felix \textsc{Mueller} has nevertheless, shown that a TMVA solution will keep the signal significant while reducing the background contribution \cite{Mueller}.
+%This analysis has to be completed with a study of the Higgs boson decaying into a pair of charmed and anti-charmed quarks.
+%The ability of measuring the coupling of the Higgs boson to the $c$ quarks is needed. 
+%This measurement is challenging to perform at the \gls{LHC} due to the \gls{QCD} background. 
+%Moreover, the life-time of the $b$ and $c$ quarks are similar, leading to a close vertex decay. 
+%Thus, the vertex detector has to be optimised to separate this two quarks.
+
+The largest part of this thesis work was devoted to study \gls{PLUME} prototypes, which are currently equipped with \gls{CMOS} pixel sensors.
+Since the first small scale prototype (V0) developed in 2009, the collaboration has shown its capability to build full scale and fully functional \gls{PLUME} ladders.
+Two versions have been produced so far, the first one (V1) with a relaxed material budget constraint and the final one approaching the $0.3~\%$ of $\rm{X_{0}}$ requirement.
 The work done during this three years was split into checking the basic assessments of individual \gls{PLUME} module before assembling them into ladders, studying the impact of the mechanical deformations on the pointing resolution and preparing a protocol to measure the radiation length of complete ladders.
 
-The validation and characterisation done in laboratory have shown that the combination of six sensors running in the same time does not degrade the performances of the \gls{MIMOSA}-26.
+The validation and characterisation of the final ladder done in laboratory have shown that the combination of six sensors running at the same time does not degrade the performances of the \gls{MIMOSA}-26.
+The fake hit rate measured for the different modules is below 
 
-During the data analysis of the test beam performed in 2011 at \gls{CERN}, runs where the ladder was tilted with respect to the track direction have shown deviation on the pointing resolution, as well as a correlation between the position of the hit on the sensor and the track residual measured.
-These deviations are coming from mechanical deformation induced by the mounting procedure of a \gls{PLUME} ladder.
+During the data analysis of the test beam performed in 2011 at \gls{CERN} with the V1 ladder, runs where the ladder was tilted with respect to the track direction have shown deviation on the pointing resolution, as well as a correlation between the position of the hit on the sensor and the track residual measured.
+These deviations are coming from mechanical deformation induced by the material used (flex-cable, foam) during the mounting procedure of a \gls{PLUME} ladder.
 An algorithm to reduce the impact of these deformations have been implemented and has shown a good improvement on the pointing resolution measured for titled tracks.
 A second study during this data analysis has permitted to present the benefits of a double-sided measurement. 
-The pointing resolution has been improve by a factor $\sim 1/\sqrt{2}$ and the creation of mini-vectors give access to a new parameter, the angular resolution.
+The spatial resolution has been improve by a factor of about $1/\sqrt{2}$ and the creation of mini-vectors give access to a new parameter, the angular resolution, which was measured to be $0.1^{\circ}$ at normal incidence.
 
 Finally, the last work performed during the thesis was to set-up a test beam with a lower beam energy (up to $5~\rm{GeV}$ electrons) to measure the radiation length of the first fully functional prototype.
 After analysing the data, the radiation length measured is $\left. \frac{x}{X_0} \right|_{\rm{measured}} \simeq 0.47 \pm 0.02~\%~\rm{X_0}$, confirming the theoretical calculation of $\left. \frac{x}{X_0}\right|_{\rm{theoretical}} \simeq 0.498~~\%~\rm{X_0}$.
@@ -47,7 +64,13 @@ Instead of using the \gls{PLUME} sensors as reference planes, the six telescope 
 %  * New structure
 %    - Sernwiette? 
 
-The work performed during this thesis has shown that the collaboration is able to build light mechanical structure for a vertex detector.
+The work performed during this thesis has shown that the collaboration is able to build lightweight mechanical structure for a vertex detector.
+The material budget has been controlled and the first results are encouraging, a way to overcome the mechanical deformation inherent to the thin-sensor concept have been discussed.
+Moreover, this thesis, as well as the work performed by Loic \textit{Cousin} and Robert \textit{Maria}, have shown that \gls{CMOS} sensors are disturbed when they are closely laid together (butted and facing each others), but the expected performances (efficiency and spatial resolution) for one sensor are measured for a ladder.
+Nevertheless, the new ladder prototype with a material budget of $0.35~\%$ of $\rm{X_{0}}$ has not been tested in real conditions yet.
+
+
+
 Nevertheless, more tests and optimisations have to be done to improve the ladder.
 
 Firstly, the results of the test beam performed in April 2016 presented here are focused only on the material budget measurement.
