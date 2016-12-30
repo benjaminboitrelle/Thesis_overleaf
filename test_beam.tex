@@ -18,7 +18,7 @@
 
   \section{Preparation of the test beam}
 
-  In April 2016, a test beam campaign with electrons up to 5 GeV was performed at the DESY-II test beam facility \cite{DESYII}.
+  In April 2016, a test beam campaign with electrons up to 5 GeV was performed at the DESY-II test beam facility~\cite{DESYII}.
   The preparation of a test beam campaign is a long, intense and stressing period.
   The different aspects of the test beam have to be carefully thought to minimise the problems and the time spent for debugging during the test period.
   This consists in scheduling precisely the different measurements that have to be performed during the restricted time, as well as the set-up to use, the integration of the \gls{DUT} and the acquisition system to use.
@@ -44,12 +44,12 @@
     It has to be noted also, that for the radiation length measurement, the geometry is different.
     The upstream planes are stacked together and really close to the \gls{DUT}, whereas the downstream planes are distant from each other.
 
-    For the first time, the collaboration has decided to use the EUDET telescope and EUDAQ \cite{EUDAQ} for the acquisition, instead of the Strasbourg telescope and the IPHC acquisition.
+    For the first time, the collaboration has decided to use the EUDET telescope and EUDAQ~\cite{EUDAQ} for the acquisition, instead of the Strasbourg telescope and the IPHC acquisition.
     Several configuration are available for the set-up used.
-    The first ones consist to use the six planes of the EUDET telescope \cite{Jansen} and to have two separate acquisitions, one for \gls{PLUME} and the second one dedicated for the telescope.
+    The first ones consist to use the six planes of the EUDET telescope~\cite{Jansen} and to have two separate acquisitions, one for \gls{PLUME} and the second one dedicated for the telescope.
     Then, the data have to be merged together.
     As the EUDET telescope is equipped with the same sensors as \gls{PLUME}, the acquisition can be simplified by having only four telescope planes and connecting directly two sensors of the \gls{DUT}.
-    A simulation toolkit developed by Simon \textsc{Spannagel} \cite{spannagel_2016_48795} and based on \gls{GBL} \cite{GBL} is used to compare the pointing resolution at the \gls{DUT} position for different telescope geometries.
+    A simulation toolkit developed by Simon \textsc{Spannagel}~\cite{spannagel_2016_48795} and based on \gls{GBL}~\cite{GBL} is used to compare the pointing resolution at the \gls{DUT} position for different telescope geometries.
     Here, the six and four telescope planes set-ups are compared for different energies and spacing between the sensors.
     This simulation takes into account the material budget of the telescope, the \gls{DUT} and the multiple scattering of electrons in the air\footnote{The simulation is not based on a proper Monte-Carlo tool, but calculates the multiple scattering with an approximation of a Gaussian process}.
     One telescope plane has a material budget of $\sim 0.053~\%$ of $\rm{X_{0}}$, whereas \gls{PLUME} is $\sim 0.65~\%$ plus two kapton foils used to insulate the ladder from the light ($\sim 0.071~\%~\rm{X_{0}}$).
@@ -94,9 +94,9 @@
       
       \subsubsection{EUDAQ}
 
-      EUDAQ is a modular cross-platform data taking framework developed for the EUDET-type beam telescopes \cite{Jansen}.
+      EUDAQ is a modular cross-platform data taking framework developed for the EUDET-type beam telescopes~\cite{Jansen}.
       It is designed to be flexible and to have an easy integration of other devices.
-      The software is based on \textit{producers}, that are linked between the different subdetector systems, such as the beam telescope, the \gls{DUT} user's DAQ and the \gls{TLU} \cite{Cussans2009}.
+      The software is based on \textit{producers}, that are linked between the different subdetector systems, such as the beam telescope, the \gls{DUT} user's DAQ and the \gls{TLU}~\cite{Cussans2009}.
       The events of each subdetector are then correlated to form one single global event for data belonging to one trigger.
       This step is done by the \textit{Data Collector}.
       The robustness of the acquisition set-up planed is tested by performing multiple runs for multiple configuration in the laboratory.
@@ -178,7 +178,7 @@
       \label{eq:Highland}
     \end{equation}
 
-    For the electrons, a modified version of the equation~\ref{eq:Highland} describes its scattering better than the Highland formula does \cite{GEANT4}.
+    For the electrons, a modified version of the equation~\ref{eq:Highland} describes its scattering better than the Highland formula does~\cite{GEANT4}.
 
     \begin{equation}
       \theta_{0} = \frac{13.6~\rm{MeV}}{p}\left(\frac{x}{X_{0}}\right)^{0.555},~\text{with $\beta c = 1$.}
@@ -210,7 +210,7 @@
 
     \subsection{The DESY II test beam facility}
 
-    The \gls{DESY} test beam facility \cite{DESYII} is composed of three areas.
+    The \gls{DESY} test beam facility~\cite{DESYII} is composed of three areas.
     The electron beam is produced in the LINAC-II and accelerated up to $450~\rm{MeV}$ before being injected in the DESY-II synchrotron ring.
     The DESY-II is used as a storage ring for the PETRA-III accelerator. 
     The beam is accelerated and stored until enough particles are available to be sent into PETRA, where they are used for photon science experiments.
@@ -218,7 +218,7 @@
     \begin{figure}[!h]
       \centering
       \includegraphics[width = 0.8\textwidth]{Pictures/X0/desy_tb-sketch.png}
-      \caption{Schematic layout of the DESY-II test beam facility \cite{DESYII}.}
+      \caption{Schematic layout of the DESY-II test beam facility~\cite{DESYII}.}
       \label{fig:desyTb-sketch}
     \end{figure}
 
@@ -236,7 +236,7 @@
     \begin{figure}[!h]
       \centering
       \includegraphics[width = 0.8\textwidth]{Pictures/X0/rate_vs_p_t21.png}
-      \caption{Rate for different momentum and with different converter targets \cite{DESYII}.}
+      \caption{Rate for different momentum and with different converter targets~\cite{DESYII}.}
       \label{fig:rateTB21}
     \end{figure}
 
@@ -245,7 +245,7 @@
 
    \subsection{Software analysis chain}
 
-    The analysis of the test beam data is performed with EUTelescope \cite{Eutel}\cite{Jansen}.
+    The analysis of the test beam data is performed with EUTelescope~\cite{Eutel}\cite{Jansen}.
     It is based on the MARLIN framework, which is a part of the ILCSOFT (see~\ref{subsec:ILCSOFT} for more details about the ILCSOFT package).
     The software is used to convert the data into the LCIO format and to perform clustering search, alignment and final analysis.
     Each step of the analysis is driven by a dedicated processor and is described in figure~\ref{fig:eutel-strategy}.
@@ -253,7 +253,7 @@
     \begin{figure}[!h]
       \centering
       \includegraphics[width = \textwidth]{Pictures/X0/eutel-strategy.png}
-      \caption{Flow-chart of the analysis strategy by using EUTelescope \cite{EUTelFlowChart}.}
+      \caption{Flow-chart of the analysis strategy by using EUTelescope~\cite{EUTelFlowChart}.}
       \label{fig:eutel-strategy}
     \end{figure}
 
@@ -266,7 +266,7 @@
     Afterward, the hit candidates are defined with a centre-of-gravity method and the position of the hit is determined in the telescope frame and in the sensor frame using the alignment constant.
 
     Although the alignment procedure looks like the one presented in chapter~\ref{chap:deformation}, the procedure used with EUTelescope is slightly different.
-    The alignment is performed with \gls{GBL} and MILLEPEDE-II \cite{MPII}.
+    The alignment is performed with \gls{GBL} and MILLEPEDE-II~\cite{MPII}.
     In the case of a complete telescope (six planes), the tracks are built from the reconstruction of triplets in the upstream and downstream telescope planes.
     Firstly, a hit candidate from the outer plane is extrapolated by a horizontal straight line to the inner plane of one arm.
     Then, a triplet is formed if there is a matching between the middle plane of the arm and the doublet built.
@@ -337,7 +337,7 @@
    So, the hit information provided by \gls{PLUME} are exploited to create tracks by using the triplets method.
    The deviation from the incoming tracks and the outgoing ones (after the \gls{PLUME} ladder) is measured with \gls{GBL}, which provides information for $xz$ and $yz$-angles.
    Figure~\ref{fig:kinkAngle5GeV} shows the distribution of the kink angle fitted by a Gaussian for an energy of $5~\rm{GeV}$ and without a fiducial cut on a particular region of interest.
-   For small deflection angles, the distribution is roughly Gaussian with larger tails than expected for a Gaussian distribution \cite{Agashe:2014kda}.
+   For small deflection angles, the distribution is roughly Gaussian with larger tails than expected for a Gaussian distribution~\cite{Agashe:2014kda}.
    Therefore, the fit is performed in a range corresponding to the standard deviation of the distribution.
    %Therefore, the fit is performed only on the $1 \sigma$ range of the distribution.
    To obtain $\theta_0$, the width of the kink angle $\rm{\sigma_{kink~angle}}$ has to be corrected by the mean value of the kink angle fit $<\rm{kink~angle}>$:

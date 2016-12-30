@@ -36,7 +36,7 @@
    %The distance of the first layer to the \gls{IP} should be as slow as possible and the power consumption should 
    %The first layer has to be as close as possible to the \gls{IP} and the lowest power consumption as possible
    %The flavour tagging ability, vertex charge measurement and track and displaced vertices reconstruction are the main physics parameter that is driving the design of such detector.
-   The distance of closest approach of a particle to the collision point is called the impact parameter and the resolution achievable by the detector can be approximated with formula~\ref{eq:resIP} \cite{Battaglia2011}.
+   The distance of closest approach of a particle to the collision point is called the impact parameter and the resolution achievable by the detector can be approximated with formula~\ref{eq:resIP}~\cite{Battaglia2011}.
    %The resolution on the impact parameter $\sigma_{IP}$, defined as the distance of closest approach of the particle to the colliding beam can be parametrised by the formula~\ref{eq:resIP}.\todo{REPHRASE}
     
     \begin{equation}
@@ -80,7 +80,7 @@
    \subsection{Layout of the vertex detector}
    \label{subsec:layout}
 
-   The \gls{VXD} will be made of $12~\rm{cm}$ long ladders arranged cylindrically in concentric layers to form long-barrels surrounding the \gls{IP}, contrary to the \gls{SiD} vertex detector with a design based on a 5 layer barrel, four endcap disks and three additional forward pixel disks \cite{Behnke2010}.
+   The \gls{VXD} will be made of $12~\rm{cm}$ long ladders arranged cylindrically in concentric layers to form long-barrels surrounding the \gls{IP}, contrary to the \gls{SiD} vertex detector with a design based on a 5 layer barrel, four endcap disks and three additional forward pixel disks~\cite{Behnke2010}.
    Two different geometries are under consideration for the \gls{ILC}-{ILD}, nevertheless, they are both based on long ladders. 
    The first option is based on five single-sided layers with a material budget not exceeding $0.11~\%$ of $\rm{X_0}$ per layer.
    The five layers are in a radius range varying from $15~\rm{mm}$ for the first layer to $60~\rm{mm}$ for the last one.
@@ -99,7 +99,7 @@
     
    \subsubsection{FPCCD}
    
-     The \gls{FPCCD} \cite{CalanchaParedes} is based on \gls{CCD} processes.
+     The \gls{FPCCD}~\cite{CalanchaParedes} is based on \gls{CCD} processes.
      The sensor is using small pixels size (approximately $\sim 5~\rm{\mu m}$) to provide a sub-micron spatial resolution and an excellent capability to separate two nearby tracks.
      Its thickness is $50~\rm{\mu m}$ and the epitaxial layer ($15~\rm{\mu m}$ thick) is completely depleted to limit the charge spreading around pixels and to reduce the number of hits per pixel.
      However, the \gls{CCD} architecture provides slow readout and the matrix will be read between consecutive bunch trains, helping to reduce the power consumption and avoiding beam induced RF noise.
@@ -107,13 +107,13 @@
 
    \subsubsection{DEPFET}
     
-    The \gls{DEPFET} \cite{Richter2003} is an \gls{APS} in which field effect transistors are incorporated into each pixel.
+    The \gls{DEPFET}~\cite{Richter2003} is an \gls{APS} in which field effect transistors are incorporated into each pixel.
     The single point resolution is $\sim 3~\rm{\mu m}$ for pixels with a size of $20~\rm{\mu m}$.
     The silicon itself is used as the sensitive part but also as a mechanical structure, minimising the support and services.
     The sensor is completely depleted of free charge carriers thanks to a voltage applied all along the sensor's thickness.
     The rolling-shutter approach is used for reading each row and the column readout is done by two auxiliary \glspl{ASIC}.
 
-    \gls{DEPFET} technology has been chosen  to build the vertex detector of the BELLE-II experiment \cite{depfetBelleII}.
+    \gls{DEPFET} technology has been chosen  to build the vertex detector of the BELLE-II experiment~\cite{depfetBelleII}.
 
    \subsubsection{CMOS}
 
@@ -134,7 +134,7 @@
    
    Another aspect not discussed yet is the radiation tolerance of the detector, which is directly related to the beam background.
    The first layer is the most affected by the background and it should have a high radiation tolerance. 
-   The required radiation tolerance is about $1~\rm{kGy}$ for the total ionising dose and a fluence of $10^{11}\rm{n}_{\rm{eq}}\rm{.cm}^{-2}$ \cite{Behnke2013}.
+   The required radiation tolerance is about $1~\rm{kGy}$ for the total ionising dose and a fluence of $10^{11}\rm{n}_{\rm{eq}}\rm{.cm}^{-2}$~\cite{Behnke2013}.
 
    The efficiency of the \gls{VXD} has also to be excellent in order to maximise the tracking performance.
    The efficiency is defined here as the ratio of detected particles over all the particles crossing the detector.
@@ -150,19 +150,19 @@
 
   \section{PLUME}
 
-  The \acrfull{PLUME} project aims to produce double-sided ladder prototypes driven by \gls{ILC} requirements \cite{PLUME}.
+  The \acrfull{PLUME} project aims to produce double-sided ladder prototypes driven by \gls{ILC} requirements~\cite{PLUME}.
   Three labs in Europe are involved: the \gls{IPHC}-\gls{PICSEL} in Strasbourg, the University of Bristol and \gls{DESY} in Hamburg.
   The collaboration is studying the feasibility to build such elements of vertex detector using \gls{MAPS} thinned down to $50~\rm{\mu m}$ and is exploring the benefits of this design.
   Strasbourg is in charge to develop and mount the sensors on the modules, to take care of the readout and the \gls{DAQ}, and to provide a cooling system.
   The mechanical design, stability measurements and building the ladders are done by the University of Bristol, while \gls{DESY} has studied the ladder mock-up, performed power-pulsing tests and is now characterising and validating the modules in the lab.
-  In 2016, DESY has provided the opportunity to test the ladder in real conditions thanks to the test beam facility and the possibility to use the \gls{DAQ} software developed at DESY: EUDAQ \cite{EUDAQ}.
+  In 2016, DESY has provided the opportunity to test the ladder in real conditions thanks to the test beam facility and the possibility to use the \gls{DAQ} software developed at DESY: EUDAQ~\cite{EUDAQ}.
 
     \subsection{Design and goals}
 
     Figure~\ref{fig:PLUME} illustrates the design of a PLUME ladder.
     The ladder structure is defined by the sensors arrangement on the mechanical support (positioned next to each other).
     In this design, the stiffener is a $2~\rm{mm}$ thick \gls{SiC} foam which has a density varying between $8~\%$ and $4~\%$ (depending on the ladder version) and could be reduced to only $2$ or $3~\%$.
-    The choice of this foam results in a good compromise between the stiffness and the thickness compare to other materials \cite{LectureJoel}.
+    The choice of this foam results in a good compromise between the stiffness and the thickness compare to other materials~\cite{LectureJoel}.
     Figure~\ref{fig:YoungModulus} represents the Young Modulus as a function of the radiation length for different materials.
     The structure of the \gls{SiC} foam is shown on figure~\ref{fig:SiC}.
     It is macroscopically uniform and has the advantage of being easily machinable.
@@ -284,7 +284,7 @@
     If the first results are promising, the power-pulsing will be tested under real conditions with a high magnetic field.
     The impact of the Lorentz forces due to the coupling of the power-pulsing and the magnetic field is going to be studied, especially if this structure will induce unwanted deformations or vibrations. 
 
-    %The collaboration is considering to embed the sensors directly inside the multi-layer micro-cable \cite{Baudot2012}.
+    %The collaboration is considering to embed the sensors directly inside the multi-layer micro-cable~\cite{Baudot2012}.
     %The chips are glued on the first polyimide substrate layer, then the metal layer is deposited on top of it and the metal traces are directly connected to the chips pads.
     %Then an insulator is added to the module.
     %The advantages of this technique are, firstly, the direct connection of metal traces to the pads that avoid wire-bonding and can reduce, at the same time, the width of the module.
@@ -431,7 +431,7 @@
    % In order to limit the impact of the noise created by thermal fluctuations during the reinitialisation, a \textit{correlated double sampling} is used. A first voltage reading from the output of the pixel stores the \textit{reset} level and a second reading subtracts the measured voltage previously read to reduce the noise impact.
    % Although the compensation is fast, it generates a dead time for detection between two readings.
     
-    Figure~\ref{fig:selfBiased} depicts the \textit{self-biased pixel design} method \cite{Deveaux2009}.
+    Figure~\ref{fig:selfBiased} depicts the \textit{self-biased pixel design} method~\cite{Deveaux2009}.
     It is using a P-N junction (symbolised here by a diode mounted on the other side) coupled to the N-well implant to absorb the leakage current.
     The inverted diode is continuously compensated the diode's leakage current, thus the dead time vanishes.
     %Using a forward p-n junction has the advantage to avoid any dead-time because the diode's leakage current is continuously compensated by the second diode.
@@ -498,7 +498,7 @@
     To minimise the data bandwidth, only the pixels above certain thresholds are read thanks to discriminators coupling to a zero suppression logic, called \gls{SUZE}~\cite{Himmi}.
     In this way, only the address of the first pixel hit in a row and the number of the adjacent fired ones are stored.
     This memory is duplicated to be able to process one row, while the previous one is read out by the outside world.
-    In order to increase the readout speed, two techniques are conceivable \cite{Winter:2009zz}.
+    In order to increase the readout speed, two techniques are conceivable~\cite{Winter:2009zz}.
     The first one provides elongated pixels in the vertical direction in order to reduce the number of rows, thus degrading the spatial resolution in the same direction.
     The second one consists of dividing the columns into two distinct parts, which have its dedicated output.
 
@@ -574,7 +574,7 @@
     \caption{Block-diagram and a picture of the MIMOSA-26}\label{fig:Mi26}
     \end{figure}    
 
-    The PICSEL group then developed digital output sensors for the pixel vertex detector at the STAR experiment at Brookhaven National Laboratory \cite{1748-0221-7-01-C01102}\cite{1748-0221-10-03-C03026}.
+    The PICSEL group then developed digital output sensors for the pixel vertex detector at the STAR experiment at Brookhaven National Laboratory~\cite{1748-0221-7-01-C01102}\cite{1748-0221-10-03-C03026}.
     Figure~\ref{fig:Mi28} shows a half-section of the STAR vertex detector (figure~\ref{fig:vxdSTAR}) and a \gls{MIMOSA}-28 bonded on a PCB (figure~\ref{fig:ultimate}).
     They are based on the architecture of \gls{MIMOSA}-26 with some modifications.
     The matrix contains 960 columns and 928 rows for a pitch of $20.7 \times 20.7~\rm{\mu m}^2$.
