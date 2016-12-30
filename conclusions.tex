@@ -4,17 +4,18 @@
 Over the last years, the scientific community agrees that an accelerator beyond the \gls{LHC} is needed.
 This next generation accelerator is required for high-precision measurements, specifically for characterising the electroweak symmetry breaking, as well as looking for event compatible with physics beyond the \gls{SM}.
 So far, the most advanced candidate is the \gls{ILC}.
-With the technical design report~\cite{Baer2013}, the physicists have confirmed that the community is ready to build this future linear collider.
+With the technical design report~\cite{Baer2013}, physicists have confirmed that the community is ready to build this future linear collider.
 A governmental decision is eagerly awaited to start the project.
-The work performed during this thesis was specifically focused on the feasibility to construct double-sided pixelated layers suited for a vertex detector at the \gls{ILC}, that features a low material budget (below $0.35~\%~\rm{X_{0}}$) and a spatial resolution below $\sim 3~\rm{\mu m}$ for the \gls{ILD}.
+The work performed during this thesis was specifically focused on the feasibility to construct double-sided pixelated layers suited for a vertex detector at the \gls{ILC}, that features a low material budget (below $0.35~\%~\rm{X_{0}}$) and a spatial resolution below $ 3~\rm{\mu m}$ for the \gls{ILD}.
 
 This work is introduced with a physics analysis on simulated data corresponding to collision in the \gls{ILC} at a centre-of-mass energy $\sqrt{s} = 350~\rm{GeV}$.
-The channel studied underlines the benefits of event types produced by $e^{+}e^{-}$ collisions, it is the one leading to a $\nu \overline{\nu} H$ final state, with the Higgs boson decaying into pair of quarks or gluons.
+The channel studied underlines the benefits of event types produced by $e^{+}e^{-}$ collisions.
+It is the one leading to a $\nu \overline{\nu} H$ final state, with the Higgs boson decaying into a pair of quarks or gluons.
 
 The large part of the final particles produced in such events are invisible to the detector. 
 Hence a corner stone of the analysis of this channel is the ability to drastically reduce the contribution of events leading to the same detector response or a similar event signature. 
 The result presented in this work shows that applying a sequence of cuts on eight identified discriminating variables allows to reach a significance of 64 for the signal within the selected events. 
-This level is however not sufficient for the precision measurement targeted with these events, which requires a significance of 70. 
+This level is however not sufficient for the precision measurement targeted with these events, which requires a significance of at least 70. 
 Though sequential cuts are able to reduce by three orders of magnitude the background events, in the meantime they also remove half of the signal onces. 
 To improve on our result, another thesis work conducted by Felix \textsc{Mueller}~\cite{Mueller} developed a multivariate analysis  approach, which finally reached the desired significance for the event selection process.
 
@@ -40,20 +41,28 @@ Since the first small scale prototype (V0) developed in 2009, the collaboration 
 Two versions have been produced so far, the first one (V1) with a relaxed material budget constraint and the final one approaching the $0.3~\%$ of $\rm{X_{0}}$ requirement.
 The work done during this three years was split into checking the basic assessments of individual \gls{PLUME} module before assembling them into ladders, studying the impact of the mechanical deformations on the pointing resolution and preparing a protocol to measure the radiation length of complete ladders.
 
-The validation and characterisation of the final ladder done in laboratory have shown that the combination of six sensors running at the same time does not degrade the performances of the \gls{MIMOSA}-26.
-The fake hit rate measured for the different modules is below 
+The basic assessments are done in laboratory.
+For each module, an optical survey is performed to ensure the right positioning of sensors.
+Moreover, chips and wire-bonds are checked to make sure that none of them were damaged during gluing procedure or transportation.
+Then, an electrical test is performed and the six sensors are validated and characterised.
+The results of this tests have shown that the combination of the six sensors running at the same time does not degrade the \gls{MIMOSA}-26 performance.
+The fake hit rate of each sensor measured for the different modules is below $10^{-4}~\rm{hits/pixel/events}$ at a threshold of $3~\sigma$.
 
-During the data analysis of the test beam performed in 2011 at \gls{CERN} with the V1 ladder, runs where the ladder was tilted with respect to the track direction have shown deviation on the pointing resolution, as well as a correlation between the position of the hit on the sensor and the track residual measured.
-These deviations are coming from mechanical deformation induced by the material used (flex-cable, foam) during the mounting procedure of a \gls{PLUME} ladder.
-An algorithm to reduce the impact of these deformations have been implemented and has shown a good improvement on the pointing resolution measured for titled tracks.
+During the data analysis of the test beam performed in 2011 at \gls{CERN} with a V1 ladder, runs where the ladder was tilted with respect to the track direction have shown deviation on the spatial resolution, as well as a correlation between the position of the hit on the sensor and the track residual measured.
+These deviations are coming from mechanical deformation induced by the material used (flex-cables, foam) and the mounting procedure of a \gls{PLUME} ladder.
+An algorithm to reduce the impact of these deformations have been implemented and has shown a good improvement on the spatial resolution measured for titled tracks.
 A second study during this data analysis has permitted to present the benefits of a double-sided measurement. 
-The spatial resolution has been improve by a factor of about $1/\sqrt{2}$ and the creation of mini-vectors give access to a new parameter, the angular resolution, which was measured to be $0.1^{\circ}$ at normal incidence.
+The spatial resolution has been improved by a factor of about $1/\sqrt{2}$ and the creation of mini-vectors gives access to a new parameter, the angular resolution, which was measured to be $0.1^{\circ}$ at normal incidence.
 
-Finally, the last work performed during the thesis was to set-up a test beam with a lower beam energy (up to $5~\rm{GeV}$ electrons) to measure the radiation length of the first fully functional prototype.
+Finally, the last work performed during the thesis was to set-up a test beam with a lower beam energy (up to $5~\rm{GeV}$ electrons).
+One of the goals is to measure the radiation length of the V1 ladder.
 After analysing the data, the radiation length measured is $\left. \frac{x}{X_0} \right|_{\rm{measured}} \simeq 0.47 \pm 0.02~\%~\rm{X_0}$, confirming the theoretical calculation of $\left. \frac{x}{X_0}\right|_{\rm{theoretical}} \simeq 0.498~~\%~\rm{X_0}$.
-This measurement is in a good agreement to the theoretical value determined, even if the measured value is a bit lower than the expectations. 
-To improve the precision on the measurements, different methods could be used.
-Instead of using the \gls{PLUME} sensors as reference planes, the six telescope planes could be used to measured the deflection of the complete ladder.
+This measurement is in a good agreement to the theoretical value, even if the measured value is a bit lower than the expectation. 
+To improve the precision on the measurement, different methods could be used.
+Instead of considering the \gls{PLUME} sensors as reference planes, the six telescope planes could be used for tracking and measuring the radiation length.
+Another solution could be to perform a calibration run with a well-known material. 
+The reconstructed angle would be then corrected by a factor determined during the calibration procedure.
+
 
 % OUTLOOKS:
 %  * Test beam at low energy
@@ -65,36 +74,50 @@ Instead of using the \gls{PLUME} sensors as reference planes, the six telescope 
 %    - Sernwiette? 
 
 The work performed during this thesis has shown that the collaboration is able to build lightweight mechanical structure for a vertex detector.
-The material budget has been controlled and the first results are encouraging, a way to overcome the mechanical deformation inherent to the thin-sensor concept have been discussed.
-Moreover, this thesis, as well as the work performed by Loic \textit{Cousin} and Robert \textit{Maria}, have shown that \gls{CMOS} sensors are disturbed when they are closely laid together (butted and facing each others), but the expected performances (efficiency and spatial resolution) for one sensor are measured for a ladder.
-Nevertheless, the new ladder prototype with a material budget of $0.35~\%$ of $\rm{X_{0}}$ has not been tested in real conditions yet.
-
-
-
+A way to overcome the mechanical deformation inherent to the thin-sensor concept have been discussed.
+Besides, a procedure to control the material budget has been implemented and the first results are encouraging.
+This thesis, as well as the work performed by Loic \textsc{Cousin}~\cite{cousin} and Robert \textsc{Maria}~\cite{maria}, have shown that \gls{CMOS} sensors are disturbed when they are closely laid together (butted and facing each others), but the expected performances for one sensor are preserved for a ladder.
 Nevertheless, more tests and optimisations have to be done to improve the ladder.
 
 Firstly, the results of the test beam performed in April 2016 presented here are focused only on the material budget measurement.
-The performances of the ladder (efficiency and spatial resolution) for low momentum particles have to be checked.
+The ladder performances (efficiency and spatial resolution) for low momentum particles have to be checked.
 Runs with different tilts and air flow speed were acquired in order to study the mechanical deformations in more details.
 
-Secondly, the sensors used for validating the mechanical structure are \gls{MIMOSA}-26.
-They have the advantage of having a continuous readout without suffering from dead time, but their integration time is rather slow ($115.2~\rm{\mu s}$).
-This imposes to readout the data between two bunch crossings at the \gls{ILC}.
-But to keep the material budget below $1.5~\%~\rm{X_{0}}$, the power consumption of the sensors have to be adapted to the cooling system used.
-One way to decrease the power consumption is to use a \textit{power-pulsing} solution.
-This consists to reduce the consumption of the sensors during the $200~\rm{ms}$ of dead time and switching them on before the bunch crossing.
-Tests to perform \textit{power-pulsing} on a single \gls{MIMOSA}-26 sensor have been performed by the collaboration.
-The results have shown that the nominal supply voltage can de decreased from $3.3~\rm{V}$ to $1.85~\rm{V}$ without losing the sensor's registers~\cite{Kuprash2013}.
-Nonetheless, this sensor is not designed for this purpose and its behavior with other sensors inside a complete ladder is not known yet.
-Different tests have to be done to make sure that the ladder is still behaving correctly in a \textit{power-pulsing} mode.
-If the results are comforting, the ladder have to be then tested under real conditions with a high magnetic field (ideally $3~\rm{T}$).
-This tests is needed to study the impact of the Lorentz forces on the whole ladder, especially to know if it induces unwanted deformations or vibrations of the ladder.
-
-Finally, the mechanical structure can be improved by embedding the sensors directly inside the multi-lay micro-cable~\cite{Baudot2012}.
-This technique consists to glue the chips on a first polymide substrate layer.
+Secondly, the ladder new prototype with a material budget of $0.35~\%$ of $\rm{X_{0}}$ has been tested only in laboratory.
+A test beam in real conditions to measure its performance and its material budget has to be planned.
+Depending on the results of the test beam, the collaboration could consider to reach an even lower material budget.
+Another \gls{SiC} foam with a filling factor of $2~\%$ or a different bonding technique could be used.
+Two bonding  techniques are considered: laser soldering or embedding the sensors directly inside the multi-layer micro-cable~\cite{Baudot2012}.
+This second technique consists to glue the chips on a first polymide substrate layer.
 Then, a metal layer is deposited on top of it and the metal traces are directly connected to the chips pads.
 On the last step, an insulator is added to the module.
-This method offers the advantage of avoiding the wire-bonding and reducing in the same time the width of the module.
-Moreover, with this structure, mechanical stress is applied on the polymer wrapping and reducing its impact on the sensors.
-The advantages of this technique are the ability to connect directly the metal traces to the pads, avoiding wire-bonding and reducing in the same time the width of the module.
+This method offers the advantage of avoiding wire-bondings and reducing in the same time the width of the module.
+Moreover, with this structure, mechanical stress is applied on the polymer wrapping and it reduces its impact on the sensors.
+
+Thirdly, the lightweight mechanical structure is validated with \gls{MIMOSA}-26 sensors.
+They have the advantage of having a continuous readout without suffering from dead time, but their integration time is rather slow ($115.2~\rm{\mu s}$).
+This imposes to readout the data between two bunch crossings at the \gls{ILC}.
+But to keep the material budget below $1.5~\%~\rm{X_{0}}$, the power consumption of sensors have to be adapted to the cooling system used.
+One way for decreasing the power consumption is to use a \textit{power-pulsing} scheme.
+The sensors consumption is reduced during the $200~\rm{ms}$ of dead time and increased again before the next bunch crossing.
+The power-pulsing scheme has been tested on a single \gls{MIMOSA}-26 sensors, but not yet on a complete ladder.
+The results have shown that the nominal supply voltage can de decreased from $3.3~\rm{V}$ to $1.85~\rm{V}$ without losing the sensor's registers~\cite{Kuprash2013}.
+Nonetheless, this sensor is not designed for this purpose and its behavior with other sensors inside a complete ladder is not known yet.
+For a complete ladder, basic assessments with power-pulsing should be done in laboratory, before performing tests in real conditions with a high magnetic field (more than $1~\rm{T}$).
+The impact of the Lorentz forces on a $10~\rm{g}$ ladder would be studied, specifically to look for unwanted deformations or vibrations induced on the mechanical structure.
+
+Finally, the double-sided concept could be enriched if sensors with different optimisation are mixed on both sides.
+One side would have highly granular sensors providing a good spatial resolution (below $3~\rm{\mu m}$), whereas the other one would have sensors with elongated pixel providing a fast integration time (below $10~\rm{\mu s}$).
+Basic assessments, as well as the power dissipation have to be studied for this configuration.
+If the power dissipation is too high, the air-cooling system might not be performant anymore.
+Thus, an active cooling system has to be used.
+Microchannels could be integrated inside the mechanical structure, in which a coolant will be in charge of regulating the power dissipation.
+
+%Finally, the mechanical structure can be improved by embedding the sensors directly inside the multi-lay micro-cable~\cite{Baudot2012}.
+%This technique consists to glue the chips on a first polymide substrate layer.
+%Then, a metal layer is deposited on top of it and the metal traces are directly connected to the chips pads.
+%On the last step, an insulator is added to the module.
+%This method offers the advantage of avoiding the wire-bonding and reducing in the same time the width of the module.
+%Moreover, with this structure, mechanical stress is applied on the polymer wrapping and reducing its impact on the sensors.
+%The advantages of this technique are the ability to connect directly the metal traces to the pads, avoiding wire-bonding and reducing in the same time the width of the module.
 
