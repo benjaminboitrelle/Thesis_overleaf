@@ -47,22 +47,21 @@ The basic assessments are done in laboratory.
 For each module, an optical survey is performed to ensure the right positioning of sensors.
 Moreover, chips and wire-bonds are checked to make sure that none of them were damaged during gluing procedure or transportation.
 Then, an electrical test is performed and the six sensors are validated and characterised.
-The results of this tests have shown that the combination of the six sensors running at the same time does not degrade the \gls{MIMOSA}-26 performance.
-The fake hit rate of each sensor measured for the different modules is below $10^{-4}~\rm{hits/pixel/events}$ at a threshold of $3~\sigma$.
+The results of this tests have shown that the combination of the six sensors running at the same time in close proximity does not degrade the \gls{MIMOSA}-26 performance.
+The fake hit rate of each sensor measured for the different modules is below $10^{-6}~\rm{hits/pixel/events}$ at a threshold of $6~\sigma$.
 
 During the data analysis of the test beam performed in 2011 at \gls{CERN} with a V1 ladder, runs where the ladder was tilted with respect to the track direction have shown deviation on the spatial resolution, as well as a correlation between the position of the hit on the sensor and the track residual measured.
 These deviations are coming from mechanical deformation induced by the material used (flex-cables, foam) and the mounting procedure of a \gls{PLUME} ladder.
-An algorithm to reduce the impact of these deformations have been implemented and has shown a good improvement on the spatial resolution measured for titled tracks.
+An offline algorithm to reduce the impact of these deformations have been implemented and has shown a good improvement on the spatial resolution measured for titled tracks.
 A second study during this data analysis has permitted to present the benefits of a double-sided measurement. 
 The spatial resolution has been improved by a factor of about $1/\sqrt{2}$ and the creation of mini-vectors gives access to a new parameter, the angular resolution, which was measured to be $0.1^{\circ}$ at normal incidence.
 
 Finally, the last work performed during the thesis was to set-up a test beam with a lower beam energy (up to $5~\rm{GeV}$ electrons).
 One of the goals is to measure the radiation length of the V1 ladder.
 After analysing the data, the radiation length measured is $\left. \frac{x}{X_0} \right|_{\rm{measured}} \simeq 0.47 \pm 0.02~\%~\rm{X_0}$, confirming the theoretical calculation of $\left. \frac{x}{X_0}\right|_{\rm{theoretical}} \simeq 0.498~~\%~\rm{X_0}$.
-This measurement is in a good agreement to the theoretical value, even if the measured value is a bit lower than the expectation. 
 To improve the precision on the measurement, different methods could be used.
 Instead of considering the \gls{PLUME} sensors as reference planes, the six telescope planes could be used for tracking and measuring the radiation length.
-Another solution could be to perform a calibration run with a well-known material. 
+Another solution could be to perform a calibration run with well-known materials. 
 The reconstructed angle would be then corrected by a factor determined during the calibration procedure.
 
 
@@ -78,7 +77,8 @@ The reconstructed angle would be then corrected by a factor determined during th
 The work performed during this thesis has shown that the collaboration is able to build lightweight mechanical structure for a vertex detector.
 A way to overcome the mechanical deformation inherent to the thin-sensor concept have been discussed.
 Besides, a procedure to control the material budget has been implemented and the first results are encouraging.
-This thesis, as well as the work performed by Loic \textsc{Cousin}~\cite{cousin} and Robert \textsc{Maria}~\cite{maria}, have shown that \gls{CMOS} sensors are disturbed when they are closely laid together (butted and facing each others), but the expected performances for one sensor are preserved for a ladder.
+This thesis, as well as the work performed by Loic \textsc{Cousin}~\cite{cousin} and Robert \textsc{Maria}~\cite{maria}, have shown that \gls{CMOS} sensors are not disturbed when they are closely laid together (butted and facing each others).
+The expected performances for one sensor are preserved for a ladder.
 Nevertheless, more tests and optimisations have to be done to improve the ladder.
 
 Firstly, the results of the test beam performed in April 2016 presented here are focused only on the material budget measurement.
@@ -88,31 +88,30 @@ Runs with different tilts and air flow speed were acquired in order to study the
 Secondly, the ladder new prototype with a material budget of $0.35~\%$ of $\rm{X_{0}}$ has been tested only in laboratory.
 A test beam in real conditions to measure its performance and its material budget has to be planned.
 Depending on the results of the test beam, the collaboration could consider to reach an even lower material budget.
-Another \gls{SiC} foam with a filling factor of $2~\%$ or a different bonding technique could be used.
-Two bonding  techniques are considered: laser soldering or embedding the sensors directly inside the multi-layer micro-cable~\cite{Baudot2012}.
+Another \gls{SiC} foam with a density of $2~\%$ or a different bonding technique could be used.
+Two new bonding  techniques could be considered: laser soldering or embedding the sensors directly inside the multi-layer micro-cable~\cite{Baudot2012}.
 This second technique consists to glue the chips on a first polymide substrate layer.
 Then, a metal layer is deposited on top of it and the metal traces are directly connected to the chips pads.
 On the last step, an insulator is added to the module.
-This method offers the advantage of avoiding wire-bondings and reducing in the same time the width of the module.
+These methods offers the advantage of avoiding wire-bondings and reducing in the same time the width of the module.
 Moreover, with this structure, mechanical stress is applied on the polymer wrapping and it reduces its impact on the sensors.
 
 Thirdly, the lightweight mechanical structure is validated with \gls{MIMOSA}-26 sensors.
 They have the advantage of having a continuous readout without suffering from dead time, but their integration time is rather slow ($115.2~\rm{\mu s}$).
-This imposes to readout the data between two bunch crossings at the \gls{ILC}.
+This does not allow for tagging tracks with the bunch crossing.
 But to keep the material budget below $1.5~\%~\rm{X_{0}}$, the power consumption of sensors have to be adapted to the cooling system used.
 One way for decreasing the power consumption is to use a \textit{power-pulsing} scheme.
 The sensors consumption is reduced during the $200~\rm{ms}$ of dead time and increased again before the next bunch crossing.
 The power-pulsing scheme has been tested on a single \gls{MIMOSA}-26 sensors, but not yet on a complete ladder.
-The results have shown that the nominal supply voltage can de decreased from $3.3~\rm{V}$ to $1.85~\rm{V}$ without losing the sensor's registers~\cite{Kuprash2013}.
+The results have shown that during inactive period, the nominal supply voltage can de decreased from $3.3~\rm{V}$ to $1.85~\rm{V}$ without losing the sensor's registers~\cite{Kuprash2013}.
 Nonetheless, this sensor is not designed for this purpose and its behavior with other sensors inside a complete ladder is not known yet.
 For a complete ladder, basic assessments with power-pulsing should be done in laboratory, before performing tests in real conditions with a high magnetic field (more than $1~\rm{T}$).
-The impact of the Lorentz forces on a $10~\rm{g}$ ladder would be studied, specifically to look for unwanted deformations or vibrations induced on the mechanical structure.
+The impact of the Lorentz forces on a $10~\rm{g}$ ladder need to be studied, specifically to look for unwanted deformations or vibrations induced on the mechanical structure.
 
 Finally, the double-sided concept could be enriched if sensors with different optimisation are mixed on both sides.
-One side would have highly granular sensors providing a good spatial resolution (below $3~\rm{\mu m}$), whereas the other one would have sensors with elongated pixel providing a fast integration time (below $10~\rm{\mu s}$).
+One side would have highly granular sensors providing a good spatial resolution (below $3~\rm{\mu m}$), whereas the other one would have sensors with elongated pixel providing a fast integration time (well below $10~\rm{\mu s}$).
 Basic assessments, as well as the power dissipation have to be studied for this configuration.
 If the power dissipation is too high, the air-cooling system might not be performant anymore.
-Thus, an active cooling system has to be used.
 Microchannels could be integrated inside the mechanical structure, in which a coolant will be in charge of regulating the power dissipation.
 
 %Finally, the mechanical structure can be improved by embedding the sensors directly inside the multi-lay micro-cable~\cite{Baudot2012}.

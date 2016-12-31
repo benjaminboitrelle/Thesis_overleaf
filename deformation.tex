@@ -2,15 +2,15 @@
 \label{chap:deformation}
 
   The first full-scale prototype which embeds twelve sensors glued on a copper flex-cable and a 8 \% density \gls{SiC} foam was tested in November 2011 at \gls{CERN}-\gls{SPS} facility with a pions beam of $120~\rm{GeV}$.
-  The motivations to perform such a test in real conditions are first, to make sure that the individual sensor performances (detection efficiency, spatial resolution) are preserved on the ladder.
-  Secondly, to verify the response homogeneity of each sensor.
+  The motivations to perform such a test in real conditions are first, to make sure that individual sensor performance (detection efficiency, spatial resolution) are preserved on a ladder.
+  Secondly, response homogeneity of each sensor has to be verified.
   Finally, it has to prove the benefits of a double sided measurement.
   This chapter does not aim to present fully the test beam campaign and all the results but to focus on a specific study of the ladder's deformation observed during the alignment procedure.
-  More results about this test beam are presented in Loic \textsc{Cousin}'s thesis~\cite{cousin} and also in Robert \textsc{Daniel}~\cite{maria}.
+  More results about this test beam are presented in Loic \textsc{Cousin}'s thesis~\cite{cousin} and also in Robert \textsc{Maria}'s one~\cite{maria}.
   This chapter will present the test beam facility, as well as the experimental set-up.
-  The alignment procedure is explained and some results for the ladder positioned in a normal incidence, as well as the ladder tilted in one direction, are discussed.
-  The second part of the chapter will focus on the deviation observed during the alignment and will discuss a method to overcome these deformations.
-  Finally, the benefits of double-sided measurements will be introduced.
+  The alignment procedure is explained and some results for ladder positioned in a normal incidence, as well as ladder tilted in one direction, are discussed.
+  The second part of this chapter will focus on some deviations observed during the alignment and will discuss a method to overcome these deformations.
+  Finally, benefits of double-sided measurements will be introduced.
   
   \minitoc
 
@@ -18,7 +18,7 @@
 
     \subsection{Test beam facility and beam test set-up}
 
-    The test beam was performed at \gls{CERN}-\gls{SPS} in the North hall on the H6 beam line~\cite{SPS}.
+    The test beam was performed at \gls{CERN}-\gls{SPS} in the North hall on H6 beam line~\cite{SPS}.
     Negative pions with an energy of $120~\rm{GeV}$ were used.
     The spill structure was $9.6~\rm{s}$ with a dead time of $45.6~\rm{s}$. 
     The bench set-up is composed of a telescope equipped with four standard \gls{MIMOSA}-26 sensors, thinned down to $120~\rm{\mu m}$ and used as reference planes.
@@ -31,7 +31,7 @@
     The acquisition system is limited to eight inputs (one input per \gls{MIMOSA}-26 sensor) and four of them are used by the telescope.
     Thus, only four sensors of the \gls{DUT} were connected to the acquisition, two on each side.
     The temperature of the \gls{DUT} was stabilised using an air flow cooling system, provided by a fan.
-    The air speed typically reaches few $\rm{m.s}^{-1}$.
+    Air speed typically reaches few $\rm{m.s}^{-1}$.
 
     \subsection{Cartesian coordinate systems}
 
@@ -177,7 +177,7 @@
       \subsubsection{Alignment of the DUT}
 
       When the telescope alignment is done, the reference tracks reconstructed by the reference planes are used to align the \gls{DUT}.
-      Its $z$ position is fixed, nonetheless, two degrees of freedom are added to the three degrees defined above: the rotations around the $x$ and $y$-axes.
+      Its $z$ position is fixed, nonetheless, two degrees of freedom are added to the three degrees defined above, the rotations around the $x$ and $y$-axes.
       To assist the user in the alignment steps, several scatter plots are produced (see figure~\ref{fig:alignmentDUT}).
       For examples, figures~\ref{fig:alignUV} and~\ref{fig:alignVU} help to indicate a tilt in the $z$-direction, whereas figures~\ref{fig:alignUU} and~\ref{fig:alignVV} help to find shift and/or tilt in the respective $u$ and $v$-directions.
       Figures~\ref{fig:residualU} and~\ref{fig:residualV} show the residuals distribution in both direction for one sensor of the \gls{DUT}.
@@ -606,14 +606,10 @@
           Back  &      60       & $ 23.3 \ \pm \ 0.13$ & $21.7 \ \pm \ 0.1$  &    $6.8 \ \%$  \tabularnewline
           \hline %----------------------------------------------------------------------------------------------------------------
         \end{tabular}
-        \caption{Alignment results for different angles before and after using the correction based on Legendre polynomials.}
+        \caption{Alignment results for different angles before and after using the correction based on Legendre polynomials without taking into account the resolution of the telescope.}
         \label{tab:correctionOfDeformation}
       \end{table}
-      \todo{Specify if telescope res or not}
 
-      A hypothesis on the origin of the deformation might come from heating or the cooling system that induces vibration.
-      Although few runs were performed with a different air flow speed, the impact of the cooling system and the heat was not planned for this test beam.
-      Thus, the results are not relevant enough to conclude for any vibration or the heat that tends to deform more the surface.
     
   \section{Benefits of double-sided measurement}
   
@@ -642,14 +638,15 @@
       \label{eq:resolutionMV}
     \end{equation}
 
-    Where $\sigma_{\rm{m}}$ is the resolution on the intermediate plane, $\sigma_{\rm{front}}$ and $\sigma_{\rm{back}}$ are the resolution of the two sides of the \gls{DUT}, $\sigma_{\rm{tel}}$ the resolution of the telescope and $(d_{\rm{front}} - d_{\rm{back}})$ the distance between the front and back planes and $d_{\rm{m}}^2$ the position of the intermediate plane.
-    For the plume ladder, the \gls{SiC} has a thickness of $2~\rm{mm}$ and the intermediate plane is located in the middle, the equation~\ref{eq:resolutionMV} can be rewritten:
+    Where $\sigma_{\rm{m}}$ is the resolution on the intermediate plane, $\sigma_{\rm{front}}$ and $\sigma_{\rm{back}}$ are the resolution of the two sides of the \gls{DUT}, $\sigma_{\rm{tel}}$ the resolution of the telescope and $(d_{\rm{front}} - d_{\rm{back}})$ the distance between front and back planes and $d_{\rm{m}}^2$ the position of the intermediate plane.
+    For the \gls{PLUME} ladder, the \gls{SiC} foam used has a thickness of $2~\rm{mm}$ and the intermediate plane is located in the middle.
+    Equation~\ref{eq:resolutionMV} can be rewritten:
 
     \begin{equation}
       \sigma_{\rm{m}}^2 = \frac{\sigma_{\rm{front}}^2 + \sigma_{\rm{back}}^2}{4} + \sigma_{\rm{tel}}^2.
     \end{equation}
 
-    Thus, if the resolution on both side of the telescope are similar with $\sigma_{\rm{front}} = \sigma_{\rm{back}} = \sigma$, the position resolution of the mini-vector $\sigma_{\rm{res}}$ is then:
+    Thus, if the resolution on both side of \gls{PLUME} are similar with $\sigma_{\rm{front}} = \sigma_{\rm{back}} = \sigma$, the position resolution of the mini-vector $\sigma_{\rm{res}}$ is then:
 
     \begin{equation}
       \sigma_{\rm{res}} = \frac{\sigma}{\sqrt{2}}.
@@ -681,14 +678,14 @@
 
     For a run in normal incidence, the spatial resolution measured on each side is $\sigma_{\rm{front}} = \sigma_{\rm{back}} = 4 \pm 0.04~\rm{\mu m}$, according to figure~\ref{fig:residualFrontBackLadder}.
     Consequently, the uncertainty on the estimated position of the mini-vector should be $\sigma_{\rm{res}} = 2.8 \pm 0.1~\rm{\mu m}$.
-    The measurement of the standard deviation of the mini-vector displayed on figure~\ref{fig:residualMV} corresponds of $\sigma_{\rm{m}} = 3.2 \pm 0.026 ~\rm{\mu m}$.
+    Measurement of the standard deviation of the mini-vector displayed on figure~\ref{fig:residualMV} corresponds of $\sigma_{\rm{m}} = 3.2 \pm 0.026 ~\rm{\mu m}$.
     %The measurement of the residual for the mini-vector displayed on figure~\ref{fig:residualMV} gives a residual of $\sigma_{\rm{m}} = 3.2 \pm 0.026 ~\rm{\mu m}$.
-    Taking into account the resolution of the telescope ($\sigma_{\rm{tel}} = 1.8 \pm 0.5~\rm{\mu m}$), the spatial resolution achieved by the mini-vector is $\sigma_{\rm{res}} = 2.9 \pm 0.1~\rm{\mu m}$, when aligned with expected uncertainty.
+    Taking into account the telescope's resolution ($\sigma_{\rm{tel}} = 1.8 \pm 0.5~\rm{\mu m}$), the mini-vector's spatial resolution achieved is $\sigma_{\rm{res}} = 2.9 \pm 0.1~\rm{\mu m}$, when aligned with expected uncertainty.
 
    \subsection{Angular resolution}
 
    The mini-vectors give access to new information not provided by a single sensor, the particle incoming angle.
-   The direction of the track can be compared to the direction of the mini-vector.
+   The direction of track can be compared to the direction of mini-vector.
    The uncertainty estimation associated to the measured angle is given by:
    %The estimation of uncertainty on the estimated angle is given by:
 
@@ -708,50 +705,78 @@
      \label{fig:angRes}
    \end{figure}
 
-   Figure~\ref{fig:angRes} depicts the distribution of the angle residual between the tracks direction and the mini-vectors direction.
-   As it can be seen, several peaks are present and the distribution cannot be reproduced by a Gaussian fit.
-   The sensors have a binary output and the hit position is determined by the centre-of-gravity of the clusters.
-   If the cluster is only one pixel, the centre-of-gravity will be in the middle of the pixel, but if the clusters contain more pixels, this centre-of-gravity will be displaced.
-   Moreover, they are some deviations in the distance between the hit projected to one side to the real hit position on this side.
-   Figure~\ref{fig:clusterSize} represents the minimum distance between one cluster on one side to the cluster on the other side.
+   Figure~\ref{fig:angRes} depicts the distribution of the angle residual between tracks direction and mini-vectors direction.
+   As it can be seen, several peaks are visible and the distribution cannot be reproduced by a Gaussian fit.
+   To understand the origin of these peaks, a selection on the number of pixels per cluster on each side of the ladder is performed.
+   
+   Firstly, clusters containing only one pixel on each side are selected.
+   A peak centered in zero is awaited, but during the gluing procedure, two pixels facing each other could be slightly displaced, leading to a small angle of displacement, labelled $\delta$.
+   On figure~\ref{fig:angRes1x1}, this angle is represented by the projection of the pixel center on one side of the ladder to the other side.
+   A thick arrow represents tracks hitting most of the time this two pixels, whereas a thinner arrow is used for tracks which hit a pixel with a displacement corresponding to a pitch size $p = 18.4~\rm{\mu m}$.
+   The angle between the two displaced pixels is $\psi = 0.52^{\degree}$, leading to a smaller peak for an angle of $\delta - \psi = -0.40^{\degree}$.
+   On figure~\ref{fig:1x1cluster} shows a main peak around $0.12^{\degree}$, as well as a secondary peak around $-0.40^{\degree}$.
+
+   Secondly, a selection of clusters containing one pixel on one side and up to two pixels on the other side is performed.
+   Clusters containing two pixels have a centre-of-gravity located between the two pixels.
+   Thus, the angle between the two centre-of-gravities is $\psi/2 = 0.26^{\degree}$.
+   Figure~\ref{fig:1x2clusters} shows this displacement. 
+   Grey areas are the position of reconstructed hit, which could be in the centre of a pixel, or between two pixels. 
+   In addition to the main peak at $\delta = 0.12^{\degree}$, two other peaks are awaited at $\delta - \psi/2 = -0.14^{\degree}$ and $\delta + \psi/2 = 0.38^{\degree}$.
+   On figure~\ref{fig:angRes2x1}, these three peaks are visible, but a fourth one appears. 
+   Due to the selection performed, there is a contamination of the one pixel clusters giving a peak at $\delta - \psi = -0.40^{\degree}$.
+
+   Thirdly, a selection of up two pixels per cluster on each side is done.
+   In addition to the main peak at $\delta = 0.12^(\degree)$, two other peaks are awaited.
+   The displacement between two centre-of-gravity corresponds of a pitch size $p$ (which corresponds to an angle $\psi = 0.52^{\degree}$, see figure~\ref{fig:2x2clusters}).
+   Thus, these secondary peaks will be located at $\delta - \psi = -0.40^{\degree}$ and $\delta + \psi = 0.64^{\degree}$.
+   Nevertheless, on figure~\ref{fig:angRes2x2}, only peaks at $0.12^{\degree}$ and $-0.14^{\degree}$ are visible.
+   It could be possible that the displacement of one pitch between the two clusters is unlikely and the peak at $-0.14^{\degree}$ comes from a contamination of smaller clusters.
+
+   Finally, for clusters bigger than two pixels on each side, tracks reconstructed have a spread angle centered in $0^{\degree}$.
    
    \begin{figure}[!h]
      \centering
       \begin{subfigure}[t]{0.45\textwidth}
          \centering
-         \includegraphics[width = \textwidth]{Pictures/deformation/cluster_1x1.png}
+         %\includegraphics[width = \textwidth]{Pictures/deformation/cluster_1x1.png}
+         \includegraphics[width = \textwidth]{Pictures/deformation/cluster1x1_jerome.png}
          \caption{One pixel per cluster.}
+         \label{fig:1x1cluster}
       \end{subfigure}
       \quad
        %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
         %(or a blank line to force the subfigure onto a new line)
       \begin{subfigure}[t]{0.45\textwidth}
         \centering
-        \includegraphics[width = \textwidth]{Pictures/deformation/cluster_1x2.png}
+        %\includegraphics[width = \textwidth]{Pictures/deformation/cluster_1x2.png}
+        \includegraphics[width = \textwidth]{Pictures/deformation/cluster1x2_jerome.png}
         \caption{$1 \times 2$ pixels per cluster.}
+        \label{fig:1x2clusters}
       \end{subfigure}
       
       \begin{subfigure}[t]{0.45\textwidth}
         \centering
-        \includegraphics[width = \textwidth]{Pictures/deformation/cluster_2x2.png}
+        \includegraphics[width = \textwidth]{Pictures/deformation/cluster2x2_jerome.png}
         \caption{$2 \times 2$ pixels per cluster.}
+        \label{fig:2x2clusters}
       \end{subfigure}
-      \quad
-      \begin{subfigure}[t]{0.45\textwidth}
-        \centering
-        \includegraphics[width = \textwidth]{Pictures/deformation/cluster_3x3.png}
-        \caption{$3 \times 3$ pixels per cluster.}
-      \end{subfigure}
-      \caption{Minimum distance between the cluster projected on one side to the position of the cluster of this side.}
+      %\quad
+      %\begin{subfigure}[t]{0.45\textwidth}
+      %  \centering
+      %  \includegraphics[width = \textwidth]{Pictures/deformation/cluster_3x3.png}
+      %  \caption{$3 \times 3$ pixels per cluster.}
+      %\end{subfigure}
+      %\caption{Minimum distance between the cluster projected on one side to the position of the cluster of this side.}
+      \caption{Representation of angle displacement between different size of clusters on each side of the ladder. A thicker arrow is the main displacement between the two pixels fired, whereas a thinner one is used for traces hitting a nearby pixel. Grey areas are the position of the reconstructed hit. It could be between two pixels or centered in one pixel, depending on the cluster size.}
       \label{fig:clusterSize}
    \end{figure}
 
-   Hence, for one pixel clusters, the displacement between the two pixels is the pitch $p = 18.4~\rm{\mu m}$ and the angle between the two minimal hit position is then $\theta \sim 0.52^{\degree}$.
-   A selection of the events where only clusters of 1 pixel are considered is shown on figure~\ref{fig:angRes1x1}.
-   The two peaks have a spacing close to $0.5^{\degree}$.
-   For clusters of $1 \times 2$ or $2 \times 2$ pixels, the distance between the two hit positions reconstructed via centre-of-gravity is half the pitch.
-   Hence, the peaks are two times closer with a spacing of nearly $0.25^{\degree}$, as seen on figures~\ref{fig:angRes2x1} and~\ref{fig:angRes2x2}.
-   Nevertheless, for larger cluster sizes the angular distribution has only one peak around $0^{\degree}$.
+   %Hence, for one pixel clusters, the displacement between the two pixels is the pitch $p = 18.4~\rm{\mu m}$ and the angle between the two minimal hit position is then $\theta \sim 0.52^{\degree}$.
+   %A selection of the events where only clusters of 1 pixel are considered is shown on figure~\ref{fig:angRes1x1}.
+   %The two peaks have a spacing close to $0.5^{\degree}$.
+   %For clusters of $1 \times 2$ or $2 \times 2$ pixels, the distance between the two hit positions reconstructed via centre-of-gravity is half the pitch.
+   %Hence, the peaks are two times closer with a spacing of nearly $0.25^{\degree}$, as seen on figures~\ref{fig:angRes2x1} and~\ref{fig:angRes2x2}.
+   %Nevertheless, for larger cluster sizes the angular distribution has only one peak around $0^{\degree}$.
 
 
    \begin{figure}[!h]
@@ -792,25 +817,26 @@
   \section{Conclusions}
 
   Along this chapter, the test beam campaign done in November 2011 at \gls{CERN} was discussed. 
-  The results were focused on the alignment procedure, as well as the performances of the ladder in normal and tilted positions.
-  The runs in tilted position were challenging to align due to some deviations between the track-hit residual and the actual hit position on the plane.
-  This has the effect of improving the spatial residual measured.
-  A pointing resolution is expected for bending tracks but in a smaller proportion.
-  An algorithm using Legendre polynomials to describe the sensor's shape was discussed.
-  The results obtained for small angles are close to the value expected for a single \gls{MIMOSA}-26 sensor in normal incidence. 
-  Nevertheless, the resolution depends strongly on the incidence angle.
-  For $36^{\degree}$ and higher, the correction is less efficient to achieve the normal performances.
-  It might also be possible that the heating is increasing the deformation and that the cooling system could induce some vibrations which induce some deformation too.
-  Nevertheless, the results obtained here for different air flow speed can not lead to a conclusion on a possible impact of the cooling system.
+  The results were focused on the alignment procedure, as well as performance of the ladder in normal and tilted positions.
+  Runs in tilted position were challenging to align due to some deviations between the track-hit residual and the actual hit position on the plane.
+  This has the effect of decrease the spatial residual measured.
+  A wider spatial resolution is expected for bended tracks but in a smaller proportion.
+  An offline algorithm using Legendre polynomials to describe the sensor's shape was discussed.
+  The results obtained for small angles are close to expected value for a single \gls{MIMOSA}-26 sensor in normal incidence. 
+  Nevertheless, the resolution depends strongly on incidence angle.
+  For $36^{\degree}$ and higher, the correction is less efficient to achieve performance obtained in normal incidence.
+  It might also be possible that the heating is increasing the deformation and that the cooling system could induce some vibrations.
+  These vibrations might change locally the sensors position.
+  Nevertheless, not enough data were collected to observe vibrations induced by the cooling system.
 
-  The second part of this chapter was addressing the benefits of double-sided measurements.
-  For normal incidence, the resolution of the mini-vector, which is the combination of the resolution on each side,  is better than the spatial resolution of a single sensor.
-  Moreover, the mini-vectors give access to another information: the angular resolution.
-  Due to the binary output and the centre-of-gravity hit position reconstruction, multiple peaks are visible and a simple Gaussian fit can not be used. 
-  The same work has to be done with ladder titled with respect to the beam to study the impact of the deformation on the mini-vectors.
+  The second part of this chapter was addressing benefits of double-sided measurements.
+  For normal incidence, the resolution of mini-vector, which is the combination of the resolution on each side, is better than the spatial resolution of a single sensor.
+  Moreover, mini-vectors give access to another information: the angular resolution.
+  Due to binary output and the centre-of-gravity hit position reconstruction, multiple peaks are visible and a simple Gaussian fit can not be used. 
+  The same work has to be done with ladder titled with respect to the beam to study the impact of deformation on mini-vectors.
   This additional study was unfortunately outside the time reach of this work.
 
-  The first results obtained are encouraging the mechanical structure.
+  The first results obtained are encouraging this mechanical structure.
   Nevertheless, the material budget of the ladder is estimated theoretically.
-  The next chapter will introduce a test beam performed at \gls{DESY} in 2016 and will specifically talk about the measurement of the radiation length for a \gls{PLUME}-V1 prototype.
+  Next chapter will introduce a test beam performed at \gls{DESY} in 2016 and will specifically talk about measurement of the radiation length for a \gls{PLUME}-V1 prototype.
 

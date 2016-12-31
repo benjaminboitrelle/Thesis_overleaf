@@ -4,25 +4,8 @@
 
   In chapter~\ref{chap:vxd}, an overview of the \gls{PLUME} project was presented.
   Since 2010, the collaboration is building full scale and fully functional ladders and is trying to reduce the material budget down to $0.35~\%$ of $\rm{X_{0}}$.
-  Due to the six sensors working together and the huge amount of electrical lines to control and read the different sensors on a module, the ladders have to be carefully tested and validated in the lab before performing tests under real conditions at \gls{CERN} or \gls{DESY} test beam facilities.
-  %The chapter~\ref{chap:vxd} has described the \gls{PLUME} project with the different prototypes that were built. 
-  %Since the version-1 of \gls{PLUME}, the ladder has a more complicated electrical scheme due to the six sensors on each module.
-  %The flex-cable used has a lot of thin metal layers connected to the sensors.
-  %The synchronisation, as well the powering and data transmission of the chips have to be work without any problem.
-  %%Since the version-1 of \gls{PLUME}, the detector is more complicated due to the six sensors on a module that have to be synchronised and the flex-cable which has a lot of thin metal traces to pilot and read the sensors.
-  %Before performing a test under real conditions at test beams CERN or at DESY, the device has to be validated and characterised in the lab.
+  Due to the six sensors working together and the huge amount of electrical lines to control and read the different sensors on a module, these ladders have to be carefully tested and validated in laboratory before performing tests under real conditions at \gls{CERN} or \gls{DESY} test beam facilities.
   This chapter introduces the different steps from the assembly procedure performed at Strasbourg (for the module) and Bristol (for a complete ladder), to the final tests to study the sensors response, and include electrical functionality tests at Hamburg.
-  %This chapter is introducing the different steps from the assembly procedure performed at Strasbourg (for the module) and Bristol (for a complete ladder), to the final tests with a radiation source, and include electrical functionality tests.
-
-  %The \gls{PLUME} ladders are complex detectors and the last prototype was designed to optimise the material budget, by decreasing the width of the flex-cable and the metal traces.
-  %Before to perform test in real conditions, the device has to be validated and characterised first in the lab.
-  %This chapter is introducing the different steps from the assembly procedure performed at Strasbourg and Bristol, the electrical functionality checks to the tests with a radiation source,
-
-  %Along chapter~\ref{chap:vxd}, the evolution of the \gls{PLUME} ladder design has been presented.
-  %The first fully functionnal electrical ladder embeding six sensors on each module was built in 2010 
-
-  %^This chapter is introducing the different steps from the assembly procedure performed at Strasbourg (for the module) and Bristol (for a complete ladder), to the final tests to study the sensors response, and include electrical functionality tests at Hamburg.
-  %^Before performing a test under real coniditions at CERN or at DESY test beam facilities, the device has to be validated and characterised in the lab.
  
  \minitoc
   
@@ -47,48 +30,38 @@
     The module assembly is performed at the \gls{IPHC} by the microelectronics group and is done in three steps.
     First of all, passive components are soldered onto a flex-cable.
     Then, an epoxy layer with a thickness of $300~\rm{\mu m}$ is applied under the connector side.
-    Due to the force applied by pulling and pushing the jumper cable on the \gls{ZIF} connector, the epoxy layer has the role to reinforce this area and to avoid the flex-cable to be damaged.
+    Due to the force applied by pulling and pushing the jumper cable on the \gls{ZIF} connector, the epoxy layer is used to reinforce this area and to avoid damaging the flex-cable.
     The module is then placed on a metal jig to ensure its flatness using a vacuum suction.
-    The next step consists of gluing the six sensors onto the flex.
-    The positioning of the chips was used to be done manually, but a programmable robot which has a maximum mismatch alignment reaching approximately $20~\mu\rm{m}$ is now used for this procedure.
+    Next step consists of gluing the six sensors onto the flex.
+    The positioning of chips was used to be done manually, but a programmable robot which has a maximum mismatch alignment reaching approximately $20~\mu\rm{m}$ is now used for this procedure.
     As the sensors are thin and fragile pieces, their are manipulated with a vacuum sucker.
-    Few drops of glue are dispensed on the flex and then, the sensors are gently pressed one by one on top of it to be glued.
-    Afterward, the glue is cured in an oven and the chips cannot be removed anymore.
+    Few drops of glue are dispensed on the flex and then, these sensors are gently pressed one by one on top of it to be glued.
+    Afterward, glue is cured in an oven and the chips cannot be removed anymore.
     If a sensor is not working properly, it can not be replaced by a new one because the force needed to remove it might break the fragile flex-cable.
-    On the worse case scenario, a new sensor can be glued on top of it, but this solution cannot be envisaged for a real ladder as it increases the material budget locally.
-    
-    In order to avoid this situation, the sensors are probe-tested at the IK in Frankfurt, to select only the good ones before the module assembly.
-    The final step consists of soldering the 540 wire-bonds (a single \gls{MIMOSA}-26 requires 90 wire-bonds) using a semi-automatic machine.
-    The wire-bonds can be protected by applying a glob-top epoxy\todo{Citation to a glob-top paper}.
+    On the worse case scenario, a new sensor can be glued on top of it, but this solution cannot be envisaged for a real ladder as it increases locally the material budget.
+    To avoid this situation, a sensor probe-testing is performed to select only good sensors before the module assembly.
+    This step is done at the IK in Frankfurt.
+    Final step consists of soldering the 540 wire-bonds (a single \gls{MIMOSA}-26 requires 90 wire-bonds) using a semi-automatic machine.
+    Wire-bonds can be protected by applying a glob-top epoxy~\cite{minges1989electronic}.
     It has the advantage to offer a protection against moisture or contaminants, an electrically insulation and prohibits their movement during other manipulations (see section~\ref{subsec:visualInspection} for the utility of the glob-top epoxy). 
-    Nevertheless, it increases the material budget locally and if an electrical problem occurs, the wire-bonds can't be disconnected.
+    Nevertheless, it increases locally the material budget and if an electrical problem occurs, the wire-bonds cannot be disconnected.
     When the module is assembled, it is finally transferred onto a plastic sole, which has alignment pins.
-    This sole helps to manipulate the modules, but also reduces the stress on the flex-cable, by holding it as flat as possible.
-    During shipping, a plastic cover is screwed on top of the sole to protect completely the module.
-    %Finally, the module is then transferred onto a plastic sole which has alignment pins
-    %To test the module, it is transferred onto a plastic sole that has alignment pins.
-    %This sole is completed with a plastic cover to protect completely the module during shipping.
-
-    %Control of absolute position about 10 $\mu\text{m}$.
-    %Distance between edge of pixel of neighbouring sensors about $500 \mu\text{m}$.
-    %Mismatch about $20 \mu\text{m}$.
-
-    %The next step is to sold the wire-bonds (90 for a single Mi26) : semi-automatic machine
-    %Modules are then transferred onto a plastic sole for testing and or shipping.
+    This sole helps for the manipulation of a module, but also reduces the stress on the flex-cable, by holding it as flat as possible.
+    During shipping, a plastic cover is screwed on top of this sole to offer a complete protection of the module.
 
     \subsubsection{Ladder assembly}
 
     The ladder assembly is performed by the Bristol team.
-    It consists of two modules together on a spacer (\gls{SiC}) and a bate (an aluminum plate).
+    It consists of gluing two modules together on a spacer (\gls{SiC}) and a bate (an aluminum plate).
     The operation is done entirely by hands.
     Each module is placed on a separate jig containing grooves and alignment pins to ensure the positioning, as presented on figure~\ref{fig:ladderAssemblyStep1}.
-    The sensitive side of the module is facing the jig to have an access to the rear of the flex-cable for the gluing procedure.
-    Then, the foam is placed on one module below the sensors, while the bate is glued below the connector with an overlap on the foam (see figure~\ref{fig:ladderAssemblyStep2})
-    The second module receives some glue on the backside before the jigs are assembled together.
-    The glue is then cured for one day.
+    The sensitive side of the module is facing the jig to have an access to the rear of the flex-cable for gluing.
+    Then, a foam is placed on one module below the sensors, while a bate is glued below the connector with an overlap on this foam (see figure~\ref{fig:ladderAssemblyStep2})
+    The second module receives some glue on its backside before the jigs are assembled together.
+    Then, glue is cured for one day.
     The amount of glue needed for the assembly was studied carefully. 
-    The surface of the foam is irregular, so if not enough glue is used, the foam will not be glued on the module.
-    On the other hand, using too much glue might stick the jigs together.
+    As the foam's surface is irregular, if not enough glue is used, then gluing will not work.
+    But if too much glue is used, the jigs might be stuck together.
     When the ladder is finally ready, it is placed into an aluminum box used for shipping but also testing.
    
     \begin{figure}[!h]
@@ -116,8 +89,8 @@
 
   As explain in section~\ref{subsec:modAssembly}, the sensors positioning was performed firstly manually and later was switched to an automatic procedure.
   To tune properly the robot which is in charge of gluing the sensors on the flex-cable, the microelectronic group needs a position feedback.
-  The modules are then inspected under a microscope to measure the gap between two sensors, and their position relatively to each other.
-  The distance between the last pixel of a sensor to the neighboring one should be less than $500~\mu\rm{m}$, taking into account the $20~\mu\rm{m}$ robot's mismatch.
+  Each module is then inspected under a microscope to measure the gap between two sensors, and their position relatively to each other.
+  The distance between last pixel of a sensor to the neighboring one should be less than $500~\mu\rm{m}$, taking into account the $20~\mu\rm{m}$ robot's mismatch.
   Figure~\ref{fig:visAlign} is a picture taken with a microscope showing the relative position of two sensors on the bottom of the matrix for an aluminum straight module.
   %A visual inspection of the position,  as well as any problem on the matrix, as a crack, as well as a check of the wire-bonds have to be done before any electrical validation.
   The gap between the two edges is $\sim 51~\mu\rm{m}$. 
@@ -129,11 +102,12 @@
     \label{fig:visAlign}
   \end{figure}
   
-  The visual inspection is also needed to check if the wire-bonds are correctly connected to the right sensor's pad, to verify that the gluing of the sensors on the flex-cable did not break the matrix due to some dust and also to control that the shipping of the module between the labs (for example between Strasbourg and \gls{DESY}) did not damage it.
+  A visual inspection is also needed to check if wire-bonds are correctly connected to the right sensor's pad and to verify that the gluing procedure did not break one of the sensors due to some dust.
+  Moreover, this inspection is needed to control if module were damaged during a shipment between two labs (for example between Strasbourg and \gls{DESY}).
   The modules are fragile objects that have to be manipulated with care.
   Any wrong manipulation can damage severely the vital functionality.
   For example, figure~\ref{fig:wireBondsCrashed} shows a picture taken with a microscope of crushed wire-bonds due to a falling cable on it.
-  The sensitive part and the electronics were not damaged, but some wires were touching leading to a shortcut.
+  Sensitive part and electronics were not damaged, but some wires were in contact leading to a shortcut.
   Fortunately, the microelectronic group at Strasbourg was able to unbend the wires and repair the most damaged one.
   This module is fully operational and working correctly.
   %By using the glob-top method, the wire-bonds can survive to falling cable, but if they are not assigned to the right pad, there is no possibility to correct it anymore.
@@ -149,15 +123,16 @@
 
   The electrical validation of a \gls{PLUME} module or ladder is performed in two steps.
   The first one consists of checking that all the system controlling and powering the module is working. 
-  Then, the module is connected and its consumption, as well as the communication, are checked.
+  Then, a module is connected and its consumption, as well as its communication, are checked.
 
   \subsection{Auxiliary board}
 
-  A module or a PLUME ladder is connected to the outside world by plugging a jumper cable on a \gls{ZIF} connector at one edge of the module.
-  This jumper cable is linked to an auxiliary board which powers the sensors of the module, but also pilots them and to transfer the data to the data acquisition system.
+  A module or a PLUME ladder is connected to the outside world by plugging a jumper cable on a \gls{ZIF} connector at one its edge.
+  This jumper cable is linked to an auxiliary board which powers the module's sensors, but also pilots them.
+  It is also used to transfer the data to the data acquisition system.
   This auxiliary card is connected to a power supply board which provides the nominal voltages needed by the sensors.
   The power supply board delivers the digital and analog voltages ($\rm{V}_{\rm{DD_D}}$ and $\rm{V}_{\rm{DD_A}}$ are set to $3.3~\rm{V}$ using two independent potentiometers), the buffers voltage $\rm{V}_{\rm{CC}}$ fixed to $3.3~\rm{V}$, as well for the temperature measurement diodes, a $\pm 5~\rm{V}$ for trigger and a power pulsing signal.
-  For the lab tests to validate the module, the power pulsing is deactivated by connecting this pin to the $+5~\rm{V}$ pin of the trigger.
+  For laboratory testing of a module, the power pulsing option is deactivated by connecting this pin to the $+5~\rm{V}$ pin of the trigger.
   The clamping voltage $\rm{V}_{\rm{clp}}$ used for the polarisation of the pixel has to be in the range $\left[2, 2.2\right]~\rm{V}$.
   On the first version of the auxiliary board, it was provided by an external power supply, but the new version delivers the $2.1~\rm{V}$ needed by using an \gls{I2C} chips or a potentiometer (the user can select which methods to use via a jumper).
   The auxiliary board is also connected to a computer in charge of the sensors' slow control.
@@ -179,14 +154,14 @@
     \item \textbf{Reset}: reset the registers to default value. 
   \end{itemize}
 
-  The principle of the connection between the auxiliary board and the different components to operate one module is depicted on figure~\ref{fig:plumeAux}.
+  The principle of connection between the auxiliary board and the different components to operate one module is depicted on figure~\ref{fig:plumeAux}.
 
   Before connecting a PLUME module to the auxiliary board, the voltages have to be set and the \gls{JTAG} communication has to be checked on the auxiliary card.
   Two external power supplies are delivering $8~\rm{V}$ D.C. to the power supply board and are giving an information on the consumption of the whole system.
   The empty auxiliary board has a current consumption about $350~\rm{mA}$.
-  Then, the $\rm{V}_{\rm{CC}}$, $\rm{V}_{\rm{DD_D}}$ and $\rm{V}_{\rm{DD_A}}$ should be at $3.3~\rm{V}$, but only the two last voltages can be adjusted by using two potentiometers on the power supply board.
-  The $\rm{V}_{\rm{clp}}$ is set to $2.1~\rm{V}$ and should not be outside the range $\left[2, 2.2\right]~\rm{V}$.
-  The \gls{JTAG} communication is verified on an oscilloscope.
+  Then, $\rm{V}_{\rm{CC}}$, $\rm{V}_{\rm{DD_D}}$ and $\rm{V}_{\rm{DD_A}}$ should be at $3.3~\rm{V}$, but only the two last voltages can be adjusted by using two potentiometers on the power supply board.
+  $\rm{V}_{\rm{clp}}$ is set to $2.1~\rm{V}$ and should not be outside the range $\left[2, 2.2\right]~\rm{V}$.
+  \gls{JTAG} communication is verified on an oscilloscope.
   The observed signals should be:
 
   \begin{description}
@@ -208,9 +183,9 @@
 
   \subsection{Smoke test}
 
-  After the validation of the auxiliary board (and the power supplies switched off), the module can be linked to it via a jumper cable.
-  The voltages applied to the device have to be adjusted again due to the dissipation inside the flex-cable and the jumper cable.
-  The $\rm{V}_{\rm{DD_D}}$, $\rm{V}_{\rm{DD_A}}$ and $\rm{V}_{\rm{clp}}$ can be measured on different pads of the ladder: three pads are closed to the connector, while the three others are at the edge of the flex-cable, as seen on figure~\ref{fig:voltagePads}
+  After validating the auxiliary board (and the power supplies switched off), a module can be connected to it via a jumper cable.
+  Voltages applied to this device have to be adjusted again due to some dissipation inside the flex-cable and jumper cable.
+  $\rm{V}_{\rm{DD_D}}$, $\rm{V}_{\rm{DD_A}}$ and $\rm{V}_{\rm{clp}}$ can be measured on different pads of the ladder: three pads are closed to the connector, while the three others are at the edge of the flex-cable, as seen on figure~\ref{fig:voltagePads}
 
   \begin{figure}[!h]
     \centering
@@ -219,15 +194,15 @@
     \label{fig:voltagePads}
   \end{figure}
 
-  Two versions of the jumper cable were produced, one very flexible with a high resistivity and the second one stiff with a low resistivity.
+  Two versions of jumper cable were produced, one very flexible with a high resistivity and the second one stiff with a low resistivity.
  % The first one was not used during the test because of a problem during the fabrication.
   The most flexible cable was not used because of an important voltage drop between the auxiliary board and the module, but also because of a wrong fabrication.
-  After setting the voltages to the nominal value and plug in the module, a short-circuit happened.
+  After setting the voltages to nominal value and plug in a module, a short-circuit happened.
   The auxiliary board tests were correct and were proofed one more time without the module.
   Then, a thermal camera was used to find if a sensor was responsible for the short-circuit.
   One sensor was hotter than the others, nevertheless, the wire-bonds were correctly assigned.
-  The problem was coming from a short-circuit between the $\rm{V}_{\rm{DD_D}}$ and the $\rm{V}_{\rm{clp}}$.
-  By passing this two lines on the jumper cable and by connecting them directly to the module, the short was gone.
+  The problem was coming from a short-circuit between $\rm{V}_{\rm{DD_D}}$ and $\rm{V}_{\rm{clp}}$ lines.
+  By bypassing this two lines on the jumper cable and by connecting them directly to the module, this short-circuit has disappeared.
   Instead of this flexible jumper cable, a stiffer one was used.
   Nonetheless, any movement of the auxiliary board causes a too important stress on the connector and on the flex-cable.
   To avoid any damage, a support was built to hold the auxiliary board and the module on the same frame, thus reducing the risk to break anything.
@@ -293,19 +268,19 @@
   In chapter~\ref{chap:vxd}, the principle of \gls{CMOS} sensors is described and the noise of this technology is discussed.
   As a reminder, the two noise contributions are \acrfull{TN} and \acrfull{FPN}.
   \gls{FPN} is determined as an offset to subtract from the pixel response to reduce its non-uniformity response, while \gls{TN} is coming from the contribution of different noises during the reset, the integration and the readout of the pixel.
-  These noises have to be measured in the lab in order to find the optimum configuration to detect physics signal and reduce the noise impact on the measurement.
+  These noises have to be measured in laboratory in order to find the optimum configuration to detect physics signal and reduce the noise impact on the measurement.
 
   \subsection{Characterisation bench}
 
-  The noise is estimated with a bench of characterisation composed of a National Instrument PXIe crate equipped with a 6562 digital card, two power supplies, a power distribution board, an auxiliary and a \gls{JTAG} card, as well as the module to test.
-  The procedure described here is applied to a single \gls{MIMOSA}-26, or a \gls{PLUME} module, as well as an \gls{MIMOSA}-28 sensor.
+  The noise estimation is done with a bench of characterisation composed of a National Instrument PXIe crate equipped with a 6562 digital card, two power supplies, a power distribution board, an auxiliary and a \gls{JTAG} card, as well as the module to test.
+  The procedure described here is applied to a single \gls{MIMOSA}-26, or a \gls{PLUME} module, as well as a \gls{MIMOSA}-28 sensor.
   Nevertheless, the data acquisition software used during the characterisation is slightly different to match the clock speed, depending on the sensor technology.
   The four data outputs are connected from the pins on the auxiliary board to the digital card via a National Instrument spider cable.
   Firstly, a test pattern, which loads automatically a \gls{JTAG} file for this test, is done to read the \textit{header} and \textit{trailer} during several frames with a determined data length.
   It has been observed that the \textit{clock} output cable has to be $80~\rm{cm}$ longer than the three other cables to ensure the synchronisation on the rising edge.
   If this is not done or if one of the cables has a wrong polarity, the software is not able to read the \textit{header} and \textit{trailer} and the characterisation can't be done.
 
-  Then, the sensors are configured in the discriminator output mode.
+  Then, sensors are configured in the discriminator output mode.
   The zero suppression mode is bypassed, pixels and discriminators are in normal mode ( the whole matrix read in $115~\mu\rm{s}$), but the readout frequency is lower ($10~\rm{MHz}$) via two \gls{LVDS} output pads.
   The control of the discriminators is divided into four sub-matrices, each containing 288 columns.
   Thus, for one sub-matrix a threshold value in /gls{DAC} units in the \gls{JTAG} software is driving all the discriminators, depending on a baseline value.
@@ -430,7 +405,7 @@
   It provides several useful information, such as the number of events acquired, the \textit{header}, the \textit{trailer} and the \textit{frame counter} of the sensor.
   This helps the user to know if the acquisition is running properly.
   If the \textit{frame counter} is different for each sensor, this points out a loss of synchronisation during the acquisition.
-  Also, a different \textit{header} or \textit{trailer} such as the ones set in the JTAG software might point out a wrong connection.
+  Also, a different \textit{header} or \textit{trailer} such as the ones set in JTAG software might point out a wrong connection.
   A second software is used to store the data into three files: a parameter file containing the run number, the event number, an index file and a binary file containing the raw data.
   Two acquisition modes are available. 
   The first one, used in test beam, acquires data only when a trigger is sent.
@@ -452,7 +427,7 @@
   \end{figure}
   The error on the measurement is then the root mean squared of the distribution divided by the number of entries and the number of pixels inside the matrix.
   This calculation is done for different thresholds and figure~\ref{fig:FHR} represents the average fake hit rate per pixel per event as a function of the threshold for one sensor of an aluminum module.
-  The results are matching the expected behavior for a standalone \gls{MIMOSA}-26 sensor as shown in figure~\ref{fig:mi26Perf}.
+  These results are matching the expected behavior for a standalone \gls{MIMOSA}-26 sensor as shown in figure~\ref{fig:mi26Perf}.
 
   \begin{figure}
     \centering
@@ -463,19 +438,18 @@
 
 \section{Conclusions}
 
-  The assembly procedures and the tests performed in the laboratory were introduced along this chapter.
-  Only the results for one sensor were presented.
-  Nonetheless, all the modules have a same behavior as the one expected for one single \gls{MIMOSA}-26.
-  So far, for the new \gls{PLUME} versions which have a narrower flex-cable and which should embed only $0.35~\%$ of the radiation length, different prototypes were built. 
-  The first ladder using copper module was assembled in January 2016.
-  New ladders are currently being built and the collaboration is expecting to test them in the \gls{DESY} test beam facility in November.
-  Nevertheless, the aluminum ladder seems to be more challenging to build.
-  The three first mirrored versions produced have a connector problem, that could have been damaged by plugging and unplugging the jumper cable.
-  This problem did not occur with the copper mirrored versions and this might come from a more fragile flex-cable.
+  The assembly procedures and tests performed in the laboratory were introduced along this chapter.
+  Only results for one sensor were presented, but several modules were tested 
+  All of them a same behavior as the one expected for one single \gls{MIMOSA}-26.
+  So far, for new \gls{PLUME} versions which have a narrower flex-cable and which should embed only $0.35~\%$ of the radiation length, different prototypes were built. 
+  A first ladder using copper module was assembled in January 2016.
+  New ladders are currently being built and the collaboration is expecting to test them in the \gls{DESY} test beam facility in 2017.
+  Nevertheless, aluminum ladder seem to be more challenging to build.
+  The three first mirrored versions produced have a problem with the \gls{ZIF} connector.
+  It could have been damaged by plugging and unplugging the jumper cable.
+  This problem did not occur with copper mirrored versions and this might come from a more fragile flex-cable.
   Ideally, each module should have is own jumper cable and this should not be disconnected.
   Nevertheless, for shipping them, there is no other solution.
   The collaboration is thinking of a tool which will reduce the stress applied to the connector.
 
-  The next chapter deals with the tests performed in real condition at the CERN-SPS facility with the PLUME-V1 prototype in 2011.
-
-
+  Next chapter deals with the tests performed in real condition at the CERN-SPS facility with the PLUME-V1 prototype in 2011.

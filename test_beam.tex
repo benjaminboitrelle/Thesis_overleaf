@@ -246,7 +246,7 @@
    \subsection{Software analysis chain}
 
     The analysis of the test beam data is performed with EUTelescope~\cite{Eutel}\cite{Jansen}.
-    It is based on the MARLIN framework, which is a part of the ILCSOFT (see~\ref{subsec:ILCSOFT} for more details about the ILCSOFT package).
+    It is based on the MARLIN framework, which is a part of ILCSoft (see~\ref{subsec:ILCSOFT} for more details about the ILCSoft package).
     The software is used to convert the data into the LCIO format and to perform clustering search, alignment and final analysis.
     Each step of the analysis is driven by a dedicated processor and is described in figure~\ref{fig:eutel-strategy}.
     
@@ -295,7 +295,7 @@
     Then, the track's information are feed to MILLEPEDE-II, which calculates the residuals of the tracks on each sensor and attempts to shift the position and rotate the sensors to minimise the east square fit function of these tracks.
     MILLEPEDE-II creates an output file with theses informations and a script update the GEAR file with the new position and orientation of each planes.
 
-    \todo{Alignment plots}
+    %\todo{Alignment plots}
 
    \subsection{Measurement of the radiation length}
 
@@ -472,8 +472,10 @@
   \section{Conclusions}
 
   The radiation length measurement of the \gls{PLUME} ladder was performed for the first time with a dedicated setup placed in beam.
-  The first results obtained to determine the material budget, which gives a radiation length of $\left. \frac{x}{X_0} \right|_{\rm{measured}} \simeq 0.47 \pm 0.02~\%$ of $\rm{X_0}$ are confirming the theoretical calculation of $\left. \frac{x}{X_0}\right|_{\rm{theoretical}} \simeq 0.498~~\%$ of $\rm{X_0}$ for a flex with a fill factor of $25~\%$.
+  The first results obtained to determine the material budget, which gives a radiation length of $\left. \frac{x}{X_0} \right|_{\rm{measured}} \simeq 0.47 \pm 0.02~\%$ of $\rm{X_0}$ are confirming theoretical calculation of $\left. \frac{x}{X_0}\right|_{\rm{theoretical}} \simeq 0.498~~\%$ of $\rm{X_0}$ for a flex with a fill factor of $25~\%$.
   The origin of the shifts on the measured radiation length at $1$ and $5~\rm{GeV}$ has to be investigated.
-  In both cases, the alignment has to be done again.
-  Another solution consists to perform a calibration run with a known material to apply then a correction on the radiation length measurement for \gls{PLUME}.
+  To improve this results, a new procedure has to be planned.
+  Instead of using \gls{PLUME} sensors for tracking, a complete telescope should be used.
+  Moreover, calibration runs could be performed, by using well-know materials.
+  These measurements will be used for correcting the reconstructed kink angle by a factor determined during the calibration procedure~\cite{Stolzenberg:2016hrj}.
 
