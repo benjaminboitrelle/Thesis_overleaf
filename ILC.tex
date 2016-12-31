@@ -39,11 +39,11 @@
 
     Thirdly, the proton-proton interaction cross section is dominated by inelastic background QCD processes.
     The signal event is then accompanied by large backgrounds produced by the bunches interaction.
-    This background masks the elementary process of interests, such that it has an impact on the detector design, that should have a high radiation tolerance and implement a selective trigger to reduce the data rate.
+    At the \gls{LHC}, the bunch crossing rate is $40~\rm{MHz}$ with approximately $20$ interactions per bunch crossing, representing $10^9~\rm{events/s}$.
+    Thus, the detectors need a high radiation tolerance and a selective trigger system is used to record data according to the desired physics process of study.
     The lepton colliders do not suffer from this kind of background and at similar energies, the event rate is lower than those at hadron colliders.
     Moreover, the interaction of electrons and positrons is purely electroweak.
     As a consequence, the detector does not have to handle extreme data rates and can be used without any trigger.
-    Hence, the sensitivity to any possible signature of new physics is improved.\todo{REPHRASE EVERYTHING}
 
     Although the electron and positron, have clear advantages over hadrons to perform precise measurements, the choice of a linear collider over a circular one comes from the physics of accelerating charged particles.
     When charged particles move in a circular accelerator, they lose some energy by emitting photons via synchrotron radiation.
@@ -60,7 +60,6 @@
     Another solution to overcome the synchrotron radiation is to accelerate the particles in a linear collider.
     The centre-of-mass energy has to be reached after only passing once through the accelerator, whereas a bunch of particles in a circular collider is accelerated many times until the desired energy of collision is reached.
     The choice of a linear collider over a circular one comes also from the cost, which has a quadratic energy dependence for a circular one, whereas it follows a first power energy for a linear one~\cite{Richter:1976ug}. 
-    %To still get an "affordable" experiment, the centre-of-mass energy obtained at a linear collider is below to the one from a circular collider.\todo{WRONG: read B.Richter paper on SLAC} 
     To work at the same energy scale, a linear collider would require a larger number of accelerating cavities and would make a much bigger and more expensive collider than a circular one.
 
     \subsection{Future linear lepton collider}
@@ -132,9 +131,9 @@
      %in order to orient the beam in the desired polarisation by rotating the spin of the particle, but also to compress the beam bunch length from several millimeters to a few hundred microns thanks to a two-stage bunch compressor.
     While the bunches are compressed, sections of \gls{SRF} technology accelerate the bunches from $5~\rm{GeV}$ up to $15~\rm{GeV}$.
     One of the challenges of the \gls{RTML} is to preserve the emittance obtained after the damping rings, while the length and the energy of the bunches are tuned.
-    Then, the particles are delivered to the main linac, an 11 km long accelerator using $1.3~\rm{GHz}$ \gls{SRF} cavities, made of niobium.\todo{What are the others made of?}
+    Then, the particles are delivered to the main linac, an 11 km long accelerator using $1.3~\rm{GHz}$ \gls{SRF} cavities, made of niobium.
 
-    Before reaching the interaction region, the primary electron beam is transported through a 147 m superconducting helical undulator to produce photons from $\sim 10$ up to $\sim 30~\rm{MeV}$, depending on the energy of the primary beam.
+    Before reaching the interaction region, the primary electron beam is transported through a $147~\rm{m}$ superconducting helical undulator to produce photons from $\sim 10$ up to $\sim 30~\rm{MeV}$, depending on the energy of the primary beam.
     This primary beam is separated from the photons and sent back to the \gls{BDS} with an energy loss of $\sim 3~\rm{GeV}$.
     The photons are directed onto a rotating Ti-alloy target to create $e^+e^-$ pairs that are then separated.
     The positrons collected are accelerated to $125~\rm{MeV}$ using a normal conducting linac and then accelerated to $5~\rm{GeV}$ with a superconducting boost linac.
@@ -167,7 +166,6 @@
     Each train is composed of 1312 bunches that contain $2\times 10^{10}$ particles and lasts $1~\rm{ms}$ long. 
     The interval between two trains is $199~\rm{ms}$ long. 
     This structure is a key feature to develop detectors able to be switched off during the dead time in order to reduce the power consumption.
-    \todo{Write TDR values, see Marcel's talk}
 
     \subsection{Beam backgrounds}
 
@@ -191,7 +189,6 @@
     The beamstrahlung photons can also produce neutrons by hitting components.
     The other source of hard photons is the initial state radiation. 
     With the beamstrahlung, they contribute reducing the peak luminosity~\cite{Markin2014}.
-    \todo{Peak luminosity may-be?!}
 
     Different kinds of soft pairs background can be expected at the \gls{ILC}: the coherent and incoherent pair production.
     The coherent pair production appears when beamstrahlung photons are interacting with the strong electromagnetic field of the beams.
@@ -200,33 +197,12 @@
     There are three types of incoherent pair production, depending on the nature of the scattered photon which creates the $e^{+}e^{-}$ pairs.
    % They are to the number of three depending on the nature of the scattered photons creating the $e^+e^-$ pair.
     The Bethe-Heitler process corresponds to the scattering of one real photon while the second one is virtual.
-    It contributes to approximately two of the third pair production.
-    The second process is the Landau-Lifshitz, where the two scattered photons are virtual and contribute to approximately to a third of the pair creation.\todo{Sentence not clear}
+    This process contributes to $\sim \frac{2}{3}$ of the pair creation.
+    The second process is the Landau-Lifshitz, where the two scattered photons are virtual.
+    This process contributes to $\sim \frac{1}{3}$ of the pair creation.
     The last production occurred via two real photons (Breit-Wheeler process) and contribute only to a percent level.
     The incoherent $e^+e^-$ pairs are produced at a relatively low transverse momentum and are emitted in the forward direction.
     
-    %This interaction is called the beamstrahlung and is due to the electromagnetic force which bends the particles trajectory.
-    %On the one hand, this has a positive effect on the luminosity which is enhanced by a factor of 2.
-    %On the other hand, it creates low energy $e^+e^-$ pairs at the interaction point. 
-    %This will degrade the energy spectrum by an emission of hard breamstrahlung photons.
-    %Thanks to the design of an added dipole field to the conventional solenoid field, the pair background created are guided out of the detectors. 
-    %Different kind of pair backgrounds are expected at the \gls{ILC}: the coherent and incoherent pair background.
-    %The first one corresponds to the interaction of a photon with an atomic nucleus field.
-    %This process is estimated to be negligible in the \gls{ILC} environment.
-    %The second one is the incoherent pair background, where a $e^+e^-$ pair is generating via scattering of two photons.
-    %Depending on the origin of the photons, the process will be more or less dominant.
-    %When photons are both virtual, it will create a $e^+e^-$ pair via Landau-Lifshitz process and will contribute to approximately the third of the pair creation.
-    %The Bethe-Heitler process happens while one of the photons is real and the other virtual. 
-    %It contributes roughly to two of the third pair creation.
-    %The third process called Breit-Wheeler is the creation of $e^+e^-$ pair via two real photons.
-    %This process is estimated to have only a percent level contribution.
-    %Photons are radiated into a very narrow cone in the forward direction and would strike components.
-    %The $e^+e^-$ incoherent pair created is expected to have a relatively low $P_T$ and to be emitted in the forward direction.
-    %This has an impact on the design of the vertex detector and the forward detectors.
-
-    %An another kind of background is coming from the photon-photon collisions.
-    %It produces high-transverse momentum particles that overlap 
-
   \section{The ILC detectors concept}
   \label{sec:detectors}
 
@@ -281,11 +257,10 @@
       \label{eq:jet}
     \end{equation}
 
-    The \gls{PFA} approach is the extended version of the Energy Flow approach (used at H1, D0, CMS) for a highly granular detector. 
+    The \gls{PFA} approach is the extended version of the Energy Flow approach (used at H1, CMS) for a highly granular detector. 
     The goal of this framework is to achieve a stochastic term for the energy resolution greater than $30~\% / \sqrt{E\rm{(GeV)}}$, not reachable with a traditional calorimeter.
-    Each sub-detector should be efficient enough to separate and to reconstruct the four-vectors of all visible particles in an event.
+    Each sub-detector should be efficient enough to separate and to reconstruct the four-vector of all visible particles in an event.
     The energy of charged particle is measured in the tracking detectors, while the energy measurements for photons are done in the electromagnetic calorimeter and neutral hadrons are done in the hadron calorimeter.
-    \todo{Why better? 60 \% tracks}
      
      \begin{figure}[!h]
       \centering
@@ -294,7 +269,7 @@
       \label{fig:jetEnergy}
     \end{figure}   
     
-    The \gls{PFA} requirements drive the design of the detectors at the ILC.
+    The \gls{PFA} requirements drive the design of the detectors at the \gls{ILC}.
     For both experiments, the electromagnetic and hadronic calorimeter have to be located inside the solenoid.
     Moreover, each sub-detector must be able to distinguish single particle signals, imposing a better tracking precision and higher granularity calorimeters than the traditional detectors in high energy physics.
 
@@ -428,10 +403,10 @@
       For the \gls{ILD}, a compromise between the performance and the cost has led to a sampling calorimeter realised with tungsten absorber.
       There are three options under study for the active area.
       The first one called SiW-ECAL, is made of silicon pin diodes with a pitch of $5 \times 5~\rm{mm}^2$. 
-      It has the advantage to cover a large area, to be reliable and simple to operate, to have thin readout layers and can be operated in 3.5 T magnetic field.
+      It has the advantage to cover a large area, to be reliable and simple to operate, to have thin readout layers and can be operated in $3.5~\rm{T}$ magnetic field.
       The second option is made of scintillator strips readout by photo-sensors and is called ScECAL.
       It has an active area of $5 \times 45~\rm{mm}^2$ arranged in alternative directions to achieve an effective granularity of $5 \times 5~\rm{mm}^2$. 
-      The weakness of this technology becomes apparent in dense jets environment, where the reconstruction becomes more and more complicated.\todo{???}
+      %The weakness of this technology becomes apparent in dense jets environment, where the reconstruction becomes more and more complicated.\todo{???}
       Some alternatives are also thought, like the Micromegas chambers. Nevertheless, this technology is less advanced compared to the others.
       One other good candidate could be the use of \gls{MAPS} sensors.
       They have the advantage of housing the signal sensing and processing on the same  substrate and by choosing standard CMOS processes, the cost of fabrication would be reduced.
@@ -446,11 +421,11 @@
       The LumiCAL is placed in a circular hole of the end-cap \gls{ECAL} and covers polar angles between 31 and $77~\rm{mrad}$. 
       It serves as a luminosity monitor by measuring the Bhabha scattering $e^+e^- \rightarrow e^+e^-$ via emission of virtual $\gamma$.
       The luminosity $\mathcal{L}$ is determined by measuring  the ratio of the number of counted events $N_B$ in a considered polar angle range and the integral of the differential cross-section $\sigma_B$ in the same region.
-      The measurement precision should be better than $10^{-3}$ at 500 GeV.
+      The measurement precision should be better than $10^{-3}$ at $500~\rm{GeV}$.
       After each bunch crossing, the beamstrahlung pairs hit the BeamCal.
       This would permit to get an estimation of the bunch-by-bunch luminosity, but also to determine the beam parameters.
       It is placed in front of the final focus quadrupole and covers polar angles between 5 and 40 mrad.
-      The third system, the \gls{LHCAL}, ensures the coverage of the hadron calorimeter to small polar angles. \todo{WHY ?}
+      %The third system, the \gls{LHCAL}, ensures the coverage of the hadron calorimeter to small polar angles. \todo{WHY ?}
 
       \subsubsection{Magnetic field and yoke}
 

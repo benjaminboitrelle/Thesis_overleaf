@@ -1,4 +1,5 @@
-\chapter{As light as a feather}
+%\chapter{As light as a feather}
+\chapter{ILD vertex detector and PLUME project}
 \label{chap:vxd}
   
   Since the end of the 1960's, the development of position sensitive silicon sensors has permitted the confirmation of the predictions of the \acrfull{SM} with a high precision, as well as the discovery of the top quark.
@@ -32,12 +33,7 @@
    Also, in order to reduce the unwanted interactions, the sensor technology used has to have a low power consumption to avoid any special cooling system which can have a negative impact on the material budget.
    The design of such a detector, like the minimal distance of the first layer to the \gls{IP} and the spacing between different layers, is determined by both the beam background and the physics to study.
    The flavour tagging ability, the vertex charge measurement and tracking, and the displaced vertices reconstruction are the main physics parameters driving the design.
-   %The structure should be as light as possible to minimize the interaction of particles before they are flying to the other detectors.
-   %The distance of the first layer to the \gls{IP} should be as slow as possible and the power consumption should 
-   %The first layer has to be as close as possible to the \gls{IP} and the lowest power consumption as possible
-   %The flavour tagging ability, vertex charge measurement and track and displaced vertices reconstruction are the main physics parameter that is driving the design of such detector.
    The distance of closest approach of a particle to the collision point is called the impact parameter and the resolution achievable by the detector can be approximated with formula~\ref{eq:resIP}~\cite{Battaglia2011}.
-   %The resolution on the impact parameter $\sigma_{IP}$, defined as the distance of closest approach of the particle to the colliding beam can be parametrised by the formula~\ref{eq:resIP}.\todo{REPHRASE}
     
     \begin{equation}
       %\sigma_{IP} = 5 \mu\text{m} \oplus \frac{10 \ - \ 15 \mu\text{m}}{p \sin{\theta}^{3/2} }
@@ -81,18 +77,43 @@
    \label{subsec:layout}
 
    The \gls{VXD} will be made of $12~\rm{cm}$ long ladders arranged cylindrically in concentric layers to form long-barrels surrounding the \gls{IP}, contrary to the \gls{SiD} vertex detector with a design based on a 5 layer barrel, four endcap disks and three additional forward pixel disks~\cite{Behnke2010}.
-   Two different geometries are under consideration for the \gls{ILC}-{ILD}, nevertheless, they are both based on long ladders. 
+   Figure~\ref{fid:ild_vxd} shows the different geometries under consideration for the \gls{ILC}-\gls{ILD}.
+   This two geometries are based on a long ladders design.
    The first option is based on five single-sided layers with a material budget not exceeding $0.11~\%$ of $\rm{X_0}$ per layer.
    The five layers are in a radius range varying from $15~\rm{mm}$ for the first layer to $60~\rm{mm}$ for the last one.
    The second option is based on three double-sided layers.
    The material budget should be less than $0.16~\%~\rm{X_0}$ for one detecting face.
    The mechanical structure, which holds the two layers, is $2~\rm{mm}$ thick and will be in a radius range varying from $15$ to $60~\rm{mm}$.
+   Table~\ref{tab:ild_vxd} represents different \gls{VXD} options for the three double-sided layers. 
+   Depending on the radius position, a layer will have fast integration time sensors or highly granular sensors~\cite{Yorgos}.
 
    \begin{figure}[!h]
      \centering
      \includegraphics[width = 10 cm]{Pictures/vxd/ild_VXD.png}
      \caption{Overview of the two vertex detector option for the ILC. On the left, it is made of five single sided layers, whereas the right one represents three double-sided layers.}
+     \label{fig:ild_vxd}
    \end{figure}
+
+   \begin{table}[!h]
+     \centering
+     \begin{tabular}{K{0.7cm} K{1.1cm} K{1.4cm} K{1.4cm} K{1.4cm} K{1.4cm} K{1.4cm} K{1.4cm}}
+            & & \multicolumn{2}{c}{DBD VXD} &  \multicolumn{2}{c}{Conservative VXD} & \multicolumn{2}{c}{Ambitious VXD} \tabularnewline
+      Layer & $R~(\rm{mm})$  & $\sigma_{\rm{sp}}~(\rm{\mu m})$ & $\sigma_{\rm{time}}~(\rm{\mu s})$ & $\sigma_{\rm{sp}}~(\rm{\mu m})$ & $\sigma_{\rm{time}}~(\rm{\mu s})$ & $\sigma_{\rm{sp}}~(\rm{\mu m})$ & $\sigma_{\rm{time}}~(\rm{\mu s})$ \tabularnewline 
+      \hline
+      \hline
+      L1 & $16$ & $3$ & $50$ & $4$ & $4$ & $3$ & $1$ \tabularnewline
+      L2 & $18$ & $6$ & $100$ & $4$ & $4$ & $3$ & $1$ \tabularnewline
+      \hline
+      L3 & $37$ & $4$ & $100$ & $4$ & $8$ & $3$ & $2$ \tabularnewline
+      L4 & $39$ & $4$ & $100$ & $4$ & $8$ & $3$ & $2$ \tabularnewline
+      \hline
+      L5 & $58$ & $4$ & $100$ & $4$ & $8$ & $3$ & $2$ \tabularnewline
+      L6 & $60$ & $4$ & $100$ & $4$ & $8$ & $3$ & $2$ \tabularnewline
+      \hline
+     \end{tabular}
+     \caption{Possible performance for the three double-sided layers vertex detector. $R$ is the radius position of the considered layer, $\sigma_{\rm{sp}}$ the spatial resolution and $\sigma_{\rm{time}}$, the integration time~\cite{Yorgos}. }
+     \label{tab:ild_vxd}
+   \end{table}
 
    Both geometry designs are based on  pixel sensors instead of strips detectors.
    The currently considered technologies are presented below. 
@@ -122,7 +143,8 @@
   % The STAR experiment at RHIC is the first one to get an entire vertex detector made of ULTIMATE-MIMOSA28 CMOS sensors.
    %One of the technology developed is described in section~\ref{sec:CMOS}.
 
-   For all the technologies, the sensors' power consumption has to be minimised in a way to reduce the cooling system and its impact on the material budget in the sensitive detector volume.
+   For all technologies, the power consumption of the sensors is one of the key point in the \gls{VXD} design.
+   The higher the power consumption, the more complex the cooling system is and higher the material budget in the sensitive area is.
    As it was shown on figure~\ref{fig:bunches} of chapter~\ref{chap:ILC}, the bunch train will last less than $1~\rm{ms}$ for a dead time of $199~\rm{ms}$.
    Two possibilities are envisaged to benefit from the beam structure.
    For the first one, the hits information are stored using a time stamp during the bunch crossings and the data are read out after the last collision.
@@ -373,11 +395,20 @@
     The \gls{CMOS} sensors have several interesting properties.
     First of all, the fabrication cost is lower than other pixel technologies due to the industrial processes used to build the sensors.
     Therefore, many prototypes and bigger matrices can be built, while benefiting from the industrial experience.
-    For example, the imaging industry has developed smaller and smaller grid size and a pitch size of ten microns can be achieved.
+    The limit toward small pixels is fixed by the number of transistors embedded in a pixel.
+    Smaller grid size with a pitch size of few microns are built by the imaging industry.
     
     Secondly, due to the size of the depleted area, the charge carriers tend to spread more over neighboring pixels.
     On the one hand, the signal collected per pixel is smaller, but on the other hand, the reconstruction of the hit position with a centre of gravity algorithm is improving the spatial resolution.
     To give an idea, a binary output sensor with a pitch of $18.4~\rm{\mu m}$ can achieve a spatial resolution better than $3~\rm{\mu m}$.
+    Figure~\ref{fig:pitchVsSR} shows the evolution of the spatial resolution achieved for different pitch size for different \gls{MIMOSA} sensors.
+
+    \begin{figure}
+      \centering
+      \includegraphics[width = 0.7\textwidth]{Pictures/vxd/resolution_pitch_10to40_withBinary.png}
+      \caption{Evolution of the spatial resolution achieved for different pitch size for different MIMOSA sensors.}
+      \label{fig:pitchVsSR}
+    \end{figure}
 
     Thirdly, the distinct doping of the different layers is responsible for the reflection of the charge carriers to the collection diodes.
     However, only the interface between two different doped regions is responsible for this reflection.
@@ -388,7 +419,7 @@
     %The substrate can be thinned down to few microns leading to a sensor with a thickness of 50 $\mu\text{m}$ while keeping the possibility to manipulate them.
     %The material budget can then be reduced to 0.053 \%.
 
-    \begin{figure}
+    \begin{figure}[!h]
       \centering
       \includegraphics[width = \textwidth]{Pictures/vxd/collectionEfield.png}
       \caption{Principle of charge collection in a MAPS. The difference of doping between the substrate and the epitaxial layers create a reflection region.}
@@ -407,9 +438,10 @@
     Nevertheless, a smaller pitch size induces a slower readout and the cost to build such a sensor increases.
     The second solution is to increase the resistivity of the epitaxial layer to expand the depleted area.
     
-    The ionizing radiation is responsible for charge accumulation in oxides at the interface with silicon layers.
+    The ionising radiation is responsible for charge accumulation in oxides at the interface with silicon layers.
     The leakage current increases in the pixel and diode collection.
-    To reduce the leakage current, smaller diodes can be used to reduce the impact of the leakage current but, as was explained before, the cost of fabrication increases.
+    The ionising dose increases the noise, whereas the non-ionising fluence decreases the signal.
+    %To reduce the leakage current, smaller diodes can be used to reduce the impact of the leakage current but, as was explained before, the cost of fabrication increases.
     
     \subsection{Signal processing}
 
@@ -530,6 +562,12 @@
     To remove the \gls{FPN} and the reset noise, a \gls{CDS} is performed inside the pixel or at the bottom of the column.
     It consists to acquire two frames and to subtract the first one to the second one to search for possible signals.
     Chapter~\ref{chap:labTests} describes the steps to characterise the \gls{FPN} and \gls{TN} and to select an appropriate \gls{SNR} in order to minimise the noise contribution, and to find a range at which the sensor is working properly.
+
+    Typically a \gls{SNR} larger than 10 is considered as appropriate to detect efficiently particles.
+    Considering the charge sharing, signals as small as about $200~e^{-}$ are expected. 
+    Hence, the \gls{ENC} shall be kept below $20~e^{-}$. 
+    This noise level is easily achieved with analogue output sensors, for which prototypes reach typically $10~e^{-}$ \gls{ENC}.
+    For sensor featuring digital output, the additional treatment micro-circuits tend to increase the \gls{ENC} around $15~e^{-}$.
 
     \subsection{State of the art in high energy physics}
     \label{subsec:Mi26}
