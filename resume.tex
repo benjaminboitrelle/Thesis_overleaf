@@ -232,34 +232,89 @@
   Des mesures de plusieurs heures ont permis de vérifier la stabilité du système d'acquisition. 
   En même temps, un support rotatif a été construit afin de maintenir l'échelle à la position verticale et de permettre une prise de données pour des angles variants de $0^{\circ}$ à $60^{\circ}$.
   La figure~\ref{fig:testBeam_resume} est une photographie prise durant la campagne de faisceau test et montre le positionnement de l'échelle PLUME, située au centre entre les quatre plans de référence.
-
-  Un des objectifs de ce faisceau test est de mesuré le budget de matière de l'échelle PLUME.
-  En effet, seul des calculs théoriques ont permis de déterminer cette valeur cruciale dans la fabrication d'un détecteur de vertex.
-  Les particules chargées traversant un milieu sont défléchies par par de multiples diffusions coulombiennes à petits angles causées par les noyaux de la cible.
-  Cette déviation est appelée \textit{Diffusion Multiple de Coulomb}.
-  La projection de l'angle de déflexion dépend de l'énergie de la particule incidente ainsi que du matériau.
-  Cet angle est calculé par la formule~\ref{eq:MSC}:
-
-  \begin{equation}
-    \theta_0 \simeq \frac{13.6~\rm{MeV}}{\beta c p} \left(\frac{x}{X_0}\right)^{0.555},
-    \label{eq:MSC}
-  \end{equation}de la manière suivante : 
-
-  où, $\beta = v/c$, $p$ est l’impulsion de la particule en $MeV$, x la distance parcourue et $\rm{X_0}$ la longueur de radiation du milieu.
-  Ce processus agissant un grand nombre de fois le long du parcours des particules dans la matière, cela a pour effet une déflexion de leur trajectoire par rapport à la direction initiale.
-  Ainsi, grâce aux plans de référence utilisés en faisceau test, il est possible de mesurer le passage des particules avant et après avoir traversé notre échelle PLUME.
-  En mesurant l'angle entre la trace incidente et la trace sortante, il est possible d'estimer le budget de matière du module.
-  La mesure a été réalisée au niveau d'une zone comportant des capteurs sur l'échelle PLUME, pour des positrons ayant une énergie variant de 1 à 5 GeV.
-  Les premiers résultats ont permis de calculer un budget de matière d'environ $1.3~\%~\rm{X_0}$.
-  Bien que le résultat valide le concept de l'expérience, le budget de matière de ce prototype est estimé à $0.65~\%~\rm{X_0}$ pour la zone étudiée.
-  Le facteur 2 peut être gagné en améliorant l'alignement hors-ligne du système, mais aussi en effectuant une mesure de calibration avec un matériau dont le budget de matière est précisément connu.  
-
+ 
   \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{Pictures/X0/testBeam.png}
     \caption{Photo prise pendant la campagne de faisceau test au DESY. L'échelle PLUME est montée sur un support rotatif et est située entre les quatre plans de référence.}
     \label{fig:testBeam_resume}
   \end{figure}
+
+  Un des objectifs de ce faisceau test est de mesuré le budget de matière de l'échelle PLUME.
+  En effet, seul des calculs théoriques ont permis de déterminer cette valeur cruciale dans la fabrication d'un détecteur de vertex.
+  Les particules chargées traversant un milieu sont défléchies par par de multiples diffusions coulombiennes à petits angles causées par les noyaux de la cible.
+  Cette déviation est appelée \textit{Diffusion Multiple de Coulomb}.
+  La projection de l'angle de déflexion dépend de l'énergie de la particule incidente ainsi que du matériau.
+  Cet angle est calculé de la manière suivante :
+
+  \begin{equation}
+    \theta_0 \simeq \frac{13.6~\rm{MeV}}{\beta c p} \left(\frac{x}{X_0}\right)^{0.555},
+    \label{eq:MSC}
+  \end{equation} 
+
+  où, $\beta = v/c$, $p$ est l’impulsion de la particule en $MeV$, $x$ la distance parcourue et $\rm{X_0}$ la longueur de radiation du milieu.
+  Ce processus agissant un grand nombre de fois le long du parcours des particules dans la matière, cela a pour effet une déflexion de leur trajectoire par rapport à la direction initiale.
+  Ainsi, grâce aux plans de référence utilisés en faisceau test, il est possible de suivre le passage des particules avant et après avoir traversé notre échelle PLUME et de mesurer cet angle déflexion.
+  En connaissant la déflexion moyenne, il est possible d'estimer le budget de matière de l'échelle.
+  
+  Cette mesure a été réalisée au niveau d'une zone comportant des capteurs sur le détecteur, pour des électrons ayant une énergie variant de 2 à $4~\rm{GeV}$.
+  Les particules traversent ainsi :
+
+  \begin{itemize}
+    \item deux capteurs \gls{MIMOSA}-26 amincis à $\sim 50~\rm{\mu m}$ représentant un budget de matière $\left. \frac{x}{X_0} \right|_{\rm{Mi26}} \sim 0.053~\%$ de $\rm{X_{0}}$,
+    \item quatre couches de colle (à l'interface entre le capteur et le flex, ainsi qu'entre le flex et la mousse) ayant une longueur de radiation estimée à $\left. \frac{x}{X_0} \right|_{\rm{Glue}} \sim 0.01~\%$ de $\rm{X_0}$,
+    \item la mousse de silice de carbure d'une densité de $8~\%$ et d'une épaisseur de $\sim 2~\rm{mm}$, dont le budget de matière est $\left. \frac{x}{X_0} \right|_{\rm{SiC}} ~\sim 0.184~\%~\rm{X_{0}}$,
+    \item deux flex composés deux pistes métalisées en cuivre et protégées par trois couches de Kapton :
+    \begin{itemize}
+      \item budget de matière pour $\sim 50~\rm{\mu m}$ de Kapton: $\left. \frac{x}{X_0} \right|_{\rm{Kapton}} \sim 0.014~\%$ de $\rm{X_{0}}$,
+      \item budget de matière pour $\sim 14~\rm{\mu m}$ de cuivre: $\left. \frac{x}{X_0} \right|_{\rm{Cu}} \sim 0.084~\%$ de $\rm{X_{0}}$.
+    \end{itemize}
+  \end{itemize}
+
+  Il est supposé que la proportion des couches de cuivre représentent entre $25~\%$ et $30~\%$ du flex.
+  Ainsi, le budget de matière du cable est : 
+  
+  \begin{equation}
+    \left. \frac{x}{X_0} \right|_{\rm{Flex}} \sim 0.084~-~0.092~\%~\rm{de}~\rm{X_0}.
+  \end{equation}
+
+  Ce qui représente un longueur de radiation toalte de :
+
+  \begin{equation}
+    \begin{array}{lcl}
+      \left. \frac{x}{X_0} \right|_{\rm{PLUME}} & = & 2 \times \left( \left. \frac{x}{X_0} \right|_{\rm{Mi26}} + \left. \frac{x}{X_0} \right|_{\rm{Flex}} + 2 \times \left. \frac{x}{X_0} \right|_{\rm{Glue}}\right) + \left. \frac{x}{X_0} \right|_{\rm{SiC}}, \\
+      \\
+      & \simeq & 0.498~-~0.515~\%~\rm{de}~\rm{X_0}.
+    \end{array}
+    \label{eq:X0theorique}
+  \end{equation} 
+
+  La figure~\ref{fig:angleX0} représente la distribution de l'angle de déflexion pour une énergie de $4~\rm{GeV}$, sur laquelle est ajustée une fonction gaussienne.
+  L'ajustement n'est effectué sur l'interval correspondant à la largeur à mi-hauteur de la distribution, car les queues de la distribution sont plus larges.
+    
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width = \textwidth]{Pictures/X0/kinkAngle4GeV.png}
+    \caption{Distribution de l'angle de déflexion mesuré à une énergie de $4~\rm{GeV}$ et ajustée par une fonction gaussienne.}
+    \label{fig:angleX0}
+  \end{figure} 
+
+  Ces mêmes mesures sont effectuées pour des énergies comprises entre 2 et $4~\rm{GeV}$.
+  La figure~\ref{fig:theta0_2-4} est un histogramme représentant l'angle de déflexion mesuré en fonction de l'énergie des particules incidentes sur lequel est ajusté l'équation de Highland (voir ~\ref{eq:MSC}), en gardant la longueur de radiation comme paramètre libre d'ajustement.
+  Ainsi, le budget de matière mesuré est de $0.47 \pm 0.02~\%$ of $\rm{X_0}$, en deça de l'estimation théorique.
+  Cette mesure a été effectuée en prenant en compte les deux capteurs \gls{CMOS} de l'échelle pour mesure le parcours des particules.
+  Comme le signal créé est supposé se trouve au milieu de la couche epitaxiée, une petite partie du capteur n'est pas prise en compte.
+  Ceci correspond pour les deux capteurs à $0.028~\%$ de $\rm{X_{0}}$ manquant.
+
+  Afin d'améliorer cette mesure, des prises de données de calibration peuvent être effecutées.
+  En plaçant différent matériaux dont le budget de matière est précisement connu, il est possible d'estimer un biais de mesure qui sera ensuite inclus dans notre calcul final.
+   \begin{figure}[!h]
+     \centering
+     \includegraphics[width = \textwidth]{Pictures/X0/theta0VsP_2-4GeV.png}
+     \caption{Extrapolation de l'angle de déflexion en fonction de l'énergie incidente pour une gamme d'énergie comprise entre 2 et $4~\rm{GeV}$.
+     Cette courbe est ajustée par la formule d'Highland (voir l'équation~\ref{eq:MSC}), où la longueur de radiation est un paramêtre libre.}
+     \label{fig:theta0_2-4}
+   \end{figure}
 
   \section{Conclusions}
  
