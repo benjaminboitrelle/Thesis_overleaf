@@ -17,14 +17,14 @@
     \label{fig:ILD_resume}
   \end{figure}
  
-  Un nouveau grand projet en physique des hautes énergies est à l'étude : \acrfull{ILC}. 
+  Un nouveau grand projet en physique des hautes énergies est à l'étude : l'\acrfull{ILC}. 
   Ce collisionneur linéaire de 31 kilomètres de long permettra la collision d'électrons et de positrons à une échelle d'énergie comprise entre $250~\rm{GeV}$ et $500~\rm{GeV}$ et ultérieurement $1~\rm{TeV}$, pour des polarisations différentes.
   Grâce à l'étude des collisions électrons/positrons reposant sur l'identification complète des processus quantiques de chaque évènement, ce nouveau collisionneur devrait permettre de mieux caractériser les particules déjà connues, comme le boson de Higgs grâce à son couplage avec les fermions, mais aussi d'étudier la matière noire.
   Pour cela la partie centrale du détecteur, dédiée à la reconstruction des chaînes de désintégration survenues avant la première couche instrumentée, doit avoir à la fois une excellente résolution spatiale et un budget de matière ($\rm{X_0}$) ne dépassant pas quelques millièmes de la longueur de radiation. 
   Ce sous-détecteur, appelé détecteur de vertex, doit être optimisé afin de permettre la trajectométrie dans un milieu hautement dense en particules et de différencier la trajectoire des quarks $b$ et $c$.
 
   La collaboration PLUME, qui implique l'IPHC de Strasbourg, le DESY à Hambourg et l'université de Bristol, met en place les outils permettant de surmonter ces défis grâce à une conception innovante d'échelles de trajectométrie double face pixelisée, appelée PLUME\footnote{\textbf{P}ixelated \textbf{L}adder with \textbf{U}ltra low \textbf{M}aterial \textbf{E}mbeded}\cite{PLUME}. 
-  Ce type d'objet est équipé de six capteurs à pixels CMOS ultra fins (amincis à $\sim 50~\rm{\mu m}$), alignés l'un à côté de l'autre, sur chaque face d'un support mécanique très léger et tente d'atteindre un record au niveau du budget de matière en se rapprochant de $0.35~\%~\rm{X_0}$.
+  Ce type d'objet est équipé de six capteurs à pixels CMOS ultra fins (amincis à $\sim 50~\rm{\mu m}$), alignés l'un à côté de l'autre, sur chaque face d'un support mécanique très léger et tente d'atteindre un record au niveau du budget de matière en se rapprochant de $0.35~\%$ de $\rm{X_0}$.
   La figure~\ref{fig:PLUME_resume} est un schéma représentant le principe d'une échelle double face développée par la collaboration.
   Pour chaque trajectoire, deux positions seront mesurées, une par face. 
   Elles permettront d'évaluer le point d'intersection de la particule avec le détecteur, mais aussi son mouvement et son origine. 
@@ -39,7 +39,7 @@
 
   Ma thèse vise à participer à la construction de la seconde génération de détecteurs de PLUME et à caractériser leurs performances.
 
-  \section{Étude (simpliste) de la désintégration du boson de Higgs}
+  \section{Étude de la désintégration du boson de Higgs}
 
   Afin de comprendre les paramètres du système de détection, j'ai démarré une analyse de physique concernant la désintégration du boson de Higgs en deux paires de quarks charmé et anti-charmé à une énergie de centre de masse de $350~\rm{GeV}$ à l'ILC, avec des données simulées par méthode Monte Carlo.
 
@@ -70,20 +70,20 @@
         \label{fig:higgsProduction_resume}
     \end{figure}    
 
-  Contrairement aux canaux de production du boson de Higgs disponible au LHC, l'ILC est capable de produire directement le Higgs, soit par Higgs-strahlung (voir figure~\ref{fig:higgsStrahlung_resume}), soit par la fusion de bosons W (voir figure~\ref{fig:WW-fusion_resume}) ou alors par la fusion de bosons Z (voir figure~\ref{fig:ZZ-fusion_resume}).
-  Néanmoins, à $350~\rm{GeV}$, seulement le Higgs-strahlung et la fusion WW sont observables.
+  Contrairement aux canaux de production du boson de Higgs disponible au LHC, l'ILC est capable de produire directement le Higgs, soit par Higgs-strahlung (voir figure~\ref{fig:higgsStrahlung_resume}), soit par la fusion de bosons $W$ (voir figure~\ref{fig:WW-fusion_resume}) ou alors par la fusion de bosons $Z$ (voir figure~\ref{fig:ZZ-fusion_resume}).
+  Néanmoins, à $350~\rm{GeV}$, seulement le Higgs-strahlung et la fusion $WW$ sont observables.
   Je me suis tout particulièrement intéressé à l'état final comportant un boson de Higgs et deux neutrinos.
   Ces canaux de production permettent une observation particulièrement précise des propriétés du boson de Higgs. 
   En effet, les particules détectées dans l'état final proviennent uniquement de la désintégration du boson de Higgs. 
   Par ailleurs, la production via Higgs-strahlung autorise une étude du boson de Higgs sans considérations des produits de désintégrations, en étudiant simplement la masse de recule.
   
   L'étude m'a d'abord permis de comprendre l'avantage de la polarisation des électrons et positrons sur le canal de physique que l'on souhaite étudier.
-  Par exemple, la contribution de la fusion de bosons W est atténuée lorsque les électrons sont droits et les positrons gauches.
+  Par exemple, la contribution de la fusion de bosons $W$ est atténuée lorsque les électrons sont droits et les positrons gauches.
   Cependant, le signal étudié est noyé dans un bruit de fond généré pas d'autres processus.
   Deux bruits de fonds sont considérés, ceux menant à un état final identique à notre signal, ou alors ceux produisant une réponse dans le détecteur similaire à celle du signal.
   Afin de différencier le signal du bruit, certains critères doivent être définis.
   Tout d'abord, nous nous attendons à observer deux jets provenant de la désintégration du boson de Higgs. 
-  Ainsi, tous les évènements ne contenant qu'un lepton isolé ne sont pas pris en compte.
+  Ainsi, tous les évènements contenant des leptons isolés ne sont pas pris en compte.
   Puis, une sélection sur l'impulsion transverse visible est effectuée afin de réduire l'impact des hadrons produits par interaction $\gamma\gamma$.
   Ensuite, les évènements sont sélectionnés par rapport à l'hypothèse sur la structure de notre signal.
   Par exemple, la masse visible doit correspondre à la signature du boson de Higgs, qui est de $125~\rm{GeV}$.
@@ -147,14 +147,12 @@
     \label{tab:cutFlow_resume}
   \end{table}
 
-
-
   La suite de ce travail consiste a étudier la capacité d'identifier les quarks charmés pour différentes géométries de détecteur de vertex. 
   Malheureusement, dû au temps qui m'a été imparti pour effectuer cette thèse, je n'ai pu effectuer cette étude.
 
   \section{Préparation d'une campagne de tests sous faisceaux}
 
-    Comme décrit en introduction, l'objectif de la collaboration PLUME est d'atteindre un budget de matière se rapprochant de $0.35~\%~\rm{X_0}$ pour une résolution spatiale meilleure que 4 microns.
+    Comme décrit en introduction, l'objectif de la collaboration PLUME est d'atteindre un budget de matière se rapprochant de $0.35~\%$ de $\rm{X_0}$ pour une résolution spatiale meilleure que 4 microns.
   La structure mécanique est validée grâce à l'utilisation de MIMOSA-26, des détecteurs monolithiques complexes qui ont une résolution spatiale de $< 4~\mu\rm{m}$.
   Le traitement des données est directement intégré dans les photocites qui collectent les charges. 
   Il permet de numériser directement le signal, grâce à des discriminateurs et de réduire la bande-passante de transmission des données par le biais d'un système de suppression de zéro (ne prend pas en compte les zéros envoyés par les pixels, qui ne représentent pas un signal physique intéressant).
@@ -162,7 +160,7 @@
   
    \subsection{Validation en laboratoire des échelles PLUME}
 
-  Les échelles PLUME sont les premiers prototypes double faces associant un budget de matière se rapprochant de $0.35~\%~\rm{X_0}$ et des pistes métallisées adaptées à la surface de détection de $1 \times 12~\rm{cm}^2$, afin de réduire les zones mortes du détecteurs. 
+  Les échelles PLUME sont les premiers prototypes double faces associant un budget de matière se rapprochant de $0.35~\%$ de $\rm{X_0}$ et des pistes métallisées adaptées à la surface de détection de $1 \times 12~\rm{cm}^2$, afin de réduire les zones mortes du détecteurs. 
   Chaque module doit être validé en laboratoire afin de s'assurer que l'assemblage n'altère pas les capteurs utilisés.
   Après une inspection visuelle afin de contrôler l'alignement de chaque capteur l'un par rapport à l'autre et qu'aucun d'eux, ni aucune connexion n'ait été endommagé pendant l'assemblage, chaque échelle est testée électriquement.
   La consommation des capteurs, le contrôle JTAG ainsi que la présence de pixels morts sont vérifiés, pour ensuite évaluer les seuils des comparateurs qui vont permettre de discriminer le signal du bruit.
@@ -171,8 +169,8 @@
   
     \subsection{Étude de la déformation des échelles lors d'une campagne de faisceau test}
 
-  Actuellement, différentes versions des échelles PLUME existent : celles dont le budget de matière est de $0.65~\%~\rm{X_0}$ utilisant uniquement des pistes métallisées en cuivre; deux nouveaux prototypes, l'un utilisant des pistes métallisées en cuivre et l'autre en aluminium et dont les zones mortes de détection ont été réduites et la densité de la mousse mécanique a été diminuée de moitié.
-  Bien que différentes versions existent, seuls les modules atteignant un budget de matière de $0.65~\%~\rm{X_0}$ ont été étudiés lors de deux campagnes en faisceau test, l'une réalisée par la collaboration en 2011 au CERN et l'autre que j'ai mené en avril 2016 au DESY.
+  Actuellement, différentes versions des échelles PLUME existent : celles dont le budget de matière est de $0.65~\%$ de $\rm{X_0}$ utilisant uniquement des pistes métallisées en cuivre; deux nouveaux prototypes, l'un utilisant des pistes métallisées en cuivre et l'autre en aluminium et dont les zones mortes de détection ont été réduites et la densité de la mousse mécanique a été diminuée de moitié.
+  Bien que différentes versions existent, seuls les modules atteignant un budget de matière de $0.65~\%$ de$ \rm{X_0}$ ont été étudiés lors de deux campagnes en faisceau test, l'une réalisée par la collaboration en 2011 au CERN et l'autre que j'ai mené en avril 2016 au DESY.
   Les résultats de la première campagne ont permis à la collaboration de mettre en avant les avantages d'une double mesure. 
   De ces résultats, je me suis intéressé à l'étude des déformations mécaniques de nos échelles et leur impact sur les résultats d'analyse.
   En effet, lorsque l'échelle est inclinée dans une direction et que le faisceau ne la touche plus en incidence normale, la résolution spatiale se dégrade dans des proportions inattendues.
@@ -229,8 +227,8 @@
   En effet, le détecteur de vertex doit être capable de mesurer les particules qui ont une grande impulsion, ainsi que celles qui ont une faible impulsion et qui ne pourront être détectées par les autres parties de ce détecteur.
   C'est pourquoi, j'ai préparé et effectué une deuxième campagne de faisceau test avec des électrons de quelques GeV au DESY en avril 2016.
   Avant de réaliser cette expérience, il m'a fallu m'assurer de l'intégration de notre détecteur au sein du système d'acquisition EUDAQ fourni par le DESY. 
-  Un outil de simulation estimant la résolution spatiale en fonctions de différentes géométrie de télescope m'a permis de définir une géométrie optimale pour étudier à la fois les caractéristiques attendues de l'échelle, mais aussi de pouvoir déterminer son budget de matière et le comparer aux attentes théoriques.
-  Comme la technologie des capteurs utilisés pour le télescope et PLUME sont les mêmes, le système d'acquisition a été simplifié : deux plans de télescopes sont positionnés de part et d'autres du détecteur afin de mesurer la trajectoire des particules. 
+  Un outil de simulation estimant la résolution spatiale en fonction de différentes géométrie de télescope m'a permis de définir une géométrie optimale pour étudier à la fois les caractéristiques attendues de l'échelle, mais aussi de pouvoir déterminer son budget de matière et le comparer aux attentes théoriques.
+  Comme la technologie des capteurs utilisés pour le télescope et PLUME sont les mêmes, le système d'acquisition a été simplifié : deux plans de télescopes sont positionnés de part et d'autre du détecteur afin de mesurer la trajectoire des particules. 
   Des mesures de plusieurs heures ont permis de vérifier la stabilité du système d'acquisition. 
   En même temps, un support rotatif a été construit afin de maintenir l'échelle à la position verticale et de permettre une prise de données pour des angles variants de $0^{\circ}$ à $60^{\circ}$.
   La figure~\ref{fig:testBeam_resume} est une photographie prise durant la campagne de faisceau test et montre le positionnement de l'échelle PLUME, située au centre entre les quatre plans de référence.
@@ -240,10 +238,11 @@
   Les particules chargées traversant un milieu sont défléchies par par de multiples diffusions coulombiennes à petits angles causées par les noyaux de la cible.
   Cette déviation est appelée \textit{Diffusion Multiple de Coulomb}.
   La projection de l'angle de déflexion dépend de l'énergie de la particule incidente ainsi que du matériau.
-  Cet angle est calculé par :
+  Cet angle est calculé par la formule~\ref{eq:MSC}:
 
   \begin{equation}
     \theta_0 \simeq \frac{13.6~\rm{MeV}}{\beta c p} \left(\frac{x}{X_0}\right)^{0.555},
+    \label{eq:MSC}
   \end{equation}de la manière suivante : 
 
   où, $\beta = v/c$, $p$ est l’impulsion de la particule en $MeV$, x la distance parcourue et $\rm{X_0}$ la longueur de radiation du milieu.

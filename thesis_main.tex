@@ -31,6 +31,7 @@
 \usepackage{hyperref}
 %\usepackage[Bjornstrup]{fncychap}
 \usepackage{tabulary}
+\usepackage{pdfpages}
 \newcolumntype{K}[1]{>{\centering\arraybackslash}p{#1}}
 
 %\usepackage{titlesec}
@@ -222,6 +223,7 @@
 \begin{document}
     
   \frontmatter
+    \includepdf[pages=-]{coverThesis}
     %\maketitle
     \input{aknowledgements.tex}
     %\setcounter{page}{1}
@@ -273,8 +275,8 @@
 %	  \appendix	  
     
   \backmatter
-    
-    %\input{resume.tex}
+   
+    \input{resume.tex}
     
 
 	
