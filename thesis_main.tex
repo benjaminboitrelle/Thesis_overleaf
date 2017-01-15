@@ -220,10 +220,51 @@
 %\setheaderspaces{*}{2\onelineskip}{*} 
 %\checkandfixthelayout
 
+%\usepackage[explicit]{titlesec}
+%\newlength\chapnumb
+%\setlength\chapnumb{3cm}
+% 
+%\titleformat{\chapter}[block] {
+%  \normalfont\sffamily}{}{0pt} {
+%    \parbox[b]{\chapnumb}{
+%      \fontsize{60}{55}\selectfont\thechapter}
+%      \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{
+%        \raggedleft
+%        \hfill{\LARGE#1}\\
+%        \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}
+%  }
+%}
+% 
+%\titleformat{name=\chapter,numberless}[block]
+%{\normalfont\sffamily}{}{0pt}
+%{\parbox[b]{\chapnumb}{%
+%   \mbox{}}%
+%  \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{%
+%    \raggedleft%
+%    \hfill{\LARGE#1}\\
+%    \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyhead[LE,RO]{\textbf{\thepage}}
+\fancyhead[LO]{\textbf{\rightmark}}
+\fancyhead[RE]{\textbf{\leftmark}}
+\fancypagestyle{plain}{%
+   \fancyhead{} % get rid of headers
+   \renewcommand{\headrulewidth}{0pt} % and the line
+}
+
+%\fancyhf{}
+%\rhead{Page \thepage}
+
 \begin{document}
     
   \frontmatter
-    \includepdf[pages=-]{coverThesis}
+    \includepdf[pages=1]{coverThesis}
+    \input{abstract.tex}
     %\maketitle
     \input{aknowledgements.tex}
     %\setcounter{page}{1}
