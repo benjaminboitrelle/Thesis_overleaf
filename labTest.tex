@@ -3,9 +3,9 @@
 \label{chap:labTests}
 
   In chapter~\ref{chap:vxd}, an overview of the \gls{PLUME} project was presented.
-  Since 2010, the collaboration is building full scale and fully functional ladders and is trying to reduce the material budget down to $0.35~\%$ of $\rm{X_{0}}$.
+  Since 2010, the collaboration is building full-scale and fully functional ladders and is trying to reduce the material budget down to $0.35~\%$ of $\rm{X_{0}}$.
   Due to the six sensors working together and the huge amount of electrical lines to control and read the different sensors on a module, these ladders have to be carefully tested and validated in the laboratory before performing tests under real conditions at \gls{CERN} or \gls{DESY} test beam facilities.
-  This chapter introduces the different steps from the assembly procedure performed at Strasbourg (for the module) and Bristol (for a complete ladder), to the final tests to study the sensor's response, and include electrical functionality tests at Hamburg.
+  This chapter introduces the different steps from the assembly procedure performed at Strasbourg (for the module) and Bristol (for a complete ladder), to the final tests to study the sensor's responses including electrical functionality tests at Hamburg.
  
  \minitoc
   
@@ -19,7 +19,8 @@
 
   The ladders are built in two steps. 
   Two independent modules are assembled at Strasbourg and then tested at \gls{DESY}. 
-  Afterward, they are shipped to Bristol where the modules are glued together on a \gls{SiC} foam to form a \gls{PLUME} ladder.
+  These modules consist of a flex-cable on which \gls{MIMOSA}-26 sensors are glued.
+  Afterwards, they are shipped to Bristol where the modules are glued together on a \gls{SiC} foam to form a \gls{PLUME} ladder.
   The assembly procedures are introduced below, as well as the visual inspection between the mounting steps.
 
   \subsection{Module and ladder assembly}
@@ -28,15 +29,15 @@
     \label{subsec:modAssembly}
 
     The module assembly is performed at the \gls{IPHC} by the microelectronics group and is done in three steps.
-    First of all, passive components are soldered onto a flex-cable.
+    First of all, passive components (capacitors, resistances) are soldered onto a flex-cable.
     Then, an epoxy layer with a thickness of $300~\rm{\mu m}$ is applied under the connector side.
     Due to the force applied by pulling and pushing the jumper cable on the \gls{ZIF} connector, the epoxy layer is used to reinforce this area and to avoid damaging the flex-cable.
     The module is then placed on a metal jig to ensure its flatness using a vacuum suction.
-    The next step consists of gluing the six sensors onto the flex.
+    The next step is to glue the six sensors onto the flex.
     The positioning of the chips used to be done manually, but a programmable robot, which has a maximum mismatch alignment reaching approximately $20~\mu\rm{m}$, is now used for this procedure.
     As the sensors are thin and fragile, they are manipulated with a vacuum sucker.
     A few drops of glue are dispensed on the flex and then, these sensors are gently pressed one by one on top of it to be glued.
-    Afterward, glue is cured in an oven and the chips cannot be removed anymore.
+    Afterwards, the glue is cured in an oven. After this step, the chips cannot be removed anymore.
     If a sensor is not working properly, it can not be replaced by a new one because the force needed to remove it might break the fragile flex-cable.
     In the worse case scenario, a new sensor can be glued on top of it, but this solution cannot be envisaged for a real ladder as it increases locally the material budget.
     To avoid this situation, a sensor probe-test is performed to select only good sensors before the module assembly.
@@ -45,13 +46,15 @@
     Wire-bonds can be protected by applying a glob-top epoxy~\cite{minges1989electronic}.
     It has the advantage of offering protection against moisture or contaminants, adding electrical insulation and prohibiting their movement during other manipulations (see section~\ref{subsec:visualInspection} for the utility of the glob-top epoxy). 
     Nevertheless, it increases locally the material budget and if an electrical problem occurs, the wire-bonds cannot be disconnected.
-    When the module is assembled, it is finally transferred onto a plastic sole, which has alignment pins.
+    Once the module is assembled, it is finally transferred onto a plastic sole, which has alignment pins.
     This sole helps with the manipulation of a module, but also reduces the stress on the flex-cable, by holding it as flat as possible.
     During shipping, a plastic cover is screwed on top of this sole to completely protect the module.
 
     \subsubsection{Ladder assembly}
 
-    The ladder assembly is performed by the Bristol team.
+    The ladder assembly is performed by the Bristol team.     
+    The assembly comprises the gluing of two modules on a spacer (\gls{SiC}) and a bate 
+
     It consists of gluing two modules together on a spacer (\gls{SiC}) and a bate (an aluminum plate).
     The operation is done entirely by hand.
     Each module is placed on a separate jig containing grooves and alignment pins to ensure the positioning, as presented in figure~\ref{fig:ladderAssemblyStep1}.
@@ -62,9 +65,9 @@
     The amount of glue needed for the assembly was studied carefully. 
     As the foam's surface is irregular, if not enough glue is used, then gluing will not work.
     But if too much glue is used, the jigs might be stuck together.
-    When the ladder is finally ready, it is placed into an aluminum box used for shipping but also testing.
-   
-    \begin{figure}[!h]
+    When the ladder is finally ready, it is placed into an aluminum box used for testing and shipping.
+     
+    \begin{figure}[!tbh]
       \centering
       \begin{subfigure}[t]{0.4\textwidth}
           \includegraphics[width = 1.3\textwidth]{Pictures/labTests/plumeLadderAssembly_step1.png}
@@ -87,15 +90,15 @@
   \subsection{Visual inspections}
   \label{subsec:visualInspection}
 
-  As explained in section~\ref{subsec:modAssembly}, the sensors positioning was performed first manually and later was switched to an automatic procedure.
+  As explained in section~\ref{subsec:modAssembly}, the sensor positioning was performed first manually and later was switched to an automatic procedure.
   To tune properly the robot which is in charge of gluing the sensors on the flex-cable, the microelectronic group needs a position feedback.
   Each module is then inspected under a microscope to measure the gap between two sensors, and their position relative to each other.
-  The distance between the last pixel of a sensor to the neighboring one should be less than $500~\mu\rm{m}$, taking into account the $20~\mu\rm{m}$ robot's mismatch.
+  The distance between the last pixel of a sensor to the first one on the next sensor should be less than $500~\mu\rm{m}$, taking into account the robot's $20~\mu\rm{m}$ mismatch.
   Figure~\ref{fig:visAlign} is a picture taken with a microscope showing the relative position of two sensors on the bottom of the matrix for an aluminum straight module.
   %A visual inspection of the position,  as well as any problem on the matrix, as a crack, as well as a check of the wire-bonds have to be done before any electrical validation.
   The gap between the two edges is $\sim 51~\mu\rm{m}$. 
   
-  \begin{figure}
+  \begin{figure}[!tbh]
     \centering
     \includegraphics[width=0.6\textwidth]{Pictures/labTests/alignment_sensors.jpg}
     \caption{Visualisation of the alignment. The distance between the two edges is $\sim 51~\mu\rm{m}$.}
@@ -103,16 +106,16 @@
   \end{figure}
   
   A visual inspection is also needed to check if wire-bonds are correctly connected to the right sensor's pad and to verify that the gluing procedure did not break one of the sensors due to some dust.
-  Moreover, this inspection is needed to determine if modules were damaged during a shipment between two labs (for example between Strasbourg and \gls{DESY}).
+  Moreover, this inspection is needed to determine if modules were damaged during shipment.
   The modules are fragile objects that have to be manipulated with care.
   Any wrong manipulation can damage severely the vital functionality.
-  For example, figure~\ref{fig:wireBondsCrashed} shows a picture taken with a microscope of crushed wire-bonds due to a cable falling on it.
+  For example, figure~\ref{fig:wireBondsCrashed} shows a picture taken with a microscope of  wire-bonds crushed by a cable falling.
   Sensitive parts and electronics were not damaged, but some wires were in contact leading to a shortcut.
   Fortunately, the microelectronic group at Strasbourg was able to unbend the wires and repair the most damaged ones.
-  This module is fully operational and working correctly.
+  This module is now fully operational again and working correctly.
   %By using the glob-top method, the wire-bonds can survive to falling cable, but if they are not assigned to the right pad, there is no possibility to correct it anymore.
 
-  \begin{figure}[!h]
+  \begin{figure}[!tbh]
     \centering
     \includegraphics[width=0.6\textwidth]{Pictures/labTests/crash_bonds.jpg}
     \caption{Picture taken with a microscope showing crushed wire-bonds due to a falling cable. Some of the wire-bonds are in contact leading to a shortcut and a non-functional module.}
@@ -123,7 +126,7 @@
 
   The electrical validation of a \gls{PLUME} module or ladder is performed in two steps.
   The first one consists of checking that all the systems controlling and powering the module are working. 
-  Then, a module is connected and its consumption, as well as its communication, are checked.
+  Then, a module is connected and its power-consumption, as well as its communication, are checked.
 
   \subsection{Auxiliary board}
 
@@ -131,34 +134,41 @@
   This jumper cable is linked to an auxiliary board which powers the module's sensors, but also drives them.
   It is also used to transfer the data to the data acquisition system.
   This auxiliary card is connected to a power supply board which provides the nominal voltages needed by the sensors.
-  The power supply board delivers the digital and analog voltages ($\rm{V}_{\rm{DD_D}}$ and $\rm{V}_{\rm{DD_A}}$ are set to $3.3~\rm{V}$ using two independent potentiometers), the buffer voltage $\rm{V}_{\rm{CC}}$ fixed to $3.3~\rm{V}$, as well for the temperature measurement diodes, a $\pm 5~\rm{V}$ for trigger and a power pulsing signal.
+  The power supply board delivers the digital and analog voltages ($\rm{V}_{\rm{DD_D}}$ and $\rm{V}_{\rm{DD_A}}$ are set to $3.3~\rm{V}$ using two independent potentiometers), the buffer voltage $\rm{V}_{\rm{CC}}$ fixed to $3.3~\rm{V}$, as well as the voltage for the temperature measurement diodes, a $\pm 5~\rm{V}$ supply for trigger and a power pulsing signal.
   For laboratory testing of a module, the power pulsing option is deactivated by connecting this pin to the $+5~\rm{V}$ pin of the trigger.
   The clamping voltage $\rm{V}_{\rm{clp}}$ used for the polarisation of the pixel has to be in the range $\left[2, 2.2\right]~\rm{V}$.
-  On the first version of the auxiliary board, it was provided by an external power supply, but the new version delivers the $2.1~\rm{V}$ needed by using an \gls{I2C} chip or a potentiometer (the user can select which methods to use via a jumper).
+  On the first version of the auxiliary board, $\rm{V}_{\rm{clp}}$ was provided by an external power supply, but the new version delivers the $2.1~\rm{V}$ needed by using an \gls{I2C} chip or a potentiometer (the user can select which methods to use via a jumper).
   The auxiliary board is also connected to a computer in charge of the sensors' slow control.
   Two RJ45 are providing the \gls{JTAG} registers, as well as the start and reset signal. 
   For a complete ladder, the two modules have to be synchronised and the clock can be injected by a clock distribution board.
   One RJ45 connector is dedicated to the \gls{JTAG} slow control and the signals delivered are: 
 
   \begin{itemize}
-    \item \textbf{\gls{TDI}}: received the serial data input feed to the test data registers or instruction register
-    \item \textbf{\gls{TMS}}: controls operation of test logic (for example, by selecting the register)
-    \item \textbf{\gls{TCK}}: used to load test mode data from \gls{TMS} pin and test data on \gls{TDI} pin at the rising edge, while at the falling edge, it is used to output the test data on the next pin.
+    \item \textbf{\gls{TDI}}: receives the serial data input feed to the test data registers or instruction register;
+    \item \textbf{\gls{TMS}}: controls operation of the test logic (for example, by selecting the register);
+    \item \textbf{\gls{TCK}}: used to load test mode data from \gls{TMS} pin and test data on \gls{TDI} pin at the rising edge, while at the falling edge, it is used to output the test data on the next pin;
     \item \textbf{\gls{TDO}}: the output data feed the input data of the next sensor and the last sensor sends the information back to the computer 
   \end{itemize}
 
-  The second RJ45 connector provides signal coming from the \gls{DAQ}:
+  The second RJ45 connector provides the signals coming from the \gls{DAQ}:
   \begin{itemize}
-    \item \textbf{Clock}: has a rate of 80 MHz and is provided by the clock distribution board to synchronise two modules together
-    \item \textbf{Start}: signal provided by the \gls{DAQ} software to start and synchronise multiple sensors (the \gls{JTAG} start works only for one sensor).
-    \item \textbf{Reset}: reset the registers to default value. 
+    \item \textbf{Clock}: has a rate of 80 MHz and is provided by the clock distribution board to synchronise two modules together;
+    \item \textbf{Start}: signal provided by the \gls{DAQ} software to start and synchronise multiple sensors (the \gls{JTAG} start works only for one sensor);
+    \item \textbf{Reset}: reset the registers to test default values. 
   \end{itemize}
 
   The principle of connection between the auxiliary board and the different components to operate one module is depicted in figure~\ref{fig:plumeAux}.
+  
+  \begin{figure}[!tbh]
+    \centering
+    \includegraphics[width=\textwidth]{Pictures/labTests/plumeAux.png}
+    \caption{Sketch of the PLUME connection scheme.}
+    \label{fig:plumeAux}
+  \end{figure}
 
   Before connecting a PLUME module to the auxiliary board, the voltages have to be set and the \gls{JTAG} communication has to be checked on the auxiliary card.
-  Two external power supplies deliver $8~\rm{V}$ D.C. to the power supply board and give  information on the consumption of the whole system.
-  The empty auxiliary board has a current consumption about $350~\rm{mA}$.
+  Two external power supplies deliver $8~\rm{V}$ D.C. to the power supply board and give information on the power consumption of the whole system.
+  The empty auxiliary board has a current consumption of about $350~\rm{mA}$.
   Then, $\rm{V}_{\rm{CC}}$, $\rm{V}_{\rm{DD_D}}$ and $\rm{V}_{\rm{DD_A}}$ should be at $3.3~\rm{V}$, but only the two last voltages can be adjusted by using two potentiometers on the power supply board.
   $\rm{V}_{\rm{clp}}$ is set to $2.1~\rm{V}$ and should not be outside the range $\left[2, 2.2\right]~\rm{V}$.
   \gls{JTAG} communication is verified on an oscilloscope.
@@ -167,27 +177,21 @@
   \begin{description}
     %\item[\gls{TDI}:]
     %\item[\gls{TDO}:]
-    \item[\gls{TMS}:] by default is fixed to 1 and change to 0 at every register selection
-    \item[\gls{TCK}:] this clock is slower (30 kHz) than the 80 MHz needed by the sensors and is only dedicated for the slow control
-    \item[Reset:] by default is fixed to 1 and should change to 0 every time the reset is called by the \gls{JTAG} software
-    \item[Start:] during the test, the start signal is provided by the \gls{DAQ} software
-    \item[Clock:] independently of the method used, the 80 MHz clock has to be correctly distributed along the auxiliary card
+    \item[\gls{TMS}:] by default is fixed to 1 and changes to 0 at every register selection;
+    \item[\gls{TCK}:] this clock is slower (30 kHz) than the 80 MHz needed by the sensors and is dedicated to the slow control;
+    \item[Reset:] by default is fixed to 1 and should change to 0 every time the reset is called by the \gls{JTAG} software;
+    \item[Start:] during the test, the start signal is provided by the \gls{DAQ} software;
+    \item[Clock:] independently of the method used, the 80 MHz clock has to be correctly distributed along the auxiliary card.
   \end{description}
 
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=\textwidth]{Pictures/labTests/plumeAux.png}
-    \caption{Sketch of the PLUME connection.}
-    \label{fig:plumeAux}
-  \end{figure}
 
   \subsection{Smoke test}
 
   After validating the auxiliary board (and with the power supplies switched off), a module can be connected to it via a jumper cable.
-  Voltages applied to this device have to be adjusted again due to some dissipation inside the flex-cable and jumper cable.
-  $\rm{V}_{\rm{DD_D}}$, $\rm{V}_{\rm{DD_A}}$ and $\rm{V}_{\rm{clp}}$ can be measured on different pads of the ladder: three pads are close to the connector, while the three others are at the edge of the flex-cable, as seen in figure~\ref{fig:voltagePads}
+  Voltages applied to this module have to be adjusted again due to some dissipation inside the flex-cable and jumper cable.
+  $\rm{V}_{\rm{DD_D}}$, $\rm{V}_{\rm{DD_A}}$ and $\rm{V}_{\rm{clp}}$ can be measured on different pads of the ladder: three pads are close to the connector, while the three others are at the edge of the flex-cable, as seen in figure~\ref{fig:voltagePads}.
 
-  \begin{figure}[!h]
+  \begin{figure}[!tbh]
     \centering
     \includegraphics[width=\textwidth]{Pictures/labTests/AM01_voltagePads.jpg}
     \caption{Picture of a aluminum mirrored module with the points of measurement for $\rm{V}_{\rm{DD_D}}$, $\rm{V}_{\rm{DD_A}}$ and $\rm{V}_{\rm{clp}}$.}
@@ -198,20 +202,20 @@
  % The first one was not used during the test because of a problem during the fabrication.
   The most flexible cable was not used because of an important voltage drop between the auxiliary board and the module, but also because of a wrong fabrication.
   After setting the voltages to nominal values and plugging in a module, a short-circuit happened.
-  The auxiliary board tests were correct and were proofed one more time without the module.
+  The auxiliary board tests were correct and were demonstrated one more time without the module.
   Then, a thermal camera was used to find if a sensor was responsible for the short-circuit.
-  One sensor was hotter than the others, nevertheless, the wire-bonds were correctly assigned.
-  The problem was coming from a short-circuit between $\rm{V}_{\rm{DD_D}}$ and $\rm{V}_{\rm{clp}}$ lines.
+  One sensor was hotter than the others, although, the wire-bonds were correctly assigned.
+  The problem was shown to come from a short-circuit between the $\rm{V}_{\rm{DD_D}}$ and $\rm{V}_{\rm{clp}}$ lines.
   By bypassing these two lines on the jumper cable and by connecting them directly to the module, this short-circuit has disappeared.
-  Instead of this flexible jumper cable, a stiffer one was used.
+  The problem was solved by using a stiffer jumper cable.
   Nonetheless, any movement of the auxiliary board causes too much stress on the connector and on the flex-cable.
-  To avoid any damage, a support was built to hold the auxiliary board and the module on the same frame, thus reducing the risk of breaking anything.
+  Therefore, to avoid any damage, a support was built to hold the auxiliary board and the module on the same frame, thus reducing the risk of breaking anything.
 
   The module consumption is checked at every \gls{JTAG} step to make sure that no short-circuit occurs.
-  Right after powering-on the system, the six sensors start in a random state and the consumption at this stage can not indicate any electrical problem.
+  Right after powering the system, the six sensors start in a random state and the consumption at this stage can not indicate any electrical problem.
   After the reset of the registers, the total consumption should be around $33~\rm{mA}$.
   Then, the registers are loaded and the consumption should be around $750~\rm{mA}$.
-  They are read-back by the \gls{JTAG} software, which indicates if errors occur.
+  These registers are read-back by the \gls{JTAG} software, indicating if any errors happened.
   If, during the reading step no error was discovered, the sensors can be operated and their consumption should be around $1300~\rm{mA}$.
 
   %Before to present the next step to control the JTAG communication of every sensor, let's introduce the MIMOSA-26 output.
@@ -219,7 +223,7 @@
   %\subsection{Mimosa-26 output}
 
   An inspection of the output with an oscilloscope is performed to check the slow control and to estimate the response of the sensor.
-  For the normal mode data format with \gls{SUZE} enable, the output data of the last frame is sparsified and transmitted during the acquisition of the current one.
+  For the normal mode data format with \gls{SUZE} enabled, the output data of the last frame are sparsified and transmitted during the acquisition of the current one.
   The information provided by the \gls{MIMOSA}-26 is contained in four output lines.
   The first output line corresponds to the \textit{clock} which is always running even if the data transmission is finished. 
   Its rate depends on the clock rate register. 
@@ -229,35 +233,35 @@
   Then, the two last output lines are dedicated to the data.
   They contain multiple information.
   First of all, the beginning and the ending of the data transmission is determined by the \textit{header} and \textit{trailer}.
-  They can be used to detect a loss of synchronisation.
-  They correspond to $2 \times 16$ bits (\textit{header0-header1} and \textit{trailer0-trailer1}) and are totally configurable through the \gls{JTAG} software.
+  The \textit{header} and/or \textit{trailer} can be used to detect a loss of synchronisation.
+  They correspond to $2 \times 16$ bits (\textit{header0-header1} and \textit{trailer0-trailer1}) and are fully configurable through the \gls{JTAG} software.
   The \textit{header} is followed by the \textit{frame counter} which corresponds to the number of frames since the chip was reset. 
   The information is separated into two words (\textit{FrameCounter0} corresponding to the least significant bit and \textit{FrameCounter1} corresponding to the most significant bit).
   Then, the \textit{data length} gives the number of 16 bits words of the useful data. 
   The useful data is split into \textit{states/line}, which contains the address of the line which has a hit and an overflow flag if the number of states is bigger than the memory limitation.
   It is followed by the \textit{state} giving the number of consecutive hits and the address of the first column.
   Finally, the \textit{trailer} is ending the data transmission followed by 32 bits of zero.
-  Figure~\ref{fig:mi26Output} is a picture of an oscilloscope output of a \gls{MIMOSA}-26 data output. From the top to the bottom, it shows the $80~\rm{MHz}$ \textit{clock}, the four clock's cycle \textit{marker}, the \textit{data0} and \textit{data1} with the \textit{header} and the \textit{frame counter}.
+  Figure~\ref{fig:mi26Output} is a picture of an oscilloscope recording of a \gls{MIMOSA}-26 data output. From the top to the bottom, it shows the $80~\rm{MHz}$ \textit{clock}, the four clock's cycle \textit{marker}, the \textit{data0} and \textit{data1} with the \textit{header} and the \textit{frame counter}.
   More information about the \gls{MIMOSA}-26 can be found in the \gls{MIMOSA}-26 user manual~\cite{manualMi26}.
 
-  \begin{figure}[h]
+  \begin{figure}[!tbh]
     \centering
     \includegraphics[width=0.8\textwidth]{Pictures/labTests/mi26_output}
-    \caption{MIMOSA-26 output from oscilloscope. The top yellow line corresponds to the clock, the blue line below to the marker (which last 4 clock cycles), and the green and purple line are the data output containing the hit information}
+    \caption{MIMOSA-26 output from oscilloscope. The top yellow line corresponds to the clock, the blue line below to the marker (which lasts 4 clock cycles), and the green and purple lines are the data output containing the hit information}
     \label{fig:mi26Output}
   \end{figure}
 
   \subsection{JTAG communication}
 
   After adjusting the voltages and looking for any short-circuits, the next step is to control the \gls{JTAG} communication for every sensor.
-  As in the \gls{PLUME} module, all the sensors are synchronised, only \textit{clock} and \textit{marker} signals from one sensor is read back.
+  Since in the \gls{PLUME} modules, all the sensors are synchronised, only \textit{clock} and \textit{marker} signals from one sensor are read back.
   On the oscilloscope, the trigger is set on the \textit{marker}.  
-  The sensors are configured in the normal mode data format (80 MHz with zero suppression output) and the output is checked in three steps.
+  The sensors are configured in the normal-mode data format (80 MHz with zero suppressed output) and the output is checked in three steps.
   First of all, the sensor is reset, the registers are loaded and read back and then the start signal is sent. 
   Through the \gls{JTAG} software, \textit{header} and \textit{trailer} are modified several times and are checked on the oscilloscope.
-  Then, the discriminators' response is visualised, specifically to find pixels always sending data even if the discriminators are closed.
+  Then, the discriminators' response is visualised, specifically to find pixels that always send data even if the discriminators are closed.
   The number of defective pixels and their position is then estimated.
-  After that, an estimation of the threshold discriminator values to get few hits are determined and the response is then checked.
+  After that, an estimation of the threshold discriminator values to get few hits are determined and the response is checked.
   Nevertheless, using light to estimate the response of the sensor can impact the pixels' baseline and modify the normal behavior of the matrix.
   For example, instead of sending more information, the pixels are less responsive.
   Thus, using a radiation source is a better solution.
@@ -265,23 +269,23 @@
 \section{Noise measurements}
 \label{sec:noiseMeasurements}
 
-  In chapter~\ref{chap:vxd}, the principle of \gls{CMOS} sensors is described and the noise of this technology is discussed.
+  In chapter~\ref{chap:vxd}, the principle of \gls{CMOS} sensors was described and the noise of this technology was discussed.
   As a reminder, the two noise contributions are \acrfull{TN} and \acrfull{FPN}.
-  \gls{FPN} is determined as an offset to subtract from the pixel response to reduce its non-uniformity response, while \gls{TN} is coming from the contribution of different noises during the reset, the integration and the readout of the pixel.
-  These noises have to be measured in the laboratory in order to find the optimum configuration to detect physics signal and reduce the noise impact on the measurement.
+  \gls{FPN} is determined as an offset to be subtracted from the pixel response to reduce its non-uniformity, while \gls{TN} is coming from the contribution of different noises during the reset, the integration and the readout of the pixel.
+  These noises have to be measured in the laboratory in order to find the optimum configuration to detect physics signals and reduce the noise impact on the measurement.
 
   \subsection{Characterisation bench}
 
-  The noise estimation is done with a bench of characterisation composed of a National Instrument PXIe crate equipped with a 6562 digital card, two power supplies, a power distribution board, an auxiliary and a \gls{JTAG} card, as well as the module to test.
+  The noise estimation is done with a bench of characterisation composed of a National Instruments PXIe crate equipped with a 6562 digital card, two power supplies, a power distribution board, an auxiliary and a \gls{JTAG} card, as well as the module to test.
   The procedure described here is applied to a single \gls{MIMOSA}-26, or a \gls{PLUME} module, as well as a \gls{MIMOSA}-28 sensor.
   Nevertheless, the data acquisition software used during the characterisation is slightly different to match the clock speed, depending on the sensor technology.
-  The four data outputs are connected from the pins on the auxiliary board to the digital card via a National Instrument spider cable.
-  Firstly, a test pattern, which automatically loads a \gls{JTAG} file for this test, is done to read the \textit{header} and \textit{trailer} during several frames with a determined data length.
+  The four data outputs are connected from the pins on the auxiliary board to the digital card via a National Instruments spider cable.
+  Firstly, a test pattern, which automatically loads a \gls{JTAG} file for this test, is used to read the \textit{header} and \textit{trailer} during several frames with a determined data length.
   It has been observed that the \textit{clock} output cable has to be $80~\rm{cm}$ longer than the three other cables to ensure the synchronisation on the rising edge.
   If this is not done or if one of the cables has the wrong polarity, the software is not able to read the \textit{header} and \textit{trailer} and the characterisation can't be done.
 
   Then, sensors are configured in the discriminator output mode.
-  The zero suppression mode is bypassed, pixels and discriminators are in normal mode ( the whole matrix read in $115~\mu\rm{s}$), but the readout frequency is lower ($10~\rm{MHz}$) via two \gls{LVDS} output pads.
+  The zero suppression mode is bypassed, pixels and discriminators are in normal mode (the whole matrix is read in $115~\mu\rm{s}$), but the readout frequency is lower ($10~\rm{MHz}$).% via two \gls{LVDS} output pads.
   The control of the discriminators is divided into four sub-matrices, each containing 288 columns.
   Thus, for one sub-matrix a threshold value in /gls{DAC} units in the \gls{JTAG} software is driving all the discriminators, depending on a baseline value.
   For one line, usually one located in the middle of the matrix, its baseline response is studied to find the "middle-points" by looking for the threshold of each sub-matrix, in which the discriminators are reaching a half activation.
@@ -289,7 +293,7 @@
   Due to the structure of the sensor, the homogeneity is not perfect and some dispersions in the discriminator response are observed between the beginning and the end of a sub-matrix.
   Moreover, to reduce this dispersion, the reference baseline, and the clamping voltage have to be adjusted.
   
-  \begin{figure}[!h]
+  \begin{figure}[!tbh]
     \centering
     \includegraphics[width = \textwidth]{Pictures/labTests/discri_middle.png}
     \caption{Matrix response for the discriminators half activated.}
@@ -301,48 +305,49 @@
   Figure~\ref{fig:openPixel} depicts the matrix output for when all the discriminators are closed.
   Therefore, a line is always activated, as well as a few pixels in a column and they are increasing the fake hit rate of the matrix.
   A solution exists to disconnect some discriminators in order to reduce the noise of defective columns on the \gls{JTAG} program, nevertheless, no solution during the sensor programming exists to remove the defective lines.
-  On the other hand, a few pixels can be always deactivated even if the discriminators are completely opened, thus, they are not able to detect any physics signal.
-  This behavior is represented in figure~\ref{fig:closePixel} and no solution exists to make them work properly.
+  On the other hand, a few pixels can be always deactivated even if the discriminators are completely opened, i.e these pixels are not able to detect any physics signal.
+  This behavior is represented in figure~\ref{fig:closePixel}. 
+  To date, no solution exists to make these pixels working properly.
    
-  \begin{figure}[!h]
+  \begin{figure}[!tbh]
     \centering
     \includegraphics[width=\textwidth]{Pictures/labTests/th0.png}
-    \caption{Matrix response in discriminator mode, where all the discriminators are opened. On the right of the matrix, one line is not working correctly and some pixels are never activated}
+    \caption{Matrix response in discriminator mode, where all the discriminators are opened. On the right of the matrix, one row is not working correctly and some pixels are never activated}
     \label{fig:openPixel}
   \end{figure}
    
-  \begin{figure}[!h]
+  \begin{figure}[!tbh]
     \centering
     \includegraphics[width=\textwidth]{Pictures/labTests/th255.png}
-    \caption{Matrix response in discriminator mode, where all the discriminators are closed. One line of pixels is always activated, as well as few pixels in the same column. This will increase the fake hit rate of the sensor.}
+    \caption{Matrix response in discriminator mode, where all the discriminators are closed. One line of pixels is always activated, as well as few pixels in one column. This will increase the fake hit rate of the sensor.}
     \label{fig:closePixel}
   \end{figure}
 
   \subsection{Threshold scan}
 
   The noise performance of the sensor is determined through a threshold scan around the "middle-point" found before.
-  This consists of recording the normalised response of the discriminators or the discriminators and the pixels for different threshold values.
-  For the first possibility, an external voltage is injected into the discriminators, while the matrix output is disconnected.
+  This threshold scan consists of recording the normalised response of the discriminators or the discriminators and the pixels for different threshold values.
+  For the first possibility, an external voltage is injected into the discriminators while the pixels are disconnected.
   Only the noise contribution coming from the discriminator is thus determined.
-  In this work, the noise performance results presented were done without an injected external voltage, but rather with the sensitive system connected to the discriminators.
-  Usually, 29 runs containing between 50 to 1000 are stored.
-  The files created are used to firstly, build a configuration file containing the \gls{DAC} values of each sub-matrix for the different thresholds applied.
+  In this work, the noise performance results presented were done without injecting an external voltage, but rather with the sensitive system connected to the discriminators.
+  Usually, 29 runs containing between 500 to 1000 events are stored.
+  The files created are used to firstly build a configuration file containing the \gls{DAC} values of each sub-matrix for the different thresholds applied.
   The threshold is here defined as the voltage applied to the discriminators.
   Afterward, this file is analysed and converted to create an output file containing a hit average picture of each sub-matrix for each step.
-  Then, a macro based on C++ and ROOT framework is reading the hit average picture to plot the transfer function, also called "S" curve, as represented in figure~\ref{fig:transfer}.
+  Then, a macro based on C++ and the ROOT framework is reading the hit average picture to plot the transfer function, also called "S" curve, as represented in figure~\ref{fig:transfer}.
   It shows the normalised response of the 288 discriminators and the pixels contained in this sub-matrix as a function of the threshold applied in millivolts.
   The temporal noise of each pixel is calculated from the derivative of the "S" curve and is represented here in the left plot of figure~\ref{fig:TN&FPN}.
   The mean value of the distribution obtained the mid-point threshold of a pixel.
   The dispersion of the mid-point threshold corresponds to the fixed pattern noise, represented on the right plot of figure~\ref{fig:TN&FPN}.
   
-  \begin{figure}[!h]
+  \begin{figure}[!tbh]
     \centering
     \includegraphics[width=0.7\textwidth]{Pictures/labTests/transfer_B.png}
     \caption{Pixels response of a threshold scan around the middle-point of discriminators for a sub-matrix.}
     \label{fig:transfer}
   \end{figure}
 
-  \begin{figure}[!h]
+  \begin{figure}[!tbh]
     \centering
     \includegraphics[width=0.8\textwidth]{Pictures/labTests/noise_A.png}
     \caption{Noise performances of a sub-matrix for the discriminators and the pixel array output. The temporal noise is plotted on the left plot, whereas the fixed pattern noise is represented on the right plot.} 
@@ -351,11 +356,13 @@
 
   The plot on the left in figure~\ref{fig:TN&FPN} represents the temporal noise, while the right one represents the fixed pattern noise.
   The systematic offset of the discriminator is extracted from these measurements (the mean value of the temporal noise, the mean value and the sigma value of the fixed pattern noise).
-  To calculate the discriminator thresholds of each sub-matrix for a given \gls{SNR}, the total noise is determined as:
+  To calculate the discriminator thresholds of each sub-matrix for a given \acrfull{SNR}, the total noise is determined as:
   
   \begin{equation}
-    \rm{Total~noise} = \sqrt{<\rm{TN}>^2 + <\rm{FPN}>^2}.
+    \rm{Total~noise} = \sqrt{\langle\rm{TN}\rangle^2 + \langle\rm{FPN}\rangle^2},
   \end{equation}
+
+  with $\langle\rm{TN}\rangle$ the mean value of the temporal noise, and $\langle\rm{FPN}\rangle$ the mean value of the fixed pattern noise.
 
   For a given S/N cut $\sigma$, the thresholds are determined by:
 
@@ -372,54 +379,54 @@
   \subsection{Noise measurements}
 
   Once the thresholds are defined for the different cuts, the fake hit rate of the matrix, as well as the detection homogeneity is determined.
-  A quick step consists of using the \gls{DAQ} software and acquiring ten-thousands events in the dark to determine the noise qualitatively. 
-  The fake hit rate per event per pixel is then considered as:
+  A quick step consists of using the \gls{DAQ} software and acquiring $10^4$~events in the dark to determine the noise qualitatively. 
+  The fake hit rate per event per pixel is then defined as:
 
   \begin{equation}
     \rm{F.H.R} = \frac{\rm{Number~of~hits}}{\rm{Number~of~events} \times \rm{Number~of~pixels}}. 
   \end{equation}
   
-  Figure~\ref{fig:darkEvents} represents the accumulation in the dark of ten thousand events for a threshold five times bigger than the noise.
-  The measured fake hit rate was below $10^{-4}~\rm{hits/pixel/events}$.
+  Figure~\ref{fig:darkEvents} represents the accumulation in the dark of $10^4$~events for a threshold five times bigger than the noise.
+  The measured fake hit rate was below $10^{-4}~\rm{hits/pixel/event}$.
 
-   \begin{figure}[!h]
+   \begin{figure}[!tbh]
     \centering
     \includegraphics[width=0.6\textwidth]{Pictures/labTests/dark_10kEvents_not_noisy.png}
-    \caption{Accumulation of $10^4$ events at a thresholds of 5 times the noise acquired in the dark.}
+    \caption{Accumulation of $10^4$ events at a thresholds of 5 times the noise acquired in the dark for one sensor.}
     \label{fig:darkEvents}
   \end{figure}
 
   Then, an iron $^{55}\rm{Fe}$ source is used to control the homogeneity of the thresholds determined before.
-  Figure~\ref{fig:fe55} represents the accumulation of ten thousand events for a threshold five time bigger than the noise with an iron source on top of the sensor.
+  Figure~\ref{fig:fe55} represents the accumulation of ten thousand events for a threshold five times larger than the noise with an iron source on top of the sensor.
   
-  \begin{figure}[!h]
+  \begin{figure}[!tbh]
     \centering
     \includegraphics[width=0.6\textwidth]{Pictures/labTests/10kEvents_Fe55_cut5sigma.png}
-    \caption{Accumulation of $10^{4}$ events at a thresholds of 5 times the noise with $^{55}\rm{Fe}$ radiation source.}
+    \caption{Accumulation of $10^{4}$ events at a threshold of 5 times the noise with a $^{55}\rm{Fe}$ radiation source for one sensor.}
     \label{fig:fe55}
   \end{figure}
 
   Finally, in order to validate the sensor, the acquisition system used during the test beam is used to calculate quantitatively the fake hit rate.
   The auxiliary board is connected to a Flex RIO board instead of the digital card.
   The test beam \gls{DAQ} software developed by the \gls{IPHC} is using a LabVIEW interface for the run control.
-  It provides several useful pieces of information, such as the number of events acquired, the \textit{header}, the \textit{trailer} and the \textit{frame counter} of the sensor.
+  It provides a lot of useful pieces of information, such as the number of events acquired, the \textit{header}, the \textit{trailer} and the \textit{frame counter} of the sensor.
   This helps the user to know if the acquisition is running properly.
-  If the \textit{frame counter} is different for each sensor, this points out a loss of synchronisation during the acquisition.
+  If the \textit{frame counter} is different for each sensor, this points at a loss of synchronisation during the acquisition.
   Also, a different \textit{header} or \textit{trailer} such as the ones set in JTAG software might point out a wrong connection.
   A second  piece of software is used to store the data into three files: a parameter file containing the run number, the event number, an index file and a binary file containing the raw data.
   Two acquisition modes are available. 
-  The first one, used in test beam, acquires data only when a trigger is sent.
-  The second one, stores all frames regardless the trigger status. 
-  This acquisition is the one used in the lab, as only the noise of the sensor is measured.
+  The first one, used in the test beam, acquires data only when a trigger is sent.
+  The second one stores all frames regardless of the trigger status. 
+  This acquisition is the one used in the lab, when only the noise of the sensor is measured.
    
   Several runs each containing one million events are acquired for different thresholds. 
-  The data stored are analysed with software developed by the \gls{IPHC} and is called \gls{TAF}~\cite{TAF2015}.
+  The data stored are analysed with software developed by the \gls{IPHC} called \gls{TAF}~\cite{TAF2015}.
   It is based on C++ and the ROOT framework.
   The software reads the information of the hit pixels, reconstructs the clusters of hit pixels and in the case of a test beam is able to reconstruct tracks from the hit information.
 
-  A method is used to determine the fake hit rate with respect to the number of pixels hit per event.
-  From the distribution shown in figure~\ref{fig:pixel/event}, which represents the number of pixels fired per event, the average fake hit rate is calculated as the mean of this distribution divided by the total number of pixels contained in the matrix.
-    \begin{figure}
+  The fake hit rate is determined with respect to the number of pixels hit per event.
+  From the fake rate distribution per pixel shown in figure~\ref{fig:pixel/event} (bottom-left plot), which represents the number of pixels fired per event, the average fake hit rate is calculated as the mean of this distribution divided by the total number of pixels contained in the matrix.
+  \begin{figure}[!tbh]
     \centering
     \includegraphics[width = \textwidth]{Pictures/labTests/FHR_AS01_chip3.png}
     \caption{Results of the fake hit rate measurement for a threshold three times bigger than the noise. The top left plot represents a raw picture of the million events accumulated over the whole matrix. The top right one is the distribution of the number of pixels hit per event. The bottom left plot is the fake hit rate per pixel distribution, while the bottom right one is the fake hit rate relative to the average rate distribution.}
@@ -429,7 +436,7 @@
   This calculation is done for different thresholds and figure~\ref{fig:FHR} represents the average fake hit rate per pixel per event as a function of the threshold for one sensor of an aluminum module.
   These results match the expected behavior for a standalone \gls{MIMOSA}-26 sensor as shown in figure~\ref{fig:mi26Perf}.
 
-  \begin{figure}
+  \begin{figure}[!tbh]
     \centering
     \includegraphics[width=0.7\textwidth]{Pictures/labTests/fake_sensor6.png}
     \caption{Distribution of the fake hit rate per pixel.}
@@ -448,8 +455,8 @@
   The three first mirrored versions produced have a problem with the \gls{ZIF} connector.
   It could have been damaged by plugging and unplugging the jumper cable.
   This problem did not occur with copper mirrored versions and this might come from a more fragile flex-cable.
-  Ideally, each module should have is own jumper cable and this should not be disconnected.
+  Ideally, each module should have is own jumper cable, which then should not be disconnected.
   Nevertheless, for shipping them, there is no other solution.
   The collaboration is thinking of a tool which will reduce the stress applied to the connector.
 
-  The next chapter deals with the tests performed in real conditions at the CERN-SPS facility with the PLUME-V1 prototype in 2011.
+  The next chapter deals with the tests performed under realistic conditions at the CERN-SPS facility with the PLUME-V1 prototype in 2011.
